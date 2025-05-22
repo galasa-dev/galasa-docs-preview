@@ -1,0 +1,1575 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Galasa is an open source deep integration test framework for teams looking to give more power to their testers">
+      
+      
+      
+        <link rel="canonical" href="https://galasa.dev/docs/reference/cli-syntax/errors-list/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Errors list - Galasa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#errors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Galasa" class="md-header__button md-logo" aria-label="Galasa" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Galasa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Errors list
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/galasa-dev/galasa.dev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    galasa.dev
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Galasa" class="md-nav__button md-logo" aria-label="Galasa" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Galasa
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/galasa-dev/galasa.dev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    galasa.dev
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+  
+  <span class="md-ellipsis">
+    About Galasa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/different/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why Galasa is different
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benefits of Galasa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Galasa and DevOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    A brief history of Galasa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Docs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
+  
+  <span class="md-ellipsis">
+    Galasa Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    The Galasa Ecosystem
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            The Galasa Ecosystem
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Galasa Ecosystem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Releases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 9A1.5 1.5 0 0 0 7 7.5 1.5 1.5 0 0 0 5.5 6 1.5 1.5 0 0 0 4 7.5 1.5 1.5 0 0 0 5.5 9m11.91 2.58c.36.36.59.86.59 1.42 0 .55-.22 1.05-.59 1.41l-5 5a1.996 1.996 0 0 1-2.83 0l-6.99-6.99C2.22 12.05 2 11.55 2 11V6c0-1.11.89-2 2-2h5c.55 0 1.05.22 1.41.58zm-3.87-5.87 1-1 6.87 6.87c.37.36.59.87.59 1.42s-.22 1.05-.58 1.41l-5.38 5.38-1-1L20.75 13z"/></svg>
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Support
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../support/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.79 15.41c.95-2.17.95-4.66 0-6.82l-2.74 1.24c.6 1.38.6 2.95.01 4.34zm-4.37-11.2a8.54 8.54 0 0 0-6.83 0l1.24 2.73c1.39-.59 2.96-.59 4.35.01zM4.21 8.58a8.56 8.56 0 0 0 0 6.84l2.74-1.25c-.6-1.38-.6-2.96 0-4.35zm4.38 11.21a8.5 8.5 0 0 0 6.83-.01l-1.24-2.73a5.5 5.5 0 0 1-4.34.01zM12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4"/></svg>
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Community
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Community
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../community/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c5.5 0 10 3.58 10 8s-4.5 8-10 8c-1.24 0-2.43-.18-3.53-.5C5.55 21 2 21 2 21c2.33-2.33 2.7-3.9 2.75-4.5C3.05 15.07 2 13.13 2 11c0-4.42 4.5-8 10-8"/></svg>
+  
+  <span class="md-ellipsis">
+    Get involved
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Blogs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Blogs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 3H4c-1.11 0-2 .89-2 2v14c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2M5 7h5v6H5zm14 10H5v-2h14zm0-4h-7v-2h7zm0-4h-7V7h7z"/></svg>
+  
+  <span class="md-ellipsis">
+    Galasa Blogs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/category/blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/category/podcast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Podcast
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/category/press-release/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Press release
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/category/redpaper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Redpaper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hub/category/video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Video
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Errors list</h1>
+
+<h2 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h2>
+<p>The <code>galasactl</code> tool can generate the following errors:</p>
+<ul>
+<li>GAL1001E: Unsupported bootstrap URL {}. Acceptable values start with 'http' or 'https'. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1002E: Bootstrap url does not end in '/bootstrap'. Bootstrap url is '{}'. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1003E: Bootstrap contents is badly formed. Bootstrap is at {}. Reason is: {}</li>
+<li>GAL1004E: Failed to load the bootstrap from {}. Reason is {}. If the URL is not resolving, try adding the hostname to your /etc/hosts file. This might especially be needed if communicating over a VPN connection.</li>
+<li>GAL1005E: Failed to write to 'throttle' file {}. Reason is {}</li>
+<li>GAL1006E: The submit command does not support mixing of the test selection flags and a portfolio. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1007E: Failed to create report yaml file {}. Reason is {}</li>
+<li>GAL1008E: Failed to check if group {} exists already. Reason is {}</li>
+<li>GAL1009E: The submit command requires either test selection flags (eg: --stream, --class, --bundle, --package, --tag, --regex, --test, --gherkin) or --portfolio flag to be specified. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1010E: Invalid override '{}'</li>
+<li>GAL1011E: Failed to encode the yaml file {}. Reason is {}</li>
+<li>GAL1012E: Failed to prepare test report for writing to json file {}. Reason is {}</li>
+<li>GAL1013E: Failed to write test report json file {}. Reason is {}</li>
+<li>GAL1014E: Failed to prepare test report for writing to the junit results file {}. Reason is {}</li>
+<li>GAL1015E: Failed to  write test report junit results file {}. Reason is {}</li>
+<li>GAL1016E: There are no tests in the test porfolio {}</li>
+<li>GAL1017E: Not all runs passed. {} failed.</li>
+<li>GAL1018E: No tests were selected.</li>
+<li>GAL1019E: Invalid override '{}'</li>
+<li>GAL1020E: Failed to open log file '{}' for writing. Reason is {}</li>
+<li>GAL1021E: Failed to open portfolio file '{}' for reading. Reason is {}</li>
+<li>GAL1022E: Failed to read portfolio file '{}' because the content is in the wrong format. Reason is {}</li>
+<li>GAL1023E: Failed to read portfolio file '{}' because the content are not using format '{}'.</li>
+<li>GAL1024E: Failed to read portfolio file '{}' because the content are not a resource of type '{}'.</li>
+<li>GAL1025E: Unable to locate test stream '{}' catalog location</li>
+<li>GAL1026E: Failed to find location of tests in stream '{}'. Reason is {}</li>
+<li>GAL1027E: Failed to copy test catalog from REST reply for property '{}', stream '{}'. Reason is {}</li>
+<li>GAL1028E: Failed to unmarshal test catalog from REST reply for property '{}', stream '{}'. Reason is {}</li>
+<li>GAL1029E: Stream '{}' is not found in the ecosystem. There are no streams set up. Ask your Galasa system administrator to add a new stream with the desired name.</li>
+<li>GAL1030E: Stream '{}' is not found in the ecosystem. Valid streams are:{}. Try again using a valid stream, or ask your Galasa system administrator to add a new stream with the desired name.</li>
+<li>GAL1031E: Invalid flags. --bundle, --package, --test, --tag, and --class flags can only be specified if --stream is provided. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1032E: Invalid select regex '{}'. Reason is {}</li>
+<li>GAL1033E: Invalid select quoted regex '{}'. Reason is {}</li>
+<li>GAL1034E: Class '{}' is not format 'bundle/class'</li>
+<li>GAL1035E: Class '{}' is not format. Name is blank</li>
+<li>GAL1036E: File '{}' exists. Use the --force flag to overwrite it.</li>
+<li>GAL1037E: Invalid Java package name '{}' should not contain the '{}' character. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1038E: Invalid Java package name '{}' should not start with the '{}' character. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1039E: Invalid Java package name '{}' should not end with the '{}' character. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1040E: Invalid Java package name. Package name should not be blank. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1041E: Failed to create folders '{}'. Reason is '{}'. Check that you have permissions to write to that folder, and that there is enough disk space available and try again.</li>
+<li>GAL1042E: Failed to open file '{}' for writing. Reason is '{}'. Check that you have permissions to write to that folder and file, and that there is enough disk space available and try again.</li>
+<li>GAL1043E: Failed to open file '{}' for reading. Reason is '{}'. Check that you have permissions to read the file and try again.</li>
+<li>GAL1044E: Invalid Java package name. Package name '{}' contains the reserved java keyword '{}'.</li>
+<li>GAL1045E: Invalid feature name. Feature name '{}' cannot be used as a java package name. '{}'</li>
+<li>GAL1046E: Failed to determine the home folder of this user. '{}'</li>
+<li>GAL1047E: Cannot create the yaml report in file '{}' as that file already exists.</li>
+<li>GAL1048E: Failed to read from 'throttle' file '{}'. Reason is '{}'</li>
+<li>GAL1049E: Invalid value '{}' read from 'throttle' file '{}'. Reason is '{}'. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1050E: JAVA_HOME environment variable is not set. It must be for when --local flag is used.</li>
+<li>GAL1051E: Failed to determine if folder '{}' exists. Reason is '{}'</li>
+<li>GAL1052E: Folder '{}' is missing. JAVA_HOME environment variable should refer to a folder which contains a 'bin' folder.</li>
+<li>GAL1053E: Failed to determine if '{}' exists. Reason is '{}'</li>
+<li>GAL1054E: Program '{}' should exist. JAVA_HOME has been set incorrectly.</li>
+<li>GAL1055E: Failed to read bootstrap file '{}'. Reason is '{}'</li>
+<li>GAL1056E: The RAS folder path could not be detected in trace output for runId '{}'</li>
+<li>GAL1057E: The run identifier could not be detected in trace output of the child process</li>
+<li>GAL1058E: Failed to load bootstrap file '{}'. Reason is '{}'</li>
+<li>GAL1059E: Failed to load overrides file '{}'. Reason is '{}'</li>
+<li>GAL1060E: Badly formed OBR parameter '{}'. Expected it to be of the form mvn:<GROUP_ID>/<ARTIFACT_ID>/<VERSION>/obr with 4 parts separated by slash characters.</li>
+<li>GAL1061E: Badly formed OBR parameter '{}'. Expected it to be of the form mvn:<GROUP_ID>/<ARTIFACT_ID>/<VERSION>/obr with 4 parts separated by slash characters.</li>
+<li>GAL1062E: Badly formed OBR parameter '{}'. Expected it to be of the form mvn:<GROUP_ID>/<ARTIFACT_ID>/<VERSION>/obr with a 'mvn:' prefix.</li>
+<li>GAL1063E: Badly formed OBR parameter '{}'. Expected it to be of the form mvn:<GROUP_ID>/<ARTIFACT_ID>/<VERSION>/obr with an '/obr' suffix.</li>
+<li>GAL1064E: Badly formed Class parameter '{}'. Expected it to be of the form <OSGiBundleId>/<FullyQualifiedJavaClass> with no .class suffix. No slash found.</li>
+<li>GAL1065E: Badly formed Class parameter '{}'. Expected it to be of the form <OSGiBundleId>/<FullyQualifiedJavaClass> with no .class suffix. Too many slashes found.</li>
+<li>GAL1066E: Badly formed Class parameter '{}'. Expected it to be of the form <OSGiBundleId>/<FullyQualifiedJavaClass> with no .class suffix. Unwanted .class suffix detected.</li>
+<li>GAL1067E: Unsupported value '{}' for parameter --format. Supported values are: {}. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1068E: Could not query run results. Reason: '{}'</li>
+<li>GAL1069E: Could not open log file for writing. '{}' is a directory, the --log parameter should refer to a file path (existing or not), or '-' (the console)</li>
+<li>GAL1070E: Invalid value '{}' detected for optional property '{}' in bootstrap properties. Valid values are 'listen' or 'attach'. Only used when --debug flag is set. Defaults to 'listen'. Can be overridden with the --debugMode flag.</li>
+<li>GAL1071E: Invalid value '{}' detected for optional --debugMode argument. Valid values are 'listen' or 'attach'. Only used when --debug flag is set. Defaults to 'listen'. Default can be set with an optional property '{}' in bootstrap properties.</li>
+<li>GAL1072E: Invalid value '{}' detected for optional property '{}' in bootstrap properties. Valid values must be a non-zero positive integer, for a port number. Only used when --debug flag is set. Defaults to '{}'. Can be overridden with the --debugPort flag.</li>
+<li>GAL1073E: Could not get run artifacts. Reason: '{}'</li>
+<li>GAL1074E: Could not download artifact '{}'. Reason: '{}'</li>
+<li>GAL1075E: run name '{}' is invalid. Expected it to be in format starting with letters, and ending in a number with no non-alphanumeric characters.</li>
+<li>GAL1076E: Badly formed from or to value '{}' specified in the age parameter. The value could not be converted into an integer value.</li>
+<li>GAL1077E: Invalid value '{}' detected for age parameter. The 'from' value must be greater than the 'to' value.</li>
+<li>GAL1078E: Badly formed '--age' parameter value '{}' specified. Age of the test runs should be specified in the format '{FROM}{TIME-UNIT}:{TO}{TIME-UNIT}' or '{FROM}{TIME-UNIT}', where 'FROM' is a positive, non-zero integer, 'TO' is a non-negative integer, and 'TIME-UNIT' can be {}. 'FROM' must be greater than 'TO'. 'TO' defaults to 0 if not specified. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1079E: The --age, --name, or --group parameter must be used to identify which test run(s) you want see. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1080E: Invalid 'from' value '{}' in the '--age' parameter. Age of the test runs should be specified in the format '{FROM}{TIME-UNIT}:{TO}{TIME-UNIT}' or '{FROM}{TIME-UNIT}', where 'FROM' is a positive, non-zero integer, 'TO' is a non-negative integer, and 'TIME-UNIT' can be {}. 'FROM' must be greater than 'TO'. 'TO' defaults to 0 if not specified. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1081E: Unable use a negative value '{}' in the '--age' parameter. Age of the test runs should be specified in the format '{FROM}{TIME-UNIT}:{TO}{TIME-UNIT}' or '{FROM}{TIME-UNIT}', where 'FROM' is a positive, non-zero integer, 'TO' is a non-negative integer, and 'TIME-UNIT' can be {}. 'FROM' must be greater than 'TO'. 'TO' defaults to 0 if not specified. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1082E: Invalid time unit specified '{}' in the '--age' parameter. Age of the test runs should be specified in the format '{FROM}{TIME-UNIT}:{TO}{TIME-UNIT}' or '{FROM}{TIME-UNIT}', where 'FROM' is a positive, non-zero integer, 'TO' is a non-negative integer, and 'TIME-UNIT' can be {}. 'FROM' must be greater than 'TO'. 'TO' defaults to 0 if not specified. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1083E: No artifacts to download for run: '{}'</li>
+<li>GAL1084E: Communications failure while closing an HTTP response. '{}'</li>
+<li>GAL1085E: Programming logic error. ReadTextFile operation on embedded file system failed. Reason is {}</li>
+<li>GAL1086E: Communications problem between the command-line tool and the target Galasa Ecosystem. The tool could not retrieve the list of valid result names. Reason: '{}'</li>
+<li>GAL1087E: Invalid '--result' parameter value: {}. The possible result values currently in the Ecosystem Result Archive Store (RAS) are: {}</li>
+<li>GAL1088E: --active and --result must not be used at the same time, they are mutually exclusive. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1089E: Need to use --maven and/or --gradle parameter Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1090E: Could not get username of current requestor. Reason is '{}'</li>
+<li>GAL1091E: '{}' is not a properly formed file URL Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1092E: Galasa Ecosystem error: A test was submitted for launch. The galasa runtime is not reporting test progress. The test is lost and may execute but test progress cannot be monitored from this tool. (bundle: {}, class: {}).</li>
+<li>GAL1093E: Failed to submit test (bundle: {}, class: {}). Reason is: {}</li>
+<li>GAL1094E: User error: Cannot run test {} on a local JVM because no OBR information is available. Supply an OBR using the --obr parameter, or (if using a portfolio) ensure the portfolio contains an OBR for this test. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1095E: namespace '{}' is invalid. Expected it to be in a format starting with letters, and ending in a number with no non-alphanumeric characters. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1096E: Could not query namespace results. Reason: '{}'</li>
+<li>GAL1097E: Property --name cannot be set alongside --prefix, --suffix, or --infix. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1098E: Property '{}' could not be updated. Reason: '{}'</li>
+<li>GAL1099E: Property '{}' could not be deleted. Reason: '{}'</li>
+<li>GAL1100E: Property '{}' could not be created. Reason: '{}'</li>
+<li>GAL1101E: namespace '{}' is invalid. '--namespace' is a mandatory flag for this command. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1102E: name '{}' is invalid. '--name' is a mandatory flag for this command. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1103E: Could not query CPS results. Reason: '{}'</li>
+<li>GAL1104E: Unable to delete the bearer token file '{}'.</li>
+<li>GAL1105E: Invalid group name provided. Group names must only contain characters in the following ranges: 'a'-'z', 'A'-'Z', '0'-'9', '-' (dash), '_' (underscore).</li>
+<li>GAL1106E: Could not get security bearer token from API server. Reason: '{}'. Ensure you have allocated a personal access token and configured your client program by setting your GALASA_TOKEN as an environment variable or by storing it in your galasactl.properties file</li>
+<li>GAL1107E: Could not get security bearer token from file '{}'. Reason: '{}'. Ensure you are authenticated by running 'galasactl auth login' and that your personal access token has not expired or been revoked</li>
+<li>GAL1108E: Invalid bearer token. Ensure you are authenticated by running 'galasactl auth login' and that your personal access token has not expired or been revoked</li>
+<li>GAL1109E: Unable to access the file. Reason: '{}'</li>
+<li>GAL1110E: Could not retrieve the content of the file provided. Reason: '{}'</li>
+<li>GAL1111E: Error parsing the file '{}'. The file is not in the expected yaml format. Reason: '{}'. Invalid yaml:'{}'</li>
+<li>GAL1112E: Error converting the parsed yaml content into a json payload for the http request. Reason: '{}'</li>
+<li>GAL1113E: Failure reported by the Galasa Ecosystem. The Ecosystem believes there is a problem with this client program or the user input. Errors returned: '{}'</li>
+<li>GAL1114E: The resources operation failed due to a problem on the server. Collect a log with the --log option and contact your Galasa Ecosystem adminstrator.</li>
+<li>GAL1115E: An unexpected response was received from the Galasa Ecosystem. Collect a log with the --log option and contact your Galasa Ecosystem adminstrator.</li>
+<li>GAL1116E: Error reading the HTTP Response body. Reason: '{}'</li>
+<li>GAL1117E: The delete operation failed. Unable to process the error information returned from the server.</li>
+<li>GAL1118E: The resource operation failed. Unable to process the error information returned from the server. Reason: '{}'</li>
+<li>GAL1119E: The server thinks you are unauthorized to perform this operation.</li>
+<li>GAL1120E: Program logic error. Collect a log using the '--log' option and send to the Galasa development team.</li>
+<li>GAL1121E: Unable to retrieve rest api version. Reason is: {}. Try downloading the latest version of galasa or rebuilding a clean version.</li>
+<li>GAL1122E: Authentication property {} is not available, which is needed to connect to the Galasa Ecosystem. It either needs to be in a file '{}' or set as an environment variable.</li>
+<li>GAL1123E: Failed to read 3270 terminal JSON because the content is in the wrong format. Reason: {}</li>
+<li>GAL1124E: Internal Failure. Terminal image could not be encoded into PNG format. Reason: {}</li>
+<li>GAL1125E: Authentication property {} is invalid. Ensure that it the value is made up of two parts that are separated by a '{}'.</li>
+<li>GAL1132E: No active run found matching run name '{}'.</li>
+<li>GAL1133E: Error resetting run '{}'. Reason: '{}'</li>
+<li>GAL1134E: The runs reset operation failed. Unable to process the error information returned from the server.</li>
+<li>GAL1135E: Error cancelling run '{}'. Reason: '{}'</li>
+<li>GAL1136E: The runs cancel operation failed. Unable to process the error information returned from the server.</li>
+<li>GAL1137E: The gherkin URL supplied is invalid. '{}' does not end with the expected '.feature' extension.</li>
+<li>GAL1138E: Unsupported gherkin URL {}. Acceptable values start with 'file://'</li>
+<li>GAL1139E: Unable to compile the regex pattern for Galasa Property field 'namespace'. Reason: '{}'</li>
+<li>GAL1140E: The namespace, '{}', provided does not match formatting requirements. The namespace must start with a character in the 'a-z' range, followed by characters in the 'a'-'z' or '0'-'9' ranges only.</li>
+<li>GAL1141E: Unable to compile the regex pattern for Galasa Property field '{}'. Reason: '{}'</li>
+<li>GAL1142E: The {} field value, '{}', provided does not match formatting requirements. The {} field value must start with a character in the 'a-z' or 'A-Z' range, followed by any characters in the 'a'-'z', 'A'-'Z', '0'-'9', '.' (period), '-' (dash) or '_' (underscore) or '@' (at) ranges only.</li>
+<li>GAL1143E: Could not query run results. Server returned a non-200 code ({})</li>
+<li>GAL1144E: Could not use url '{}' to retrieve the contents of the test catalog from stream '{}'. Http error from the Galasa server is '{}'</li>
+<li>
+<p>GAL1145E: Failed to create folder for bearer tokens at '{}'</p>
+</li>
+<li>
+<p>GAL1146E: Could not get list of tokens from API server. Reason: '{}'. Ensure you have allocated a personal access token and configured your client program by setting your GALASA_TOKEN as an environment variable or by storing it in your galasactl.properties file</p>
+</li>
+<li>GAL1147E: The cache of access tokens contains a java web token (jwt) which is invalid or can't be parsed. File is '{}'. This could indicate a corruption in the file. To resolve, manually delete the file and authenticate against the server again with the 'galasactl auth login' command. If the problem persists, contact your Galasa system administrator. Detailed cause of this problem: '{}'</li>
+<li>
+<p>GAL1148E: The cache of access tokens contains a java web token (jwt) in file '{}', from which an expiration time could not be extracted. This could indicate a problem with the authentication configuration on the Galasa server. Contect your Galasa system administrator. Detailed problem : '{}'</p>
+</li>
+<li>
+<p>GAL1149E: Programming logic error: Cannot encrypt because the length of the key is too small.</p>
+</li>
+<li>GAL1150E: Programming logic error: Decryption of cached bearer token failed. Reason: {}</li>
+<li>GAL1151E: Programming logic error: Decryption of cached bearer token failed. Cipher is not long enough. Cipher size: {}, AES block size: {}</li>
+<li>GAL1152E: Programming logic error: Too much data passed to the encryption process. Please contact your Galasa systems administrator.</li>
+<li>GAL1153E: Failed to revoke the token with ID '{}'. Reason: '{}'.</li>
+<li>GAL1154E: The provided token ID, '{}', does not match formatting requirements. The token ID can contain any character in the 'a'-'z', 'A'-'Z', '0'-'9', '-' (dash), or '_' (underscore) ranges only.</li>
+<li>GAL1155E: The loginId provided by the --login-id field cannot be an empty string.</li>
+<li>GAL1156E: Could not get list of users from API server. Reason: '{}'. Ensure you have allocated a personal access token and configured your client program by setting your GALASA_TOKEN as an environment variable or by storing it in your galasactl.properties file</li>
+<li>GAL1157E: An attempt to delete a run named '{}' failed. Cause is {}</li>
+<li>GAL1158E: An attempt to delete a run named '{}' failed. Sending the delete request to the Galasa service failed. Cause is {}</li>
+<li>GAL1159E: An attempt to delete a run named '{}' failed. Unexpected http status code {} received from the server.</li>
+<li>GAL1160E: An attempt to delete a run named '{}' failed. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1161E: An attempt to delete a run named '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1162E: An attempt to delete a run named '{}' failed. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1163E: The run named '{}' could not be deleted because it was not found by the Galasa service. Try listing runs using 'galasactl runs get' to identify the one you wish to delete</li>
+<li>GAL1164E: An attempt to delete a run named '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1165E: '{}' is not supported as a valid login ID. Login ID should not contain spaces.</li>
+<li>GAL1166E: The loginId provided by the --login-id field cannot be an empty string.</li>
+<li>GAL1167E: An attempt to delete a secret named '{}' failed. Unexpected http status code {} received from the server.</li>
+<li>GAL1168E: An attempt to delete a secret named '{}' failed. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1169E: An attempt to delete a secret named '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1170E: An attempt to delete a secret named '{}' failed. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1171E: An attempt to delete a secret named '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1172E: Invalid secret name provided. The name provided with the --name flag cannot be empty and must only contain characters in the following ranges: 'a'-'z', 'A'-'Z', '0'-'9', '-' (dash), '_' (underscore).</li>
+<li>GAL1173E: An attempt to delete a secret named '{}' failed. Sending the delete request to the Galasa service failed. Cause is {}</li>
+<li>GAL1174E: An attempt to get a secret named '{}' failed. Unexpected http status code {} received from the server.</li>
+<li>GAL1175E: An attempt to get a secret named '{}' failed. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1176E: An attempt to get a secret named '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1177E: An attempt to get a secret named '{}' failed. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1178E: An attempt to get a secret named '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1179E: An attempt to get a secret named '{}' failed. Sending the get request to the Galasa service failed. Cause is {}</li>
+<li>GAL1180E: Failed to get secrets. Unexpected http status code {} received from the server.</li>
+<li>GAL1181E: Failed to get secrets. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1182E: Failed to get secrets. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1183E: Failed to get secrets. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1184E: Failed to get secrets. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1185E: Failed to get secrets. Sending the get request to the Galasa service failed. Cause is {}</li>
+<li>GAL1186E: Invalid secret type provided. Supported secret types are: {}. Check your provided command parameters and try again.</li>
+<li>GAL1187E: Failed to set a secret named '{}'. Unexpected http status code {} received from the server.</li>
+<li>GAL1188E: Failed to set a secret named '{}'. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1189E: Failed to set a secret named '{}'. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1190E: Failed to set a secret named '{}'. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1191E: Failed to set a secret named '{}'. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1192E: Failed to set a secret named '{}'. Sending the put request to the Galasa service failed. Cause is {}</li>
+<li>GAL1193E: Invalid flag combination provided. --username cannot be provided with --base64-username, --password cannot be provided with --base64-password, and --token cannot be provided with --base64-token. Use the --help flag for more information, or refer to the documentation at <a href="https://galasa.dev/docs/reference/cli-commands">https://galasa.dev/docs/reference/cli-commands</a>.</li>
+<li>GAL1194E: Invalid secret description provided. The description provided with the --description flag cannot be an empty string, and must only contain characters in the Latin-1 character set.</li>
+<li>GAL1195E: Failed to delete user from database by user number.</li>
+<li>GAL1196E: The user could not be deleted by login ID because it was not found by the Galasa service. Try listing users using 'galasactl users get' to identify the one you wish to delete</li>
+<li>GAL1197E: An attempt to delete a user failed. Sending the delete request to the Galasa service failed. Cause is {}</li>
+<li>GAL1198E: An attempt to delete a user '{}' failed. Unexpected http status code {} received from the server.</li>
+<li>GAL1199E: An attempt to delete a user '{}' failed. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1200E: An attempt to delete a user '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1201E: An attempt to delete a user '{}' failed. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1202E: An attempt to delete a user '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1203E: Failed to get roles. Sending the get request to the Galasa service failed. Cause is {}</li>
+<li>GAL1204E: Failed to get roles. Unexpected http status code {} received from the server.</li>
+<li>GAL1205E: Failed to get roles. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1206E: Failed to get roles. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1207E: Failed to get roles. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1208E: Failed to get roles. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1209E: Invalid role name provided. The name provided with the --name flag cannot be empty and must only contain characters in the following ranges: 'a'-'z', 'A'-'Z', '0'-'9', '-' (dash), '_' (underscore).</li>
+<li>GAL1210E: Role name {} is not known on the Galasa service.</li>
+<li>GAL1211E: User with login id {} is not known on the Galasa service.</li>
+<li>GAL1212E: Failed to update user record on the Galasa service.</li>
+<li>GAL1213E: An attempt to update a user '{}' failed. Unexpected http status code {} received from the server.</li>
+<li>GAL1214E: An attempt to update a user '{}' failed. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1215E: An attempt to update a user '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1216E: An attempt to update a user '{}' failed. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1217E: An attempt to update a user '{}' failed. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1218E: Failed to get monitors. Sending the get request to the Galasa service failed. Cause is {}</li>
+<li>GAL1219E: Failed to get monitors. Unexpected http status code {} received from the server.</li>
+<li>GAL1220E: Failed to get monitors. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1221E: Failed to get monitors. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1222E: Failed to get monitors. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1223E: Failed to get monitors. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1224E: Galasa Monitor named {} is not known on the Galasa service.</li>
+<li>GAL1225E: Invalid monitor name provided. The name provided with the --name flag cannot be empty and must only contain characters in the following ranges: 'a'-'z', 'A'-'Z', '0'-'9', '-' (dash), '_' (underscore).</li>
+<li>GAL1226E: Invalid '--is-enabled' value provided. Supported values are 'true' and 'false'. Check your command parameters and try again.</li>
+<li>GAL1227E: Failed to update a monitor named '{}'. Sending the put request to the Galasa service failed. Cause is {}</li>
+<li>GAL1228E: Failed to update a monitor named '{}'. Unexpected http status code {} received from the server.</li>
+<li>GAL1229E: Failed to update a monitor named '{}'. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1230E: Failed to update a monitor named '{}'. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1231E: Failed to update a monitor named '{}'. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1232E: Failed to update a monitor named '{}'. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1233E: The stream name provided by the --name field cannot be an empty string.</li>
+<li>GAL1234E: Could not get list of test streams from API server. Reason: '{}'.</li>
+<li>GAL1235E: The name provided with the --name flag cannot be empty and must only contain characters in the following ranges: 'a'-'z', 'A'-'Z', '0'-'9', '-' (dash), '_' (underscore).</li>
+<li>GAL1236E: Failed to get streams. Unexpected http status code {} received from the server.</li>
+<li>GAL1237E: Failed to get streams. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1238E: Failed to get streams. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1239E: Failed to get streams. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1240E: Failed to get streams. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL12412E: Failed to delete test stream with the given name from the Galasa service</li>
+<li>GAL1242E: Failed to delete stream {}. Unexpected http status code {} received from the server.</li>
+<li>GAL1243E: Failed to delete stream {}. Unexpected http status code {} received from the server. Error details from the server could not be read. Cause: {}</li>
+<li>GAL1244E: Failed to delete stream {}. Unexpected http status code {} received from the server. Error details from the server are not in a valid json format. Cause: '{}'</li>
+<li>GAL1245E: Failed to delete stream {}. Unexpected http status code {} received from the server. Error details from the server are: '{}'</li>
+<li>GAL1246E: Failed to delete stream {}. Unexpected http status code {} received from the server. Error details from the server are not in the json format.</li>
+<li>GAL1247E: Error cancelling runs with group name '{}'. Reason: '{}'</li>
+<li>GAL2000W: Warning: Maven configuration file settings.xml should contain a reference to a Galasa repository so that the galasa OBR can be resolved. The official release repository is '{}', and 'pre-release' repository is '{}'</li>
+<li>
+<p>GAL2501I: Downloaded {} artifacts to folder '{}'</p>
+</li>
+<li>
+<p>GAL2503I: The request to reset run '{}' has been accepted by the server.</p>
+</li>
+<li>
+<p>GAL2504I: The request to cancel run '{}' has been accepted by the server.</p>
+</li>
+<li>
+<p>GAL2505I: The request to cancel runs with group name '{}' has been accepted by the server.</p>
+</li>
+<li>
+<p>GAL2506I: The request to cancel runs with group name '{}' has been handled successfully. However, no recent active (unfinished) test runs were found which are part of that group. Archived test runs may be part of that group, which can be queried separately from the Result Archive Store.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Open Mainframe Project
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/galasa-dev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://openmainframeproject.slack.com/signup#/domain-signup" target="_blank" rel="noopener" title="openmainframeproject.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1s21.16-47.06 47.06-47.06h47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06S448 171 448 196.9s-21.16 47.06-47.06 47.06h-47.06zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06S309 480 283.1 480s-47.06-21.16-47.06-47.06v-47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06s21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
