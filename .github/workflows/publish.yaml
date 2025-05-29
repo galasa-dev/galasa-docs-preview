@@ -98,7 +98,7 @@ jobs:
           echo "Last commit in the log for the preview repo is:" >> commit-message.txt
           git log -1 >> commit-message.txt
           git commit -F commit-message.txt
-          git push origin ${{ inputs.target_folder }}
+          git push origin ${{ inputs.target_branch }}
 
 
   # report-failure:
