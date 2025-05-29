@@ -74,10 +74,6 @@ jobs:
 
       - name: Copy the preview material into the target repo
         run: |-
-          echo "Listing the workspace content"
-          ls -la ${{ github.workspace }}
-          echo "Listing the target repo content"
-          ls -la ${{ github.workspace }}/${{ inputs.target_repo }}
           mkdir -p ${{ github.workspace }}/${{ inputs.target_repo }}/${{ inputs.target_folder }}
           cp -r ${{ github.workspace }}/docs/* ${{ github.workspace }}/${{ inputs.target_repo }}/${{ inputs.target_folder }}
 
@@ -97,7 +93,7 @@ jobs:
         run: |-
           git add .
           # Collect the first line of the commit message, changing any double-quote characters to escaped double-quotes.
-          msg=$(echo "${{ github.event.head_commit.message }}" | sed "s/\"/\\"/g" | head -1)
+          msg=$(log log -1 | sed "s/\"/\\"/g" | head -1)
           git commit -m "Automated update from the galasa-dev/galasa repo." 
           -m "Source branch ${{ github.ref }} git head commit id: ${{ github.event.head_commit.id }}" \
           -m "Change: ${msg}"
