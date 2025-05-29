@@ -1,0 +1,101 @@
+#
+# Copyright contributors to the Galasa project
+#
+# SPDX-License-Identifier: EPL-2.0
+#
+name: Publish site to production
+
+on:
+  workflow_call:
+    inputs:
+      target_repo:
+        description: 'The name of the target repository within this oranisation you want the documentation pushed to.'
+        default: 'galasa-docs'
+        type: string
+      target_branch:
+        description: 'The branch in the source repository you want to push to'
+        default: 'main'
+        type: string
+      target_folder:
+        description: 'The folder within the repo/branch which is the root of the pages being served up by github pages. Relative to the repo root folder.'
+        default: 'docs'
+        type: string
+    
+jobs:
+    deploy-docs-to-github-pages-production-repo:
+
+      # Only deploy from the main branch, as that's the only one anyone has had a chance to review, as
+      # that's the only branch served-up the browsers by github pages.
+      if: ${{ (github.ref_name == 'main') }}
+
+      # Specify runner + deployment step
+      runs-on: ubuntu-latest
+      steps:
+
+      - name: Checkout the preview site material
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            docs
+
+      - name: Configure git user
+        run: |
+          git config --global user.name "galasa-team"
+          git config --global user.email "galasa.team@gmail.com"
+          git config user.email
+          git config user.name
+
+      - name: Clone the target repository
+        continue-on-error: false
+        env: 
+          GITHUB_PAT: ${{ secrets.GALASA_TEAM_GITHUB_TOKEN_AUTH_IN_WORKFLOWS }}
+        run: |
+          git clone --single-branch -b ${{ inputs.target_branch }} https://galasa-team:${{ env.GITHUB_PAT }}@github.com/${{ env.GITHUB_REPOSITORY_OWNER }}/${{ inputs.target_repo }}.git
+
+      - name: Clean out the docs which are currently in the target folder of the target branch.
+        working-directory: ${{ inputs.target_repo }}
+        run: |-
+          rm -fr ${{ inputs.target_folder }}
+
+      - name: Copy the preview material into the target repo
+        run: |-
+          cp -r docs/* ${{ inputs.target_repo }}/${{ inputs.target_folder }}
+
+      # It turns out that when you deploy something to gh pages, you need to create this file
+      # in the root folder which GH pages serves up to contain the custom domain,
+      # so that github pages can route traffic to the correct place.
+      # We serve pages from the /docs folder inside the repo, so it goes there.
+      # Without this, it won't be able to route traffic correctly resulting in broken, and 
+      # will appear to 'forget' where vnext.galasa.dev is hosted from.
+      - name: Add the CNAME file so github pages knows
+        working-directory: ${{ inputs.target_repo }}/${{ inputs.target_folder }}
+        run: |
+          echo "galasa.dev" > "CNAME"
+
+      - name: Push the changes to the target git repo
+        working-directory: ${{ inputs.target_repo }}
+        run: |-
+          git add .
+          # Collect the first line of the commit message, changing any double-quote characters to escaped double-quotes.
+          msg=$(echo "${{ github.event.head_commit.message }}" | sed "s/\"/\\"/g" | head -1)
+          git commit -m "Automated update from the galasa-dev/galasa repo." 
+          -m "Source branch ${{ github.ref }} git head commit id: ${{ github.event.head_commit.id }}" \
+          -m "Change: ${msg}"
+          git push origin ${{ inputs.target_folder }}
+
+
+  # report-failure:
+  #   # Skip this job for forks
+  #   if: ${{ failure() && github.repository_owner == 'galasa-dev' }}
+  #   name: Report failure in workflow
+  #   runs-on: ubuntu-latest
+  #   needs: [deploy-docs-pr-preview-to-github-pages]
+
+  #   steps:
+  #     - name: Report failure in workflow to Slack
+  #       env: 
+  #         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  #       run : |
+  #         docker run --rm ghcr.io/galasa-dev/galasabld-ibm:main slackpost workflows --repo "galasa" --module "docs" --workflowName "${{ github.workflow }}" --workflowRunNum "${{ github.run_id }}" --ref "${{ env.BRANCH }}" --hook "${{ env.SLACK_WEBHOOK }}"
+
+    
