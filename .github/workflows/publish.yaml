@@ -93,10 +93,11 @@ jobs:
         run: |-
           git add .
           # Collect the first line of the commit message, changing any double-quote characters to escaped double-quotes.
-          msg=$(log log -1 | sed "s/\"/\\"/g" | head -1)
-          git commit -m "Automated update from the galasa-dev/galasa repo." 
-          -m "Source branch ${{ github.ref }} git head commit id: ${{ github.event.head_commit.id }}" \
-          -m "Change: ${msg}"
+          echo "Automated update from the galasa-dev/galasa repo." > commit-message.txt
+          echo "Source branch ${{ github.ref }} git head commit id: ${{ github.event.head_commit.id }}" >> commit-message.txt
+          echo "Last commit in the log for the preview repo is:" >> commit-message.txt
+          git log -1 >> commit-message.txt
+          git commit -F commit-message.txt
           git push origin ${{ inputs.target_folder }}
 
 
