@@ -20,6 +20,21 @@ on:
         description: 'The folder within the repo/branch which is the root of the pages being served up by github pages. Relative to the repo root folder.'
         default: 'docs'
         type: string
+        
+  workflow_dispatch:
+    inputs:
+      target_repo:
+        description: 'The name of the target repository within this oranisation you want the documentation pushed to.'
+        default: 'galasa-docs'
+        type: string
+      target_branch:
+        description: 'The branch in the source repository you want to push to'
+        default: 'main'
+        type: string
+      target_folder:
+        description: 'The folder within the repo/branch which is the root of the pages being served up by github pages. Relative to the repo root folder.'
+        default: 'docs'
+        type: string
     
 jobs:
     deploy-docs-to-github-pages-production-repo:
