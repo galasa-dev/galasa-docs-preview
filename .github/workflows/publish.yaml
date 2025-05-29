@@ -20,7 +20,7 @@ on:
         description: 'The folder within the repo/branch which is the root of the pages being served up by github pages. Relative to the repo root folder.'
         default: 'docs'
         type: string
-        
+
   workflow_dispatch:
     inputs:
       target_repo:
@@ -65,7 +65,7 @@ jobs:
         env: 
           GITHUB_PAT: ${{ secrets.GALASA_TEAM_GITHUB_TOKEN_AUTH_IN_WORKFLOWS }}
         run: |
-          git clone --single-branch -b ${{ inputs.target_branch }} https://galasa-team:${{ env.GITHUB_PAT }}@github.com/${{ env.GITHUB_REPOSITORY_OWNER }}/${{ inputs.target_repo }}.git
+          git clone --single-branch -b ${{ inputs.target_branch }} https://galasa-team:${{ env.GITHUB_PAT }}@github.com/${{ github.repository_owner }}/${{ inputs.target_repo }}.git
 
       - name: Clean out the docs which are currently in the target folder of the target branch.
         working-directory: ${{ inputs.target_repo }}
