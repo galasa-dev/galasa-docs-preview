@@ -74,7 +74,11 @@ jobs:
 
       - name: Copy the preview material into the target repo
         run: |-
-          cp -r docs/* ${{ inputs.target_repo }}/${{ inputs.target_folder }}
+          echo "Listing the workspace content"
+          ls -la ${{ github.workspace }}
+          echo "Listing the target repo content"
+          ls -la ${{ github.workspace }}/${{ inputs.target_repo }}
+          cp -r ${{ github.workspace }}/docs/* ${{ github.workspace }}/${{ inputs.target_repo }}/${{ inputs.target_folder }}
 
       # It turns out that when you deploy something to gh pages, you need to create this file
       # in the root folder which GH pages serves up to contain the custom domain,
