@@ -78,6 +78,7 @@ jobs:
           ls -la ${{ github.workspace }}
           echo "Listing the target repo content"
           ls -la ${{ github.workspace }}/${{ inputs.target_repo }}
+          mkdir -p ${{ github.workspace }}/${{ inputs.target_repo }}/${{ inputs.target_folder }}
           cp -r ${{ github.workspace }}/docs/* ${{ github.workspace }}/${{ inputs.target_repo }}/${{ inputs.target_folder }}
 
       # It turns out that when you deploy something to gh pages, you need to create this file
