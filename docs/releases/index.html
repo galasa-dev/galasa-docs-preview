@@ -3437,7 +3437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/managers/zos-managers/z-os-batch-rse-api-manager/" class="md-nav__link">
+      <a href="../docs/managers/zos-managers/zos-batch-rse-api-manager/" class="md-nav__link">
         
   
   
@@ -3460,7 +3460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/managers/zos-managers/z-os-batch-z-os-mf-manager/" class="md-nav__link">
+      <a href="../docs/managers/zos-managers/zos-batch-zos-mf-manager/" class="md-nav__link">
         
   
   
@@ -3483,12 +3483,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/managers/zos-managers/z-os-file-manager/" class="md-nav__link">
+      <a href="../docs/managers/zos-managers/z-os-file-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    z/OS file Manager
+    None
     
   </span>
   
@@ -3506,7 +3506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/managers/zos-managers/z-os-file-rse-api-manager/" class="md-nav__link">
+      <a href="../docs/managers/zos-managers/zos-file-rse-api-manager/" class="md-nav__link">
         
   
   
@@ -3529,12 +3529,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/managers/zos-managers/z-os-file-zos-mf-manager/" class="md-nav__link">
+      <a href="../docs/managers/zos-managers/z-os-file-zos-mf-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    z/OS File zOS/MF Manager
+    None
     
   </span>
   
@@ -3552,12 +3552,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/managers/zos-managers/zos-batch-manager/" class="md-nav__link">
+      <a href="../docs/managers/zos-managers/zos-batch-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS Batch Manager
+    None
     
   </span>
   
@@ -3580,7 +3580,7 @@
   
   
   <span class="md-ellipsis">
-    zOS Batch zOS MF Manager
+    z/OS Batch z/OS MF Manager
     
   </span>
   
@@ -3598,12 +3598,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/managers/zos-managers/zos-console-manager/" class="md-nav__link">
+      <a href="../docs/managers/zos-managers/zos-console-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS Console Manager
+    None
     
   </span>
   
@@ -3667,12 +3667,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/managers/zos-managers/zos-file-manager/" class="md-nav__link">
+      <a href="../docs/managers/zos-managers/zos-file-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS file Manager
+    None
     
   </span>
   
@@ -3736,12 +3736,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs/managers/zos-managers/zos-managertestformat/" class="md-nav__link">
+      <a href="../docs/managers/zos-managers/zos-managertestformat.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS Manager
+    None
     
   </span>
   
@@ -6026,84 +6026,320 @@
 <ul>
 <li>
 <p>Streams Service:</p>
-</li>
-<li>
-<p>Streams can now be created, updated and deleted using a new set of REST API endpoints.</p>
-</li>
-<li>
-<p>Command-line tool list or delete report streams, or create and apply changes to stream resources using the galasactl apply -f command.</p>
+<ul>
+<li>Streams can now be created, updated and deleted using a new set of REST API endpoints.</li>
+<li>Command-line tool list or delete report streams, or create and apply changes to stream resources using the galasactl apply -f command.</li>
+</ul>
 </li>
 <li>
 <p>Resource Management:</p>
-</li>
-<li>
-<p>Custom managers can have their cleanup code executed in a new "Resource Cleanup Monitor" construct, allowing for more cleanup of remote resources after test failures.</p>
-</li>
+<ul>
+<li>Custom managers can have their cleanup code executed in a new "Resource Cleanup Monitor" construct, allowing for more cleanup of remote resources after test failures.</li>
 <li>Cleanup monitors load resource management code from a given test stream.</li>
 <li>New REST API commands allow manipulation and query of stream definitions.</li>
-<li>
-<p>Improved command-line can enable or disable monitors dynamically.</p>
+<li>Improved command-line can enable or disable monitors dynamically.</li>
+</ul>
 </li>
 <li>
 <p>Tagging of test run results:</p>
-</li>
-<li>
-<p>Test runs can be submitted with extra tags, which are combined with the annotation tags inside the test source code such that the test results are also tagged with the combined set of tags.</p>
-</li>
-<li>
-<p>Extra tagging in test run details can help categorise failures and can contribute to better charting of results over time.</p>
+<ul>
+<li>Test runs can be submitted with extra tags, which are combined with the annotation tags inside the test source code such that the test results are also tagged with the combined set of tags.</li>
+<li>Extra tagging in test run details can help categorise failures and can contribute to better charting of results over time.</li>
+</ul>
 </li>
 <li>
 <p>Kubernetes CPU and Memory resources:</p>
-</li>
-<li>
-<p>For each pod, including pods that runs tests, can optionally specify resources constraints. Telling Kubernetes how much CPU and memory each pod needs helps Kubernetes spread workload among nodes in the cluster. The default install now specifies such limits.</p>
+<ul>
+<li>For each pod, including pods that runs tests, can optionally specify resources constraints. Telling Kubernetes how much CPU and memory each pod needs helps Kubernetes spread workload among nodes in the cluster. The default install now specifies such limits.</li>
+</ul>
 </li>
 <li>
 <p>Miscellaneous:</p>
-</li>
-<li>
-<p>Tests which are re-queued or cancelled get marked as finished, rather than appearing to be active forever.</p>
-</li>
+<ul>
+<li>Tests which are re-queued or cancelled get marked as finished, rather than appearing to be active forever.</li>
 <li>Querying runs with the --active flag no longer returns cancelled runs. Cancelled runs are marked as finished now.</li>
 <li>Web user interface footer shows the version of the Galasa service, and a health indicator.</li>
 <li>Test runner handles exceptions from rogue manager code better, so test cleanup can be performed.</li>
+</ul>
+</li>
 </ul>
 <h3 id="changes-affecting-local-tests"><a class="toclink" href="2025/05/06/v0.41.0/#changes-affecting-local-tests">Changes affecting local tests</a></h3>
 <ul>
 <li>
 <p>Managers vetoing method execution changes:</p>
-</li>
-<li>
-<p>Managers implementing anyReasonTestMethodShouldBeIgnored will not be called to see whether the manager wants to veto the execution of <code>@Before</code> or <code>@After</code> methods separately to the test method they surround. Managers will only be asked whether the test method should be ignored or not, which will cause the "before" and "after" methods to also be ignored.</p>
+<ul>
+<li>Managers implementing anyReasonTestMethodShouldBeIgnored will not be called to see whether the manager wants to veto the execution of <code>@Before</code> or <code>@After</code> methods separately to the test method they surround. Managers will only be asked whether the test method should be ignored or not, which will cause the "before" and "after" methods to also be ignored.</li>
+</ul>
 </li>
 <li>
 <p>Tests can find out if the test has failed yet:</p>
-</li>
-<li>
-<p>Test code can ask for a TestStatus provider to be injected into their object. This can be used to find out if the test has failed yet or not, and can be useful when doing complex cleanup of resources allocated during the test.</p>
+<ul>
+<li>Test code can ask for a TestStatus provider to be injected into their object. This can be used to find out if the test has failed yet or not, and can be useful when doing complex cleanup of resources allocated during the test.</li>
+</ul>
 </li>
 <li>
 <p>3270 manager now copes with SSCP-LU-DATA:</p>
-</li>
-<li>
-<p>Unformatted data screens are now processed and the contents is visible to test applications.</p>
+<ul>
+<li>Unformatted data screens are now processed and the contents is visible to test applications.</li>
+</ul>
 </li>
 <li>
 <p><code>@ContinueOnTestFailure</code> annotations:</p>
-</li>
-<li>
-<p>These annotations are now respected by the Galasa framework.</p>
+<ul>
+<li>These annotations are now respected by the Galasa framework.</li>
+</ul>
 </li>
 </ul>
 <h3 id="other-changes"><a class="toclink" href="2025/05/06/v0.41.0/#other-changes">Other changes</a></h3>
 <ul>
 <li>
 <p>Make contributing code easier:</p>
+<ul>
+<li>Code for the galasactl command-line tool has moved git repositories, to the galasa repository.
+  This simplifies the build process and makes changes on a fork easier to build and verify.</li>
+</ul>
+</li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-03-12 00:00:00+00:00">March 12, 2025</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0400-release-highlights"><a class="toclink" href="2025/03/12/v0.40.0/">0.40.0 - Release Highlights</a></h2>
+<ul>
+<li>
+<p>Nameculture:</p>
+<ul>
+<li>The term "Galasa Ecosystem" is being replaced with "Galasa Service" because it more clearly describes Galasa components that are deployed onto a Kubernetes cluster, providing testing as a service.</li>
+</ul>
 </li>
 <li>
-<p>Code for the galasactl command-line tool has moved git repositories, to the galasa repository.
-    This simplifies the build process and makes changes on a fork easier to build and verify.</p>
+<p>Galasa Service Changes:</p>
+<ul>
+<li>
+<p>A submission ID is generated for each test run submitted. A new field has been added to the test structures passed over the REST interface. Client programs can use the submission ID to query test runs from the Results Archive Store (RAS).</p>
+</li>
+<li>
+<p>Each user now has a <code>role</code>, which dictates what that user can do. See the <a href="../docs/ecosystem/ecosystem-role-based-access/">documentation on Role Based Access Control (RBAC)</a> for more details.</p>
+</li>
+<li>
+<p>The Helm chart can configure specific users to be <code>owners</code> of the system, such that these users are immutable administrators of the system. Configuring owners is used to set up a system with some initial administrators, and to recover a system that no longer has any functioning administrators.</p>
+</li>
+<li>
+<p>Completed test pods now count when calculating the maximum number of pods that Galasa creates. Use the Helm chart parameter <code>max_engines</code> to configure the maximum number of pods.</p>
+</li>
+<li>
+<p>When tests complete, the pod for the test disappears quicker than in previous releases, to free up resources on the cluster. Instead of up to 5 minutes, completed pods are cleaned up within 2-4 seconds.</p>
+</li>
+<li>
+<p>It is now possible to configure the Galasa service to use an etcd server that is external to the Galasa namespace, for Dynamic Status Store traffic. This option is not recommended but may be useful for allowing testcase developers to use the same resource pools as the rest of the Galasa service.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Framework and Manager changes:</p>
+<ul>
+<li>The addition of an IMS manager for contacting, controlling, and asserting against an IMS system.</li>
+</ul>
+</li>
+<li>
+<p>The Web User interface changes:</p>
+<ul>
+<li>
+<p>Everyone logged-in to the Galasa service can see the list of users on the system, and their roles.</p>
+</li>
+<li>
+<p>Administrators on the Galasa service can delete the tokens of other users, change their role, or delete their entire user record.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Command-line tool (<code>galasactl</code>) changes:</p>
+<ul>
+<li>Users launching tests can use multiple override files with the <code>--overridefile</code> option.
+These files are combined into a single collection of properties, with warning messages generated in the logs if any property keys clash.</li>
+</ul>
+</li>
+<li>
+<p>Development process, infrastructure, and contributing:</p>
+<ul>
+<li>
+<p>Improvements to the build process and instructions you use to fork the code, and build your own Galasa binaries in your own GitHub organisation.</p>
+</li>
+<li>
+<p>Added experimental instructions describing how to install the Galasa Service into Minikube. Minikube can be used when developing contributions to Galasa, but is not suitable as a useable run time platform.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Various other component version upgrades and bug fixes.</p>
+</li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-01-16 00:00:00+00:00">January 16, 2025</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0390-release-highlights"><a class="toclink" href="2025/01/16/v0.39.0/">0.39.0 - Release Highlights</a></h2>
+<ul>
+<li>
+<p>Forks and fork builds are now supported making it easier to contribute to Galasa!</p>
+</li>
+<li>
+<p>All Galasa components now use a common version number.</p>
+</li>
+<li>
+<p>CPS property names can now include the '@' character.</p>
+</li>
+<li>
+<p>The <code>galasactl runs get</code> command supports a new <code>--group</code> option to query test runs by the group ID they were launched with.</p>
+</li>
+<li>
+<p>Gherkin now respects the <code>framework.continue.on.test.failure</code> flag so it doesn't need to exit a feature when the first scenario fails.</p>
+</li>
+<li>
+<p>This release also includes instability fixes, and dependency updates.</p>
+</li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-12-06 00:00:00+00:00">December 6, 2024</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0380-release-highlights"><a class="toclink" href="2024/12/06/v0.38.0/">0.38.0 - Release Highlights</a></h2>
+<ul>
+<li>
+<p>CLI updates:</p>
+<ul>
+<li>
+<p>You can get, set and delete secrets from the credentials store using the <code>galasactl secrets</code> command. Secrets support base64 encoding to handle special characters.</p>
+</li>
+<li>
+<p><a href="../docs/ecosystem/ecosystem-managing-encryption-keys/">Managing Ecosystem encryption keys</a> describes how to use <code>galasactl secrets get</code> and <code>galasactl resources apply</code> to replace the encryption key being used to encrypt credentials in the Galasa Ecosystem's credentials store.</p>
+</li>
+<li>
+<p>Users can now be deleted with the <code>galasactl users delete</code> command.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Web UI updates:</p>
+<ul>
+<li>
+<p>A new settings page has been added to the web UI to manage access tokens.</p>
+</li>
+<li>
+<p>Recent login activity is now available on the profile page.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>This release also includes bug fixes, security updates, and other dependency updates.</p>
+</li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-09-18 00:00:00+00:00">September 18, 2024</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0370-release-highlights"><a class="toclink" href="2024/09/18/v0.37.0/">0.37.0 - Release Highlights</a></h2>
+<ul>
+<li>
+<p>Galasa now supports Java 17.</p>
+</li>
+<li>
+<p>You can delete a test run by using the <code>galasactl runs delete</code> command. Deleting a test run removes all information about the test run along with any associated artifacts from an ecosystem's RAS.</p>
+</li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-08-13 00:00:00+00:00">August 13, 2024</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0360-release-highlights"><a class="toclink" href="2024/08/13/v0.36.0/">0.36.0 - Release Highlights</a></h2>
+<ul>
+<li>
+<p>You can now create Galasa projects and build and compile Galasa test code using Gradle version 8. For more information, see the <code>Upgrading tests to compile using Gradle version 8</code> section in the <a href="../docs/upgrading/">Upgrading</a> documentation to understand the changes you need to make.</p>
+</li>
+<li>
+<p>Log into the Galasa Ecosystem and revoke a personal access token by using the <code>galasactl auth tokens delete</code> command.</p>
+</li>
+<li>
+<p>Set terminal size within Gherkin tests (previously only available in Java tests) and use Scenario Outlines.</p>
+</li>
+<li>
+<p>Various updates to the Galasa Web UI </p>
+</li>
+<li>
+<p>Various defect fixes</p>
+</li>
+<li>
+<p>Various documentation updates</p>
 </li>
 </ul>
     

@@ -3075,8 +3075,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -3109,14 +3107,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#limitations" class="md-nav__link">
@@ -3133,6 +3138,102 @@
       Code snippets
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Code snippets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-jmeter-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a JMeter session
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-a-jmx-file-in-a-jmeter-session-by-using-the-artifact-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting a JMX file in a JMeter session by using the Artifact Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-the-properties-file-in-a-jmeter-session-by-using-the-artifact-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting the properties file in a JMeter session by using the Artifact Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-jmeter-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting a JMeter session
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-the-jmx-file-from-the-jmeter-execution-as-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining the JMX file from the JMeter-execution as a String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-the-log-file-from-the-jmeter-execution-as-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining the log file from the JMeter execution as a String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-console-output-as-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing the console output as a String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-a-generated-file-from-the-jmeter-execution-as-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining a generated file from the JMeter-execution as a String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-your-test-ran-correctly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking your test ran correctly
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopping-the-jmeter-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopping the JMeter test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3532,7 +3633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-batch-rse-api-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-batch-rse-api-manager/" class="md-nav__link">
         
   
   
@@ -3555,7 +3656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-batch-z-os-mf-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-batch-zos-mf-manager/" class="md-nav__link">
         
   
   
@@ -3578,12 +3679,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-file-manager/" class="md-nav__link">
+      <a href="../../zos-managers/z-os-file-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    z/OS file Manager
+    None
     
   </span>
   
@@ -3601,7 +3702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-file-rse-api-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-file-rse-api-manager/" class="md-nav__link">
         
   
   
@@ -3624,12 +3725,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-file-zos-mf-manager/" class="md-nav__link">
+      <a href="../../zos-managers/z-os-file-zos-mf-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    z/OS File zOS/MF Manager
+    None
     
   </span>
   
@@ -3647,12 +3748,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/zos-batch-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-batch-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS Batch Manager
+    None
     
   </span>
   
@@ -3675,7 +3776,7 @@
   
   
   <span class="md-ellipsis">
-    zOS Batch zOS MF Manager
+    z/OS Batch z/OS MF Manager
     
   </span>
   
@@ -3693,12 +3794,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/zos-console-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-console-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS Console Manager
+    None
     
   </span>
   
@@ -3762,12 +3863,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/zos-file-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-file-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS file Manager
+    None
     
   </span>
   
@@ -3831,12 +3932,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/zos-managertestformat/" class="md-nav__link">
+      <a href="../../zos-managers/zos-managertestformat.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS Manager
+    None
     
   </span>
   
@@ -6089,14 +6190,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#limitations" class="md-nav__link">
@@ -6113,6 +6221,102 @@
       Code snippets
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Code snippets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-jmeter-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a JMeter session
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-a-jmx-file-in-a-jmeter-session-by-using-the-artifact-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting a JMX file in a JMeter session by using the Artifact Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-the-properties-file-in-a-jmeter-session-by-using-the-artifact-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting the properties file in a JMeter session by using the Artifact Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-a-jmeter-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting a JMeter session
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-the-jmx-file-from-the-jmeter-execution-as-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining the JMX file from the JMeter-execution as a String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-the-log-file-from-the-jmeter-execution-as-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining the log file from the JMeter execution as a String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-console-output-as-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing the console output as a String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtaining-a-generated-file-from-the-jmeter-execution-as-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining a generated file from the JMeter-execution as a String
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-your-test-ran-correctly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking your test ran correctly
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopping-the-jmeter-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopping the JMeter test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6187,112 +6391,69 @@
   
 
 
-<p>This Manager is at Beta level. You can view the <a href="https://javadoc.galasa.dev/dev/galasa/jmeter/package-summary.html" target="_blank" rel="noopener noreferrer">Javadoc documentation for the Manager here</a>.<br></p>
-<p><a href="#overview">Overview</a><br>
-<a href="#codesnippets">Code snippets and examples</a><br></p>
-<h1 id="overview"><a name="overview"></a>Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
-<p>This Manager enables a JMeter session to run inside a Docker Container. The JMeter Manager requests a container from the Docker Manager inside which the JMeter scripts, or JMX files can run.   The test can access all JMeter-generated files inside the container without worrying about how the container is provisioned, maintained or shut down at the end of test. By using a containerized environment, the test can benefit from the associated standards of scalability and uniformity. <br><br>  <br><br>  The logfiles and generated CSV files can be accessed once the JMeter tests are complete and the container becomes available for interaction. The JMeter Manager allows as many JMeter sessions as you have available Docker container slots on your machine.</p>
+  <h1>JMeter Manager</h1>
+
+<p>This Manager is at Beta level. You can view the <a href="https://javadoc.galasa.dev/dev/galasa/jmeter/package-summary.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This Manager enables a JMeter session to run inside a Docker Container. The JMeter Manager requests a container from the Docker Manager inside which the JMeter scripts, or JMX files can run.   The test can access all JMeter-generated files inside the container without worrying about how the container is provisioned, maintained or shut down at the end of test. By using a containerized environment, the test can benefit from the associated standards of scalability and uniformity.</p>
+<p>The logfiles and generated CSV files can be accessed once the JMeter tests are complete and the container becomes available for interaction. The JMeter Manager allows as many JMeter sessions as you have available Docker container slots on your machine.</p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
-<p>JMeter tests cannot be run remotely on a target host.<br><br> </p>
-<h2 id="code-snippets"><a name="codesnippets"></a>Code snippets<a class="headerlink" href="#code-snippets" title="Permanent link">&para;</a></h2>
+<p>JMeter tests cannot be run remotely on a target host.</p>
+<h2 id="code-snippets">Code snippets<a class="headerlink" href="#code-snippets" title="Permanent link">&para;</a></h2>
 <p>Use the following code snippets to help you get started with the JMeter Manager.</p>
-<details><summary>Creating a JMeter session</summary>
-
-The following snippet shows the minimum code that is required to request a JMeter session in a Galasa test:
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@JMeterSession(jmxPath=&quot;test.jmx&quot;)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>public IJMeterSession session;
+<h3 id="creating-a-jmeter-session">Creating a JMeter session<a class="headerlink" href="#creating-a-jmeter-session" title="Permanent link">&para;</a></h3>
+<p>The following snippet shows the minimum code that is required to request a JMeter session in a Galasa test:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@JMeterSession</span><span class="p">(</span><span class="n">jmxPath</span><span class="o">=</span><span class="s">&quot;test.jmx&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="n">IJMeterSession</span><span class="w"> </span><span class="n">session</span><span class="p">;</span>
 </code></pre></div>
-
-This code requests the Docker Manager to provision a container with all the JMeter binaries that are required to run a JMX test installed. You can provision your JMX file via the Artifact Manager and point it to the bundle resources, the location of which is specified in the input stream of your JMX file. The container is discarded when the test finishes. 
-
-The following snippet enables you to add a personal properties file to the test by pointing the Artifact Manager at the JMeter properties file.
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>@JMeterSession(jmxPath=&quot;test.jmx&quot;, propPath=&quot;jmeter.properties&quot;)
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>public IJMeterSession session;
+<p>This code requests the Docker Manager to provision a container with all the JMeter binaries that are required to run a JMX test installed. You can provision your JMX file via the Artifact Manager and point it to the bundle resources, the location of which is specified in the input stream of your JMX file. The container is discarded when the test finishes. </p>
+<p>The following snippet enables you to add a personal properties file to the test by pointing the Artifact Manager at the JMeter properties file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@JMeterSession</span><span class="p">(</span><span class="n">jmxPath</span><span class="o">=</span><span class="s">&quot;test.jmx&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">propPath</span><span class="o">=</span><span class="s">&quot;jmeter.properties&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="n">IJMeterSession</span><span class="w"> </span><span class="n">session</span><span class="p">;</span>
 </code></pre></div>
-
-
-There is no limit in Galasa on the number of JMeter sessions that can be used within a single test. The only limit is the number of containers that can be started in the Galasa Ecosystem. This limit is set by the Galasa Administrator and is typically set to the maximum number of containers that can be supported by the Docker Server or Swarm.  If there are not enough slots available for an automated run, the run is put back on the queue in *waiting* state to retry. **Local test runs fail if there are not enough container slots available.**
-</details>
-
-<details><summary>Setting a JMX file in a JMeter session by using the Artifact Manager</summary>
-
-Use the following code to provision a JMX file by using the Artifact Manager.
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    IBundleResources bundleResources = artifactManager.getBundleResources(getClass());
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    InputStream jmxStream = bundleResources.retrieveFile(&quot;/test.jmx&quot;);
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    session2.setJmxFile(jmxStream);
+<p>There is no limit in Galasa on the number of JMeter sessions that can be used within a single test. The only limit is the number of containers that can be started in the Galasa Ecosystem. This limit is set by the Galasa Administrator and is typically set to the maximum number of containers that can be supported by the Docker Server or Swarm.  If there are not enough slots available for an automated run, the run is put back on the queue in <em>waiting</em> state to retry. <strong>Local test runs fail if there are not enough container slots available.</strong></p>
+<h3 id="setting-a-jmx-file-in-a-jmeter-session-by-using-the-artifact-manager">Setting a JMX file in a JMeter session by using the Artifact Manager<a class="headerlink" href="#setting-a-jmx-file-in-a-jmeter-session-by-using-the-artifact-manager" title="Permanent link">&para;</a></h3>
+<p>Use the following code to provision a JMX file by using the Artifact Manager.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">IBundleResources</span><span class="w"> </span><span class="n">bundleResources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">artifactManager</span><span class="p">.</span><span class="na">getBundleResources</span><span class="p">(</span><span class="n">getClass</span><span class="p">());</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">InputStream</span><span class="w"> </span><span class="n">jmxStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bundleResources</span><span class="p">.</span><span class="na">retrieveFile</span><span class="p">(</span><span class="s">&quot;/test.jmx&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">session2</span><span class="p">.</span><span class="na">setJmxFile</span><span class="p">(</span><span class="n">jmxStream</span><span class="p">);</span>
 </code></pre></div>
-</details>
-
-<details><summary>Setting the properties file in a JMeter session by using the Artifact Manager</summary>
-
-Just as you would provision a JMX file via the Artifact Manager, you can use the following code to provision a personalized properties file that gets used by JMeter at runtime.
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    IBundleResources bundleResources = artifactManager.getBundleResources(getClass());
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    InputStream propStream = bundleResources.retrieveFile(&quot;/jmeter.properties&quot;);
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    session.applyProperties(propStream);
+<h3 id="setting-the-properties-file-in-a-jmeter-session-by-using-the-artifact-manager">Setting the properties file in a JMeter session by using the Artifact Manager<a class="headerlink" href="#setting-the-properties-file-in-a-jmeter-session-by-using-the-artifact-manager" title="Permanent link">&para;</a></h3>
+<p>Just as you would provision a JMX file via the Artifact Manager, you can use the following code to provision a personalized properties file that gets used by JMeter at runtime.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">IBundleResources</span><span class="w"> </span><span class="n">bundleResources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">artifactManager</span><span class="p">.</span><span class="na">getBundleResources</span><span class="p">(</span><span class="n">getClass</span><span class="p">());</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">InputStream</span><span class="w"> </span><span class="n">propStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bundleResources</span><span class="p">.</span><span class="na">retrieveFile</span><span class="p">(</span><span class="s">&quot;/jmeter.properties&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">session</span><span class="p">.</span><span class="na">applyProperties</span><span class="p">(</span><span class="n">propStream</span><span class="p">);</span>
 </code></pre></div>
-</details>
-
-<details><summary>Starting a JMeter session</summary>
-
-You can set a timeout for a JMeter session or use the *default timeout of 60 seconds* for a JMeter session. To use this command, you must configure the JMX file correctly by using the `session.setJmxFile(inputStream)` method. *Timeout is in milli-seconds.*
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    session.startJmeter();
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    ...
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>     session.startJmeter(60000);
+<h3 id="starting-a-jmeter-session">Starting a JMeter session<a class="headerlink" href="#starting-a-jmeter-session" title="Permanent link">&para;</a></h3>
+<p>You can set a timeout for a JMeter session or use the <em>default timeout of 60 seconds</em> for a JMeter session. To use this command, you must configure the JMX file correctly by using the <code>session.setJmxFile(inputStream)</code> method. <em>Timeout is in milli-seconds.</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">session</span><span class="p">.</span><span class="na">startJmeter</span><span class="p">();</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">//...</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">session</span><span class="p">.</span><span class="na">startJmeter</span><span class="p">(</span><span class="mi">60000</span><span class="p">);</span>
 </code></pre></div>
-</details>
-
-<details><summary>Obtaining the JMX file from the JMeter-execution as a String</summary>
-
-Use the following snippet to access the JMX file that was used in the JMeter session.
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>session.getJmxFile();
+<h3 id="obtaining-the-jmx-file-from-the-jmeter-execution-as-a-string">Obtaining the JMX file from the JMeter-execution as a String<a class="headerlink" href="#obtaining-the-jmx-file-from-the-jmeter-execution-as-a-string" title="Permanent link">&para;</a></h3>
+<p>Use the following snippet to access the JMX file that was used in the JMeter session.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">session</span><span class="p">.</span><span class="na">getJmxFile</span><span class="p">();</span>
 </code></pre></div>
-</details>
-
-<details><summary>Obtaining the log file from the JMeter execution as a String</summary>
-
-Use the following snippet to access the log file that is created when the JMX file that is running inside the container finishes running.
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>session.getLogFile();
+<h3 id="obtaining-the-log-file-from-the-jmeter-execution-as-a-string">Obtaining the log file from the JMeter execution as a String<a class="headerlink" href="#obtaining-the-log-file-from-the-jmeter-execution-as-a-string" title="Permanent link">&para;</a></h3>
+<p>Use the following snippet to access the log file that is created when the JMX file that is running inside the container finishes running.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">session</span><span class="p">.</span><span class="na">getLogFile</span><span class="p">();</span>
 </code></pre></div>
-</details>
-
-<details><summary>Viewing the console output as a String</summary>
-
-Use the following snippet to view any console output that is generated by the JMeter test run. Typically, there is no console output unless the JMX file itself is corrupt or written incorrectly. If a correctly written JMX file generates errors during execution, the errors are held in the log files or in the JTL file.
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>session.getConsoleOutput();
+<h3 id="viewing-the-console-output-as-a-string">Viewing the console output as a String<a class="headerlink" href="#viewing-the-console-output-as-a-string" title="Permanent link">&para;</a></h3>
+<p>Use the following snippet to view any console output that is generated by the JMeter test run. Typically, there is no console output unless the JMX file itself is corrupt or written incorrectly. If a correctly written JMX file generates errors during execution, the errors are held in the log files or in the JTL file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">session</span><span class="p">.</span><span class="na">getConsoleOutput</span><span class="p">();</span>
 </code></pre></div>
-</details>
-
-<details><summary>Obtaining a generated file from the JMeter-execution as a String</summary>
-
-Use the following snippet to help you to access any file that is created after execution of a JMX file inside a container completes. In this example, the JTL file *test.jtl* is returned as a String containing the results of the test run which can be exported to a CSV file. The name of the JTL file has the same prefix as the JMX file.
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>session.getListenerFile(&quot;test.jtl&quot;)
+<h3 id="obtaining-a-generated-file-from-the-jmeter-execution-as-a-string">Obtaining a generated file from the JMeter-execution as a String<a class="headerlink" href="#obtaining-a-generated-file-from-the-jmeter-execution-as-a-string" title="Permanent link">&para;</a></h3>
+<p>Use the following snippet to help you to access any file that is created after execution of a JMX file inside a container completes. In this example, the JTL file <em>test.jtl</em> is returned as a String containing the results of the test run which can be exported to a CSV file. The name of the JTL file has the same prefix as the JMX file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">session</span><span class="p">.</span><span class="na">getListenerFile</span><span class="p">(</span><span class="s">&quot;test.jtl&quot;</span><span class="p">)</span>
 </code></pre></div>
-</details>
-
-<details><summary>Checking your test ran correctly</summary>
-
-Use the following code to check that the test ran correctly. You can use the logs and JMX files for further investigation. If the JMX file has completed its function successfully, a boolean value of true is returned, otherwise a value of false is returned.
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>session.statusTest();
+<h3 id="checking-your-test-ran-correctly">Checking your test ran correctly<a class="headerlink" href="#checking-your-test-ran-correctly" title="Permanent link">&para;</a></h3>
+<p>Use the following code to check that the test ran correctly. You can use the logs and JMX files for further investigation. If the JMX file has completed its function successfully, a boolean value of true is returned, otherwise a value of false is returned.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">session</span><span class="p">.</span><span class="na">statusTest</span><span class="p">();</span>
 </code></pre></div>
-</details>
-
-<details><summary>Stopping the JMeter test</summary>
-
-Use the following code to stop the JMeter test that is running inside the Docker container.
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>session.stopTest();
+<h3 id="stopping-the-jmeter-test">Stopping the JMeter test<a class="headerlink" href="#stopping-the-jmeter-test" title="Permanent link">&para;</a></h3>
+<p>Use the following code to stop the JMeter test that is running inside the Docker container.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">session</span><span class="p">.</span><span class="na">stopTest</span><span class="p">();</span>
 </code></pre></div>
-</details>
 
 
 

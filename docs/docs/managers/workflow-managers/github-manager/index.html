@@ -3326,8 +3326,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -3360,14 +3358,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#including-the-manager-in-a-test" class="md-nav__link">
@@ -3385,10 +3390,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Using the Manager">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -3396,8 +3400,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#using-regex" class="md-nav__link">
     <span class="md-ellipsis">
       Using regex
@@ -3405,11 +3409,30 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#setting-overrides" class="md-nav__link">
     <span class="md-ellipsis">
       Setting overrides
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting overrides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overriding-a-test-method-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overriding a test method result
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-a-test-class-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overriding a test class result
     </span>
   </a>
   
@@ -3418,7 +3441,7 @@
           <li class="md-nav__item">
   <a href="#scenario-1" class="md-nav__link">
     <span class="md-ellipsis">
-      Scenario 1:
+      Scenario 1
     </span>
   </a>
   
@@ -3446,6 +3469,105 @@
   <a href="#scenario-4" class="md-nav__link">
     <span class="md-ellipsis">
       Scenario 4:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-instance-url-cps-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Instance URL CPS Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-instance-credentials-cps-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Instance Credentials CPS Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-instance-repository-cps-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Instance Repository CPS Property
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations-provided-by-the-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations provided by the Manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotations provided by the Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Issue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-snippets-and-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code snippets and examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code snippets and examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-githubissue-and-continueontestfailure-annotation-on-a-test-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add the @GitHubIssue and @ContinueOnTestFailure annotation on a test class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-githubissue-annotation-on-a-test-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add the @GitHubIssue annotation on a test method
     </span>
   </a>
   
@@ -3601,7 +3723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-batch-rse-api-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-batch-rse-api-manager/" class="md-nav__link">
         
   
   
@@ -3624,7 +3746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-batch-z-os-mf-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-batch-zos-mf-manager/" class="md-nav__link">
         
   
   
@@ -3647,12 +3769,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-file-manager/" class="md-nav__link">
+      <a href="../../zos-managers/z-os-file-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    z/OS file Manager
+    None
     
   </span>
   
@@ -3670,7 +3792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-file-rse-api-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-file-rse-api-manager/" class="md-nav__link">
         
   
   
@@ -3693,12 +3815,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/z-os-file-zos-mf-manager/" class="md-nav__link">
+      <a href="../../zos-managers/z-os-file-zos-mf-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    z/OS File zOS/MF Manager
+    None
     
   </span>
   
@@ -3716,12 +3838,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/zos-batch-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-batch-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS Batch Manager
+    None
     
   </span>
   
@@ -3744,7 +3866,7 @@
   
   
   <span class="md-ellipsis">
-    zOS Batch zOS MF Manager
+    z/OS Batch z/OS MF Manager
     
   </span>
   
@@ -3762,12 +3884,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/zos-console-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-console-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS Console Manager
+    None
     
   </span>
   
@@ -3831,12 +3953,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/zos-file-manager/" class="md-nav__link">
+      <a href="../../zos-managers/zos-file-manager.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS file Manager
+    None
     
   </span>
   
@@ -3900,12 +4022,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zos-managers/zos-managertestformat/" class="md-nav__link">
+      <a href="../../zos-managers/zos-managertestformat.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    zOS Manager
+    None
     
   </span>
   
@@ -6158,14 +6280,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#including-the-manager-in-a-test" class="md-nav__link">
@@ -6183,10 +6312,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Using the Manager">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -6194,8 +6322,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#using-regex" class="md-nav__link">
     <span class="md-ellipsis">
       Using regex
@@ -6203,11 +6331,30 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#setting-overrides" class="md-nav__link">
     <span class="md-ellipsis">
       Setting overrides
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting overrides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overriding-a-test-method-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overriding a test method result
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-a-test-class-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overriding a test class result
     </span>
   </a>
   
@@ -6216,7 +6363,7 @@
           <li class="md-nav__item">
   <a href="#scenario-1" class="md-nav__link">
     <span class="md-ellipsis">
-      Scenario 1:
+      Scenario 1
     </span>
   </a>
   
@@ -6244,6 +6391,105 @@
   <a href="#scenario-4" class="md-nav__link">
     <span class="md-ellipsis">
       Scenario 4:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-instance-url-cps-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Instance URL CPS Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-instance-credentials-cps-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Instance Credentials CPS Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-instance-repository-cps-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Instance Repository CPS Property
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations-provided-by-the-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations provided by the Manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotations provided by the Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Issue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-snippets-and-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code snippets and examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code snippets and examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-githubissue-and-continueontestfailure-annotation-on-a-test-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add the @GitHubIssue and @ContinueOnTestFailure annotation on a test class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-githubissue-annotation-on-a-test-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add the @GitHubIssue annotation on a test method
     </span>
   </a>
   
@@ -6325,216 +6571,348 @@
   
 
 
-<p>This Manager is at Release level. You can view the <a href="https://javadoc.galasa.dev/dev/galasa/githubissue/package-summary.html">Javadoc documentation for the Manager here</a>.<br></p>
-<p><a href="#overview">Overview</a><br>
-<a href="#configuring">Configuring</a><br>
-<a href="#annotations">Provided annotation</a><br>
-<a href="#codesnippets">Code snippets and examples</a><br></p>
-<h1 id="overview"><a name="overview"></a>Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+  <h1>GitHub Manager</h1>
+
+<p>This Manager is at Release level. You can view the <a href=""><a href="https://javadoc.galasa.dev/dev/galasa/githubissue/package-summary.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>If there is an open issue in a GitHub repository that tracks a known problem which is expected to cause a test class or test method to fail, you can add the <em>@GitHubIssue</em> annotation to a test class or test method so that the expected failure is recorded as <em>Failed with Defects</em>  in the test report. </p>
 <p>Using this annotation on a test class or test method means that the expected failure is clearly identifiable in the test report, making it easier to spot any unexpected test failures and saving time by avoiding the investigation of a known issue. </p>
-<h2 id="including-the-manager-in-a-test"><a name="dependencies"></a>Including the Manager in a test<a class="headerlink" href="#including-the-manager-in-a-test" title="Permanent link">&para;</a></h2>
+<h2 id="including-the-manager-in-a-test">Including the Manager in a test<a class="headerlink" href="#including-the-manager-in-a-test" title="Permanent link">&para;</a></h2>
 <p>To use the GitHub Manager in a test you must import the <em>@GitHubIssue</em> annotation into the test, as shown in the following example: </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>import dev.galasa.githubissue.GitHubIssue;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">dev.galasa.githubissue.GitHubIssue</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">//...</span>
 </code></pre></div>
 <p>You also need to add the Manager dependency into the pom.xml file if you are using Maven, or into the build.gradle file if you are using Gradle. </p>
 <p>If you are using Maven, add the following dependencies into the <em>pom.xml</em> in the <em>dependencies</em> section:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;dependency&gt;
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&lt;groupId&gt;dev.galasa&lt;/groupId&gt;
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&lt;artifactId&gt;dev.galasa.githubissue.manager&lt;/artifactId&gt;
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&lt;/dependency&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>dev.galasa<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>dev.galasa.githubissue.manager<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div>
 <p>If you are using Gradle, add the following dependencies into <code>build.gradle</code> in the <em>dependencies</em> closure:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dependencies {
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>compileOnly &#39;dev.galasa:dev.galasa.githubissue.manager&#39;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">compileOnly</span><span class="w"> </span><span class="s1">&#39;dev.galasa:dev.galasa.githubissue.manager&#39;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">}</span>
 </code></pre></div>
 <p>Finally, use the annotation that is provided by the Manager in the test. The annotation calls the Manager at runtime. In this example, the provided annotation is <em>@GitHubIssue</em>. </p>
 <h2 id="using-the-manager">Using the Manager<a class="headerlink" href="#using-the-manager" title="Permanent link">&para;</a></h2>
 <p>The GitHub Manager is activated at runtime if there is a <em>@GitHubIssue</em> annotation on the test class or any of its test methods. The presence of the <em>@GitHubIssue</em> annotation means that there is a known problem which is expected to affect the result of the test. </p>
 <p>If the issue is expected to affect one or more specific test methods, add the annotation on the test method. If the scope of the issue is larger and might affect the whole test class, add the annotation at the class level.</p>
 <p>Use the following examples, which are based on <em>BatchAccountsOpenTest</em> to understand how to add the <em>@GitHubIssue</em> annotation for GitHub issue number <em>1178</em> to a test method and to a test class.</p>
-<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>GitHub issue <em>1178</em> has a status of <em>open</em> on GitHub in the <em>galasa-dev/projectmanagement</em> repository. Issue <em>1178</em> tracks a known problem with the behaviour of the 
 Z/OS Batch Manager. The issue causes the test class <em>BatchAccountsOpenTest</em> to fail.</p>
 <p>The following example adds the <em>@GitHubIssue</em> annotation on the test method:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>@Test
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>@GitHubIssue(issue = &quot;1178&quot;, repo = &quot;galasa-dev/projectmanagement&quot;)
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>public void batchOpenAccountsTest() throws TestBundleResourceException, IOException, ZosBatchException {
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        // Create a list of accounts to create
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        List&lt;String&gt; accountList = new LinkedList&lt;&gt;();
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        accountList.add(&quot;901000001,20-40-60,1000&quot;);
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@Test</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nd">@GitHubIssue</span><span class="p">(</span><span class="n">issue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1178&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;galasa-dev/projectmanagement&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">batchOpenAccountsTest</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">TestBundleResourceException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="w"> </span><span class="n">ZosBatchException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// Create a list of accounts to create</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">accountList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">accountList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;901000001,20-40-60,1000&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="c1">//...</span>
 </code></pre></div>
 <p>The following example adds the <em>@GitHubIssue</em> annotation on the test class:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>@Test
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>@GitHubIssue(issue = &quot;1178&quot;, repo = &quot;galasa-dev/projectmanagement&quot;)
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>public class BatchAccountsOpenTest {
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@Test</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nd">@GitHubIssue</span><span class="p">(</span><span class="n">issue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1178&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;galasa-dev/projectmanagement&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BatchAccountsOpenTest</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="c1">//...</span>
 </code></pre></div>
 <p>Once the GitHub issue is closed, remove the <em>@GitHubIssue</em> annotation from the test class or test method.</p>
-<h3 id="using-regex">Using regex<a class="headerlink" href="#using-regex" title="Permanent link">&para;</a></h3>
+<h2 id="using-regex">Using regex<a class="headerlink" href="#using-regex" title="Permanent link">&para;</a></h2>
 <p>To ensure that the failing exception is due to the known problem that is identified in the GitHub issue, use regex in the annotation to check that the recorded test failure matches the string that is specified in regex. </p>
 <p>For example, GitHub issue <em>1179</em> describes a problem in source code that results in a <em>HttpServerErrorException</em> message being returned when a test is run. You can add the following annotation to your test to ensure that it is failing because of this exception, and not for a different reason:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>@GitHubIssue(issue = &quot;1179&quot;, repo = &quot;galasa-dev/projectmanagement&quot;,
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>regex = &quot;HttpServerErrorException&quot;)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@GitHubIssue</span><span class="p">(</span><span class="n">issue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1179&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;galasa-dev/projectmanagement&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;HttpServerErrorException&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>If the failing exception does not match the regex, the test has failed for a different or unknown reason. If no regex is provided in the annotation, any failing exception is accepted.</p>
-<h3 id="setting-overrides"><a name="overrides"></a>Setting overrides<a class="headerlink" href="#setting-overrides" title="Permanent link">&para;</a></h3>
+<h2 id="setting-overrides">Setting overrides<a class="headerlink" href="#setting-overrides" title="Permanent link">&para;</a></h2>
 <p>You can override the result of a test method or a test class by using the <em>@GitHubIssue</em> annotation in conjunction with the <em>@ContinueOnTestFailure</em> annotation to return a test result for all test methods within a test class.</p>
-<p><b>Overriding a test method result:</b></p>
+<h3 id="overriding-a-test-method-result">Overriding a test method result<a class="headerlink" href="#overriding-a-test-method-result" title="Permanent link">&para;</a></h3>
 <p>If a test method is annotated with <em>@GitHubIssue</em>, and the initial result of the method is <em>Failed</em>, the GitHub Manager uses the GitHub API to retrieve the current state of the GitHub issue from the annotation. If the issue is in <em>open</em> status, the result of the test method is overridden from <em>Failed</em> to <em>Failed With Defects</em>. If the issue is in <em>closed</em> status, the result is not overridden, as that issue is supposedly fixed and is not expected to affect the test method anymore. In the latter scenario, further investigation into the cause of the failure is required.</p>
-<p><b>Overriding a test class result:</b></p>
+<h3 id="overriding-a-test-class-result">Overriding a test class result<a class="headerlink" href="#overriding-a-test-class-result" title="Permanent link">&para;</a></h3>
 <p>At the end of a test class run, the results of each individual test method are combined to determine whether the result of the test class should be overridden. </p>
 <p>Use the following scenarios and examples to understand the expected test class result and what to do next. In each scenario, the issue is in an <em>open</em> state.</p>
-<h3 id="scenario-1">Scenario 1:<a class="headerlink" href="#scenario-1" title="Permanent link">&para;</a></h3>
+<h3 id="scenario-1">Scenario 1<a class="headerlink" href="#scenario-1" title="Permanent link">&para;</a></h3>
 <p>Scenario 1 uses the <em>@GitHubIssue</em> annotation on the test method <em>testNotNull</em> with the <em>@ContinueOnTestFailure</em> annotation:</p>
-<p>@Test<br>
-@ContinueOnTestFailure<br>
-Test class SimBankIVT<br>
-@GitHubIssue( issue = "1178")<br>
-Test method testNotNull() result: <em>Failed with defects</em> <img alt="failed with defects icon:" src="failed-with-defects.svg" /><br>
-Test method checkBankIsAvailable() result: <em>Failed</em> <img alt="failed icon:" src="failed.svg" /><br><br>
-<b>Test class result: <em>Failed</em></b> <img alt="failed icon:" src="failed.svg" /><br></p>
-<p>Next steps:<br>
-Test method <em>testNotNull</em> returned a result of <em>Failed With Defects</em>. Test method <em>checkBankIsAvailable</em> returned a result of <em>Failed</em> for an unknown reason. Further investigation is required to understand why test method <em>checkBankIsAvailable</em> failed.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@Test</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nd">@ContinueOnTestFailure</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SimBankIVT</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nd">@GitHubIssue</span><span class="p">(</span><span class="n">issue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1178&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nd">@Test</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testNotNull</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span><span class="c1">// Failing test</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nd">@Test</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkBankIsAvailable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">        </span><span class="c1">// Failing test</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>Results:</p>
+<ul>
+<li>Test method <code>testNotNull()</code> result: <img alt="" src="../failed-with-defects.svg" valign="middle" /> <em>Failed with defects</em></li>
+<li>Test method <code>checkBankIsAvailable()</code> result: <img alt="" src="../failed.svg" valign="middle" /> <em>Failed</em></li>
+<li>Test class <code>SimBankIVT</code> result: <img alt="" src="../failed.svg" valign="middle" /> <strong>Failed</strong></li>
+</ul>
+<p>Next steps:</p>
+<p>Test method <em>testNotNull</em> returned a result of <em>Failed With Defects</em>. Test method <em>checkBankIsAvailable</em> returned a result of <em>Failed</em> for an unknown reason. Further investigation is required to understand why test method <em>checkBankIsAvailable</em> failed.</p>
 <h3 id="scenario-2">Scenario 2:<a class="headerlink" href="#scenario-2" title="Permanent link">&para;</a></h3>
 <p>Scenario 2 uses the <em>@GitHubIssue</em> annotation on the test method <em>testNotNull</em> with the <em>@ContinueOnTestFailure</em> annotation:</p>
-<p>@Test<br>
-@ContinueOnTestFailure<br>
-Test class SimBankIVT <br>
-@GitHubIssue( issue = "1178")<br>
-Test method testNotNull() result: <em>Failed with defects</em> <img alt="failed with defects icon:" src="failed-with-defects.svg" /><br>
-Test method checkBankIsAvailable() result: <em>Passed</em> <img alt="passed icon:" src="passed.svg" /><br><br>
-<b>Test class result: <em>Passed with defects</em></b> <img alt="passed with defects icon:" src="passed-with-defects.svg" /><br></p>
-<p>Next steps:<br>
-The first method, <em>testNotNull</em>, returned a result of <em>Failed With Defects</em>.  As the <em>ContinueOnTestFailure</em> annotation is used, the test continued to run and the following method <em>checkBankIsAvailable</em> returned a result of <em>Passed</em>. All methods that are expected to pass returned a result of <em>Passed</em>, so the overall result of the test is <em>Passed With Defects</em>. No further investigation is required.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nd">@Test</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nd">@ContinueOnTestFailure</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SimBankIVT</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nd">@GitHubIssue</span><span class="p">(</span><span class="n">issue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1178&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nd">@Test</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testNotNull</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="c1">// Failing test</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="nd">@Test</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkBankIsAvailable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="c1">// Passing test</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>Results:</p>
+<ul>
+<li>Test method <code>testNotNull()</code> result: <img alt="" src="../failed-with-defects.svg" valign="middle" /> <em>Failed with defects</em></li>
+<li>Test method <code>checkBankIsAvailable()</code> result: <img alt="" src="../passed.svg" valign="middle" /> <em>Passed</em></li>
+<li>Test class <code>SimBankIVT</code> result: <img alt="" src="../passed-with-defects.svg" valign="middle" /> <strong>Passed with defects</strong></li>
+</ul>
+<p>Next steps:</p>
+<p>The first method, <em>testNotNull</em>, returned a result of <em>Failed With Defects</em>.  As the <em>ContinueOnTestFailure</em> annotation is used, the test continued to run and the following method <em>checkBankIsAvailable</em> returned a result of <em>Passed</em>. All methods that are expected to pass returned a result of <em>Passed</em>, so the overall result of the test is <em>Passed With Defects</em>. No further investigation is required.</p>
 <h3 id="scenario-3">Scenario 3:<a class="headerlink" href="#scenario-3" title="Permanent link">&para;</a></h3>
 <p>Scenario 3 uses the <em>@GitHubIssue</em> annotation on the test method <em>checkBankIsAvailable</em> without the <em>@ContinueOnTestFailure</em> annotation:</p>
-<p>@Test<br>
-Test class SimBankIVT<br>
-Test method testNotNull() result: <em>Passed</em> <img alt="passed icon:" src="passed.svg" /><br>
-@GitHubIssue( issue = "1178")<br>
-Test method checkBankIsAvailable() result: <em>Failed with defects</em> <img alt="failed with defects icon:" src="failed-with-defects.svg" /><br><br>
-<b>Test class result: <em>Passed with defects</em></b> <img alt="passed with defects icon:" src="passed-with-defects.svg" /> <br></p>
-<p>Next steps:<br> 
-The method <em>checkBankIsAvailable</em> returned a result of <em>Failed With Defects</em>. As the test did not use the <em>ContinueOnTestFailure</em> annotation, the test would have ended prematurely. However, as the <em>checkBankIsAvailable</em> method was the last test method, the results of all test methods in the class are known. All methods that are expected to pass returned a result of <em>Passed</em>, so the overall result of the test is <em>Passed With Defects</em>. No further investigation required.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nd">@Test</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SimBankIVT</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nd">@Test</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testNotNull</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="c1">// Passing test</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="nd">@Test</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="nd">@GitHubIssue</span><span class="p">(</span><span class="n">issue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1178&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkBankIsAvailable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">        </span><span class="c1">// Failing test</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="p">}</span>
+</code></pre></div>
+<p>Results:</p>
+<ul>
+<li>Test method <code>testNotNull()</code> result: <img alt="" src="../passed.svg" valign="middle" /> <em>Passed</em></li>
+<li>Test method <code>checkBankIsAvailable()</code> result: <img alt="" src="../failed-with-defects.svg" valign="middle" /> <em>Failed with defects</em></li>
+<li>Test class <code>SimBankIVT</code> result: <img alt="" src="../passed-with-defects.svg" valign="middle" /> <strong>Passed with defects</strong></li>
+</ul>
+<p>Next steps:</p>
+<p>The method <em>checkBankIsAvailable</em> returned a result of <em>Failed With Defects</em>. As the test did not use the <em>ContinueOnTestFailure</em> annotation, the test would have ended prematurely. However, as the <em>checkBankIsAvailable</em> method was the last test method, the results of all test methods in the class are known. All methods that are expected to pass returned a result of <em>Passed</em>, so the overall result of the test is <em>Passed With Defects</em>. No further investigation required.</p>
 <h3 id="scenario-4">Scenario 4:<a class="headerlink" href="#scenario-4" title="Permanent link">&para;</a></h3>
 <p>Scenario 4 uses the <em>@GitHubIssue</em> annotation on the test method <em>testNotNull</em> without the <em>@ContinueOnTestFailure</em> annotation:</p>
-<p>@Test<br>
-Test class SimBankIVT<br>
-@GitHubIssue( issue = "1178")<br>
-Test method testNotNull() result: <em>Failed with defects</em> <img alt="failed with defects icon:" src="failed-with-defects.svg" /><br>
-Test method checkBankIsAvailable() result: <em>Unknown</em><br><br>
-<b>Test class result: <em>Failed with defects</em></b> <img alt="failed with defects icon:" src="failed-with-defects.svg" /><br></p>
-<p>Next steps:<br> 
-The <em>testNotNull</em> method returned a status of <em>Failed With Defects</em>. As the <em>ContinueOnTestFailure</em> annotation is not used, the results of the following methods - in this example <em>checkBankIsAvailable</em> are not known. The overall result returned is <em>Failed With Defects</em>. To check the result of all methods, add the <em>@ContinueOnTestFailure</em> annotation for future test runs.</p>
-<h1 id="configuring"><a name="configuring"></a>Configuring<a class="headerlink" href="#configuring" title="Permanent link">&para;</a></h1>
-<p>You must configure your CPS properties so that the GitHub Manager knows the GitHub instance in which to look for the specified issue. The GitHub Manager converts the GitHub instance URL that is provided in the CPS to the correct URL for the GitHub API, removing the need to manually supply a URL for the GitHub API. Alternatively, you can set the GitHub repository in the <em>@GitHubIssue</em> annotation. The value in the annotation takes precedence over the value in the CPS. </p>
-<h2 id="configuration-properties"><a name="cps"></a>Configuration Properties<a class="headerlink" href="#configuration-properties" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nd">@Test</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SimBankIVT</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nd">@Test</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nd">@GitHubIssue</span><span class="p">(</span><span class="n">issue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1178&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testNotNull</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span><span class="c1">// Failing test</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="nd">@Test</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">checkBankIsAvailable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">        </span><span class="c1">// ...</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="p">}</span>
+</code></pre></div>
+<p>Results:</p>
+<ul>
+<li>Test method <code>testNotNull()</code> result: <img alt="" src="../failed-with-defects.svg" valign="middle" /> <em>Failed with defects</em></li>
+<li>Test method <code>checkBankIsAvailable()</code> result: <em>Unknown</em></li>
+<li>Test class <code>SimBankIVT</code> result: <img alt="" src="../failed-with-defects.svg" valign="middle" /> <strong>Failed with defects</strong></li>
+</ul>
+<p>Next steps:</p>
+<p>The <em>testNotNull</em> method returned a status of <em>Failed With Defects</em>. As the <em>ContinueOnTestFailure</em> annotation is not used, the results of the following methods – in this example <em>checkBankIsAvailable</em> – are not known. The overall result returned is <em>Failed With Defects</em>. To check the result of all methods, add the <em>@ContinueOnTestFailure</em> annotation for future test runs.</p>
+<h2 id="configuration-properties">Configuration Properties<a class="headerlink" href="#configuration-properties" title="Permanent link">&para;</a></h2>
+<p>You must configure your CPS properties so that the GitHub Manager knows the GitHub instance in which to look for the specified issue. The GitHub Manager converts the GitHub instance URL that is provided in the CPS to the correct URL for the GitHub API, removing the need to manually supply a URL for the GitHub API. Alternatively, you can set the GitHub repository in the <em>@GitHubIssue</em> annotation. The value in the annotation takes precedence over the value in the CPS.</p>
 <p>The following are properties used to configure the GitHub Manager:</p>
-<details>
-<summary>GitHub Instance URL CPS Property</summary>
-
-| Property: | GitHub Instance URL CPS Property |
-| --------------------------------------- | :------------------------------------- |
-| Name: | githubissue.instance.url |
-| Description: | The GitHub instance for the issue  |
-| Required:  | No |
-| Default value: | https://github.com |
-| Valid values: | A valid GitHub instance, for example, <br> _https://github.acompany.com_  |
-| Examples: | <code>githubissue.instance.DEFAULT.url=https://github.com</code> |
-
-</details>
-
-<details>
-<summary>GitHub Instance Credentials CPS Property</summary>
-
-| Property: | GitHub Instance Credentials CPS Property |
-| --------------------------------------- | :------------------------------------- |
-| Name: | githubissue.instance.credentials |
-| Description: | The credentials ID to use for the GitHub instance  |
-| Required:  | No |
-| Default value: | _GITHUB_ |
-| Valid values: | _GITHUB_, _DEFAULT_, _IBM_  |
-| Examples: | <code>githubissue.instance.DEFAULT.credentials=GITHUB</code> |
-
-</details>
-
-<details>
-<summary>GitHub Instance Repository CPS Property</summary>
-
-| Property: | GitHub Instance Repository CPS Property |
-|| ------------- | :------------------------------------- |
-| Name: | githubissue.instance.repository |
-| Description: | The GitHub repository that contains the GitHub issue |
-| Required:  | No, can be provided in the annotation |
-| Default value: | N/A |
-| Valid values: | A valid repository, for example, _galasa-dev/projectmanagement_ |
-| Examples: |<code>githubissue.instance.DEFAULT.repository=galasa-dev/projectmanagement</code> |
-
-Note: You must provide credentials for your GitHub Enterprise instances in the credentials store, so that the request to the GitHub API is authenticated.
-
-For example, if you set the _GitHub Instance Credentials CPS Property_ to:
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>githubissue.instance.url=https://github.com
+<h3 id="github-instance-url-cps-property">GitHub Instance URL CPS Property<a class="headerlink" href="#github-instance-url-cps-property" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property:</th>
+<th style="text-align: left;">GitHub Instance URL CPS Property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name:</td>
+<td style="text-align: left;">githubissue.instance.url</td>
+</tr>
+<tr>
+<td>Description:</td>
+<td style="text-align: left;">The GitHub instance for the issue</td>
+</tr>
+<tr>
+<td>Required:</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td>Default value:</td>
+<td style="text-align: left;">https://github.com</td>
+</tr>
+<tr>
+<td>Valid values:</td>
+<td style="text-align: left;">A valid GitHub instance, for example, <em>https://github.acompany.com</em></td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td style="text-align: left;"><code>githubissue.instance.DEFAULT.url=https://github.com</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="github-instance-credentials-cps-property">GitHub Instance Credentials CPS Property<a class="headerlink" href="#github-instance-credentials-cps-property" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property:</th>
+<th style="text-align: left;">GitHub Instance Credentials CPS Property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name:</td>
+<td style="text-align: left;">githubissue.instance.credentials</td>
+</tr>
+<tr>
+<td>Description:</td>
+<td style="text-align: left;">The credentials ID to use for the GitHub instance</td>
+</tr>
+<tr>
+<td>Required:</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td>Default value:</td>
+<td style="text-align: left;"><em>GITHUB</em></td>
+</tr>
+<tr>
+<td>Valid values:</td>
+<td style="text-align: left;"><em>GITHUB</em>, <em>DEFAULT</em>, <em>IBM</em></td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td style="text-align: left;"><code>githubissue.instance.DEFAULT.credentials=GITHUB</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="github-instance-repository-cps-property">GitHub Instance Repository CPS Property<a class="headerlink" href="#github-instance-repository-cps-property" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property:</th>
+<th style="text-align: left;">GitHub Instance Repository CPS Property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name:</td>
+<td style="text-align: left;">githubissue.instance.repository</td>
+</tr>
+<tr>
+<td>Description:</td>
+<td style="text-align: left;">The GitHub repository that contains the GitHub issue</td>
+</tr>
+<tr>
+<td>Required:</td>
+<td style="text-align: left;">No, can be provided in the annotation</td>
+</tr>
+<tr>
+<td>Default value:</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr>
+<td>Valid values:</td>
+<td style="text-align: left;">A valid repository, for example, <em>galasa-dev/projectmanagement</em></td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td style="text-align: left;"><code>githubissue.instance.DEFAULT.repository=galasa-dev/projectmanagement</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note: You must provide credentials for your GitHub Enterprise instances in the credentials store, so that the request to the GitHub API is authenticated.</p>
+<p>For example, if you set the <em>GitHub Instance Credentials CPS Property</em> to:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="na">githubissue.instance.url</span><span class="o">=</span><span class="s">https://github.com</span>
 </code></pre></div>
-
-then you need to edit the _credentials.properties_ file in the _.galasa folder_ to set the username and password for the GitHub instance. For example: 
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>secure.credentials.GITHUB.username=COMPANYUSER
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>secure.credentials.GITHUB.password=Password123
+<p>then you need to edit the <em>credentials.properties</em> file in the <em>.galasa folder</em> to set the username and password for the GitHub instance. For example: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="na">secure.credentials.GITHUB.username</span><span class="o">=</span><span class="s">COMPANYUSER</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">secure.credentials.GITHUB.password</span><span class="o">=</span><span class="s">Password123</span>
 </code></pre></div>
-
-</details>
-
-<h1 id="annotations-provided-by-the-manager"><a name="annotations"></a>Annotations provided by the Manager<a class="headerlink" href="#annotations-provided-by-the-manager" title="Permanent link">&para;</a></h1>
+<h2 id="annotations-provided-by-the-manager">Annotations provided by the Manager<a class="headerlink" href="#annotations-provided-by-the-manager" title="Permanent link">&para;</a></h2>
 <p>The following annotation is provided by the GitHub Manager:</p>
-<details>
-<summary>GitHub Issue</summary>
-
-| Name: | GitHub Issue |
-| --------------------------------------- | :------------------------------------- |
-| Name: | @GitHubIssue |
-| Description: | If present on a method or class, this annotation will tell the GitHub Manager to influence the result of the method or class based on the known problem in the GitHub issue. |
-| Syntax:  | @GitHubIssue( githubId = "DEFAULT", issue = "1178", repo = "galasa-dev/projectmanagement")|
-| Attribute `issue`: | The number of the issue. Required.|
-| Attribute `githubId`: | Optional. Default value is "DEFAULT".|
-| Attribute `repo`: | Optional. If not present in the annotation, the CPS is checked. If a value is not present in the CPS, the Manager logs a warning message.|
-| Attribute `regex`: | Optional. Use to narrow down the failing exception.|
-
-The annotation can be used at the class or method level.
-
-Use of the _@ContinueOnTestFailure_ annotation alongside the _@GitHubIssue_ annotation can affect the test result. For examples, see the [Overrides](#overrides) section.
-
-</details>
-
-<h1 id="code-snippets-and-examples"><a name="codesnippets"></a>Code snippets and examples<a class="headerlink" href="#code-snippets-and-examples" title="Permanent link">&para;</a></h1>
-<details><summary>Add the @GitHubIssue and @ContinueOnTestFailure annotation on a test class</summary>
-
-Use the following code to add GitHub issue _1178_ in the _galasa-dev/projectmanagement_ repository on the SimBank _ProvisionedAccountCreditTest_ test class. Ensure all test methods in the test class are run by using the _@ContinueOnTestFailure_ annotation:
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>@Test
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>@GitHubIssue( issue = &quot;1178&quot;, repo = &quot;galasa-dev/projectmanagement&quot; )
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>@ContinueOnTestFailure
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>public class ProvisionedAccountCreditTest {
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>...
+<h3 id="github-issue">GitHub Issue<a class="headerlink" href="#github-issue" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name:</th>
+<th style="text-align: left;">GitHub Issue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name:</td>
+<td style="text-align: left;">@GitHubIssue</td>
+</tr>
+<tr>
+<td>Description:</td>
+<td style="text-align: left;">If present on a method or class, this annotation will tell the GitHub Manager to influence the result of the method or class based on the known problem in the GitHub issue.</td>
+</tr>
+<tr>
+<td>Syntax:</td>
+<td style="text-align: left;">@GitHubIssue( githubId = "DEFAULT", issue = "1178", repo = "galasa-dev/projectmanagement")</td>
+</tr>
+<tr>
+<td>Attribute <code>issue</code>:</td>
+<td style="text-align: left;">The number of the issue. Required.</td>
+</tr>
+<tr>
+<td>Attribute <code>githubId</code>:</td>
+<td style="text-align: left;">Optional. Default value is "DEFAULT".</td>
+</tr>
+<tr>
+<td>Attribute <code>repo</code>:</td>
+<td style="text-align: left;">Optional. If not present in the annotation, the CPS is checked. If a value is not present in the CPS, the Manager logs a warning message.</td>
+</tr>
+<tr>
+<td>Attribute <code>regex</code>:</td>
+<td style="text-align: left;">Optional. Use to narrow down the failing exception.</td>
+</tr>
+</tbody>
+</table>
+<p>The annotation can be used at the class or method level.</p>
+<p>Use of the <em>@ContinueOnTestFailure</em> annotation alongside the <em>@GitHubIssue</em> annotation can affect the test result. For examples, see the <a href="#setting-overrides">Overrides</a> section.</p>
+<h2 id="code-snippets-and-examples">Code snippets and examples<a class="headerlink" href="#code-snippets-and-examples" title="Permanent link">&para;</a></h2>
+<h3 id="add-the-githubissue-and-continueontestfailure-annotation-on-a-test-class">Add the @GitHubIssue and @ContinueOnTestFailure annotation on a test class<a class="headerlink" href="#add-the-githubissue-and-continueontestfailure-annotation-on-a-test-class" title="Permanent link">&para;</a></h3>
+<p>Use the following code to add GitHub issue <em>1178</em> in the <em>galasa-dev/projectmanagement</em> repository on the SimBank <em>ProvisionedAccountCreditTest</em> test class. Ensure all test methods in the test class are run by using the <em>@ContinueOnTestFailure</em> annotation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nd">@Test</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nd">@GitHubIssue</span><span class="p">(</span><span class="w"> </span><span class="n">issue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1178&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;galasa-dev/projectmanagement&quot;</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nd">@ContinueOnTestFailure</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ProvisionedAccountCreditTest</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="c1">//...</span>
 </code></pre></div>
-</details>
-
-<details><summary>Add the @GitHubIssue annotation on a test method</summary>
-
-Use the following code to add GitHub issue _1178_ in the _galasa-dev/projectmanagement_ repository on the _updateAccountWebServiceTest_ method in the _ProvisionedAccountCreditTest_ test class:
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>@Test
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>@GitHubIssue( issue = &quot;1178&quot;, repo = &quot;galasa-dev/projectmanagement&quot; )
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>public void updateAccountWebServiceTest() throws Exception {
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    // Obtain the initial balance
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    BigDecimal userBalance = account.getBalance();
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>...
+<h3 id="add-the-githubissue-annotation-on-a-test-method">Add the @GitHubIssue annotation on a test method<a class="headerlink" href="#add-the-githubissue-annotation-on-a-test-method" title="Permanent link">&para;</a></h3>
+<p>Use the following code to add GitHub issue <em>1178</em> in the <em>galasa-dev/projectmanagement</em> repository on the <em>updateAccountWebServiceTest</em> method in the <em>ProvisionedAccountCreditTest</em> test class:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nd">@Test</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nd">@GitHubIssue</span><span class="p">(</span><span class="w"> </span><span class="n">issue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1178&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;galasa-dev/projectmanagement&quot;</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">updateAccountWebServiceTest</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="c1">// Obtain the initial balance</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">userBalance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="na">getBalance</span><span class="p">();</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="c1">//...</span>
 </code></pre></div>
-</details>
 
 
 

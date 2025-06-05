@@ -277,35 +277,11 @@
          <lastmod>2025-06-05</lastmod>
     </url>
     <url>
-         <loc>https://galasa.dev/docs/managers/zos-managers/z-os-batch-rse-api-manager/</loc>
-         <lastmod>2025-06-05</lastmod>
-    </url>
-    <url>
-         <loc>https://galasa.dev/docs/managers/zos-managers/z-os-batch-z-os-mf-manager/</loc>
-         <lastmod>2025-06-05</lastmod>
-    </url>
-    <url>
-         <loc>https://galasa.dev/docs/managers/zos-managers/z-os-file-manager/</loc>
-         <lastmod>2025-06-05</lastmod>
-    </url>
-    <url>
-         <loc>https://galasa.dev/docs/managers/zos-managers/z-os-file-rse-api-manager/</loc>
-         <lastmod>2025-06-05</lastmod>
-    </url>
-    <url>
-         <loc>https://galasa.dev/docs/managers/zos-managers/z-os-file-zos-mf-manager/</loc>
-         <lastmod>2025-06-05</lastmod>
-    </url>
-    <url>
-         <loc>https://galasa.dev/docs/managers/zos-managers/zos-batch-manager/</loc>
+         <loc>https://galasa.dev/docs/managers/zos-managers/zos-batch-rse-api-manager/</loc>
          <lastmod>2025-06-05</lastmod>
     </url>
     <url>
          <loc>https://galasa.dev/docs/managers/zos-managers/zos-batch-zos-mf-manager/</loc>
-         <lastmod>2025-06-05</lastmod>
-    </url>
-    <url>
-         <loc>https://galasa.dev/docs/managers/zos-managers/zos-console-manager/</loc>
          <lastmod>2025-06-05</lastmod>
     </url>
     <url>
@@ -317,7 +293,7 @@
          <lastmod>2025-06-05</lastmod>
     </url>
     <url>
-         <loc>https://galasa.dev/docs/managers/zos-managers/zos-file-manager/</loc>
+         <loc>https://galasa.dev/docs/managers/zos-managers/zos-file-rse-api-manager/</loc>
          <lastmod>2025-06-05</lastmod>
     </url>
     <url>
@@ -326,10 +302,6 @@
     </url>
     <url>
          <loc>https://galasa.dev/docs/managers/zos-managers/zos-manager/</loc>
-         <lastmod>2025-06-05</lastmod>
-    </url>
-    <url>
-         <loc>https://galasa.dev/docs/managers/zos-managers/zos-managertestformat/</loc>
          <lastmod>2025-06-05</lastmod>
     </url>
     <url>
@@ -686,6 +658,26 @@
     </url>
     <url>
          <loc>https://galasa.dev/releases/license/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/releases/2024/08/13/v0.36.0/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/releases/2024/09/18/v0.37.0/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/releases/2024/12/06/v0.38.0/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/releases/2025/01/16/v0.39.0/</loc>
+         <lastmod>2025-06-05</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/releases/2025/03/12/v0.40.0/</loc>
          <lastmod>2025-06-05</lastmod>
     </url>
     <url>
