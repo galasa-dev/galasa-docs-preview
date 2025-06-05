@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://galasa.dev/docs/writing-own-tests/writing-test-classes/">
       
       
-        <link rel="prev" href="../../running-simbank-tests/writing-a-simbank-test/">
+        <link rel="prev" href="../">
       
       
         <link rel="next" href="../running-test-modes/">
@@ -76,6 +76,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#the-anatomy-of-a-galasa-test-class" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -656,6 +661,8 @@
       
         
       
+        
+      
     
     
     
@@ -937,7 +944,7 @@
   
   
   <span class="md-ellipsis">
-    Creating a Galasa project using the command line
+    Creating a Galasa project
     
   </span>
   
@@ -960,7 +967,7 @@
   
   
   <span class="md-ellipsis">
-    Running tests locally using the command line
+    Running a test locally
     
   </span>
   
@@ -1356,6 +1363,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1384,8 +1395,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1394,8 +1406,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
@@ -1403,6 +1421,8 @@
             Writing your own independent Galasa tests
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1418,6 +1438,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Writing test classes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1429,6 +1462,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-anatomy-of-a-galasa-test-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The anatomy of a Galasa test class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The anatomy of a Galasa test class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#galasa-test-method-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Galasa test method annotations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pitfalls-and-tips-when-writing-test-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfalls and tips when writing test code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pitfalls and tips when writing test code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-use-systemout-or-systemerr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do not use System.out or System.err
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-all-test-resources-within-the-test-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keep all test resources within the test project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovering-manager-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discovering Manager resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvm-lifecycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      JVM lifecycles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1814,6 +1948,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1846,8 +1984,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../manage-ecosystem/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1856,8 +1995,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
@@ -1865,6 +2010,8 @@
             Managing tests in a Galasa Ecosystem
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -2311,6 +2458,8 @@
           
         
       
+        
+      
     
     
     
@@ -2340,6 +2489,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_3" id="__nav_3_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_3_label" aria-expanded="false">
@@ -2349,6 +2503,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/ims-tm-managers/ims-tm-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IMS TM Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2370,6 +2547,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2401,6 +2584,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_4" id="__nav_3_8_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_4_label" aria-expanded="false">
@@ -2410,6 +2598,75 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/docker-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/kubernetes-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kubernetes Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/open-stack-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Stack Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2431,6 +2688,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2462,6 +2725,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_5" id="__nav_3_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_5_label" aria-expanded="false">
@@ -2471,6 +2739,75 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/http-client-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP Client Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/ipnetwork-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IP Network Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/mq-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MQ Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2492,6 +2829,10 @@
       
         
           
+        
+      
+        
+      
         
       
     
@@ -2523,6 +2864,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_6" id="__nav_3_8_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_6_label" aria-expanded="false">
@@ -2532,6 +2878,52 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/core-managers/artifact-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Artifact Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/core-managers/core-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2553,6 +2945,8 @@
       
         
           
+        
+      
         
       
     
@@ -2584,6 +2978,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_7" id="__nav_3_8_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_7_label" aria-expanded="false">
@@ -2593,6 +2992,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/logging-managers/elasticlog-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ElasticLog Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2614,6 +3036,8 @@
       
         
           
+        
+      
         
       
     
@@ -2645,6 +3069,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_8" id="__nav_3_8_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_8_label" aria-expanded="false">
@@ -2654,6 +3083,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/ecosystem-managers/galasa-ecosystem-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Galasa Ecosystem Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2675,6 +3127,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2706,6 +3166,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_9" id="__nav_3_8_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_9_label" aria-expanded="false">
@@ -2715,6 +3180,98 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/jmeter-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JMeter Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/sdv-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDV Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/selenium-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selenium Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/vtp-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VTP Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2736,6 +3293,8 @@
       
         
           
+        
+      
         
       
     
@@ -2767,6 +3326,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_10" id="__nav_3_8_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_10_label" aria-expanded="false">
@@ -2776,6 +3340,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/unix-managers/linux-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2797,6 +3384,8 @@
       
         
           
+        
+      
         
       
     
@@ -2828,6 +3417,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_11" id="__nav_3_8_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_11_label" aria-expanded="false">
@@ -2837,6 +3431,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/workflow-managers/github-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitHub Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -3431,6 +4048,72 @@
     
       
         
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faqs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            FAQs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
       
         
       
@@ -3454,11 +4137,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3467,38 +4151,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10" id="__nav_3_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/index.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    None
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -3508,6 +4177,10 @@
   
     
     
+      
+        
+          
+        
       
         
       
@@ -3618,11 +4291,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_9_2" id="__nav_3_9_2_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/cli-syntax/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3631,15 +4305,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10_2" id="__nav_3_10_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10_2">
             <span class="md-nav__icon md-icon"></span>
             Galasactl command-line reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -5468,6 +6150,98 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-anatomy-of-a-galasa-test-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The anatomy of a Galasa test class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The anatomy of a Galasa test class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#galasa-test-method-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Galasa test method annotations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pitfalls-and-tips-when-writing-test-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pitfalls and tips when writing test code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pitfalls and tips when writing test code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-use-systemout-or-systemerr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do not use System.out or System.err
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep-all-test-resources-within-the-test-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keep all test resources within the test project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovering-manager-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discovering Manager resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvm-lifecycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      JVM lifecycles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5480,18 +6254,57 @@
                 
                   
 
+<!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine whether to show actions -->
+
+
+<!-- Actions -->
+
+
+  <!-- Edit button -->
   
-    <a href="https://github.com/galasa-dev/galasa/edit/main/docs/content/docs/writing-own-tests/writing-test-classes.md" title="Edit this page" class="md-content__button md-icon">
+    <a
+      href="https://github.com/galasa-dev/galasa/edit/main/docs/content/docs/writing-own-tests/writing-test-classes.md"
+      title="Edit this page"
+      class="md-content__button md-icon"
+      rel="edit"
+    >
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
   
+
+  <!-- View button -->
   
     
       
     
-    <a href="https://github.com/galasa-dev/galasa/raw/main/docs/content/docs/writing-own-tests/writing-test-classes.md" title="View source of this page" class="md-content__button md-icon">
+    <a
+      href="https://github.com/galasa-dev/galasa/raw/main/docs/content/docs/writing-own-tests/writing-test-classes.md"
+      title="View source of this page"
+      class="md-content__button md-icon"
+    >
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
@@ -5506,24 +6319,32 @@
 <p>All Galasa tests must have a <code>@Test</code> annotation (<code>dev.galasa.Test</code>) defined and in place for it to be recognised by Galasa. Doing this allows the Galasa Maven plugin to differentiate between test and utility classes within a project. Only classes that use <code>@Test</code> are included in the test catalog.</p>
 <p>Once loaded by the Galasa test runner, there are a few further annotations that dictate how a test is executed. These are <code>@BeforeClass</code>, <code>@Before</code>, <code>@Test</code>, <code>@After</code> and <code>@AfterClass</code>. These are visually similar to how they appear in JUnit, but are handled differently in Galasa.</p>
 <h3 id="galasa-test-method-annotations">Galasa test method annotations<a class="headerlink" href="#galasa-test-method-annotations" title="Permanent link">&para;</a></h3>
-<p><strong><code>@Test</code></strong>
-<br>
-This annotation identifies a method as one that contains test code. Such methods are executed by Galasa by the order in which they appear in the test class - from top to bottom. If a test method fails, the following test methods are bypassed to encourage short, sharp parallel testing. This behaviour can be overridden using the <code>@ContinueOnTestFailure</code> annotation on the <code>class</code> statement.</p>
+<dl>
+<dt><code>@Test</code></dt>
+<dd>
+<p>This annotation identifies a method as one that contains test code.
+Such methods are executed by Galasa by the order in which they appear in the test class - from top to bottom. If a test method fails, the following test methods are bypassed to encourage short, sharp parallel testing. This behaviour can be overridden using the <code>@ContinueOnTestFailure</code> annotation on the <code>class</code> statement.</p>
 <p>When a test method succeeds it is marked as PASSED, and if there is an exception it is marked FAILED. Managers can override this marking - for example, if a test throws a specific exception, a Manager could set the result to DISASTER.</p>
-<p><strong><code>@BeforeClass</code> and <code>@AfterClass</code></strong>
-<br>
-Methods marked <code>@Beforeclass</code> and <code>@AfterClass</code> are executed once before and once after all tests in the class respectively. They are executed in the order they appear in the sources.</p>
+</dd>
+<dt><code>@BeforeClass</code> and <code>@AfterClass</code></dt>
+<dd>
+<p>Methods marked <code>@Beforeclass</code> and <code>@AfterClass</code> are executed once before and once after all tests in the class respectively.
+They are executed in the order they appear in the sources.</p>
 <p>Such methods are used to perform setup and tear-down for the test class, for example, setting up an HTTP server that all of the <code>@Test</code> methods will use.</p>
 <p>Unlike JUnit, these are not static methods as they need access to some <em>class fields</em>/<em>manager annotated fields</em> which are described later.</p>
 <p>Failures that occur in <code>@BeforeClass</code> and <code>@AfterClass</code> usually cause tests to fail with <code>ENVIRONMENT_FAILURE</code>, which indicates that the test itself didn't fail, but the set up did for some reason. For this reason, <code>@BeforeClass</code> and <code>@AfterClass</code> should not contain any test code.</p>
-<p><strong><code>@Before</code></strong> and <strong><code>@After</code></strong>
-<br>
-Methods marked <code>@Before</code> and <code>@After</code> are executed before and after every <code>@Test</code> method respectively, in the order in which they appear in the source.</p>
+</dd>
+<dt><code>@Before</code> and <code>@After</code></dt>
+<dd>
+<p>Methods marked <code>@Before</code> and <code>@After</code> are executed before and after every <code>@Test</code> method respectively,
+in the order in which they appear in the source.</p>
 <p>These methods are typically used to reset resources before a test or perhaps check logs for post-test error messages.</p>
 <p>Failures that occur in <code>@Before</code> and <code>@After</code> result in the test method being marked as FAILED, as it is likely that such methods contain test checking code.</p>
-<p><strong>Manager annotated fields</strong>
-<br>
-Before any of the <code>@</code> methods in a test class are executed, the Galasa test runner requests any active Managers to populate their <em>test fields</em> with appropriate values. These fields are highly-dependent on the Managers, and you will need to review the Manager reference documentation to appreciate what is available.</p>
+</dd>
+<dt>Manager annotated fields</dt>
+<dd>
+<p>Before any of the <code>@</code> methods in a test class are executed,
+the Galasa test runner requests any active Managers to populate their <em>test fields</em> with appropriate values. These fields are highly-dependent on the Managers, and you will need to review the Manager reference documentation to appreciate what is available.</p>
 <p>As an example, the test field</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@RunName</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">runName</span><span class="p">;</span>
@@ -5535,6 +6356,8 @@ Before any of the <code>@</code> methods in a test class are executed, the Galas
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="n">ICoreManager</span><span class="w"> </span><span class="n">coreManager</span><span class="p">;</span>
 </code></pre></div>
 <p>The Core Manager provides a method to obtain credentials via an ID - but the test may not know the ID before it runs, so it would be difficult to do this via an annotated field.</p>
+</dd>
+</dl>
 <h2 id="example-tests">Example tests<a class="headerlink" href="#example-tests" title="Permanent link">&para;</a></h2>
 <p>Review the SimBank sample tests to see how these principles are applied in practice. With one or two exceptions, these sample tests will be kept up to date with the latest specifications.</p>
 <h2 id="pitfalls-and-tips-when-writing-test-code">Pitfalls and tips when writing test code<a class="headerlink" href="#pitfalls-and-tips-when-writing-test-code" title="Permanent link">&para;</a></h2>
@@ -5598,7 +6421,7 @@ Before any of the <code>@</code> methods in a test class are executed, the Galas
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../running-simbank-tests/writing-a-simbank-test/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Writing your own SimBank test">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Writing your own independent Galasa tests">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5608,7 +6431,7 @@ Before any of the <code>@</code> methods in a test class are executed, the Galas
                 Previous
               </span>
               <div class="md-ellipsis">
-                Writing your own SimBank test
+                Writing your own independent Galasa tests
               </div>
             </div>
           </a>

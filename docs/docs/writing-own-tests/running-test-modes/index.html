@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -656,6 +661,8 @@
       
         
       
+        
+      
     
     
     
@@ -937,7 +944,7 @@
   
   
   <span class="md-ellipsis">
-    Creating a Galasa project using the command line
+    Creating a Galasa project
     
   </span>
   
@@ -960,7 +967,7 @@
   
   
   <span class="md-ellipsis">
-    Running tests locally using the command line
+    Running a test locally
     
   </span>
   
@@ -1356,6 +1363,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1384,8 +1395,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1394,8 +1406,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
@@ -1403,6 +1421,8 @@
             Writing your own independent Galasa tests
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1441,6 +1461,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Running a Galasa test
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1452,6 +1485,110 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-test-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running a test locally
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-test-in-the-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running a test in the Galasa Ecosystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-test-locally-but-using-shared-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running a test locally but using shared configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-run-a-test-in-the-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to run a test in the Galasa Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to run a test in the Galasa Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tests-need-to-run-in-bulk-in-parallel-often-submitted-by-different-automation-jobs-or-people-in-an-environment-where-resources-are-limited-and-need-to-be-managed-between-tests-for-example-ports-slots-of-processing-capability-files-and-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tests need to run in bulk, in parallel, often submitted by different automation jobs or people, in an environment where resources are limited and need to be managed between tests. For example, ports, slots of processing capability, files, and sessions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-results-and-reports-need-gathering-from-a-single-point-for-example-when-test-results-need-reporting-or-exporting-to-another-report-generating-system-or-when-bug-investigation-can-proceed-by-independent-inspection-test-results-and-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test results and reports need gathering from a single point. For example, when test results need reporting or exporting to another report-generating system, or when bug investigation can proceed by independent inspection test results and artifacts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-clean-up-of-resources-in-the-system-under-test-is-an-important-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      When the clean-up of resources in the system under test is an important requirement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-run-a-test-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to run a test locally
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1814,6 +1951,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1846,8 +1987,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../manage-ecosystem/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1856,8 +1998,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
@@ -1865,6 +2013,8 @@
             Managing tests in a Galasa Ecosystem
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -2311,6 +2461,8 @@
           
         
       
+        
+      
     
     
     
@@ -2340,6 +2492,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_3" id="__nav_3_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_3_label" aria-expanded="false">
@@ -2349,6 +2506,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/ims-tm-managers/ims-tm-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IMS TM Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2370,6 +2550,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2401,6 +2587,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_4" id="__nav_3_8_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_4_label" aria-expanded="false">
@@ -2410,6 +2601,75 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/docker-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/kubernetes-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kubernetes Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/open-stack-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Stack Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2431,6 +2691,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2462,6 +2728,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_5" id="__nav_3_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_5_label" aria-expanded="false">
@@ -2471,6 +2742,75 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/http-client-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP Client Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/ipnetwork-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IP Network Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/mq-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MQ Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2492,6 +2832,10 @@
       
         
           
+        
+      
+        
+      
         
       
     
@@ -2523,6 +2867,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_6" id="__nav_3_8_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_6_label" aria-expanded="false">
@@ -2532,6 +2881,52 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/core-managers/artifact-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Artifact Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/core-managers/core-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2553,6 +2948,8 @@
       
         
           
+        
+      
         
       
     
@@ -2584,6 +2981,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_7" id="__nav_3_8_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_7_label" aria-expanded="false">
@@ -2593,6 +2995,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/logging-managers/elasticlog-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ElasticLog Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2614,6 +3039,8 @@
       
         
           
+        
+      
         
       
     
@@ -2645,6 +3072,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_8" id="__nav_3_8_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_8_label" aria-expanded="false">
@@ -2654,6 +3086,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/ecosystem-managers/galasa-ecosystem-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Galasa Ecosystem Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2675,6 +3130,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2706,6 +3169,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_9" id="__nav_3_8_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_9_label" aria-expanded="false">
@@ -2715,6 +3183,98 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/jmeter-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JMeter Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/sdv-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDV Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/selenium-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selenium Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/vtp-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VTP Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2736,6 +3296,8 @@
       
         
           
+        
+      
         
       
     
@@ -2767,6 +3329,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_10" id="__nav_3_8_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_10_label" aria-expanded="false">
@@ -2776,6 +3343,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/unix-managers/linux-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2797,6 +3387,8 @@
       
         
           
+        
+      
         
       
     
@@ -2828,6 +3420,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_11" id="__nav_3_8_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_11_label" aria-expanded="false">
@@ -2837,6 +3434,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/workflow-managers/github-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitHub Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -3431,6 +4051,72 @@
     
       
         
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faqs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            FAQs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
       
         
       
@@ -3454,11 +4140,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3467,38 +4154,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10" id="__nav_3_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/index.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    None
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -3508,6 +4180,10 @@
   
     
     
+      
+        
+          
+        
       
         
       
@@ -3618,11 +4294,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_9_2" id="__nav_3_9_2_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/cli-syntax/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3631,15 +4308,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10_2" id="__nav_3_10_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10_2">
             <span class="md-nav__icon md-icon"></span>
             Galasactl command-line reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -5468,6 +6153,101 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-test-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running a test locally
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-test-in-the-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running a test in the Galasa Ecosystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-test-locally-but-using-shared-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running a test locally but using shared configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-run-a-test-in-the-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to run a test in the Galasa Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to run a test in the Galasa Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tests-need-to-run-in-bulk-in-parallel-often-submitted-by-different-automation-jobs-or-people-in-an-environment-where-resources-are-limited-and-need-to-be-managed-between-tests-for-example-ports-slots-of-processing-capability-files-and-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tests need to run in bulk, in parallel, often submitted by different automation jobs or people, in an environment where resources are limited and need to be managed between tests. For example, ports, slots of processing capability, files, and sessions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-results-and-reports-need-gathering-from-a-single-point-for-example-when-test-results-need-reporting-or-exporting-to-another-report-generating-system-or-when-bug-investigation-can-proceed-by-independent-inspection-test-results-and-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test results and reports need gathering from a single point. For example, when test results need reporting or exporting to another report-generating system, or when bug investigation can proceed by independent inspection test results and artifacts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-clean-up-of-resources-in-the-system-under-test-is-an-important-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      When the clean-up of resources in the system under test is an important requirement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-run-a-test-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to run a test locally
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5480,18 +6260,57 @@
                 
                   
 
+<!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine whether to show actions -->
+
+
+<!-- Actions -->
+
+
+  <!-- Edit button -->
   
-    <a href="https://github.com/galasa-dev/galasa/edit/main/docs/content/docs/writing-own-tests/running-test-modes.md" title="Edit this page" class="md-content__button md-icon">
+    <a
+      href="https://github.com/galasa-dev/galasa/edit/main/docs/content/docs/writing-own-tests/running-test-modes.md"
+      title="Edit this page"
+      class="md-content__button md-icon"
+      rel="edit"
+    >
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
   
+
+  <!-- View button -->
   
     
       
     
-    <a href="https://github.com/galasa-dev/galasa/raw/main/docs/content/docs/writing-own-tests/running-test-modes.md" title="View source of this page" class="md-content__button md-icon">
+    <a
+      href="https://github.com/galasa-dev/galasa/raw/main/docs/content/docs/writing-own-tests/running-test-modes.md"
+      title="View source of this page"
+      class="md-content__button md-icon"
+    >
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
@@ -5500,56 +6319,52 @@
 
   <h1>Running a Galasa test</h1>
 
-<p><a href="#overview">Overview</a><br>
-<a href="#locally">Running a test locally</a><br>
-<a href="#remotely">Running a test in the Ecosystem</a><br>
-<a href="#hybrid">Running a test locally but using shared configuration</a><br>
-<a href="#whenremote">When to run a test in the Ecosystem</a><br>
-<a href="#whenlocal">When to run a test locally</a><br></p>
-<h2 id="overview"><a name="overview"></a>Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>There are three modes in which you can run a Galasa test:<br><br>
--  locally, with everything running on the local machine<br>
--  locally but using a shared configuration that is hosted by the Galasa Ecosystem<br>
--  remotely, by submitting the test to run in the Galasa Ecosystem<br> </p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>There are three modes in which you can run a Galasa test:</p>
+<ul>
+<li>locally, with everything running on the local machine</li>
+<li>locally but using a shared configuration that is hosted by the Galasa Ecosystem</li>
+<li>remotely, by submitting the test to run in the Galasa Ecosystem</li>
+</ul>
 <p>If you are running a test locally but using a shared configuration that is hosted by the Galasa Ecosystem, or running a test remotely by submitting the test to run in the Galasa Ecosystem, you are interacting with the Galasa Ecosystem. </p>
-<p>Before you can interact with the Galasa Ecosystem, you must authenticate with it by using a personal access token. Tokens are stored in the <code>GALASA_TOKEN</code> in the <code>galasactl.properties</code> in your Galasa home folder. You can request a personal access token by using the Galasa Web UI. For more information about setting up authentication with an Ecosystem, see the <a href="../ecosystem/ecosystem-authentication">Configuring authentication</a> documentation.</p>
+<p>Before you can interact with the Galasa Ecosystem, you must authenticate with it by using a personal access token. Tokens are stored in the <code>GALASA_TOKEN</code> in the <code>galasactl.properties</code> in your Galasa home folder. You can request a personal access token by using the Galasa Web UI. For more information about setting up authentication with an Ecosystem, see the <a href="../../ecosystem/ecosystem-authentication/">Configuring authentication</a> documentation.</p>
 <p>The mode in which you choose to run a test depends on what you are trying to achieve. Use the following information to understand which mode is most appropriate for a given scenario. </p>
-<h2 id="running-a-test-locally"><a name="locally"></a>Running a test locally<a class="headerlink" href="#running-a-test-locally" title="Permanent link">&para;</a></h2>
+<h2 id="running-a-test-locally">Running a test locally<a class="headerlink" href="#running-a-test-locally" title="Permanent link">&para;</a></h2>
 <p>When you run a test locally, without using shared configuration, everything runs on your local machine. The Galasa bootstrap file is blank and makes no reference to an Ecosystem. The Galasa framework is launched within the JVM on the local machine and the local file system holds all the configuration that is used by the test. The test runs in the local JVM and all test results and artifacts are stored on the local disk. </p>
 <p><img alt="running in local mode:" src="../running-local.svg" /></p>
-<p>You can run a test in this mode by using the <code>runs submit local</code> <a href="https://github.com/galasa-dev/cli/blob/main/docs/generated/galasactl_runs_submit_local.md" target="_blank"> Galasa CLI</a> command.</p>
-<h2 id="running-a-test-in-the-galasa-ecosystem"><a name="remotely"></a>Running a test in the Galasa Ecosystem<a class="headerlink" href="#running-a-test-in-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
+<p>You can run a test in this mode by using the <code>runs submit local</code> <a href="https://github.com/galasa-dev/cli/blob/main/docs/generated/galasactl_runs_submit_local.md" target="_blank">Galasa CLI</a> command.</p>
+<h2 id="running-a-test-in-the-galasa-ecosystem">Running a test in the Galasa Ecosystem<a class="headerlink" href="#running-a-test-in-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
 <p>To submit your test to an Ecosystem for remote execution, the Galasa bootstrap is set to the URL of the Galasa Ecosystem in which you want to run your test. The configuration of the test is also held within that Ecosystem, and Galasa starts up in a container in which the test code will run. The test results and artifacts are stored in a database within the specified Ecosystem, and users on client machines can view the test results. </p>
 <p><img alt="running remotely:" src="../run-remote.svg" /></p>
-<p>After configuring authentication, you can run a test in this mode by setting up your bootstrap file to refer to the Ecosystem that you want to use and running the <code>runs submit</code> <a href="https://github.com/galasa-dev/cli/blob/main/docs/generated/galasactl_runs_submit.md" target="_blank"> Galasa CLI</a> command.</p>
-<h2 id="running-a-test-locally-but-using-shared-configuration"><a name="hybrid"></a>Running a test locally but using shared configuration<a class="headerlink" href="#running-a-test-locally-but-using-shared-configuration" title="Permanent link">&para;</a></h2>
-<p>When you run a test locally, but using shared configuration, you need to run the <code>galasactl auth login</code> command to access the remote system using the Galasa bootstrap. You can then unset the bootstrap so that your local <code>bootstrap.properties</code> file is used, or alternatively you can refer explicitly to the local bootstrap file. For more information about the <code>galasactl auth login</code> command, see the <a href="../ecosystem/ecosystem-authentication">Configuring authentication</a> documentation.</p>
+<p>After configuring authentication, you can run a test in this mode by setting up your bootstrap file to refer to the Ecosystem that you want to use and running the <code>runs submit</code> <a href="https://github.com/galasa-dev/cli/blob/main/docs/generated/galasactl_runs_submit.md" target="_blank">Galasa CLI</a> command.</p>
+<h2 id="running-a-test-locally-but-using-shared-configuration">Running a test locally but using shared configuration<a class="headerlink" href="#running-a-test-locally-but-using-shared-configuration" title="Permanent link">&para;</a></h2>
+<p>When you run a test locally, but using shared configuration, you need to run the <code>galasactl auth login</code> command to access the remote system using the Galasa bootstrap. You can then unset the bootstrap so that your local <code>bootstrap.properties</code> file is used, or alternatively you can refer explicitly to the local bootstrap file. For more information about the <code>galasactl auth login</code> command, see the <a href="../../ecosystem/ecosystem-authentication/">Configuring authentication</a> documentation.</p>
 <p>The Galasa framework is launched within the JVM on the local machine, but the framework consults the remote Ecosystem to read configuration data, but not the credentials properties as these are drawn from a local file. This is the key difference between running a test in this "hybrid" mode versus running a test locally without using shared configuration. In hybrid mode, the test still runs in the local JVM and all test results and artifacts are stored on the local disk. </p>
 <p><img alt="running in local mode with shared configuration:" src="../hybridrunmode.svg" /></p>
 <p>To run tests in hybrid mode, add the following properties into your local <code>bootstrap.properties</code> file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>framework.config.store=galasacps://my.ecosystem.url/api
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>framework.extra.bundles=dev.galasa.cps.rest
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">framework.config.store</span><span class="o">=</span><span class="s">galasacps://my.ecosystem.url/api</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">framework.extra.bundles</span><span class="o">=</span><span class="s">dev.galasa.cps.rest</span>
 </code></pre></div>
-<p>where: <br>
-- <code>https://my.ecosystem.url</code> refers to the Web UI used to allocate tokens and <br>
-- <code>framework.extra.bundles</code> tells the Galasa framework to load the <code>dev.galasa.cps.rest</code> extension. This extension tells the Galasa framework how to handle URLs that start with <code>galasacps</code> as the <em>scheme</em> part of the URL. <br></p>
-<p>After setting the <code>GALASA_TOKEN</code> to be a valid token for the Ecosystem from which the CPS property values will be drawn, log into the Ecosystem by running the <code>galasactl auth login</code> command. You can then run a test in hybrid mode by setting your bootstrap to refer to the Ecosystem in which the shared configuration is stored, and using the <code>galasactl runs submit local</code> <a href="https://github.com/galasa-dev/cli/blob/main/docs/generated/galasactl_runs_submit_local.md" target="_blank"> Galasa CLI</a> command. </p>
-<h3 id="when-to-run-a-test-in-the-galasa-ecosystem"><a name="whenremote"></a>When to run a test in the Galasa Ecosystem<a class="headerlink" href="#when-to-run-a-test-in-the-galasa-ecosystem" title="Permanent link">&para;</a></h3>
-<p>Running a test remotely is useful in the following scenarios:</p>
+<p>where:</p>
 <ul>
-<li><b>Tests need to run in bulk, in parallel, often submitted by different automation jobs or people, in an environment where resources are limited and need to be managed between tests. For example, ports, slots of processing capability, files, and sessions.</b> </li>
+<li>
+<p><code>https://my.ecosystem.url</code> refers to the Web UI used to allocate tokens and</p>
+</li>
+<li>
+<p><code>framework.extra.bundles</code> tells the Galasa framework to load the <code>dev.galasa.cps.rest</code> extension. This extension tells the Galasa framework how to handle URLs that start with <code>galasacps</code> as the <em>scheme</em> part of the URL.</p>
+</li>
 </ul>
+<p>After setting the <code>GALASA_TOKEN</code> to be a valid token for the Ecosystem from which the CPS property values will be drawn, log into the Ecosystem by running the <code>galasactl auth login</code> command. You can then run a test in hybrid mode by setting your bootstrap to refer to the Ecosystem in which the shared configuration is stored, and using the <code>galasactl runs submit local</code> <a href="https://github.com/galasa-dev/cli/blob/main/docs/generated/galasactl_runs_submit_local.md">Galasa CLI</a> command. </p>
+<h2 id="when-to-run-a-test-in-the-galasa-ecosystem">When to run a test in the Galasa Ecosystem<a class="headerlink" href="#when-to-run-a-test-in-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
+<p>Running a test remotely is useful in the following scenarios:</p>
+<h3 id="tests-need-to-run-in-bulk-in-parallel-often-submitted-by-different-automation-jobs-or-people-in-an-environment-where-resources-are-limited-and-need-to-be-managed-between-tests-for-example-ports-slots-of-processing-capability-files-and-sessions">Tests need to run in bulk, in parallel, often submitted by different automation jobs or people, in an environment where resources are limited and need to be managed between tests. For example, ports, slots of processing capability, files, and sessions<a class="headerlink" href="#tests-need-to-run-in-bulk-in-parallel-often-submitted-by-different-automation-jobs-or-people-in-an-environment-where-resources-are-limited-and-need-to-be-managed-between-tests-for-example-ports-slots-of-processing-capability-files-and-sessions" title="Permanent link">&para;</a></h3>
 <p>If you are able to dynamically provision a system, then running tests from a local JVM can work well, as the system under test might have few resource contraints and can be used exclusively by the tests before being de-provisioned. However, if you want to run many test in parallet, you cannot do so reliably from a single system using the local JVM method on one user account. Any contention to name test runs uniquely, or other stateful changes in the test framework might cause the tests to clash, over-write each other, fail, or produce unexpected results. Running multiple tests in series can avoid some of these issues but running large numbers of tests in this way can take a long time. </p>
 <p>To reliably run many tests in parallel, deploy your tests to the Galasa Ecosystem, letting the Ecosystem manage the test runs, and the Galasa Manager components manage any shared or constrained resources. </p>
-<ul>
-<li><b>Test results and reports need gathering from a single point. For example, when test results need reporting or exporting to another report-generating system, or when bug investigation can proceed by independent inspection test results and artifacts.</b></li>
-</ul>
+<h3 id="test-results-and-reports-need-gathering-from-a-single-point-for-example-when-test-results-need-reporting-or-exporting-to-another-report-generating-system-or-when-bug-investigation-can-proceed-by-independent-inspection-test-results-and-artifacts">Test results and reports need gathering from a single point. For example, when test results need reporting or exporting to another report-generating system, or when bug investigation can proceed by independent inspection test results and artifacts<a class="headerlink" href="#test-results-and-reports-need-gathering-from-a-single-point-for-example-when-test-results-need-reporting-or-exporting-to-another-report-generating-system-or-when-bug-investigation-can-proceed-by-independent-inspection-test-results-and-artifacts" title="Permanent link">&para;</a></h3>
 <p>A problem faced in large-scale use of the local JVM method of test invocation is how to gather test results from disparate machines or environments, so that the test results can be combined and form test reports for system health monitoring. This is something that running tests within a Galasa Ecosystem handles well, as the results of each test are stored centrally. Test results can be shared with others, enabling independent inspection and debugging of run artifacts. </p>
-<ul>
-<li><b>When the clean-up of resources in the system under test is an important requirement</b></li>
-</ul>
+<h3 id="when-the-clean-up-of-resources-in-the-system-under-test-is-an-important-requirement">When the clean-up of resources in the system under test is an important requirement<a class="headerlink" href="#when-the-clean-up-of-resources-in-the-system-under-test-is-an-important-requirement" title="Permanent link">&para;</a></h3>
 <p>When you run tests in a Galasa Ecosystem, resources are cleaned up by the Managers that are called during abnormal test exit conditions. When a locally run test stops prematurely, the Manager code that handles the clean-up of allocated resources might not run, so resources are not cleaned up. Over time, this can result in performance degradation of the system under test. </p>
-<h3 id="when-to-run-a-test-locally"><a name="whenlocal"></a>When to run a test locally<a class="headerlink" href="#when-to-run-a-test-locally" title="Permanent link">&para;</a></h3>
+<h2 id="when-to-run-a-test-locally">When to run a test locally<a class="headerlink" href="#when-to-run-a-test-locally" title="Permanent link">&para;</a></h2>
 <p>Running a test locally is useful when you are doing the following types of task:</p>
 <ul>
 <li>

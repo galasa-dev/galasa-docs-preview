@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#options-for-querying-and-viewing-test-run-results" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -656,6 +661,8 @@
       
         
       
+        
+      
     
     
     
@@ -937,7 +944,7 @@
   
   
   <span class="md-ellipsis">
-    Creating a Galasa project using the command line
+    Creating a Galasa project
     
   </span>
   
@@ -960,7 +967,7 @@
   
   
   <span class="md-ellipsis">
-    Running tests locally using the command line
+    Running a test locally
     
   </span>
   
@@ -1354,6 +1361,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1382,8 +1393,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../writing-own-tests/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1392,8 +1404,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
@@ -1401,6 +1419,8 @@
             Writing your own independent Galasa tests
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1806,6 +1826,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1838,8 +1862,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1848,8 +1873,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_6">
@@ -1857,6 +1888,8 @@
             Managing tests in a Galasa Ecosystem
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1964,6 +1997,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Viewing test run results
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1975,6 +2021,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#options-for-querying-and-viewing-test-run-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options for querying and viewing test run results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-about-the-result-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      More about the --result option
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-tests-results-in-summary-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      View tests results in summary format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-tests-results-in-details-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      View tests results in details format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-tests-results-in-raw-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      View tests results in raw format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-tests-with-specified-results-in-summary-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return tests with specified results in summary format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2311,6 +2443,8 @@
           
         
       
+        
+      
     
     
     
@@ -2340,6 +2474,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_3" id="__nav_3_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_3_label" aria-expanded="false">
@@ -2349,6 +2488,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/ims-tm-managers/ims-tm-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IMS TM Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2370,6 +2532,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2401,6 +2569,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_4" id="__nav_3_8_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_4_label" aria-expanded="false">
@@ -2410,6 +2583,75 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/docker-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/kubernetes-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kubernetes Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/open-stack-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Stack Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2431,6 +2673,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2462,6 +2710,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_5" id="__nav_3_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_5_label" aria-expanded="false">
@@ -2471,6 +2724,75 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/http-client-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP Client Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/ipnetwork-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IP Network Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/mq-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MQ Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2492,6 +2814,10 @@
       
         
           
+        
+      
+        
+      
         
       
     
@@ -2523,6 +2849,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_6" id="__nav_3_8_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_6_label" aria-expanded="false">
@@ -2532,6 +2863,52 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/core-managers/artifact-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Artifact Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/core-managers/core-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2553,6 +2930,8 @@
       
         
           
+        
+      
         
       
     
@@ -2584,6 +2963,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_7" id="__nav_3_8_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_7_label" aria-expanded="false">
@@ -2593,6 +2977,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/logging-managers/elasticlog-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ElasticLog Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2614,6 +3021,8 @@
       
         
           
+        
+      
         
       
     
@@ -2645,6 +3054,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_8" id="__nav_3_8_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_8_label" aria-expanded="false">
@@ -2654,6 +3068,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/ecosystem-managers/galasa-ecosystem-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Galasa Ecosystem Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2675,6 +3112,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2706,6 +3151,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_9" id="__nav_3_8_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_9_label" aria-expanded="false">
@@ -2715,6 +3165,98 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/jmeter-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JMeter Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/sdv-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDV Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/selenium-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selenium Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/vtp-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VTP Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2736,6 +3278,8 @@
       
         
           
+        
+      
         
       
     
@@ -2767,6 +3311,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_10" id="__nav_3_8_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_10_label" aria-expanded="false">
@@ -2776,6 +3325,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/unix-managers/linux-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2797,6 +3369,8 @@
       
         
           
+        
+      
         
       
     
@@ -2828,6 +3402,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_11" id="__nav_3_8_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_11_label" aria-expanded="false">
@@ -2837,6 +3416,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/workflow-managers/github-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitHub Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -3431,6 +4033,72 @@
     
       
         
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faqs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            FAQs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
       
         
       
@@ -3454,11 +4122,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3467,38 +4136,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10" id="__nav_3_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/index.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    None
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -3508,6 +4162,10 @@
   
     
     
+      
+        
+          
+        
       
         
       
@@ -3618,11 +4276,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_9_2" id="__nav_3_9_2_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/cli-syntax/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3631,15 +4290,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10_2" id="__nav_3_10_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10_2">
             <span class="md-nav__icon md-icon"></span>
             Galasactl command-line reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -5468,6 +6135,83 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#options-for-querying-and-viewing-test-run-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options for querying and viewing test run results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-about-the-result-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      More about the --result option
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-tests-results-in-summary-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      View tests results in summary format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-tests-results-in-details-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      View tests results in details format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-tests-results-in-raw-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      View tests results in raw format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-tests-with-specified-results-in-summary-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return tests with specified results in summary format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5480,18 +6224,57 @@
                 
                   
 
+<!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine whether to show actions -->
+
+
+<!-- Actions -->
+
+
+  <!-- Edit button -->
   
-    <a href="https://github.com/galasa-dev/galasa/edit/main/docs/content/docs/manage-ecosystem/runs-get.md" title="Edit this page" class="md-content__button md-icon">
+    <a
+      href="https://github.com/galasa-dev/galasa/edit/main/docs/content/docs/manage-ecosystem/runs-get.md"
+      title="Edit this page"
+      class="md-content__button md-icon"
+      rel="edit"
+    >
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
   
+
+  <!-- View button -->
   
     
       
     
-    <a href="https://github.com/galasa-dev/galasa/raw/main/docs/content/docs/manage-ecosystem/runs-get.md" title="View source of this page" class="md-content__button md-icon">
+    <a
+      href="https://github.com/galasa-dev/galasa/raw/main/docs/content/docs/manage-ecosystem/runs-get.md"
+      title="View source of this page"
+      class="md-content__button md-icon"
+    >
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
@@ -5504,7 +6287,7 @@
 <p>You can view the full command syntax in the <a href="https://github.com/galasa-dev/cli/blob/main/docs/generated/galasactl_runs_get.md" target="_blank">Galasa cli repository</a>.</p>
 <h3 id="options-for-querying-and-viewing-test-run-results">Options for querying and viewing test run results<a class="headerlink" href="#options-for-querying-and-viewing-test-run-results" title="Permanent link">&para;</a></h3>
 <p>Use the tables provided to view the options for filtering test results, and for choosing the format in which you want those results displayed.</p>
-<p><b>Table 1:</b> The following table shows the options that you can set on the <code>galasactl runs get</code> command to query test run data on specific details:</p>
+<p><strong>Table 1:</strong> The following table shows the options that you can set on the <code>galasactl runs get</code> command to query test run data on specific details:</p>
 <table>
 <thead>
 <tr>
@@ -5527,7 +6310,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code>--result</code></td>
-<td style="text-align: left;">Use the <a href="#result"><code>--result</code> option</a> to return test runs based on test run results. You can select more than one result by using a comma-separated list. The <code>--result</code> flag cannot be used in conjunction with the <code>--active</code> flag. The two flags are mutually exclusive.</td>
+<td style="text-align: left;">Use the <a href="#more-about-the-result-option"><code>--result</code> option</a> to return test runs based on test run results. You can select more than one result by using a comma-separated list. The <code>--result</code> flag cannot be used in conjunction with the <code>--active</code> flag. The two flags are mutually exclusive.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>--active</code></td>
@@ -5535,15 +6318,15 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code>--group</code></td>
-<td style="text-align: left;">Use the <code>--group</code> flag to get all the test runs associated with the given group name. A custom group name can be assigned to a set of test runs when submitting tests using the <a href="./ecosystem-cli-runs-submit">galasactl runs submit</a> command, otherwise a random group name will be assigned. <code>--group</code> can be used with other flags, like <code>--age</code>, <code>--requestor</code>, and <code>--result</code>, to filter test runs as desired, but it cannot be used alongside the <code>--name</code> flag.</td>
+<td style="text-align: left;">Use the <code>--group</code> flag to get all the test runs associated with the given group name. A custom group name can be assigned to a set of test runs when submitting tests using the <a href="../runs-submit/">galasactl runs submit</a> command, otherwise a random group name will be assigned. <code>--group</code> can be used with other flags, like <code>--age</code>, <code>--requestor</code>, and <code>--result</code>, to filter test runs as desired, but it cannot be used alongside the <code>--name</code> flag.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>--tags</code></td>
-<td style="text-align: left;">Use the <code>--tags</code> flag to get all the test runs that have the given test tags assigned to them. A custom set of tags can be assigned to a set of test runs when submitting tests using the <a href="./ecosystem-cli-runs-submit">galasactl runs submit</a> command. <code>--tags</code> can be used with other flags, like <code>--age</code>, <code>--requestor</code>, and <code>--result</code>, to filter test runs as desired. Multiple tags can be supplied by either providing <code>--tags</code> with a comma-separated list of tags (e.g. <code>--tags tag1,tag2,tag3</code>) or by providing multiple <code>--tags</code> flags separately (e.g. <code>--tags tag1 --tags tag2 --tags tag3</code>).</td>
+<td style="text-align: left;">Use the <code>--tags</code> flag to get all the test runs that have the given test tags assigned to them. A custom set of tags can be assigned to a set of test runs when submitting tests using the <a href="../runs-submit/">galasactl runs submit</a> command. <code>--tags</code> can be used with other flags, like <code>--age</code>, <code>--requestor</code>, and <code>--result</code>, to filter test runs as desired. Multiple tags can be supplied by either providing <code>--tags</code> with a comma-separated list of tags (e.g. <code>--tags tag1,tag2,tag3</code>) or by providing multiple <code>--tags</code> flags separately (e.g. <code>--tags tag1 --tags tag2 --tags tag3</code>).</td>
 </tr>
 </tbody>
 </table>
-<p><b>Table 2:</b> The following table shows the options that you can set on the <code>galasactl runs get</code> command to display test run results in different formats:</p>
+<p><strong>Table 2:</strong> The following table shows the options that you can set on the <code>galasactl runs get</code> command to display test run results in different formats:</p>
 <table>
 <thead>
 <tr>
@@ -5566,15 +6349,17 @@
 </tr>
 </tbody>
 </table>
-<h2 id="more-about-the-result-option"><a name="result"></a>More about the <code>--result</code> option<a class="headerlink" href="#more-about-the-result-option" title="Permanent link">&para;</a></h2>
+<h2 id="more-about-the-result-option">More about the <code>--result</code> option<a class="headerlink" href="#more-about-the-result-option" title="Permanent link">&para;</a></h2>
 <p>You might want to filter the test results that are returned based on run result. For example, you might choose to return only failed tests, so that you can quickly check if you need to investigate an issue. </p>
 <p>The <em>galasactl runs get</em> command now supports the <code>--result</code> option, so that test runs which completed with a specified result are returned. Runs which completed with a result that is not specified are not displayed.</p>
 <p>The <code>--result</code>  option accepts a comma-separated list of values. The following values are supported:</p>
-<p><em>Passed</em> <br>
-<em>Failed</em><br>
-<em>EnvFailed</em><br>
-<em>Ignored</em><br> <br />
-<em>Unknown</em><br></p>
+<ul>
+<li><em>Passed</em></li>
+<li><em>Failed</em></li>
+<li><em>EnvFailed</em></li>
+<li><em>Ignored</em></li>
+<li><em>Unknown</em></li>
+</ul>
 <p>The parameters are accepted regardless of whether they are entered in upper or lower-case.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>Use the following sections to view some example command options and generated output. Note that the <code>--format summary</code> and <code>--format details</code> options return a total count of results returned, along with a breakdown of the number that are returned with a particular result, for example, <em>Passed</em>, <em>Failed</em>, <em>PassedWithDefects</em>. </p>
@@ -5582,12 +6367,12 @@
 <p>This is the default format. Use this format to get a quick, high-level update on the status of a test run or runs. Returned information includes details about time the test was submitted, run name, status, result, and test name. This format is especially useful if a query returns a large number of results. </p>
 <p>The following example command returns test status in a summary format for tests that were requested by the user name <em>bobsmith</em>, and that ran between two weeks ago and one week ago:</p>
 <p>On Mac or Unix:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>galasactl runs get --bootstrap http://example.com:30960/bootstrap \ 
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--requestor bobsmith --age 2w:1w
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>galasactl<span class="w"> </span>runs<span class="w"> </span>get<span class="w"> </span>--bootstrap<span class="w"> </span>http://example.com:30960/bootstrap<span class="w"> </span><span class="se">\ </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--requestor<span class="w"> </span>bobsmith<span class="w"> </span>--age<span class="w"> </span>2w:1w
 </code></pre></div>
 <p>On Windows (Powershell):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>galasactl runs get --bootstrap http://example.com:30960/bootstrap ` 
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>--requestor bobsmith --age 2w:1w
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">galasactl</span> <span class="n">runs</span> <span class="n">get</span> <span class="p">-</span><span class="n">-bootstrap</span> <span class="n">http</span><span class="p">://</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="p">:</span><span class="n">30960</span><span class="p">/</span><span class="n">bootstrap</span> <span class="p">`</span> 
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">-</span><span class="n">-requestor</span> <span class="n">bobsmith</span> <span class="p">-</span><span class="n">-age</span> <span class="n">2w</span><span class="p">:</span><span class="n">1w</span>
 </code></pre></div>
 <p>where:</p>
 <ul>
@@ -5613,13 +6398,13 @@
 <p>Use this format to drill down to get more details on a particular test run. The returned information includes details about the bundle and a link to the run log URL, which can be viewed in a browser. Viewing the run log in this way makes it easier to diagnose why a test failed. A table of methods is also displayed, including details about the status and result of each test method. </p>
 <p>The following example command returns test status in a details format:</p>
 <p>On Mac or Unix:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$galasactl runs get --name U456 --bootstrap http://example.com:30960/bootstrap \
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>--format details 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">$galasactl</span><span class="w"> </span>runs<span class="w"> </span>get<span class="w"> </span>--name<span class="w"> </span>U456<span class="w"> </span>--bootstrap<span class="w"> </span>http://example.com:30960/bootstrap<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>--format<span class="w"> </span>details<span class="w"> </span>
 </code></pre></div>
-<p>On Windows (Powershell):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>galasactl runs get --name U456 --bootstrap http://example.com:30960/bootstrap `
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>--format details 
-</code></pre></div></p>
+<p>On Windows (Powershell):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">galasactl</span> <span class="n">runs</span> <span class="n">get</span> <span class="p">-</span><span class="n">-name</span> <span class="n">U456</span> <span class="p">-</span><span class="n">-bootstrap</span> <span class="n">http</span><span class="p">://</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="p">:</span><span class="n">30960</span><span class="p">/</span><span class="n">bootstrap</span> <span class="p">`</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">-</span><span class="n">-format</span> <span class="n">details</span> 
+</code></pre></div>
 <p>where:
 - <code>--name</code> is the name of the test run 
 - <code>--bootstrap</code> is the URL of the ecosystem's bootstrap properties
@@ -5648,13 +6433,13 @@
 <p>Use this format if you want to parse test results using scripts. The raw format returns values separated by pipes, without formatting or header information.</p>
 <p>The following example command returns test status in a raw format:</p>
 <p>On Mac or Unix:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>galasactl runs get --name U456 --bootstrap http://example.com:30960/bootstrap \
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>--format raw
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>galasactl<span class="w"> </span>runs<span class="w"> </span>get<span class="w"> </span>--name<span class="w"> </span>U456<span class="w"> </span>--bootstrap<span class="w"> </span>http://example.com:30960/bootstrap<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>--format<span class="w"> </span>raw
 </code></pre></div>
-<p>On Windows (Powershell):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>galasactl runs get --name U456 --bootstrap http://example.com:30960/bootstrap `
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>--format raw
-</code></pre></div></p>
+<p>On Windows (Powershell):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">galasactl</span> <span class="n">runs</span> <span class="n">get</span> <span class="p">-</span><span class="n">-name</span> <span class="n">U456</span> <span class="p">-</span><span class="n">-bootstrap</span> <span class="n">http</span><span class="p">://</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="p">:</span><span class="n">30960</span><span class="p">/</span><span class="n">bootstrap</span> <span class="p">`</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">-</span><span class="n">-format</span> <span class="n">raw</span>
+</code></pre></div>
 <p>where:
 - <code>--name</code> is the name of the test run 
 - <code>--bootstrap</code> is the URL of the ecosystem's bootstrap properties
@@ -5666,13 +6451,13 @@
 <h3 id="return-tests-with-specified-results-in-summary-format">Return tests with specified results in summary format<a class="headerlink" href="#return-tests-with-specified-results-in-summary-format" title="Permanent link">&para;</a></h3>
 <p>Use the following example command to return test information for test runs that ran the previous day and have a result of either <em>Failed</em> or <em>EnvFail</em>.</p>
 <p>On Mac or Unix:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>galasactl runs get --age 1d --result failed,envfail \
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>--bootstrap http://example.com:30960/bootstrap
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>galasactl<span class="w"> </span>runs<span class="w"> </span>get<span class="w"> </span>--age<span class="w"> </span>1d<span class="w"> </span>--result<span class="w"> </span>failed,envfail<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>--bootstrap<span class="w"> </span>http://example.com:30960/bootstrap
 </code></pre></div>
-<p>On Windows (Powershell):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>galasactl runs get --age 1d --result failed,envfail `
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>--bootstrap http://example.com:30960/bootstrap
-</code></pre></div></p>
+<p>On Windows (Powershell):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">galasactl</span> <span class="n">runs</span> <span class="n">get</span> <span class="p">-</span><span class="n">-age</span> <span class="n">1d</span> <span class="p">-</span><span class="n">-result</span> <span class="n">failed</span><span class="p">,</span><span class="n">envfail</span> <span class="p">`</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">-</span><span class="n">-bootstrap</span> <span class="n">http</span><span class="p">://</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="p">:</span><span class="n">30960</span><span class="p">/</span><span class="n">bootstrap</span>
+</code></pre></div>
 <p>Results are returned on the terminal in the following example format:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>galasactl runs get --age 1d --result failed,envfail --bootstrap http://example.com:30960/bootstrap
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>

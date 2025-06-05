@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#prerequisites" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -656,6 +661,8 @@
       
         
       
+        
+      
     
     
     
@@ -937,7 +944,7 @@
   
   
   <span class="md-ellipsis">
-    Creating a Galasa project using the command line
+    Creating a Galasa project
     
   </span>
   
@@ -960,7 +967,7 @@
   
   
   <span class="md-ellipsis">
-    Running tests locally using the command line
+    Running a test locally
     
   </span>
   
@@ -1354,6 +1361,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1382,8 +1393,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../writing-own-tests/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1392,8 +1404,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
@@ -1401,6 +1419,8 @@
             Writing your own independent Galasa tests
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -1664,6 +1684,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Installing an Ecosystem using Helm
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1675,6 +1708,161 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes role-based access control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing a Galasa Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing a Galasa Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-galasa-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding the Galasa repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-ingress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Ingress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-dex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Dex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-default-user-role-and-owner-of-the-galasa-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure the default user role, and 'owner' of the Galasa service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying the installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-galasa-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Galasa tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-the-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrading the Galasa Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading the Galasa Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1814,6 +2002,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1846,8 +2038,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../manage-ecosystem/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -1856,8 +2049,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
@@ -1865,6 +2064,8 @@
             Managing tests in a Galasa Ecosystem
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -2311,6 +2512,8 @@
           
         
       
+        
+      
     
     
     
@@ -2340,6 +2543,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_3" id="__nav_3_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_3_label" aria-expanded="false">
@@ -2349,6 +2557,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/ims-tm-managers/ims-tm-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IMS TM Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2370,6 +2601,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2401,6 +2638,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_4" id="__nav_3_8_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_4_label" aria-expanded="false">
@@ -2410,6 +2652,75 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/docker-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/kubernetes-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kubernetes Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/cloud-managers/open-stack-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Stack Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2431,6 +2742,12 @@
       
         
           
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2462,6 +2779,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_5" id="__nav_3_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_5_label" aria-expanded="false">
@@ -2471,6 +2793,75 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/http-client-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP Client Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/ipnetwork-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IP Network Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/communications-managers/mq-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MQ Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2492,6 +2883,10 @@
       
         
           
+        
+      
+        
+      
         
       
     
@@ -2523,6 +2918,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_6" id="__nav_3_8_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_6_label" aria-expanded="false">
@@ -2532,6 +2932,52 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/core-managers/artifact-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Artifact Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/core-managers/core-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2553,6 +2999,8 @@
       
         
           
+        
+      
         
       
     
@@ -2584,6 +3032,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_7" id="__nav_3_8_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_7_label" aria-expanded="false">
@@ -2593,6 +3046,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/logging-managers/elasticlog-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ElasticLog Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2614,6 +3090,8 @@
       
         
           
+        
+      
         
       
     
@@ -2645,6 +3123,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_8" id="__nav_3_8_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_8_label" aria-expanded="false">
@@ -2654,6 +3137,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/ecosystem-managers/galasa-ecosystem-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Galasa Ecosystem Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2675,6 +3181,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
     
@@ -2706,6 +3220,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_9" id="__nav_3_8_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_9_label" aria-expanded="false">
@@ -2715,6 +3234,98 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/jmeter-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JMeter Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/sdv-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDV Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/selenium-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selenium Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/test-tool-managers/vtp-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VTP Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2736,6 +3347,8 @@
       
         
           
+        
+      
         
       
     
@@ -2767,6 +3380,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_10" id="__nav_3_8_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_10_label" aria-expanded="false">
@@ -2776,6 +3394,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/unix-managers/linux-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linux Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2797,6 +3438,8 @@
       
         
           
+        
+      
         
       
     
@@ -2828,6 +3471,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_8_11" id="__nav_3_8_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_11_label" aria-expanded="false">
@@ -2837,6 +3485,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managers/workflow-managers/github-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitHub Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -3431,6 +4102,72 @@
     
       
         
+          
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faqs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            FAQs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
       
         
       
@@ -3454,11 +4191,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3467,38 +4205,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10" id="__nav_3_10_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../reference/index.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    None
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -3508,6 +4231,10 @@
   
     
     
+      
+        
+          
+        
       
         
       
@@ -3618,11 +4345,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_9_2" id="__nav_3_9_2_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/cli-syntax/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3631,15 +4359,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10_2" id="__nav_3_10_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10_2">
             <span class="md-nav__icon md-icon"></span>
             Galasactl command-line reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -5468,6 +6204,152 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes role-based access control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing a Galasa Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing a Galasa Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-galasa-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding the Galasa repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-ingress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Ingress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-dex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Dex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-default-user-role-and-owner-of-the-galasa-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure the default user role, and 'owner' of the Galasa service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying the installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-galasa-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Galasa tests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-the-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrading the Galasa Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading the Galasa Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5480,18 +6362,57 @@
                 
                   
 
+<!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine whether to show actions -->
+
+
+<!-- Actions -->
+
+
+  <!-- Edit button -->
   
-    <a href="https://github.com/galasa-dev/galasa/edit/main/docs/content/docs/ecosystem/ecosystem-installing-k8s.md" title="Edit this page" class="md-content__button md-icon">
+    <a
+      href="https://github.com/galasa-dev/galasa/edit/main/docs/content/docs/ecosystem/ecosystem-installing-k8s.md"
+      title="Edit this page"
+      class="md-content__button md-icon"
+      rel="edit"
+    >
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
   
+
+  <!-- View button -->
   
     
       
     
-    <a href="https://github.com/galasa-dev/galasa/raw/main/docs/content/docs/ecosystem/ecosystem-installing-k8s.md" title="View source of this page" class="md-content__button md-icon">
+    <a
+      href="https://github.com/galasa-dev/galasa/raw/main/docs/content/docs/ecosystem/ecosystem-installing-k8s.md"
+      title="View source of this page"
+      class="md-content__button md-icon"
+    >
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
@@ -5503,50 +6424,74 @@
 <p>If you want to run scalable, highly available testing for enterprise level workloads, you need to install your Galasa Ecosystem in a Kubernetes cluster. Running Galasa in a Kubernetes cluster means that you can run many tests in parallel on a resilient and scalable platform, where the clean-up of test resources can be managed, and test results can be centralised and gathered easily. </p>
 <p>Galasa provides a Galasa Ecosystem Helm chart to install a Galasa Ecosystem. You can install the chart into a Kubernetes cluster or minikube. However, note that minikube is not suitable for production purposes because it provides a single Kubernetes node and therefore does not scale well. Use minikube only for development and testing purposes.</p>
 <p>The following sections explain how to install a Galasa Ecosystem on a Kubernetes cluster (and on minikube) by using Helm and validate that the Ecosystem is installed correctly. </p>
-<p>The <a href=https://github.com/galasa-dev/helm target="_blank"> Galasa Helm repository</a> contains the Galasa Ecosystem Helm chart that is referenced in the following sections.</p>
+<p>The <a href="https://github.com/galasa-dev/helm" target="_blank">Galasa Helm repository</a> contains the Galasa Ecosystem Helm chart that is referenced in the following sections.</p>
 <p><em>Note:</em> The Galasa Ecosystem Helm chart currently supports only x86-64 systems. It cannot be installed on ARM64-based systems.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href=https://helm.sh target="_blank"> Helm</a> must be installed to use the chart. See the <a href=https://helm.sh/docs/ target="_blank"> Helm documentation</a> for installation instructions.</li>
-<li>The Kubernetes command-line tool <em>kubectl</em> must be installed on the machine that is used to run the commands and must be configured to point at your Kubernetes cluster. To find out more about Kubernetes, see the <a href=https://kubernetes.io/docs/home/ target="_blank"> Kubernetes Documentation</a>.</li>
-<li>You must have a Kubernetes cluster at version 1.16 or higher. You can check the version number by running the <code>kubectl version</code> command.  </li>
-<li>If you want to install the chart into minikube, ensure you have minikube installed and that it is running with <code>minikube status</code>. If minikube is not running, start it by running <code>minikube start</code>. Once minikube is running, follow the instructions in the following sections to install the Galasa Ecosystem Helm chart.</li>
+<li>
+<p><a href="https://helm.sh" target="_blank">Helm</a> must be installed to use the chart. See the <a href="https://helm.sh/docs/" target="_blank">Helm documentation</a> for installation instructions.</p>
+</li>
+<li>
+<p>The Kubernetes command-line tool <em>kubectl</em> must be installed on the machine that is used to run the commands and must be configured to point at your Kubernetes cluster. To find out more about Kubernetes, see the <a href="https://kubernetes.io/docs/home/" target="_blank">Kubernetes Documentation</a>.</p>
+</li>
+<li>
+<p>You must have a Kubernetes cluster at version 1.16 or higher. You can check the version number by running the <code>kubectl version</code> command.</p>
+</li>
+<li>
+<p>If you want to install the chart into minikube, ensure you have minikube installed and that it is running with <code>minikube status</code>. If minikube is not running, start it by running <code>minikube start</code>. Once minikube is running, follow the instructions in the following sections to install the Galasa Ecosystem Helm chart.</p>
+</li>
 </ul>
 <h2 id="kubernetes-role-based-access-control">Kubernetes role-based access control<a class="headerlink" href="#kubernetes-role-based-access-control" title="Permanent link">&para;</a></h2>
 <p>If role-based access control (RBAC) is active on your Kubernetes cluster, a user with the <code>galasa-admin</code> role (or a role with equivalent permissions) is needed to run Helm commands on the cluster. The <code>galasa-admin</code> role allows assigned users to run the Helm install, upgrade, and delete commands to interact with the Helm chart. </p>
-<p>You can assign the <code>galasa-admin</code> role to a user by replacing the placeholder username in the <a href=https://github.com/galasa-dev/helm/blob/main/charts/ecosystem/rbac-admin.yaml#L42 target="_blank"> rbac-admin.yaml </a> file with a username that corresponds to a user with access to your cluster. If multiple users require admin privileges, you can assign the <code>galasa-admin</code> role to multiple groups, users, or service accounts by extending the <a href=https://github.com/galasa-dev/helm/blob/main/charts/ecosystem/rbac-admin.yaml#L39 target="_blank"> subjects</a> list. See the <a href=https://kubernetes.io/docs/reference/access-authn-authz/rbac/ target="_blank"> Using RBAC Authorization</a> Kubernetes documentation for more information.</p>
+<p>You can assign the <code>galasa-admin</code> role to a user by replacing the placeholder username in the <a href="https://github.com/galasa-dev/helm/blob/main/charts/ecosystem/rbac-admin.yaml" target="_blank">rbac-admin.yaml</a> file with a username that corresponds to a user with access to your cluster. If multiple users require admin privileges, you can assign the <code>galasa-admin</code> role to multiple groups, users, or service accounts by extending the <code>subjects</code> list. See the <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/" target="_blank">Using RBAC Authorization Kubernetes documentation</a> for more information.</p>
 <p>You also need a Galasa service account. The Galasa service account allows the API, Engine Controller, Metrics, and Resource Monitor to co-ordinate between themselves, and allows the Engine Controller to create and manage engine pods. </p>
 <p>For chart versions later than <code>0.23.0</code>, the Galasa service account is automatically created, if one does not already exist, when installing the Galasa Ecosystem Helm chart.  The Galasa service account enables the API, Engine Controller, Metrics, and Resource Monitor to co-ordinate, while allowing the Engine Controller to create and manage engine pods.</p>
-<p>For chart versions <code>0.23.0</code> and earlier, you must create the Galasa service account manually by running the following command in the repository's <a href=https://github.com/galasa-dev/helm/tree/main/charts/ecosystem target="_blank"> ecosystem</a> directory:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl apply -f \
+<p>For chart versions <code>0.23.0</code> and earlier, you must create the Galasa service account manually by running the following command in the repository's <a href="https://github.com/galasa-dev/helm/tree/main/charts/ecosystem" target="_blank">ecosystem</a> directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>https://raw.githubusercontent.com/galasa-dev/helm/ecosystem-0.23.0/charts/ecosystem/rbac.yaml
 </code></pre></div>
 <h2 id="installing-a-galasa-ecosystem">Installing a Galasa Ecosystem<a class="headerlink" href="#installing-a-galasa-ecosystem" title="Permanent link">&para;</a></h2>
 <p>Complete the following steps to install a Galasa Ecosystem by using Helm:</p>
 <h3 id="adding-the-galasa-repository">Adding the Galasa repository<a class="headerlink" href="#adding-the-galasa-repository" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Add or update the Galasa repository.<br><ul>
-<li>If the repository does not exist, add the repository by running the following command: 
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm repo add galasa https://galasa-dev.github.io/helm
-</code></pre></div></li>
-<li>If the repository exists, run the <code>helm repo update</code> command to get the latest versions of the packages and then run <code>helm search repo galasa</code> to see the available charts.<br>
-<em>Note:</em> The Galasa Ecosystem Helm chart deploys three persistent volumes (PVs). If you need to provide a Kubernetes storage class for these PVs, download the <code>values.yaml</code> file for your chosen Galasa Ecosystem version from the Galasa Helm repository's <a href=https://github.com/galasa-dev/helm/releases target="_blank">releases page</a> and update the <code>storageClass</code> value in the file with the name of a valid storage class on your cluster. If you are deploying to minikube, you can optionally use the standard storage class that is created for you by minikube, but this is not required. </li>
-</ul>
+<li>
+<p>Add or update the Galasa repository.</p>
+<ul>
+<li>
+<p>If the repository does not exist, add the repository by running the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>galasa<span class="w"> </span>https://galasa-dev.github.io/helm
+</code></pre></div>
 </li>
-<li>Download the values.yaml file for your chosen Galasa Ecosystem version from the Galasa Helm repository's <a href=https://github.com/galasa-dev/helm/releases target="_blank">releases page</a> if you have not done so already, and edit the values of the following properties: <ul>
-<li>Set <code>galasaVersion</code> to the version of Galasa that you want to run. (See the <a href="/releases">Releases</a> documentation for released versions). To ensure that each pod in the Ecosystem is running at the same level, do not use <code>latest</code> as the Galasa version.</li>
-<li>Set <code>externalHostname</code> to the DNS hostname that you wish to use to access the Galasa Ecosystem services.</li>
+<li>
+<p>If the repository exists, run the <code>helm repo update</code> command to get the latest versions of the packages and then run <code>helm search repo galasa</code> to see the available charts.    </p>
+</li>
+</ul>
+<p><em>Note:</em> The Galasa Ecosystem Helm chart deploys three persistent volumes (PVs). If you need to provide a Kubernetes storage class for these PVs, download the <code>values.yaml</code> file for your chosen Galasa Ecosystem version from the <a href="https://github.com/galasa-dev/helm/releases" target="_blank">Galasa Helm repository's releases page</a> and update the <code>storageClass</code> value in the file with the name of a valid storage class on your cluster. If you are deploying to minikube, you can optionally use the standard storage class that is created for you by minikube, but this is not required.</p>
+</li>
+<li>
+<p>Download the values.yaml file for your chosen Galasa Ecosystem version from the <a href="https://github.com/galasa-dev/helm/releases" target="_blank">Galasa Helm repository's releases page</a> if you have not done so already, and edit the values of the following properties:</p>
+<ul>
+<li>
+<p>Set <code>galasaVersion</code> to the version of Galasa that you want to run. (See the <a href="../../../releases/">Releases</a> documentation for released versions). To ensure that each pod in the Ecosystem is running at the same level, do not use <code>latest</code> as the Galasa version.</p>
+</li>
+<li>
+<p>Set <code>externalHostname</code> to the DNS hostname that you wish to use to access the Galasa Ecosystem services.</p>
+</li>
 </ul>
 </li>
 </ol>
 <p>After updating the <code>galasaVersion</code> and <code>externalHostname</code> values, complete the following instructions to set up Ingress for your Ecosystem. </p>
-<h3 id="configuring-ingress"><a name="configuring-ingress"></a>Configuring Ingress<a class="headerlink" href="#configuring-ingress" title="Permanent link">&para;</a></h3>
-<p>The Galasa Ecosystem Helm chart uses Ingress to reach services that are running within a Kubernetes cluster. To learn more about Ingress, see the <a href=https://kubernetes.io/docs/concepts/services-networking/ingress/ target="_blank"> Kubernetes Documentation</a>.</p>
+<h3 id="configuring-ingress">Configuring Ingress<a class="headerlink" href="#configuring-ingress" title="Permanent link">&para;</a></h3>
+<p>The Galasa Ecosystem Helm chart uses Ingress to reach services that are running within a Kubernetes cluster. To learn more about Ingress, see the <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_blank">Kubernetes Documentation</a>.</p>
 <p><em>Note:</em> If you are deploying to minikube, ensure the NGINX Ingress controller is enabled by running the <code>minikube addons enable ingress</code> command.</p>
 <p>Assuming that your Ingress controller is set up on your Kubernetes cluster, configure the use of Ingress in your Ecosystem by completing the following updates to the values that are listed under the <code>ingress</code> section within your <code>values.yaml</code> file:</p>
 <ol>
-<li>Replace the <code>ingressClassName</code> value with the name of the IngressClass that is configured in your cluster. By default, <code>nginx</code> is used.</li>
-<li>If you are using HTTPS, add a <code>tls</code> configuration within the <code>ingress</code> section, specifying the <code>hosts</code> list and a <code>secretName</code> value corresponding to the name of the Kubernetes Secret that contains your TLS private key and certificate. See the <a href=https://kubernetes.io/docs/concepts/services-networking/ingress/#tls target="_blank"> Kubernetes Documentation</a> for information on how to set up TLS.</li>
+<li>
+<p>Replace the <code>ingressClassName</code> value with the name of the IngressClass that is configured in your cluster. By default, <code>nginx</code> is used.</p>
+</li>
+<li>
+<p>If you are using HTTPS, add a <code>tls</code> configuration within the <code>ingress</code> section, specifying the <code>hosts</code> list and a <code>secretName</code> value corresponding to the name of the Kubernetes Secret that contains your TLS private key and certificate. See the <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/#tls" target="_blank">Kubernetes Documentation</a> for information on how to set up TLS.</p>
+</li>
 </ol>
 <p>After updating the values under the <code>ingress</code> section of your <code>values.yaml</code> file, complete the following instructions to configure Dex in your Ecosystem.</p>
 <h3 id="configuring-dex">Configuring Dex<a class="headerlink" href="#configuring-dex" title="Permanent link">&para;</a></h3>
@@ -5559,19 +6504,19 @@
 </code></pre></div>
 </li>
 <li>
-<p>Optional. Update the <code>expiry</code> section to configure the expiry of JSON Web Tokens (JWTs) and refresh tokens issued by Dex. By default, JWTs expire 24 hours after being issued and refresh tokens remain valid unless they have not been used for one year. See the Dex documentation on <a href=https://dexidp.io/docs/tokens target="_blank"> ID tokens</a> for information and available expiry settings. </p>
+<p>Optional. Update the <code>expiry</code> section to configure the expiry of JSON Web Tokens (JWTs) and refresh tokens issued by Dex. By default, JWTs expire 24 hours after being issued and refresh tokens remain valid unless they have not been used for one year. See the <a href="https://dexidp.io/docs/tokens" target="_blank">Dex documentation on ID tokens</a> for information and available expiry settings. </p>
 </li>
 </ol>
-<p>You can now configure Dex to authenticate via a connector to authenticate with an upstream identity provider, for example, GitHub, Microsoft, or an LDAP server. For a full list of supported connectors, refer to the <a href=https://dexidp.io/docs/connectors target="_blank"> Dex documentation</a>. The following instructions explain how to configure Dex to authenticate through GitHub.</p>
+<p>You can now configure Dex to authenticate via a connector to authenticate with an upstream identity provider, for example, GitHub, Microsoft, or an LDAP server. For a full list of supported connectors, refer to the <a href="https://dexidp.io/docs/connectors" target="_blank">Dex documentation</a>. The following instructions explain how to configure Dex to authenticate through GitHub.</p>
 <h3 id="configuring-authentication">Configuring authentication<a class="headerlink" href="#configuring-authentication" title="Permanent link">&para;</a></h3>
 <p>Complete the following steps to configure Dex to authenticate through GitHub:</p>
 <ol>
 <li>
-<p>Register an OAuth application in <a href="https://github.com/settings/applications/new">GitHub</a>, ensuring the callback URL of the application is set to your Dex <code>issuer</code> value, followed by <code>/callback</code>. For example, if your <code>issuer</code> value is <code>https://prod-ecosystem.galasa.dev/dex</code>, then your callback URL is <code>https://prod-ecosystem.galasa.dev/dex/callback</code>.</p>
+<p>Register an OAuth application in <a href="https://github.com/settings/applications/new" target="_blank">GitHub</a>, ensuring the callback URL of the application is set to your Dex <code>issuer</code> value, followed by <code>/callback</code>. For example, if your <code>issuer</code> value is <code>https://prod-ecosystem.galasa.dev/dex</code>, then your callback URL is <code>https://prod-ecosystem.galasa.dev/dex/callback</code>.</p>
 </li>
 <li>
 <p>Add a GitHub connector to your Dex configuration, providing the name of your GitHub organisation and any teams that you require users to be part of to be able to use your Ecosystem as follows:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">dex</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">dex</span><span class="p">:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="c1"># Other Dex configuration values...</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -5588,7 +6533,7 @@
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">          </span><span class="nt">teams</span><span class="p">:</span>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-team</span>
 </code></pre></div>
-where <code>$GITHUB_CLIENT_ID</code> and <code>$GITHUB_CLIENT_SECRET</code> correspond to the registered OAuth application's client ID and secret. Ensure that the <code>redirectURI</code> value is the same value that you provided when setting up your GitHub OAuth application in step 1.</p>
+<p>where <code>$GITHUB_CLIENT_ID</code> and <code>$GITHUB_CLIENT_SECRET</code> correspond to the registered OAuth application's client ID and secret. Ensure that the <code>redirectURI</code> value is the same value that you provided when setting up your GitHub OAuth application in step 1.</p>
 <p>If you want to pull the client ID and secret values of your OAuth application from a Kubernetes Secret, create a Secret by running the following <code>kubectl</code> command, ensuring that the Secret's keys match those given in the GitHub connector's <code>clientID</code> and <code>clientSecret</code> values without the leading <code>$</code> (i.e. <code>GITHUB_CLIENT_ID</code> and <code>GITHUB_CLIENT_SECRET</code> as shown in the following example):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>my-github-oauth-app-credentials<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>--from-literal<span class="o">=</span><span class="nv">GITHUB_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;myclientid&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -5621,7 +6566,7 @@ where <code>$GITHUB_CLIENT_ID</code> and <code>$GITHUB_CLIENT_SECRET</code> corr
 <p>By default, the Galasa Ecosystem Helm chart creates a Kubernetes Secret containing configuration details for Dex. 
 If you want to apply your own Dex configuration as a Secret, your Dex configuration must be provided in a <code>config.yaml</code> key within the Secret, 
 and the value of the <code>config.yaml</code> key must be a valid Dex configuration.</p>
-<p>For more information on configuring Dex, see the  <a href=https://dexidp.io/docs target="_blank"> Dex documentation</a>.</p>
+<p>For more information on configuring Dex, see the <a href="https://dexidp.io/docs" target="_blank">Dex documentation</a>.</p>
 <h2 id="configure-the-default-user-role-and-owner-of-the-galasa-service">Configure the default user role, and 'owner' of the Galasa service<a class="headerlink" href="#configure-the-default-user-role-and-owner-of-the-galasa-service" title="Permanent link">&para;</a></h2>
 <p>When the Galasa service is first installed, users logging in will be assigned a role as dictated by the <code>galasaDefaultUserRole</code> Helm chart property. For example 'tester'.
 This means nobody initially logging into the Galasa service will have administrator privileges.
@@ -5640,31 +6585,39 @@ If you are unsure what login-id to use, try setting up your system without an ow
 <h2 id="installing-the-chart">Installing the chart<a class="headerlink" href="#installing-the-chart" title="Permanent link">&para;</a></h2>
 <p>After configuring your <code>values.yaml</code> file, complete the following steps to install the Galasa Ecosystem Helm chart:</p>
 <ol>
-<li>Install the Galasa Ecosystem chart by running the following command:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">helm install -f /path/to/values.yaml &lt;release-name&gt; galasa/ecosystem --wait</span>
+<li>
+<p>Install the Galasa Ecosystem chart by running the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">helm install -f /path/to/values.yaml &lt;release-name&gt; galasa/ecosystem --wait</span>
 </code></pre></div>
-    where:<br><ul>
-<li><code>/path/to/values.yaml</code> is the path to where the <code>values.yaml</code> file is downloaded and<br></li>
-<li><code>&lt;release-name&gt;</code> is the name that you want to give the Ecosystem.<br><br>
-The <code>--wait</code> flag ensures that the chart installation completes before marking it as <code>Deployed</code>. During the installation, the API pod waits for the etcd and RAS pods to initialise while the Engine Controller, Metrics, and Resource Monitor pods wait for the API pod to initialise.</li>
-</ul>
+<p>where:</p>
+<ul>
+<li>
+<p><code>/path/to/values.yaml</code> is the path to where the <code>values.yaml</code> file is downloaded and</p>
 </li>
-<li>View the status of the deployed pods by running <code>kubectl get pods</code> in another terminal. The returned results should look similar to the following example:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
+<li>
+<p><code>&lt;release-name&gt;</code> is the name that you want to give the Ecosystem.</p>
+</li>
+</ul>
+<p>The <code>--wait</code> flag ensures that the chart installation completes before marking it as <code>Deployed</code>. During the installation, the API pod waits for the etcd and RAS pods to initialise while the Engine Controller, Metrics, and Resource Monitor pods wait for the API pod to initialise.</p>
+</li>
+<li>
+<p>View the status of the deployed pods by running <code>kubectl get pods</code> in another terminal. The returned results should look similar to the following example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">test-api-7945f959dd-v8tbs                 1/1     Running    0             65s</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">test-engine-controller-56fb476f45-msj4x   1/1     Running    0             65s</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="go">test-etcd-0                               1/1     Running    0             65s</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="go">test-metrics-5fd9f687b6-rwcww             1/1     Running    0             65s</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="go">test-ras-0                                1/1     Running    0             65s</span>
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="go">test-resource-monitor-778c647995-x75z9    1/1     Running    0             65s</span>
-</code></pre></div></li>
+</code></pre></div>
+</li>
 </ol>
-<h2 id="verifying-the-installation"><a name="verifying-your-galasa-ecosystem-installation"></a>Verifying the installation<a class="headerlink" href="#verifying-the-installation" title="Permanent link">&para;</a></h2>
-<p>After the <code>helm install</code> command completes with a successful deployment message, run the following command to check that the Ecosystem can be accessed externally to Kubernetes so that a simple test engine can be run:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="go">helm test &lt;release-name&gt;</span>
-</code></pre></div></p>
+<h2 id="verifying-the-installation">Verifying the installation<a class="headerlink" href="#verifying-the-installation" title="Permanent link">&para;</a></h2>
+<p>After the <code>helm install</code> command completes with a successful deployment message, run the following command to check that the Ecosystem can be accessed externally to Kubernetes so that a simple test engine can be run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;release-name&gt;
+</code></pre></div>
 <p>where:</p>
-<p><code>&lt;release-name&gt;</code> is the name that you gave the Ecosystem during installation</p>
+<p><code>&lt;release-name&gt;</code> is the name that you gave the Ecosystem during installation.</p>
 <p>When the <code>helm test</code> command ends and displays a success message, the Ecosystem is set up correctly and is ready to be used.</p>
 <h2 id="accessing-services">Accessing services<a class="headerlink" href="#accessing-services" title="Permanent link">&para;</a></h2>
 <p>The URL of the Ecosystem bootstrap will be your external hostname, followed by <code>/api/bootstrap</code>.</p>
@@ -5673,22 +6626,28 @@ The <code>--wait</code> flag ensures that the chart installation completes befor
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">192.168.49.2 example.com</span>
 </code></pre></div>
 <h2 id="running-galasa-tests">Running Galasa tests<a class="headerlink" href="#running-galasa-tests" title="Permanent link">&para;</a></h2>
-<p>Once you have successfully installed the Ecosystem, you can then deploy your Galasa tests to a Maven repository and set up a test stream. For more information on managing tests, see the <a href=https://galasa.dev/docs/manage-ecosystem>Managing tests in a Galasa Ecosystem</a> documentation.</p>
+<p>Once you have successfully installed the Ecosystem, you can then deploy your Galasa tests to a Maven repository and set up a test stream. For more information on managing tests, see the <a href="../../manage-ecosystem/">Managing tests in a Galasa Ecosystem</a> documentation.</p>
 <h2 id="upgrading-the-galasa-ecosystem">Upgrading the Galasa Ecosystem<a class="headerlink" href="#upgrading-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
 <p>Get the latest version of the Ecosystem chart and upgrade the Galasa Ecosystem to use the newer version of Galasa - for example version 0.41.0 - by running the following command:</p>
 <p>On Mac or Unix:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="go">helm repo update \</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="go">helm upgrade &lt;release-name&gt; galasa/ecosystem --reuse-values \</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="go">--set galasaVersion=0.41.0 --wait</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>--reuse-values<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.41.0<span class="w"> </span>--wait
 </code></pre></div>
 <p>On Windows (Powershell):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">helm repo update `</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">helm upgrade &lt;release-name&gt; galasa/ecosystem --reuse-values `</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">--set galasaVersion=0.41.0 --wait</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span> <span class="p">`</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">41</span><span class="p">.</span><span class="n">0</span> <span class="p">-</span><span class="n">-wait</span>
 </code></pre></div>
-<p>where:<br>
-- <code>galasaVersion</code> is set to the version that you want to use and<br>
-- <code>&lt;release-name&gt;</code> is the name that you gave to the Ecosystem during installation</p>
+<p>where:</p>
+<ul>
+<li>
+<p><code>galasaVersion</code> is set to the version that you want to use and</p>
+</li>
+<li>
+<p><code>&lt;release-name&gt;</code> is the name that you gave to the Ecosystem during installation</p>
+</li>
+</ul>
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Check the logs by running the <code>kubectl logs</code> command. </li>
