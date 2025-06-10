@@ -6186,7 +6186,7 @@
 <li>
 <p>Managers vetoing method execution changes:</p>
 <ul>
-<li>Managers implementing anyReasonTestMethodShouldBeIgnored will not be called to see whether the manager wants to veto the execution of <code>@Before</code> or <code>@After</code> methods separately to the test method they surround. Managers will only be asked whether the test method should be ignored or not, which will cause the "before" and "after" methods to also be ignored.</li>
+<li>Managers implementing <code>anyReasonTestMethodShouldBeIgnored</code> are no longer asked whether the test method should be ignored before running the <code>@Before</code> and <code>@After</code> methods. If the test method is ignored, then the <code>@Before</code> and <code>@After</code> methods are also ignored.</li>
 </ul>
 </li>
 <li>
@@ -6196,9 +6196,9 @@
 </ul>
 </li>
 <li>
-<p>3270 manager now copes with SSCP-LU-DATA:</p>
+<p>3270 Manager can now process SSCP-LU-DATA:</p>
 <ul>
-<li>Unformatted data screens are now processed and the contents is visible to test applications.</li>
+<li>Unformatted data screens are processed and the contents made available to test applications.</li>
 </ul>
 </li>
 <li>
