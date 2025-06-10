@@ -6057,6 +6057,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#0420-release-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.42.0 - Release Highlights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#0410-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       0.41.0 - Release Highlights
@@ -6124,6 +6133,67 @@
       <header class="md-typeset">
         <h1 id="galasa-releases">Galasa Releases<a class="headerlink" href="#galasa-releases" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-06-10 00:00:00+00:00">June 10, 2025</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0420-release-highlights"><a class="toclink" href="2025/06/10/v0.42.0/">0.42.0 - Release Highlights</a></h2>
+<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2025/06/10/v0.42.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
+<ul>
+<li>
+<p>Cancel a run group using the Group ID. <a href="../docs/reference/cli-syntax/galasactl_runs_cancel/">See the new command syntax</a></p>
+</li>
+<li>
+<p>For developers of Galasa: Easier development of the Web user interface</p>
+<ul>
+<li>A Personal Access Token can now be used to run a local instance of the web user interface, targetting an existing Galasa Service. </li>
+</ul>
+</li>
+<li>
+<p>Added a configuration setting <code>kubeLaunchIntervalMillisecs</code> in the Galasa Helm chart to control the time between launching of successive test runs, to space out launches more evenly so that Kubernetes is not as stressed.</p>
+</li>
+<li>
+<p>Various defects, fixes, version uplifts</p>
+</li>
+</ul>
+<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2025/06/10/v0.42.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
+<ul>
+<li>IMS-TM Manager - Improvements to how the manager handles active conversations (See issue <a href="https://github.com/galasa-dev/projectmanagement/issues/2250">#2250</a>)</li>
+</ul>
+<h3 id="other-changes"><a class="toclink" href="2025/06/10/v0.42.0/#other-changes">Other changes</a></h3>
+<ul>
+<li>
+<p>Make contributing code easier:</p>
+<ul>
+<li>Code for the Galasa documentation has moved git repositories, to the <a href="https://github.com/galasa-dev/galasa"><code>galasa</code> repository</a>.
+  This simplifies the build process for the Galasa documentation and makes changes on a git fork easier to build and verify.
+  It also facilitates closer integration between the javadoc, REST interface, CLI syntax and the rest of the material.</li>
+</ul>
+</li>
+<li>
+<p>New look for the Galasa web site:</p>
+<ul>
+<li>The look and feel of the <a href="../">Galasa website and documentation</a> has been improved.
+  The site now includes page-indexes on the right to navigate each page of the documentation.
+  The site also supports light and dark mode for easy-reading.
+  Command-line tool syntax is now more integrated with the documentation, and is searchable.</li>
+</ul>
+</li>
+</ul>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">

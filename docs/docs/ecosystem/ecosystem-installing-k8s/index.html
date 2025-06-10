@@ -6650,16 +6650,16 @@ If you are unsure what login-id to use, try setting up your system without an ow
 <h2 id="running-galasa-tests">Running Galasa tests<a class="headerlink" href="#running-galasa-tests" title="Permanent link">&para;</a></h2>
 <p>Once you have successfully installed the Ecosystem, you can then deploy your Galasa tests to a Maven repository and set up a test stream. For more information on managing tests, see the <a href="../../manage-ecosystem/">Managing tests in a Galasa Ecosystem</a> documentation.</p>
 <h2 id="upgrading-the-galasa-ecosystem">Upgrading the Galasa Ecosystem<a class="headerlink" href="#upgrading-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
-<p>Get the latest version of the Ecosystem chart and upgrade the Galasa Ecosystem to use the newer version of Galasa - for example version 0.41.0 - by running the following command:</p>
+<p>Get the latest version of the Ecosystem chart and upgrade the Galasa Ecosystem to use the newer version of Galasa - for example version 0.42.0 - by running the following command:</p>
 <p>On Mac or Unix:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>--reuse-values<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.41.0<span class="w"> </span>--wait
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.42.0<span class="w"> </span>--wait
 </code></pre></div>
 <p>On Windows (Powershell):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span> <span class="p">`</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">41</span><span class="p">.</span><span class="n">0</span> <span class="p">-</span><span class="n">-wait</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">42</span><span class="p">.</span><span class="n">0</span> <span class="p">-</span><span class="n">-wait</span>
 </code></pre></div>
 <p>where:</p>
 <ul>
