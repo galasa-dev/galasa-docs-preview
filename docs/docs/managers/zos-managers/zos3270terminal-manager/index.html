@@ -3944,6 +3944,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#add-a-custom-3270-device-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a custom 3270 device name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#select-3270-terminal-outputs" class="md-nav__link">
     <span class="md-ellipsis">
       Select 3270 terminal outputs
@@ -6359,6 +6368,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#add-a-custom-3270-device-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a custom 3270 device name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#select-3270-terminal-outputs" class="md-nav__link">
     <span class="md-ellipsis">
       Select 3270 terminal outputs
@@ -6730,7 +6748,7 @@
 <tbody>
 <tr>
 <td>Name:</td>
-<td style="text-align: left;">zos3270.image.xxxxxx.device.types</td>
+<td style="text-align: left;">zos3270.image.IMAGEID.device.types</td>
 </tr>
 <tr>
 <td>Description:</td>
@@ -6750,7 +6768,34 @@
 </tr>
 <tr>
 <td>Examples:</td>
-<td style="text-align: left;"><code>zos3270.image.custom.device.types=IBM-DYNAMIC,IBM-3278-2</code></td>
+<td style="text-align: left;"><code>zos3270.image.IMAGE_A.device.types=IBM-DYNAMIC,IBM-3278-2</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="add-a-custom-3270-device-name">Add a custom 3270 device name<a class="headerlink" href="#add-a-custom-3270-device-name" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property:</th>
+<th style="text-align: left;">3270DeviceName CPS Property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name:</td>
+<td style="text-align: left;">zos3270.image.IMAGEID.device.name</td>
+</tr>
+<tr>
+<td>Description:</td>
+<td style="text-align: left;">Allows for a custom 3270 device name to be requested when connecting to a server. Device names are case-insensitive 7-bit US ASCII strings that must not exceed 8 characters.</td>
+</tr>
+<tr>
+<td>Required:</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td style="text-align: left;"><code>zos3270.image.IMAGE_A.device.name=IYCQTC57</code></td>
 </tr>
 </tbody>
 </table>
