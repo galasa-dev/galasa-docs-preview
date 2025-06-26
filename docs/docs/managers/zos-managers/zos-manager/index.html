@@ -3733,6 +3733,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#telnet-port-number-of-the-zos-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Telnet port number of the z/OS Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-for-telnet-on-the-zos-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLS for telnet on the z/OS Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-certificate-verification-for-telnet-on-the-zos-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server certificate verification for telnet on the z/OS Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-zos-image" class="md-nav__link">
     <span class="md-ellipsis">
       The z/OS Image
@@ -6686,6 +6713,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#telnet-port-number-of-the-zos-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Telnet port number of the z/OS Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-for-telnet-on-the-zos-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLS for telnet on the z/OS Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-certificate-verification-for-telnet-on-the-zos-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server certificate verification for telnet on the z/OS Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-zos-image" class="md-nav__link">
     <span class="md-ellipsis">
       The z/OS Image
@@ -7652,6 +7706,111 @@
 <tr>
 <td>Examples:</td>
 <td style="text-align: left;"><code>zos.image.SYSA.iphostid=sysa.example.com</code><br></td>
+</tr>
+</tbody>
+</table>
+<h3 id="telnet-port-number-of-the-zos-image">Telnet port number of the z/OS Image<a class="headerlink" href="#telnet-port-number-of-the-zos-image" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property:</th>
+<th style="text-align: left;">Telnet port number of the zOS Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name:</td>
+<td style="text-align: left;">zos.image.[imageId].telnet.port</td>
+</tr>
+<tr>
+<td>Description:</td>
+<td style="text-align: left;">The port number for telnet 3270 access to the z/OS Image for the supplied tag.</td>
+</tr>
+<tr>
+<td>Required:</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td>Default value:</td>
+<td style="text-align: left;">23</td>
+</tr>
+<tr>
+<td>Valid values:</td>
+<td style="text-align: left;">A valid TCP/IP port number</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td style="text-align: left;"><code>zos.image.SYSA.telnet.port=992</code><br></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tls-for-telnet-on-the-zos-image">TLS for telnet on the z/OS Image<a class="headerlink" href="#tls-for-telnet-on-the-zos-image" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property:</th>
+<th style="text-align: left;">TLS for telnet on the zOS Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name:</td>
+<td style="text-align: left;">zos.image.[imageId].telnet.tls</td>
+</tr>
+<tr>
+<td>Description:</td>
+<td style="text-align: left;">Set this to true if Transport Layer Security (TLS) is used on the telnet 3270 port of the z/OS Image for the supplied tag.</td>
+</tr>
+<tr>
+<td>Required:</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td>Default value:</td>
+<td style="text-align: left;">false</td>
+</tr>
+<tr>
+<td>Valid values:</td>
+<td style="text-align: left;"><code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td style="text-align: left;"><code>zos.image.SYSA.telnet.tls=true</code><br></td>
+</tr>
+</tbody>
+</table>
+<h3 id="server-certificate-verification-for-telnet-on-the-zos-image">Server certificate verification for telnet on the z/OS Image<a class="headerlink" href="#server-certificate-verification-for-telnet-on-the-zos-image" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property:</th>
+<th style="text-align: left;">Server certificate verification for telnet on the zOS Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name:</td>
+<td style="text-align: left;">zos.image.[imageId].telnet.verify</td>
+</tr>
+<tr>
+<td>Description:</td>
+<td style="text-align: left;">Set this to true to request verification of the certificate provided by the z/OS Image for the supplied tag when connecting to the telnet 3270 port.<br> This property is ignored if Transport Layer Security (TLS) is not in use.<br> By default, the trust store containing certificate authorities used for verification is <code>$JAVA_HOME/lib/security/cacerts</code>. To use a different trust store, you can specify a different path on a <code>-Djavax.net.ssl.trustStore</code> option for the <code>galasactl.jvm.local.launch.options</code> property in bootstrap.properties.</td>
+</tr>
+<tr>
+<td>Required:</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td>Default value:</td>
+<td style="text-align: left;">false</td>
+</tr>
+<tr>
+<td>Valid values:</td>
+<td style="text-align: left;"><code>true</code> or <code>false</code></td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td style="text-align: left;"><code>zos.image.SYSA.telnet.verify=true</code><br></td>
 </tr>
 </tbody>
 </table>
