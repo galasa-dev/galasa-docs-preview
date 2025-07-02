@@ -1763,6 +1763,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#test-streams-as-galasastream-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Streams as GalasaStream resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#creating-and-updating-resources-using-a-yaml-file" class="md-nav__link">
     <span class="md-ellipsis">
       Creating and updating resources using a YAML file
@@ -5999,6 +6008,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#test-streams-as-galasastream-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Streams as GalasaStream resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#creating-and-updating-resources-using-a-yaml-file" class="md-nav__link">
     <span class="md-ellipsis">
       Creating and updating resources using a YAML file
@@ -6126,11 +6144,13 @@
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nt">data</span><span class="p">:</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myValue2</span>
 </code></pre></div>
-<p>where:
-- <code>apiVersion</code> is the version of the API that you are using
-- <code>name</code> is the name of the property that you want to create or update
-- <code>namespace</code> is the namespace in which the property is contained in the configuration properties store (cps.properties). 
-- <code>value</code> is the value that you want to assign to the specified property in the specified namespace</p>
+<p>where:</p>
+<ul>
+<li><code>apiVersion</code> is the version of the API that you are using</li>
+<li><code>name</code> is the name of the property that you want to create or update</li>
+<li><code>namespace</code> is the namespace in which the property is contained in the configuration properties store (cps.properties). </li>
+<li><code>value</code> is the value that you want to assign to the specified property in the specified namespace</li>
+</ul>
 <p>You can define multiple properties and values in the same YAML file by separating them using three dashes, <code>---</code>, as shown in the example.</p>
 <p>You can save the file with a <code>.yaml</code> or <code>.yml</code> file extension.</p>
 <h2 id="credentials-as-galasasecret-resources">Credentials as GalasaSecret resources<a class="headerlink" href="#credentials-as-galasasecret-resources" title="Permanent link">&para;</a></h2>
@@ -6183,54 +6203,119 @@
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="nt">data</span><span class="p">:</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;base64-encoded-username&gt;</span>
 </code></pre></div>
-<p>where:
-- <code>apiVersion</code> is the version of the API that you are using
-- <code>name</code> is the name of the secret that you want to create or update
-- <code>type</code> is the type of secret that you want to create or update. Supported values are: <code>Username</code>, <code>UsernamePassword</code>, <code>UsernameToken</code>, and <code>Token</code>
-- <code>encoding</code> is an optional encoding scheme applied to all fields in the <code>data</code> section. The currently available value for this is <code>base64</code>. If this is not provided, then the fields in the <code>data</code> section are assumed to be provided without any encoding applied
-- <code>description</code> is an optional field that allows you to supply a description associated with the secret being created or updated
-- <code>username</code> is the username value to be set for a secret, and is provided when the <code>type</code> is <code>Username</code>, <code>UsernamePassword</code>, or <code>UsernameToken</code>
-- <code>password</code> is the password value to be set for a secret, and is provided when the <code>type</code> is <code>UsernamePassword</code>
-- <code>token</code> is the token value to be set for a secret, and is provided when the <code>type</code> is <code>Token</code> or <code>UsernameToken</code></p>
+<p>where:</p>
+<ul>
+<li><code>apiVersion</code> is the version of the API that you are using</li>
+<li><code>name</code> is the name of the secret that you want to create or update</li>
+<li><code>type</code> is the type of secret that you want to create or update. Supported values are: <code>Username</code>, <code>UsernamePassword</code>, <code>UsernameToken</code>, and <code>Token</code></li>
+<li><code>encoding</code> is an optional encoding scheme applied to all fields in the <code>data</code> section. The currently available value for this is <code>base64</code>. If this is not provided, then the fields in the <code>data</code> section are assumed to be provided without any encoding applied</li>
+<li><code>description</code> is an optional field that allows you to supply a description associated with the secret being created or updated</li>
+<li><code>username</code> is the username value to be set for a secret, and is provided when the <code>type</code> is <code>Username</code>, <code>UsernamePassword</code>, or <code>UsernameToken</code></li>
+<li><code>password</code> is the password value to be set for a secret, and is provided when the <code>type</code> is <code>UsernamePassword</code></li>
+<li><code>token</code> is the token value to be set for a secret, and is provided when the <code>type</code> is <code>Token</code> or <code>UsernameToken</code></li>
+</ul>
 <p>You can define multiple secrets in the same YAML file by separating them using three dashes, <code>---</code>, as shown in the example.</p>
+<p>You can save the file with a <code>.yaml</code> or <code>.yml</code> file extension.</p>
+<h2 id="test-streams-as-galasastream-resources">Test Streams as GalasaStream resources<a class="headerlink" href="#test-streams-as-galasastream-resources" title="Permanent link">&para;</a></h2>
+<p>The topic <a href="../../manage-ecosystem/test-streams/">Test streams</a> describes how to use the <code>galasactl streams get</code> command with the <code>--format yaml</code> flag specified to extract a YAML file which describes test streams. </p>
+<p>If more than one test stream is returned, each test stream is separated in the file by three dashes, <code>---</code>, as shown in the following example: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galasa-dev/v1alpha1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GalasaStream</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ivts</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://my-galasa-service/api/streams/ivts</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Galasa installation verification tests</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nt">data</span><span class="p">:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">isEnabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nt">repository</span><span class="p">:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://my-maven-repository/path/to/test/material</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nt">obrs</span><span class="p">:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.group</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">          </span><span class="nt">artifact-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.group.ivts.obr</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">          </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.2.3</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nt">testCatalog</span><span class="p">:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://my-maven-repository/path/to/testcatalog.json</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nn">---</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galasa-dev/v1alpha1</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GalasaStream</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regressiontests</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://my-galasa-service/api/streams/regressiontests</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My regression test suite</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="nt">data</span><span class="p">:</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="nt">isEnabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="nt">repository</span><span class="p">:</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://my-maven-repository/path/to/test/material</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">    </span><span class="nt">obrs</span><span class="p">:</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.group</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">          </span><span class="nt">artifact-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.group.regressiontests.obr</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">          </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.2.1</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">    </span><span class="nt">testCatalog</span><span class="p">:</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://my-maven-repository/path/to/testcatalog.json</span>
+</code></pre></div>
+<p>Alternatively, if you want to create a new YAML file, you can do so using the following example format:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galasa-dev/v1alpha1</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GalasaStream</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">streamName</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My test stream</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nt">data</span><span class="p">:</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">repository</span><span class="p">:</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://my-maven-repository/path/to/test/material</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">obrs</span><span class="p">:</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.group</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">          </span><span class="nt">artifact-id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.group.tests.obr</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">          </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.1</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">testCatalog</span><span class="p">:</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://my-maven-repository/path/to/testcatalog.json</span>
+</code></pre></div>
+<p>where:</p>
+<ul>
+<li><code>apiVersion</code> is the version of the API that you are using</li>
+<li><code>name</code> is the name of the test stream that you want to create or update</li>
+<li><code>description</code> is an optional description of the test stream being created or updated</li>
+<li><code>repository</code> is an object with a <code>url</code> property that points to the maven repository where your test material is stored</li>
+<li><code>obrs</code> is a list of OBRs consisting of a <code>group-id</code>, <code>artifact-id</code>, and <code>version</code> corresponding to the OBRs where your test bundles can be found within</li>
+<li><code>testCatalog</code> is an object with a <code>url</code> property that points to the <code>testcatalog.json</code> file used to identify the tests that are available to run using this test stream</li>
+</ul>
 <p>You can save the file with a <code>.yaml</code> or <code>.yml</code> file extension.</p>
 <h2 id="creating-and-updating-resources-using-a-yaml-file">Creating and updating resources using a YAML file<a class="headerlink" href="#creating-and-updating-resources-using-a-yaml-file" title="Permanent link">&para;</a></h2>
 <p>You can use the galasactl command line tool to submit a YAML file to create new Galasa resources, including properties and credentials, or to update existing ones. The YAML files can contain different types of Galasa resources, where each resource is separated by three dashes <code>---</code>. For example, a GalasaProperty resource and a GalasaSecret resource can both be created using the following format:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galasa-dev/v1alpha1</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GalasaSecret</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYSTEM1</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Token</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">an example token secret</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nt">data</span><span class="p">:</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myToken</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nn">---</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galasa-dev/v1alpha1</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GalasaProperty</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nt">metadata</span><span class="p">:</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.property1</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myNamespace1</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nt">data</span><span class="p">:</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myValue1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galasa-dev/v1alpha1</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GalasaSecret</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SYSTEM1</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Token</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">an example token secret</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nt">data</span><span class="p">:</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myToken</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nn">---</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galasa-dev/v1alpha1</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GalasaProperty</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my.property1</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myNamespace1</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="nt">data</span><span class="p">:</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myValue1</span>
 </code></pre></div>
 <p>Use the following command to create Galasa resources by using a YAML file called <code>myFile.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>galasactl<span class="w"> </span>resources<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>myFile.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>galasactl<span class="w"> </span>resources<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>myFile.yaml
 </code></pre></div>
 <p>Use the following command to update Galasa resources by using a YAML file called <code>myFile.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>galasactl<span class="w"> </span>resources<span class="w"> </span>update<span class="w"> </span>-f<span class="w"> </span>myFile.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>galasactl<span class="w"> </span>resources<span class="w"> </span>update<span class="w"> </span>-f<span class="w"> </span>myFile.yaml
 </code></pre></div>
 <p>Use the following command to create a new Galasa resource if the resource does not exist or update an existing resource by using a YAML file called <code>myFile.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>galasactl<span class="w"> </span>resources<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>myFile.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>galasactl<span class="w"> </span>resources<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>myFile.yaml
 </code></pre></div>
 <p>An error message is returned if the action is not able to complete successfully. For example, if a property could not be created in a particular namespace because the property already exists in that namespace.</p>
 <h2 id="deleting-resources-using-a-yaml-file">Deleting resources using a YAML file<a class="headerlink" href="#deleting-resources-using-a-yaml-file" title="Permanent link">&para;</a></h2>
 <p>When maintaining an Ecosystem, you might have a YAML file containing Galasa property resource definitions and want to delete a corresponding set of Galasa resources stored on the server in an Ecosystem. You can do this by using the following command: </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>galasactl<span class="w"> </span>resources<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span><span class="o">{</span>filename<span class="o">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>galasactl<span class="w"> </span>resources<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span><span class="o">{</span>filename<span class="o">}</span>
 </code></pre></div>
 <p>where:</p>
 <p><code>{filename}</code> is the name of the YAML file that contains the list of Galasa resources that you want to delete.</p>
 <p>For example, you might have a list of resources that you want to delete in a file called <code>resources_to_delete.yaml</code>. You can delete those resources by running the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>galasactl resources delete -f resources_to_delete.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>galasactl resources delete -f resources_to_delete.yaml
 </code></pre></div>
 <p>For a complete list of supported parameters, see the <a href="../../reference/cli-syntax/galasactl_resources/">galasactl resources</a> command reference.</p>
 
