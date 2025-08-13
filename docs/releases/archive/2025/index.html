@@ -1496,7 +1496,7 @@
   
   
   <span class="md-ellipsis">
-    Controlling code execution after test failure
+    Controlling code execution based on test results so far
     
   </span>
   
@@ -6066,6 +6066,10 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="0430-release-highlights"><a class="toclink" href="../../2025/06/12/v0.43.0/">0.43.0 - Release Highlights</a></h2>
+<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="../../2025/06/12/v0.43.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
+<ul>
+<li>Updates to the <code>@TestResultProvider</code> annotation. The <code>@TestResultProvider</code> can now provide a list of <code>ITestMethodResult</code>s to the test which each include the method name, if the method passed, if the method failed, and exception thrown if available. This can be used by tests themselves to determine actions to take based on each method's result. See issue <a href="https://github.com/galasa-dev/projectmanagement/issues/2343">#2343</a></li>
+</ul>
     
   </div>
 </article>
