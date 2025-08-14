@@ -6005,16 +6005,19 @@
 <h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2025/08/13/v0.43.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
 <li>
-<p>The Galasa API Server will now create a run document in the Result Archive Store for each submitted run, rather than only creating the document when the test pod starts.</p>
+<p>The Galasa service now creates a test run record in the Result Archive Store when each run is submitted, rather than when the test is scheduled to execute, so more test runs will appear in the 'queued' state awaiting execution now. This also allows observability of submitted runs which were cancelled prior to being scheduled, which was not previously possible.</p>
 </li>
 <li>
-<p>Internally, requests made by the Galasa API Server have been made more efficient to avoid errors when attempting to send a message through the gRPC protocol that exceeds the maximum size. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2312">#2312</a>.</p>
+<p>The Galasa service has been made more efficient by reducing the amount of data being exchanged between internal components and avoiding the exchange of large messages travelling over the gRPC protocol. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2312">#2312</a>.</p>
 </li>
 <li>
-<p>The Galasa Helm chart creates the <code>_users</code> database in CouchDB if it doesn't already exist. This is a required database for CouchDB that should be created as default to prevent errors when the Result Archive Store is started. This is needed because latest version of CouchDB needs this database, and it may not have existed before.</p>
+<p>Upgrades are handled better: The Galasa Helm chart creates the <code>_users</code> database in CouchDB if it doesn't already exist. This is a required database for CouchDB that should be created as default to prevent errors when the Result Archive Store is started. This is needed because latest version of CouchDB needs this database, and it may not have existed before.</p>
 </li>
 <li>
-<p>The Engine Controller waits for the ETCD and RAS Pods to be ready in the Galasa service before completing any actions that involve the CPS/DSS/RAS. This is an internal change, with no externals affecting users. A deployed Galasa service will start up more cleanly.</p>
+<p>The Galasa service is more robust when failures occur: A deployed Galasa service will now only attempt to launch tests in a new Kubernetes pod if the ETCD and RAS services are working. Were either of the ETCD or RAS services to fail, the errors would not be compounded by launching more tests which would all fail anyway.</p>
+</li>
+<li>
+<p>Cancelling test runs which have not already finished is handled better: Running tests are given an opportunity to notice they have been cancelled, and to exit cleanly after releasing any resources they hold. Queued test runs are marked as cancelled immediately.<a href="https://github.com/galasa-dev/projectmanagement/issues/2317">#2317</a>.</p>
 </li>
 </ul>
 <h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2025/08/13/v0.43.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
@@ -6023,7 +6026,7 @@
 <p>Java API enhancement: Updates have been made to the <code>@TestResultProvider</code> annotation. The <code>@TestResultProvider</code> can now provide a list of <code>ITestMethodResult</code>s to the test which each include the method name, if the method passed, if the method failed, and the exception thrown to cause the failure, if available. This can be used by tests themselves to determine actions to take based on each method's result. See issue <a href="https://github.com/galasa-dev/projectmanagement/issues/2343">#2343</a>.</p>
 </li>
 <li>
-<p>The start and end line number in the run log pertaining to a particular method are now available in the test structure. This can be used to easily navigate the run log and identify which sections are about which methods. See issue <a href="https://github.com/galasa-dev/projectmanagement/issues/2214">#2214</a>.</p>
+<p>The start and end line number in the run log pertaining to a particular method are now available in the test structure. This can be used to navigate the run log and identify which sections of the run log are about which methods. See issue <a href="https://github.com/galasa-dev/projectmanagement/issues/2214">#2214</a>.</p>
 </li>
 <li>
 <p>z/OS telnet 3270 server certificates can now be verified if the CPS property <code>zos.image.[TAG].telnet.tls.verify</code> is set to true. See issue <a href="https://github.com/galasa-dev/projectmanagement/issues/2296">#2296</a>.</p>
