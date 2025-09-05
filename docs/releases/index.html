@@ -5901,6 +5901,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#0440-release-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.44.0 - Release Highlights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#0430-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       0.43.0 - Release Highlights
@@ -5986,6 +5995,40 @@
       <header class="md-typeset">
         <h1 id="galasa-releases">Galasa Releases<a class="headerlink" href="#galasa-releases" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-09-04 00:00:00+00:00">September 4, 2025</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0440-release-highlights"><a class="toclink" href="2025/09/04/v0.44.0/">0.44.0 - Release Highlights</a></h2>
+<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2025/09/04/v0.44.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
+<ul>
+<li>The Galasa service Helm chart's <code>eventStreamsSecretName</code> value is now optional and a value is no longer provided by default.<ul>
+<li>If no secret name is given, the Galasa service's Kafka extension will not be loaded.</li>
+<li>If a secret name is given, the Helm chart will attempt to load the Kubernetes secret with the given name and pass it through to be used by the Galasa service's Kafka extension.</li>
+<li>If a secret name is given but no such secret exists in the Kubernetes namespace, then the Galasa service will fail to be installed or upgraded.</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2025/09/04/v0.44.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
+<ul>
+<li>The 3270 manager's <code>ITerminal</code> interface has a new <code>toJsonString()</code> method that allows tests to convert the current 3270 terminal screen into JSON format.</li>
+</ul>
+<h3 id="other-changes"><a class="toclink" href="2025/09/04/v0.44.0/#other-changes">Other changes</a></h3>
+<h3 id="galasa-web-ui-changes"><a class="toclink" href="2025/09/04/v0.44.0/#galasa-web-ui-changes">Galasa Web UI changes</a></h3>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
