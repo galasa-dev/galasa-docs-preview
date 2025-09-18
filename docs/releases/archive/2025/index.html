@@ -6086,12 +6086,20 @@
     <h2 id="0440-release-highlights"><a class="toclink" href="../../2025/09/04/v0.44.0/">0.44.0 - Release Highlights</a></h2>
 <h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="../../2025/09/04/v0.44.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
-<li>The Galasa service Helm chart's <code>eventStreamsSecretName</code> value is now optional and a value is no longer provided by default.<ul>
+<li>
+<p>The Galasa service Helm chart's <code>eventStreamsSecretName</code> value is now optional and a value is no longer provided by default.</p>
+<ul>
 <li>If no secret name is given, the Galasa service's Kafka extension will not be loaded.</li>
 <li>If a secret name is given, the Helm chart will attempt to load the Kubernetes secret with the given name and pass it through to be used by the Galasa service's Kafka extension.</li>
 <li>If a secret name is given but no such secret exists in the Kubernetes namespace, then the Galasa service will fail to be installed or upgraded.</li>
 </ul>
 </li>
+<li>
+<p>The image used by Galasa in init containers, which contains the <code>kubectl</code> tool has been replaced.</p>
+</li>
+<li>Previously, the <code>bitnami/kubectl</code> image was used by default to make some pods wait for others to start, to avoid an error storm which would happen if all the pods started up at the same time. This enforces an ordering of pods starting up which matches their dependencies.</li>
+<li>The <code>bitnami</code> images were withdrawn, so the default value in the helm <code>values.yaml</code> file was switched to use a different image containing the same tool: <code>kubectlImage: "rancher/kubectl:v1.33.5"</code></li>
+<li>Previous releases are also effected, so administrators of older installs of the Galasa service will also need to make this change and update their helm install.</li>
 </ul>
 <h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="../../2025/09/04/v0.44.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>
