@@ -5959,8 +5959,15 @@
 
   <h1>Ecosystem REST API documentation</h1>
 
-<p><a href="../../ecosystem/">The Galasa Ecosystem</a> features a REST API that you can use to interact with your ecosystem and perform several tasks, for example, retrieving test artifacts, configuring CPS properties, and submitting test runs, allowing you to create integrations with your own applications.</p>
-<p>The REST API documentation can be found on the <a href="https://rest.galasa.dev/" target="_blank">Galasa Ecosystem API documentation page</a>.</p>
+<p>When the Galasa service is deployed on Kubernetes, it exposes a REST API that you can use 
+to interact with your ecosystem and perform several tasks, 
+for example, retrieving test artifacts, configuring CPS properties, and submitting test runs, 
+allowing you to create programmatic integrations with your own applications.</p>
+<p>See the <a href="../rest-api/">Galasa REST API documentation</a> for a detailed definition of the
+available commands and message payload structures.</p>
+<p>If you have a Galasa service deployed, you can also find the definition of the REST API from your 
+service itself, from the endpoint using a URL of the form <code>https://{myHost}/api/openapi</code>, where <code>{myHost}</code> 
+is the name of your hosted service which can be resolved.</p>
 
 
 
