@@ -11,10 +11,10 @@ info:
   contact:
     url: https://galasa.dev/support
 
-servers:
+
   # A value for the following URL is injected in the OpenAPI servlet for the /openapi endpoint.
   # Any changes to this must be reflected in the OpenAPI servlet
-  - url: '{API_SERVER_URL}'
+
 security:
   - JwtAuth: []
 paths:
