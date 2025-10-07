@@ -6026,7 +6026,15 @@
 </li>
 <li>Previously, the <code>bitnami/kubectl</code> image was used by default to make some pods wait for others to start, to avoid an error storm which would happen if all the pods started up at the same time. This enforces an ordering of pods starting up which matches their dependencies.</li>
 <li>The <code>bitnami</code> images were withdrawn, so the default value in the helm <code>values.yaml</code> file was switched to use a different image containing the same tool: <code>kubectlImage: "rancher/kubectl:v1.33.5"</code></li>
-<li>Previous releases are also effected, so administrators of older installs of the Galasa service will also need to make this change and update their helm install.</li>
+<li>
+<p>Previous releases are also effected, so administrators of older installs of the Galasa service will also need to make this change and update their helm install.</p>
+</li>
+<li>
+<p>Added <code>log4j2Properties</code> and <code>log4jJsonTemplatesConfigMapName</code> configuration settings in the Galasa service Helm chart to allow users to configure Log4j in their Galasa service. See the <a href="../docs/ecosystem/ecosystem-installing-k8s/#configuring-logging-for-the-galasa-service-optional">Installing an Ecosystem using Helm documentation</a> for detailed instructions on how to do this.</p>
+</li>
+<li>
+<p>Added a configuration setting <code>couchdb.documentRevisionLimit</code> in the Galasa Helm chart to control the maximum number of document revisions that should be stored in the CouchDB service. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2439">#2439</a>.</p>
+</li>
 </ul>
 <h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2025/09/04/v0.44.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>

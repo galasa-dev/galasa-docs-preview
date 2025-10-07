@@ -1756,6 +1756,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#configuring-logging-for-the-galasa-service-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Logging for the Galasa service (Optional)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6140,6 +6149,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#configuring-logging-for-the-galasa-service-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Logging for the Galasa service (Optional)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6424,6 +6442,48 @@
 If you want to apply your own Dex configuration as a Secret, your Dex configuration must be provided in a <code>config.yaml</code> key within the Secret, 
 and the value of the <code>config.yaml</code> key must be a valid Dex configuration.</p>
 <p>For more information on configuring Dex, see the <a href="https://dexidp.io/docs" target="_blank">Dex documentation</a>.</p>
+<h3 id="configuring-logging-for-the-galasa-service-optional">Configuring Logging for the Galasa service (Optional)<a class="headerlink" href="#configuring-logging-for-the-galasa-service-optional" title="Permanent link">&para;</a></h3>
+<p>The Galasa service generates log messages using Log4j and these messages are sent to each process' standard output stream by default.</p>
+<p>If you would like to modify the format of the Galasa service's log messages or configure additional Log4j appenders:</p>
+<ol>
+<li>
+<p>Provide a custom set of Log4j2 properties using the <code>log4j2Properties</code> value as a multi-line string in the form:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">log4j2Properties</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="no">status = error</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="no">name = Default</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="no">appender.console.type = Console</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="no">appender.console.name = stdout</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="no">appender.console.layout.type = PatternLayout</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="no">appender.console.layout.pattern = %d{dd/MM/yyyy HH:mm:ss.SSS} %-5p %c{1.} - %m%n</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="no">rootLogger.level = debug</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span><span class="no">rootLogger.appenderRef.stdout.ref = stdout</span>
+</code></pre></div>
+</li>
+</ol>
+<p>If you are using Log4j's <code>JsonTemplateLayout</code> layout type and would like to use a custom JSON template for your log messages, then you can create a ConfigMap containing the JSON templates that you wish to make available to the Galasa service and supply the name of that ConfigMap in the <code>log4jJsonTemplatesConfigMapName</code> value.</p>
+<p>The ConfigMap is mounted into the Galasa service pods in the <code>/log4j-config</code> directory, so any Log4j properties that need to refer to a template's URI will need a value to be prefixed with <code>file:/log4j-config</code>.</p>
+<p>For example, if you have a custom JSON template in a file called <code>MyLayout.json</code>, then you would take the following steps:</p>
+<ol>
+<li>
+<p>Create a ConfigMap by running:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl create configmap my-json-layouts --from-file=/path/to/MyLayout.json
+</code></pre></div></p>
+</li>
+<li>
+<p>Set <code>log4jJsonTemplatesConfigMapName</code> in the Helm values to:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">log4jJsonTemplatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-json-layouts&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Use the custom layout in the <code>log4j2Properties</code> value by adding these properties:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="na">appender.myAppender.layout.type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">JsonTemplateLayout</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">appender.myAppender.layout.eventTemplateUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">file:/log4j-config/MyLayout.json</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>Refer to the <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html">Log4j documentation</a> for available properties.</p>
 <h2 id="configure-the-default-user-role-and-owner-of-the-galasa-service">Configure the default user role, and 'owner' of the Galasa service<a class="headerlink" href="#configure-the-default-user-role-and-owner-of-the-galasa-service" title="Permanent link">&para;</a></h2>
 <p>When the Galasa service is first installed, users logging in will be assigned a role as dictated by the <code>galasaDefaultUserRole</code> Helm chart property. For example 'tester'.
 This means nobody initially logging into the Galasa service will have administrator privileges.
@@ -6444,7 +6504,7 @@ If you are unsure what login-id to use, try setting up your system without an ow
 <ol>
 <li>
 <p>Install the Galasa Ecosystem chart by running the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">helm install -f /path/to/values.yaml &lt;release-name&gt; galasa/ecosystem --wait</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="go">helm install -f /path/to/values.yaml &lt;release-name&gt; galasa/ecosystem --wait</span>
 </code></pre></div>
 <p>where:</p>
 <ul>
@@ -6459,19 +6519,19 @@ If you are unsure what login-id to use, try setting up your system without an ow
 </li>
 <li>
 <p>View the status of the deployed pods by running <code>kubectl get pods</code> in another terminal. The returned results should look similar to the following example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">test-api-7945f959dd-v8tbs                 1/1     Running    0             65s</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">test-engine-controller-56fb476f45-msj4x   1/1     Running    0             65s</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="go">test-etcd-0                               1/1     Running    0             65s</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="go">test-metrics-5fd9f687b6-rwcww             1/1     Running    0             65s</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="go">test-ras-0                                1/1     Running    0             65s</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="go">test-resource-monitor-778c647995-x75z9    1/1     Running    0             65s</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">test-api-7945f959dd-v8tbs                 1/1     Running    0             65s</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">test-engine-controller-56fb476f45-msj4x   1/1     Running    0             65s</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="go">test-etcd-0                               1/1     Running    0             65s</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="go">test-metrics-5fd9f687b6-rwcww             1/1     Running    0             65s</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="go">test-ras-0                                1/1     Running    0             65s</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="go">test-resource-monitor-778c647995-x75z9    1/1     Running    0             65s</span>
 </code></pre></div>
 </li>
 </ol>
 <h2 id="verifying-the-installation">Verifying the installation<a class="headerlink" href="#verifying-the-installation" title="Permanent link">&para;</a></h2>
 <p>After the <code>helm install</code> command completes with a successful deployment message, run the following command to check that the Ecosystem can be accessed externally to Kubernetes so that a simple test engine can be run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;release-name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;release-name&gt;
 </code></pre></div>
 <p>where:</p>
 <p><code>&lt;release-name&gt;</code> is the name that you gave the Ecosystem during installation.</p>
@@ -6480,21 +6540,21 @@ If you are unsure what login-id to use, try setting up your system without an ow
 <p>The URL of the Ecosystem bootstrap will be your external hostname, followed by <code>/api/bootstrap</code>.</p>
 <p>For example, if the external hostname that you provided was <code>example.com</code> and you provided values for using TLS, the bootstrap URL would be <code>https://example.com/api/bootstrap</code>. This is the URL that you would enter into a galasactl command's <code>--bootstrap</code> option to interact with your Ecosystem.</p>
 <p>If you are deploying to minikube, add an entry to your <code>/etc/hosts</code> file, ensuring the IP address matches the output of <code>minikube ip</code>. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">192.168.49.2 example.com</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">192.168.49.2 example.com</span>
 </code></pre></div>
 <h2 id="running-galasa-tests">Running Galasa tests<a class="headerlink" href="#running-galasa-tests" title="Permanent link">&para;</a></h2>
 <p>Once you have successfully installed the Ecosystem, you can then deploy your Galasa tests to a Maven repository and set up a test stream. For more information on managing tests, see the <a href="../../manage-ecosystem/">Managing tests in a Galasa Ecosystem</a> documentation.</p>
 <h2 id="upgrading-the-galasa-ecosystem">Upgrading the Galasa Ecosystem<a class="headerlink" href="#upgrading-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
 <p>Get the latest version of the Ecosystem chart and upgrade the Galasa Ecosystem to use the newer version of Galasa - for example version 0.44.0 - by running the following command:</p>
 <p>On Mac or Unix:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>--reuse-values<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.44.0<span class="w"> </span>--wait
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>--reuse-values<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.44.0<span class="w"> </span>--wait
 </code></pre></div>
 <p>On Windows (Powershell):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span> <span class="p">`</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">44</span><span class="p">.</span><span class="n">0</span> <span class="p">-</span><span class="n">-wait</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span> <span class="p">`</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">44</span><span class="p">.</span><span class="n">0</span> <span class="p">-</span><span class="n">-wait</span>
 </code></pre></div>
 <p>where:</p>
 <ul>
