@@ -6035,6 +6035,9 @@
 <li>
 <p>Added a configuration setting <code>couchdb.documentRevisionLimit</code> in the Galasa Helm chart to control the maximum number of document revisions that should be stored in the CouchDB service. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2439">#2439</a>.</p>
 </li>
+<li>
+<p>Deprecated the <code>callback_url</code> query parameter in the Galasa REST API's <code>GET /auth</code> endpoint in favour of a new <code>base64_callback_url</code> query parameter, which takes a Base64URL-encoded URL that the API will redirect back to after authenticating. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2416">#2416</a>.</p>
+</li>
 </ul>
 <h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2025/09/04/v0.44.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>
