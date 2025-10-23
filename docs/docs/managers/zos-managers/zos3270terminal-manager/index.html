@@ -3796,15 +3796,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#select-3270-terminal-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Select 3270 terminal outputs
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -6220,15 +6211,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#select-3270-terminal-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Select 3270 terminal outputs
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -6406,7 +6388,7 @@
 <p>Colour and highlight validation is supported. Use the <code>retrieveHighlightAtCursor</code> method to check that a field is highlighted as expected. Use the <code>retrieveColourAtCursor</code> method to check that the text colour in a specified field is as expected. You can check for the following colours: blue, red, pink, green, turquoise, yellow, neutral, and default. Use the <code>terminal.reportExtendedScreen</code> method to send colour output to the log. Support is also provided for diffent screen sizes. Screen sizes can be specified on the <code>@Zos3270Terminal</code> annotation.</p>
 <p>The <code>ConfidentialTextFiltering</code> service enables confidential information such as passwords to be replaced with a numbered shield in these generated logs. </p>
 <p>Examples of using colour support and screen sizing are available in the <a href="#code-snippets-and-examples">Code snippets and examples</a> section.</p>
-<p>When running a Galasa test with the Galasa CLI, terminal images are logged to the run log and PNG representations of the terminal screens can also be saved to the Result Archive Store (RAS) as the outputs are now controlled by the <code>zos3270.terminal.output</code> CPS property.</p>
+<p>When running a Galasa test with the Galasa CLI, terminal images are logged to the run log and PNG representations of the terminal screens are saved to the Result Archive Store (RAS).</p>
 <p>The zos3270Terminal Manager supports <a href="https://github.com/galasa-dev/cli/blob/main/gherkin-docs.md#3270-terminal-manipulation-steps" target="_blank">Gherkin keywords</a>. </p>
 <p><em>Note:</em> The feature for saving PNG representations of the terminal screens to the RAS is available in the current release as experimental code only.</p>
 <h2 id="including-the-manager-in-a-test">Including the Manager in a test<a class="headerlink" href="#including-the-manager-in-a-test" title="Permanent link">&para;</a></h2>
@@ -6631,41 +6613,6 @@
 <tr>
 <td>Examples:</td>
 <td style="text-align: left;"><code>zos3270.image.IMAGE_A.device.name=IYCQTC57</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="select-3270-terminal-outputs">Select 3270 terminal outputs<a class="headerlink" href="#select-3270-terminal-outputs" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Property:</th>
-<th style="text-align: left;">3270TerminalOutput CPS Property</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Name:</td>
-<td style="text-align: left;">zos3270.terminal.output</td>
-</tr>
-<tr>
-<td>Description:</td>
-<td style="text-align: left;">Experimental: Selects the representations of 3270 terminal screens to be saved to the RAS</td>
-</tr>
-<tr>
-<td>Required:</td>
-<td style="text-align: left;">No</td>
-</tr>
-<tr>
-<td>Default value:</td>
-<td style="text-align: left;">JSON</td>
-</tr>
-<tr>
-<td>Valid values:</td>
-<td style="text-align: left;">JSON, PNG</td>
-</tr>
-<tr>
-<td>Examples:</td>
-<td style="text-align: left;"><code>zos3270.terminal.output=json,png</code></td>
 </tr>
 </tbody>
 </table>
