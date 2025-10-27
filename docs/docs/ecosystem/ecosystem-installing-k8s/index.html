@@ -6484,6 +6484,23 @@ and the value of the <code>config.yaml</code> key must be a valid Dex configurat
 </li>
 </ol>
 <p>Refer to the <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html">Log4j documentation</a> for available properties.</p>
+<h4 id="configuring-public-certificates-optional">Configuring Public Certificates (Optional)<a class="headerlink" href="#configuring-public-certificates-optional" title="Permanent link">&para;</a></h4>
+<p>If you are deploying your Galasa service on an internal or corporate network and expect your Galasa tests to connect to servers that use internal certificates, you will need to supply the public certificates so that Galasa can contact those servers successfully.</p>
+<p>You can use the <code>certificatesConfigMapName</code> value to provide the name of an existing ConfigMap containing the certificates that you wish to inject into the Galasa service pods. To do this, take the following steps:</p>
+<ol>
+<li>
+<p>Create a ConfigMap by running:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>kubectl create configmap my-certificates --from-file=/path/to/my/certificate.pem
+</code></pre></div>
+    where <code>/path/to/my/certificate.pem</code> is a file path on your machine to a certificate that you wish to include. You can supply multiple <code>--from-file</code> flags if you wish to load multiple certificates into the ConfigMap.</p>
+</li>
+<li>
+<p>Set <code>certificatesConfigMapName</code> in the Helm values to the name of the ConfigMap that you created (in this example, the name is <code>my-certificates</code>):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">certificatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-certificates&quot;</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>You can then proceed with the installation of the Galasa service and the Helm chart will inject the certificates inside the ConfigMap into the Galasa service pods.</p>
 <h2 id="configure-the-default-user-role-and-owner-of-the-galasa-service">Configure the default user role, and 'owner' of the Galasa service<a class="headerlink" href="#configure-the-default-user-role-and-owner-of-the-galasa-service" title="Permanent link">&para;</a></h2>
 <p>When the Galasa service is first installed, users logging in will be assigned a role as dictated by the <code>galasaDefaultUserRole</code> Helm chart property. For example 'tester'.
 This means nobody initially logging into the Galasa service will have administrator privileges.
@@ -6504,7 +6521,7 @@ If you are unsure what login-id to use, try setting up your system without an ow
 <ol>
 <li>
 <p>Install the Galasa Ecosystem chart by running the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="go">helm install -f /path/to/values.yaml &lt;release-name&gt; galasa/ecosystem --wait</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="go">helm install -f /path/to/values.yaml &lt;release-name&gt; galasa/ecosystem --wait</span>
 </code></pre></div>
 <p>where:</p>
 <ul>
@@ -6519,19 +6536,19 @@ If you are unsure what login-id to use, try setting up your system without an ow
 </li>
 <li>
 <p>View the status of the deployed pods by running <code>kubectl get pods</code> in another terminal. The returned results should look similar to the following example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">test-api-7945f959dd-v8tbs                 1/1     Running    0             65s</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">test-engine-controller-56fb476f45-msj4x   1/1     Running    0             65s</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="go">test-etcd-0                               1/1     Running    0             65s</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="go">test-metrics-5fd9f687b6-rwcww             1/1     Running    0             65s</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="go">test-ras-0                                1/1     Running    0             65s</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="go">test-resource-monitor-778c647995-x75z9    1/1     Running    0             65s</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="go">test-api-7945f959dd-v8tbs                 1/1     Running    0             65s</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="go">test-engine-controller-56fb476f45-msj4x   1/1     Running    0             65s</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="go">test-etcd-0                               1/1     Running    0             65s</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="go">test-metrics-5fd9f687b6-rwcww             1/1     Running    0             65s</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="go">test-ras-0                                1/1     Running    0             65s</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="go">test-resource-monitor-778c647995-x75z9    1/1     Running    0             65s</span>
 </code></pre></div>
 </li>
 </ol>
 <h2 id="verifying-the-installation">Verifying the installation<a class="headerlink" href="#verifying-the-installation" title="Permanent link">&para;</a></h2>
 <p>After the <code>helm install</code> command completes with a successful deployment message, run the following command to check that the Ecosystem can be accessed externally to Kubernetes so that a simple test engine can be run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;release-name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;release-name&gt;
 </code></pre></div>
 <p>where:</p>
 <p><code>&lt;release-name&gt;</code> is the name that you gave the Ecosystem during installation.</p>
@@ -6540,21 +6557,21 @@ If you are unsure what login-id to use, try setting up your system without an ow
 <p>The URL of the Ecosystem bootstrap will be your external hostname, followed by <code>/api/bootstrap</code>.</p>
 <p>For example, if the external hostname that you provided was <code>example.com</code> and you provided values for using TLS, the bootstrap URL would be <code>https://example.com/api/bootstrap</code>. This is the URL that you would enter into a galasactl command's <code>--bootstrap</code> option to interact with your Ecosystem.</p>
 <p>If you are deploying to minikube, add an entry to your <code>/etc/hosts</code> file, ensuring the IP address matches the output of <code>minikube ip</code>. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">192.168.49.2 example.com</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="go">192.168.49.2 example.com</span>
 </code></pre></div>
 <h2 id="running-galasa-tests">Running Galasa tests<a class="headerlink" href="#running-galasa-tests" title="Permanent link">&para;</a></h2>
 <p>Once you have successfully installed the Ecosystem, you can then deploy your Galasa tests to a Maven repository and set up a test stream. For more information on managing tests, see the <a href="../../manage-ecosystem/">Managing tests in a Galasa Ecosystem</a> documentation.</p>
 <h2 id="upgrading-the-galasa-ecosystem">Upgrading the Galasa Ecosystem<a class="headerlink" href="#upgrading-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
 <p>Get the latest version of the Ecosystem chart and upgrade the Galasa Ecosystem to use the newer version of Galasa - for example version 0.44.0 - by running the following command:</p>
 <p>On Mac or Unix:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>--reuse-values<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.44.0<span class="w"> </span>--wait
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>--reuse-values<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.44.0<span class="w"> </span>--wait
 </code></pre></div>
 <p>On Windows (Powershell):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span> <span class="p">`</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">44</span><span class="p">.</span><span class="n">0</span> <span class="p">-</span><span class="n">-wait</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span> <span class="p">`</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">44</span><span class="p">.</span><span class="n">0</span> <span class="p">-</span><span class="n">-wait</span>
 </code></pre></div>
 <p>where:</p>
 <ul>
