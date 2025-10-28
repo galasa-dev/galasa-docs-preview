@@ -67,7 +67,6 @@ dev.galasa.selenium
 dev.galasa.selenium.spi
 dev.galasa.textscan
 dev.galasa.textscan.spi
-dev.galasa.vtp.manager
 dev.galasa.windows
 dev.galasa.windows.spi
 dev.galasa.zos
