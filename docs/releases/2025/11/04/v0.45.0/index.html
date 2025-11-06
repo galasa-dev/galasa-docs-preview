@@ -10,10 +10,10 @@
       
       
       
-        <link rel="canonical" href="https://galasa.dev/releases/2025/09/04/v0.44.0/">
+        <link rel="canonical" href="https://galasa.dev/releases/2025/11/04/v0.45.0/">
       
       
-        <link rel="prev" href="../../../08/13/v0.43.0/">
+        <link rel="prev" href="../../../10/29/v0.44.0/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>0.44.0 - Release Highlights - Galasa</title>
+        <title>0.45.0 - Release Highlights - Galasa</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#0440-release-highlights" class="md-skip">
+        <a href="#0450-release-highlights" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              0.44.0 - Release Highlights
+              0.45.0 - Release Highlights
             
           </span>
         </div>
@@ -5878,15 +5878,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#changes-affecting-the-galasa-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      Changes affecting the Galasa Service
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#changes-affecting-tests-running-locally-or-on-the-galasa-service" class="md-nav__link">
     <span class="md-ellipsis">
       Changes affecting tests running locally or on the Galasa Service
@@ -5932,7 +5923,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-09-04 00:00:00+00:00" class="md-ellipsis">September 4, 2025</time>
+                        <time datetime="2025-11-04 00:00:00+00:00" class="md-ellipsis">November 4, 2025</time>
                       </div>
                     </li>
                     
@@ -5960,12 +5951,12 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/galasa-dev/galasa/releases/tag/v0.44.0" class="md-nav__link">
+      <a href="https://github.com/galasa-dev/galasa/releases/tag/v0.45.0" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    v0.44.0 GitHub release
+    v0.45.0 GitHub release
     
   </span>
   
@@ -6023,7 +6014,7 @@
 
   <!-- Edit button -->
   
-    <a href="https://github.com/galasa-dev/galasa/edit/main/docs/content/releases/posts/v0.44.0.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/galasa-dev/galasa/edit/main/docs/content/releases/posts/v0.45.0.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -6034,53 +6025,18 @@
     
       
     
-    <a href="https://github.com/galasa-dev/galasa/raw/main/docs/content/releases/posts/v0.44.0.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/galasa-dev/galasa/raw/main/docs/content/releases/posts/v0.45.0.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="0440-release-highlights">0.44.0 - Release Highlights<a class="headerlink" href="#0440-release-highlights" title="Permanent link">&para;</a></h1>
-<h2 id="changes-affecting-the-galasa-service">Changes affecting the Galasa Service<a class="headerlink" href="#changes-affecting-the-galasa-service" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>The Galasa service Helm chart's <code>eventStreamsSecretName</code> value is now optional and a value is no longer provided by default.</p>
-<ul>
-<li>If no secret name is given, the Galasa service's Kafka extension will not be loaded.</li>
-<li>If a secret name is given, the Helm chart will attempt to load the Kubernetes secret with the given name and pass it through to be used by the Galasa service's Kafka extension.</li>
-<li>If a secret name is given but no such secret exists in the Kubernetes namespace, then the Galasa service will fail to be installed or upgraded.</li>
-</ul>
-</li>
-<li>
-<p>The image used by Galasa in init containers, which contains the <code>kubectl</code> tool has been replaced.</p>
-</li>
-<li>Previously, the <code>bitnami/kubectl</code> image was used by default to make some pods wait for others to start, to avoid an error storm which would happen if all the pods started up at the same time. This enforces an ordering of pods starting up which matches their dependencies.</li>
-<li>The <code>bitnami</code> images were withdrawn, so the default value in the helm <code>values.yaml</code> file was switched to use a different image containing the same tool: <code>kubectlImage: "rancher/kubectl:v1.33.5"</code></li>
-<li>
-<p>Previous releases are also effected, so administrators of older installs of the Galasa service will also need to make this change and update their helm install.</p>
-</li>
-<li>
-<p>Added <code>log4j2Properties</code> and <code>log4jJsonTemplatesConfigMapName</code> configuration settings in the Galasa service Helm chart to allow users to configure Log4j in their Galasa service. See the <a href="../../../../../docs/ecosystem/ecosystem-installing-k8s/#configuring-logging-for-the-galasa-service-optional">Installing an Ecosystem using Helm documentation</a> for detailed instructions on how to do this.</p>
-</li>
-<li>
-<p>Added a configuration setting <code>couchdb.documentRevisionLimit</code> in the Galasa Helm chart to control the maximum number of document revisions that should be stored in the CouchDB service. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2439">#2439</a>.</p>
-</li>
-<li>
-<p>Deprecated the <code>callback_url</code> query parameter in the Galasa REST API's <code>GET /auth</code> endpoint in favour of a new <code>base64_callback_url</code> query parameter, which takes a Base64URL-encoded URL that the API will redirect back to after authenticating. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2416">#2416</a>.</p>
-</li>
-<li>
-<p>Added a configuration setting <code>certificatesConfigMapName</code> in the Galasa service Helm chart to allow users to supply public certificates for Galasa service pods to use. See the <a href="../../../../../docs/ecosystem/ecosystem-installing-k8s/#configuring-public-certificates-optional">Installing an Ecosystem using Helm documentation</a> for detailed instructions on how to do this.</p>
-</li>
-</ul>
+<h1 id="0450-release-highlights">0.45.0 - Release Highlights<a class="headerlink" href="#0450-release-highlights" title="Permanent link">&para;</a></h1>
 <h2 id="changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service<a class="headerlink" href="#changes-affecting-tests-running-locally-or-on-the-galasa-service" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>The 3270 manager's <code>ITerminal</code> interface has a new <code>toJsonString()</code> method that allows tests to convert the current 3270 terminal screen into JSON format.</p>
-</li>
-<li>
-<p>The VTP manager has been removed from the available Galasa managers as the IBM Z Virtual Test Platform offering has been discontinued. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2460">#2460</a>.</p>
-</li>
+<li>When a local test run shares a Dynamic Status Store (DSS) with a Galasa service and the run exits while in the 'queued' state, the test run will be interrupted and the DSS record for that run will be cleaned up after a period of time has passed. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2395">#2395</a>.</li>
+<li>By default, local 'queued' runs are set to time out after 15 minutes but this can be changed by setting the new <code>framework.resource.management.local.queued.timeout</code> CPS property to the desired amount of time in seconds.</li>
 </ul>
 
 
@@ -6124,7 +6080,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../08/13/v0.43.0/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 0.43.0 - Release Highlights">
+          <a href="../../../10/29/v0.44.0/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 0.44.0 - Release Highlights">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -6134,7 +6090,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                0.43.0 - Release Highlights
+                0.44.0 - Release Highlights
               </div>
             </div>
           </a>
