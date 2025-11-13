@@ -6166,7 +6166,7 @@
 <li>Access the Galasa SimBank web application from <code>http://localhost:8080/galasa-simplatform-webapp/simbank</code></li>
 </ol>
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
-<p>If the container is not working correctly, for example, compilation and runtime errors are returned, check the version of tomcat in the Dockerfile. You might need to edit the tomcat version to a version that is compatible with Java 11, for example, <code>FROM tomcat:8.5.82-jre11-temurin</code>.</p>
+<p>If the container is not working correctly, for example, compilation and runtime errors are returned, check the version of tomcat in the Dockerfile. You might need to edit the tomcat version to a version that is compatible with the <code>javax.servlet.*</code> API and Java 17, for example, <code>FROM tomcat:9-jre17-temurin</code>.</p>
 <h2 id="walkthrough-webappintegrationtest">Walkthrough - WebAppIntegrationTest<a class="headerlink" href="#walkthrough-webappintegrationtest" title="Permanent link">&para;</a></h2>
 <p>To run the test, follow the same steps as for <code>SimBankIVT.java</code> but using the test class name <code>WebAppIntegrationTest</code> instead of <code>SimBankIVT</code>. </p>
 <p>For brevity, package declarations and imports are omitted in the following walkthrough.</p>
