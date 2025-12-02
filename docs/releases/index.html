@@ -6004,6 +6004,10 @@
 <li>When a local test run shares a Dynamic Status Store (DSS) with a Galasa service and the run exits while in the 'queued' state, the test run will be interrupted and the DSS record for that run will be cleaned up after a period of time has passed. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2395">#2395</a>.</li>
 <li>By default, local 'queued' runs are set to time out after 15 minutes but this can be changed by setting the new <code>framework.resource.management.local.queued.timeout</code> CPS property to the desired amount of time in seconds.</li>
 </ul>
+<h3 id="changes-affecting-tests-running-locally"><a class="toclink" href="2025/11/04/v0.45.0/#changes-affecting-tests-running-locally">Changes affecting tests running locally</a></h3>
+<ul>
+<li>If a local test run uses a manager that allocates resources and the test run's JVM exits before cleaning the allocated resources up, you can run the new <code>galasactl runs cleanup local</code> command which runs resource management providers (Java classes implementing Galasa's IResourceManagementProvider interface) to clean up resources. <a href="../docs/reference/cli-syntax/galasactl_runs_cleanup_local/">See the new command syntax</a>.</li>
+</ul>
     
   </div>
 </article>
