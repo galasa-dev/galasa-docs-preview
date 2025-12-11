@@ -6125,6 +6125,11 @@
 <li>The SSH client library that Galasa uses has been updated to support stronger key algorithms, including <code>rsa-sha2-256</code> and <code>rsa-sha2-512</code>. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2461">#2461</a>.</li>
 <li><strong>Galasa managers that use the IP network manager, like the zOS TSO Command SSH and zOS UNIX Command SSH managers, no longer support the RSA/SHA1 signature algorithm when connecting to a server via SSH. If you are using RSA/SHA1, you should upgrade your servers to use a stronger algorithm.</strong></li>
 </ul>
+<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="../../2025/12/05/v0.46.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
+<ul>
+<li>Users now have a <code>priority</code> modifier associated with them that can affect the order in which tests submitted by users are scheduled. Tests submitted by users with higher priority modifiers can be scheduled before tests that were submitted by users with lower priority modifiers. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2176">#2176</a>.</li>
+<li>User priorities can be updated using the new <code>--priority</code> flag in the <code>galasactl users set</code> command. <a href="../../../docs/reference/cli-syntax/galasactl_users_set/">See the command reference</a>.</li>
+</ul>
     
   </div>
 </article>
