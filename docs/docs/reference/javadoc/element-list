@@ -39,6 +39,7 @@ dev.galasa.framework.spi.language.gherkin.xform
 dev.galasa.framework.spi.ras
 dev.galasa.framework.spi.rbac
 dev.galasa.framework.spi.streams
+dev.galasa.framework.spi.tags
 dev.galasa.framework.spi.teststructure
 dev.galasa.framework.spi.utils
 dev.galasa.galasaecosystem
