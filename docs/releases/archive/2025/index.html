@@ -6134,7 +6134,14 @@
 <li>
 <p>Administrators can now set a user to associate with a batch of test runs when they are submitted, which may or may not be the same as the requestor. This allows admins who run batches of tests in an automation tool or workflow where the requestor is a functional ID/bot account, to also associate a user with the test runs, so these runs can be queried by the user later. </p>
 </li>
-<li>The user can be set when submitting tests with the Runs API. <a href="../../../docs/reference/rest-api/">See the REST API reference</a>.</li>
+<li>
+<p>The user can be set when submitting tests with the Runs API. <a href="../../../docs/reference/rest-api/">See the REST API reference</a>.</p>
+</li>
+<li>
+<p>Added <code>galasactl tags</code> commands to the Galasa CLI tool that can be used to create, read, update, and delete test tags as resources on the Galasa service. <a href="../../../docs/reference/cli-syntax/galasactl_tags/">See the command reference for more details</a></p>
+</li>
+<li>Tags can be assigned a <code>priority</code> modifier that can affect the order in which tests submitted to a Galasa service are scheduled. Test submitted with tags that have higher priority modifiers will be scheduled before tests that have no tags or tags with lower priority modifiers. </li>
+<li>Tags can also be assigned a <code>description</code> which can be used to provide more information about the tag.</li>
 </ul>
     
   </div>
