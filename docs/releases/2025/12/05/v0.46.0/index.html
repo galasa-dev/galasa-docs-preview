@@ -6075,7 +6075,13 @@
 <h2 id="changes-affecting-the-galasa-service">Changes affecting the Galasa Service<a class="headerlink" href="#changes-affecting-the-galasa-service" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Users now have a <code>priority</code> modifier associated with them that can affect the order in which tests submitted by users are scheduled. Tests submitted by users with higher priority modifiers can be scheduled before tests that were submitted by users with lower priority modifiers. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2176">#2176</a>.</li>
-<li>User priorities can be updated using the new <code>--priority</code> flag in the <code>galasactl users set</code> command. <a href="../../../../../docs/reference/cli-syntax/galasactl_users_set/">See the command reference</a>.</li>
+<li>
+<p>User priorities can be updated using the new <code>--priority</code> flag in the <code>galasactl users set</code> command. <a href="../../../../../docs/reference/cli-syntax/galasactl_users_set/">See the command reference</a>.</p>
+</li>
+<li>
+<p>Administrators can now set a user to associate with a batch of test runs when they are submitted, which may or may not be the same as the requestor. This allows admins who run batches of tests in an automation tool or workflow where the requestor is a functional ID/bot account, to also associate a user with the test runs, so these runs can be queried by the user later. </p>
+</li>
+<li>The user can be set when submitting tests with the Runs API. <a href="../../../../../docs/reference/rest-api/">See the REST API reference</a>.</li>
 </ul>
 
 
