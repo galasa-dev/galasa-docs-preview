@@ -6132,10 +6132,12 @@
 <p>User priorities can be updated using the new <code>--priority</code> flag in the <code>galasactl users set</code> command. <a href="../../../docs/reference/cli-syntax/galasactl_users_set/">See the command reference</a>.</p>
 </li>
 <li>
-<p>Administrators can now set a user to associate with a batch of test runs when they are submitted, which may or may not be the same as the requestor. This allows admins who run batches of tests in an automation tool or workflow where the requestor is a functional ID/bot account, to also associate a user with the test runs, so these runs can be queried by the user later. </p>
+<p>Administrators can now set a user to associate with a batch of test runs when they are submitted, which may or may not be the same as the requestor. This allows admins who run batches of tests in an automation tool or workflow where the requestor is a functional ID/bot account, to also associate a user with the test runs, so these runs can be queried by the user later.</p>
 </li>
+<li>This can be set with the <code>--user</code> flag on the <code>galasactl runs submit</code> command. <a href="../../../docs/reference/cli-syntax/galasactl_runs_submit/">See the command reference</a>.</li>
+<li>The user can also be set when submitting tests with the Runs API. <a href="../../../docs/reference/rest-api/">See the REST API reference</a>.</li>
 <li>
-<p>The user can be set when submitting tests with the Runs API. <a href="../../../docs/reference/rest-api/">See the REST API reference</a>.</p>
+<p>Runs can now be queried by user in the <code>galasactl runs get</code> command with the <code>--user</code> flag. This will return any runs where the <code>user</code> or <code>requestor</code> matches the value passed in with the <code>--user</code> flag. <a href="../../../docs/reference/cli-syntax/galasactl_runs_get/">See the command reference</a>.</p>
 </li>
 <li>
 <p>Added <code>galasactl tags</code> commands to the Galasa CLI tool that can be used to create, read, update, and delete test tags as resources on the Galasa service. <a href="../../../docs/reference/cli-syntax/galasactl_tags/">See the command reference for more details</a></p>
