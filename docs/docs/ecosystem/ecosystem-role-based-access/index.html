@@ -6311,9 +6311,14 @@ can be performed by a client program using that access token.</p>
 <td>none</td>
 </tr>
 <tr>
+<td>viewer</td>
+<td>A user who can query and read test results from the CLI or webui</td>
+<td>GENERAL_API_ACCESS</td>
+</tr>
+<tr>
 <td>tester</td>
 <td>A user who writes and runs tests, looks at the test results and diagnoses errors in the system under test</td>
-<td>GENERAL_API_ACCESS</td>
+<td>GENERAL_API_ACCESS, TEST_RUN_LAUNCH and USER_EDIT_OTHER</td>
 </tr>
 <tr>
 <td>admin</td>
