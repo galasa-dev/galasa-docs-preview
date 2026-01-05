@@ -6040,10 +6040,15 @@
 <p>Runs can now be queried by user in the <code>galasactl runs get</code> command with the <code>--user</code> flag. This will return any runs where the <code>user</code> or <code>requestor</code> matches the value passed in with the <code>--user</code> flag. <a href="../docs/reference/cli-syntax/galasactl_runs_get/">See the command reference</a>.</p>
 </li>
 <li>
-<p>Added <code>galasactl tags</code> commands to the Galasa CLI tool that can be used to create, read, update, and delete test tags as resources on the Galasa service. <a href="../docs/reference/cli-syntax/galasactl_tags/">See the command reference for more details</a></p>
+<p>Added <code>galasactl tags</code> commands to the Galasa CLI tool that can be used to create, read, update, and delete test tags as resources on the Galasa service. <a href="../docs/reference/cli-syntax/galasactl_tags/">See the command reference for more details</a>.</p>
 </li>
 <li>Tags can be assigned a <code>priority</code> modifier that can affect the order in which tests submitted to a Galasa service are scheduled. Test submitted with tags that have higher priority modifiers will be scheduled before tests that have no tags or tags with lower priority modifiers. </li>
-<li>Tags can also be assigned a <code>description</code> which can be used to provide more information about the tag.</li>
+<li>
+<p>Tags can also be assigned a <code>description</code> which can be used to provide more information about the tag.</p>
+</li>
+<li>
+<p><code>galasactl runs submit local</code> commands can now be supplied with one or more <code>--methods</code> flags to run a selection of test methods locally from a Galasa test class that is provided with the <code>--class</code> flag. <a href="../docs/reference/cli-syntax/galasactl_runs_submit_local/">See the command reference for more details</a>.</p>
+</li>
 </ul>
     
   </div>
