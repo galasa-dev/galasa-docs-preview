@@ -6024,6 +6024,7 @@
 <ul>
 <li>The SSH client library that Galasa uses has been updated to support stronger key algorithms, including <code>rsa-sha2-256</code> and <code>rsa-sha2-512</code>. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2461">#2461</a>.</li>
 <li><strong>Galasa managers that use the IP network manager, like the zOS TSO Command SSH and zOS UNIX Command SSH managers, no longer support the RSA/SHA1 signature algorithm when connecting to a server via SSH. If you are using RSA/SHA1, you should upgrade your servers to use a stronger algorithm.</strong></li>
+<li>The z/OS Program Manager now validates that program names specified in the <code>@ZosProgram</code> annotation are <strong>uppercase</strong> and <strong>no longer than 8 characters</strong>. If a name is not uppercase or exceeds eight characters, the z/OS Program Manager rejects it and raises a ZosProgramManagerException with an actionable error message.</li>
 </ul>
 <h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2025/12/05/v0.46.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
