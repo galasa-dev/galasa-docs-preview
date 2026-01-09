@@ -6120,6 +6120,10 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="0460-release-highlights"><a class="toclink" href="../../2025/12/05/v0.46.0/">0.46.0 - Release Highlights</a></h2>
+<h3 id="deprecated-features"><a class="toclink" href="../../2025/12/05/v0.46.0/#deprecated-features">Deprecated features</a></h3>
+<ul>
+<li>The <code>includeCursor</code> query parameter has been marked as deprecated in the Galasa Service's <code>GET /ras/runs</code> REST API endpoint as cursor-based pagination is now enabled by default. This query parameter should be removed from requests to this endpoint.</li>
+</ul>
 <h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="../../2025/12/05/v0.46.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>
 <li>The SSH client library that Galasa uses has been updated to support stronger key algorithms, including <code>rsa-sha2-256</code> and <code>rsa-sha2-512</code>. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2461">#2461</a>.</li>
