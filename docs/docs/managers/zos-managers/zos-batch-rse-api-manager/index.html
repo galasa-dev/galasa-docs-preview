@@ -6022,7 +6022,7 @@
 
   <h1>z/OS Batch RSE API Manager</h1>
 
-<p>This Manager is at Alpha level. You can view the <a href="https://javadoc.galasa.dev/index.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
+<p>This Manager is at Alpha level. You can view the <a href="../../../reference/javadoc/dev/galasa/zosbatch/package-summary.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>This Manager is an internal implementation of the z/OS Batch Manager using RSE API. The RSE API Batch Manager is used in conjunction with the z/OS Manager. The z/OS Manager provides the interface for the z/OS batch function and pulls in the RSE API Batch Manager to provide the implementation of the interface. If your test needs to submit or monitor a batch job or retrieve output from a batch job, you can call the z/OS Manager in your test code and the z/OS Manager will call the RSE API Batch Manager to provide the implementation via the z/OS batch  function. For example, the <a href="../../../running-simbank-tests/batch-accounts-open-test/">BatchAccountsOpenTest</a>  uses the z/OS Manager (which in the background, invokes RSE API) to add a set of accounts to the Galasa SimBank  system via a z/OS batch job.</p>
 <p>The zOS Batch RSE API Manager is enabled by setting the CPS property: <code>zos.bundle.extra.batch.manager=dev.galasa.zosbatch.rseapi.manager</code></p>

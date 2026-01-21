@@ -6280,7 +6280,7 @@
 <p>The <code>@ZosProgram</code> annotation defines the program to the Galasa test. Program attributes, for example, program name, programming language and source location are specified by using the annotation  elements.</p>
 <p>The source for the program is stored as a resource, along with the test. The z/OS Program Manager processes  each <code>@ZosProgram</code> annotation before any of the test methods are executed. </p>
 <p>The Manager retrieves the source from the test bundle, builds and submits the relevant compile and link JCL based on  the programs attributes and CPS properties. The batch job is saved with the test run archive. The  program can be executed in the test by retrieving the library containing the load module by using  the <code>getLoadLibrary()</code> method.  </p>
-<p>You can view the <a href="https://javadoc.galasa.dev/index.html?overview-summary.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
+<p>You can view the <a href="../../../reference/javadoc/dev/galasa/zosprogram/package-summary.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
 <h2 id="including-the-manager-in-a-test">Including the Manager in a test<a class="headerlink" href="#including-the-manager-in-a-test" title="Permanent link">&para;</a></h2>
 <p>To use the z/OS program Manager in a test you must import the <em>@ZosProgram</em> annotation into the test, as shown in the following example: </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@ZosProgram</span>
@@ -6504,7 +6504,7 @@
 </tr>
 <tr>
 <td>Attribute: <code>language</code></td>
-<td style="text-align: left;">The programming language. Required. See <a href="https://javadoc.galasa.dev/dev/galasa/zosprogram/ZosProgram.Language.html" target="_blank">ZosProgram.Language</a>. <br><br></td>
+<td style="text-align: left;">The programming language. Required. See <a href="../../../reference/javadoc/dev/galasa/zosprogram/ZosProgram.Language.html" target="_blank">ZosProgram.Language</a>. <br><br></td>
 </tr>
 <tr>
 <td>Attribute: <code>cics</code></td>
@@ -6528,7 +6528,7 @@
 </tr>
 <tr>
 <td>Notes:</td>
-<td style="text-align: left;">The <code>IZosProgram</code> interface has a number of methods to manage the z/OS Program. See <a href="https://javadoc.galasa.dev/dev/galasa/zosprogram/ZosProgram.html" target="_blank">ZosProgram</a> and <a href="https://javadoc.galasa.dev/dev/galasa/zosprogram/IZosProgram.html" target="_blank">IZosProgram</a> to find out more.</td>
+<td style="text-align: left;">The <code>IZosProgram</code> interface has a number of methods to manage the z/OS Program. See <a href="../../../reference/javadoc/dev/galasa/zosprogram/ZosProgram.html" target="_blank">ZosProgram</a> and <a href="../../../reference/javadoc/dev/galasa/zosprogram/IZosProgram.html" target="_blank">IZosProgram</a> to find out more.</td>
 </tr>
 </tbody>
 </table>

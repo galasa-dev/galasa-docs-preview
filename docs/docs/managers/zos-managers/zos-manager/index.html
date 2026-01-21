@@ -7282,7 +7282,7 @@
 
   <h1>z/OS Manager</h1>
 
-<p>This Manager is at Beta level. You can view the <a href="https://javadoc.galasa.dev/index.html?overview-summary.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
+<p>This Manager is at Beta level. You can view the <a href="../../../reference/javadoc/dev/galasa/zos/package-summary.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>This Manager provides tests and Managers with access to and configuration information about z/OS images and Sysplexes. It offers services such as APF, DUMP, SMF and Log access.</p>
 <p>Additionally, the z/OS Manager provides tests with interfaces to the following z/OS functions which are implemented by other Managers:</p>
@@ -7303,7 +7303,7 @@
 <p><code>z/OS UNIX Command</code> which enables tests and Managers to issue and retrieve the responses from z/OS UNIX commands.</p>
 </li>
 </ul>
-<p>You can view the <a href="https://javadoc.galasa.dev/dev/galasa/zos/package-summary.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
+<p>You can view the <a href="../../../reference/javadoc/dev/galasa/zos/package-summary.html" target="_blank">Javadoc documentation for the Manager</a>.</p>
 <h2 id="including-the-manager-in-a-test">Including the Manager in a test<a class="headerlink" href="#including-the-manager-in-a-test" title="Permanent link">&para;</a></h2>
 <p>The z/OS Manager is not instantiated directly. To use the z/OS Manager in a test, import one or more of the following annotations into the test, as shown in the following examples: </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@ZosImage</span>
@@ -8598,7 +8598,7 @@
 </tr>
 <tr>
 <td>Notes:</td>
-<td style="text-align: left;">The <code>IZosBatch</code> interface has a single method, {@link IZosBatch#submitJob(String, IZosBatchJobname)} to submit a JCL  as a <code>String</code> and returns a <code>IZosBatchJob</code> instance.<br><br> See <a href="https://javadoc.galasa.dev/dev/galasa/zosbatch/ZosBatch.html" target="_blank">ZosBatch</a>, <a href="https://javadoc.galasa.dev/dev/galasa/zosbatch/IZosBatch.html" target="_blank">IZosBatch</a> and <a href="https://javadoc.galasa.dev/dev/galasa/zosbatch/IZosBatchJob.html" target="_blank">IZosBatchJob</a> to find out more.</td>
+<td style="text-align: left;">The <code>IZosBatch</code> interface has a single method, {@link IZosBatch#submitJob(String, IZosBatchJobname)} to submit a JCL  as a <code>String</code> and returns a <code>IZosBatchJob</code> instance.<br><br> See <a href="../../../reference/javadoc/dev/galasa/zosbatch/ZosBatch.html" target="_blank">ZosBatch</a>, <a href="../../../reference/javadoc/dev/galasa/zosbatch/IZosBatch.html" target="_blank">IZosBatch</a> and <a href="../../../reference/javadoc/dev/galasa/zosbatch/IZosBatchJob.html" target="_blank">IZosBatchJob</a> to find out more.</td>
 </tr>
 </tbody>
 </table>
@@ -8629,7 +8629,7 @@
 </tr>
 <tr>
 <td>Notes:</td>
-<td style="text-align: left;">The <code>IZosConsole</code> interface has two methods, {@link IZosConsole#issueCommand(String)} and {@link IZosConsole#issueCommand(String, String)} to issue a command to the z/OS console and returns a <code>IZosConsoleCommand</code> instance.<br><br> See <a href="https://javadoc.galasa.dev/dev/galasa/zosconsole/ZosConsole.html" target="_blank">ZosConsole</a>, <a href="https://javadoc.galasa.dev/dev/galasa/zosconsole/IZosConsole.html" target="_blank">IZosConsole</a> and <a href="https://javadoc.galasa.dev/dev/galasa/zosconsole/IZosConsoleCommand.html" target="_blank">IZosConsoleCommand</a> to find out more.</td>
+<td style="text-align: left;">The <code>IZosConsole</code> interface has two methods, {@link IZosConsole#issueCommand(String)} and {@link IZosConsole#issueCommand(String, String)} to issue a command to the z/OS console and returns a <code>IZosConsoleCommand</code> instance.<br><br> See <a href="../../../reference/javadoc/dev/galasa/zosconsole/ZosConsole.html" target="_blank">ZosConsole</a>, <a href="../../../reference/javadoc/dev/galasa/zosconsole/IZosConsole.html" target="_blank">IZosConsole</a> and <a href="../../../reference/javadoc/dev/galasa/zosconsole/IZosConsoleCommand.html" target="_blank">IZosConsoleCommand</a> to find out more.</td>
 </tr>
 </tbody>
 </table>
@@ -8656,7 +8656,7 @@
 </tr>
 <tr>
 <td>Notes:</td>
-<td style="text-align: left;">The <code>IZosFileHandler</code> interface has three methods supplying file name and z/OS image:<br> {@link IZosFileHandler#newDataset(String, dev.galasa.zos.IZosImage)}<br>  {@link IZosFileHandler#newVSAMDataset(String, dev.galasa.zos.IZosImage)}<br> {@link IZosFileHandler#newUNIXFile(String, dev.galasa.zos.IZosImage)}<br> returning an object representing the type of file requested. This can be an existing file or can be created via a method on the file object.<br><br> See <a href="https://javadoc.galasa.dev/dev/galasa/zosfile/ZosFileHandler.html" target="_blank">ZosFileHandler</a>, <a href="https://javadoc.galasa.dev/dev/galasa/zosfile/IZosFileHandler.html" target="_blank">IZosFileHandler</a>, <a href="https://javadoc.galasa.dev/dev/galasa/zosfile/IZosDataset.html" target="_blank">IZosDataset</a>, <a href="https://javadoc.galasa.dev/dev/galasa/zosfile/IZosVSAMDataset.html" target="_blank">IZosVSAMDataset</a> and <a href="https://javadoc.galasa.dev/dev/galasa/zosfile/IZosUNIXFile.html" target="_blank">IZosUNIXFile</a> to find out more.</td>
+<td style="text-align: left;">The <code>IZosFileHandler</code> interface has three methods supplying file name and z/OS image:<br> {@link IZosFileHandler#newDataset(String, dev.galasa.zos.IZosImage)}<br>  {@link IZosFileHandler#newVSAMDataset(String, dev.galasa.zos.IZosImage)}<br> {@link IZosFileHandler#newUNIXFile(String, dev.galasa.zos.IZosImage)}<br> returning an object representing the type of file requested. This can be an existing file or can be created via a method on the file object.<br><br> See <a href="../../../reference/javadoc/dev/galasa/zosfile/ZosFileHandler.html" target="_blank">ZosFileHandler</a>, <a href="../../../reference/javadoc/dev/galasa/zosfile/IZosFileHandler.html" target="_blank">IZosFileHandler</a>, <a href="../../../reference/javadoc/dev/galasa/zosfile/IZosDataset.html" target="_blank">IZosDataset</a>, <a href="../../../reference/javadoc/dev/galasa/zosfile/IZosVSAMDataset.html" target="_blank">IZosVSAMDataset</a> and <a href="../../../reference/javadoc/dev/galasa/zosfile/IZosUNIXFile.html" target="_blank">IZosUNIXFile</a> to find out more.</td>
 </tr>
 </tbody>
 </table>
@@ -8687,7 +8687,7 @@
 </tr>
 <tr>
 <td>Notes:</td>
-<td style="text-align: left;">The <code>IZosTSOCommand</code> interface provides the methods {@link IZosTSOCommand#issueCommand(String)} and {@link IZosTSOCommand#issueCommand(String, long)} to issue a command to z/OS TSO Command and returns a <code>String</code>.<br><br> See <a href="https://javadoc.galasa.dev/dev/galasa/zostsocommand/IZosTSOCommand.html" target="_blank">IZosTSOCommand</a> to find out more.</td>
+<td style="text-align: left;">The <code>IZosTSOCommand</code> interface provides the methods {@link IZosTSOCommand#issueCommand(String)} and {@link IZosTSOCommand#issueCommand(String, long)} to issue a command to z/OS TSO Command and returns a <code>String</code>.<br><br> See <a href="../../../reference/javadoc/dev/galasa/zostsocommand/IZosTSOCommand.html" target="_blank">IZosTSOCommand</a> to find out more.</td>
 </tr>
 </tbody>
 </table>
@@ -8718,7 +8718,7 @@
 </tr>
 <tr>
 <td>Notes:</td>
-<td style="text-align: left;">The <code>IZosUNIXCommand</code> interface provides the methods {@link IZosUNIXCommand#issueCommand(String)} and {@link IZosUNIXCommand#issueCommand(String, long)} to issue a command to z/OS UNIX and returns a <a href="https://javadoc.galasa.dev/dev/galasa/zosunixcommand/String.html" target="_blank">String</a> response.<br><br> See <a href="https://javadoc.galasa.dev/dev/galasa/zosunixcommand/IZosUNIXCommand.html" target="_blank">IZosUNIXCommand</a> to find out more.</td>
+<td style="text-align: left;">The <code>IZosUNIXCommand</code> interface provides the methods {@link IZosUNIXCommand#issueCommand(String)} and {@link IZosUNIXCommand#issueCommand(String, long)} to issue a command to z/OS UNIX and returns a String response.<br><br> See <a href="../../../reference/javadoc/dev/galasa/zosunixcommand/IZosUNIXCommand.html" target="_blank">IZosUNIXCommand</a> to find out more.</td>
 </tr>
 </tbody>
 </table>
