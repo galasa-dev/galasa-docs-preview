@@ -5241,6 +5241,8 @@
       
         
       
+        
+      
     
     
     
@@ -5274,6 +5276,31 @@
             Archive
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2026
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -5901,6 +5928,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#0461-release-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.46.1 - Release Highlights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#0460-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       0.46.0 - Release Highlights
@@ -5981,15 +6017,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#0370-release-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.37.0 - Release Highlights
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -6011,7 +6038,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2025-12-05 00:00:00+00:00">December 5, 2025</time></li>
+          <time datetime="2026-02-05 00:00:00+00:00">February 5, 2026</time></li>
         
         
       </ul>
@@ -6019,18 +6046,41 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="0460-release-highlights"><a class="toclink" href="2025/12/05/v0.46.0/">0.46.0 - Release Highlights</a></h2>
-<h3 id="deprecated-features"><a class="toclink" href="2025/12/05/v0.46.0/#deprecated-features">Deprecated features</a></h3>
+    <h2 id="0461-release-highlights"><a class="toclink" href="2026/02/05/v0.46.1/">0.46.1 - Release Highlights</a></h2>
+<ul>
+<li>The dependency on assertj-core has been upgraded from 3.25.3 to 3.27.7 to remove a security vulnerability.</li>
+<li>The dependency on byte-buddy has subsequently been upgraded from 1.15.10 to 1.18.3.</li>
+</ul>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-01-30 00:00:00+00:00">January 30, 2026</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0460-release-highlights"><a class="toclink" href="2026/01/30/v0.46.0/">0.46.0 - Release Highlights</a></h2>
+<h3 id="deprecated-features"><a class="toclink" href="2026/01/30/v0.46.0/#deprecated-features">Deprecated features</a></h3>
 <ul>
 <li>The <code>includeCursor</code> query parameter has been marked as deprecated in the Galasa Service's <code>GET /ras/runs</code> REST API endpoint as cursor-based pagination is now enabled by default. This query parameter should be removed from requests to this endpoint.</li>
 </ul>
-<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2025/12/05/v0.46.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
+<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2026/01/30/v0.46.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>
 <li>The SSH client library that Galasa uses has been updated to support stronger key algorithms, including <code>rsa-sha2-256</code> and <code>rsa-sha2-512</code>. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2461">#2461</a>.</li>
 <li><strong>Galasa managers that use the IP network manager, like the zOS TSO Command SSH and zOS UNIX Command SSH managers, no longer support the RSA/SHA1 signature algorithm when connecting to a server via SSH. If you are using RSA/SHA1, you should upgrade your servers to use a stronger algorithm.</strong></li>
 <li>The z/OS Program Manager now validates that program names specified in the <code>@ZosProgram</code> annotation are <strong>uppercase</strong> and <strong>no longer than 8 characters</strong>. If a name is not uppercase or exceeds eight characters, the z/OS Program Manager rejects it and raises a ZosProgramManagerException with an actionable error message.</li>
 </ul>
-<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2025/12/05/v0.46.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
+<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2026/01/30/v0.46.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
 <li>Users now have a <code>priority</code> modifier associated with them that can affect the order in which tests submitted by users are scheduled. Tests submitted by users with higher priority modifiers can be scheduled before tests that were submitted by users with lower priority modifiers. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2176">#2176</a>.</li>
 <li>
@@ -6550,33 +6600,6 @@ These files are combined into a single collection of properties, with warning me
 </li>
 <li>
 <p>This release also includes bug fixes, security updates, and other dependency updates.</p>
-</li>
-</ul>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-09-18 00:00:00+00:00">September 18, 2024</time></li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="0370-release-highlights"><a class="toclink" href="2024/09/18/v0.37.0/">0.37.0 - Release Highlights</a></h2>
-<ul>
-<li>
-<p>Galasa now supports Java 17.</p>
-</li>
-<li>
-<p>You can delete a test run by using the <code>galasactl runs delete</code> command. Deleting a test run removes all information about the test run along with any associated artifacts from an ecosystem's RAS.</p>
 </li>
 </ul>
     

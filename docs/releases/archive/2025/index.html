@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://galasa.dev/releases/archive/2025/">
       
       
-        <link rel="prev" href="../../license/">
+        <link rel="prev" href="../2026/">
       
       
         <link rel="next" href="../2024/">
@@ -5243,6 +5243,8 @@
       
         
       
+        
+      
     
     
     
@@ -5276,6 +5278,31 @@
             Archive
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2026
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -5336,15 +5363,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#0460-release-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.46.0 - Release Highlights
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#0450-release-highlights" class="md-nav__link">
@@ -6019,15 +6037,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#0460-release-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.46.0 - Release Highlights
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#0450-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       0.45.0 - Release Highlights
@@ -6104,60 +6113,6 @@
       <header class="md-typeset">
         <h1 id="2025">2025<a class="headerlink" href="#2025" title="Permanent link">&para;</a></h1>
       </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-12-05 00:00:00+00:00">December 5, 2025</time></li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="0460-release-highlights"><a class="toclink" href="../../2025/12/05/v0.46.0/">0.46.0 - Release Highlights</a></h2>
-<h3 id="deprecated-features"><a class="toclink" href="../../2025/12/05/v0.46.0/#deprecated-features">Deprecated features</a></h3>
-<ul>
-<li>The <code>includeCursor</code> query parameter has been marked as deprecated in the Galasa Service's <code>GET /ras/runs</code> REST API endpoint as cursor-based pagination is now enabled by default. This query parameter should be removed from requests to this endpoint.</li>
-</ul>
-<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="../../2025/12/05/v0.46.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
-<ul>
-<li>The SSH client library that Galasa uses has been updated to support stronger key algorithms, including <code>rsa-sha2-256</code> and <code>rsa-sha2-512</code>. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2461">#2461</a>.</li>
-<li><strong>Galasa managers that use the IP network manager, like the zOS TSO Command SSH and zOS UNIX Command SSH managers, no longer support the RSA/SHA1 signature algorithm when connecting to a server via SSH. If you are using RSA/SHA1, you should upgrade your servers to use a stronger algorithm.</strong></li>
-<li>The z/OS Program Manager now validates that program names specified in the <code>@ZosProgram</code> annotation are <strong>uppercase</strong> and <strong>no longer than 8 characters</strong>. If a name is not uppercase or exceeds eight characters, the z/OS Program Manager rejects it and raises a ZosProgramManagerException with an actionable error message.</li>
-</ul>
-<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="../../2025/12/05/v0.46.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
-<ul>
-<li>Users now have a <code>priority</code> modifier associated with them that can affect the order in which tests submitted by users are scheduled. Tests submitted by users with higher priority modifiers can be scheduled before tests that were submitted by users with lower priority modifiers. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2176">#2176</a>.</li>
-<li>
-<p>User priorities can be updated using the new <code>--priority</code> flag in the <code>galasactl users set</code> command. <a href="../../../docs/reference/cli-syntax/galasactl_users_set/">See the command reference</a>.</p>
-</li>
-<li>
-<p>Administrators can now set a user to associate with a batch of test runs when they are submitted, which may or may not be the same as the requestor. This allows admins who run batches of tests in an automation tool or workflow where the requestor is a functional ID/bot account, to also associate a user with the test runs, so these runs can be queried by the user later.</p>
-</li>
-<li>This can be set with the <code>--user</code> flag on the <code>galasactl runs submit</code> command. <a href="../../../docs/reference/cli-syntax/galasactl_runs_submit/">See the command reference</a>.</li>
-<li>The user can also be set when submitting tests with the Runs API. <a href="../../../docs/reference/rest-api/">See the REST API reference</a>.</li>
-<li>
-<p>Runs can now be queried by user in the <code>galasactl runs get</code> command with the <code>--user</code> flag. This will return any runs where the <code>user</code> or <code>requestor</code> matches the value passed in with the <code>--user</code> flag. <a href="../../../docs/reference/cli-syntax/galasactl_runs_get/">See the command reference</a>.</p>
-</li>
-<li>
-<p>Added <code>galasactl tags</code> commands to the Galasa CLI tool that can be used to create, read, update, and delete test tags as resources on the Galasa service. <a href="../../../docs/reference/cli-syntax/galasactl_tags/">See the command reference for more details</a>.</p>
-</li>
-<li>Tags can be assigned a <code>priority</code> modifier that can affect the order in which tests submitted to a Galasa service are scheduled. Test submitted with tags that have higher priority modifiers will be scheduled before tests that have no tags or tags with lower priority modifiers. </li>
-<li>
-<p>Tags can also be assigned a <code>description</code> which can be used to provide more information about the tag.</p>
-</li>
-<li>
-<p><code>galasactl runs submit local</code> commands can now be supplied with one or more <code>--methods</code> flags to run a selection of test methods locally from a Galasa test class that is provided with the <code>--class</code> flag. <a href="../../../docs/reference/cli-syntax/galasactl_runs_submit_local/">See the command reference for more details</a>.</p>
-</li>
-</ul>
-    
-  </div>
-</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -6640,7 +6595,7 @@ These files are combined into a single collection of properties, with warning me
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../license/" class="md-footer__link md-footer__link--prev" aria-label="Previous: License">
+          <a href="../2026/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2026">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -6650,7 +6605,7 @@ These files are combined into a single collection of properties, with warning me
                 Previous
               </span>
               <div class="md-ellipsis">
-                License
+                2026
               </div>
             </div>
           </a>
