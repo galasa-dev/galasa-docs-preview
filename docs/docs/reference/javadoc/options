@@ -37,8 +37,6 @@
 -tag
 "galasa.required:a:Required:"
 -tag
-"galasa.release.state:a:Release State:"
--tag
 "galasa.valid_values:a:Valid Values:"
 -use
 -version
