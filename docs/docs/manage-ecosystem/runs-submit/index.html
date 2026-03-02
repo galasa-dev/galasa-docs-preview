@@ -2030,6 +2030,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#controlling-how-long-tests-are-allowed-to-run-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlling how long tests are allowed to run for
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6067,6 +6076,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#controlling-how-long-tests-are-allowed-to-run-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlling how long tests are allowed to run for
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6222,6 +6240,12 @@
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="p">-</span><span class="n">-log</span> <span class="p">-</span> <span class="p">\</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="p">-</span><span class="n">-user</span> <span class="n">my-tester-user</span>
 </code></pre></div>
+<h2 id="controlling-how-long-tests-are-allowed-to-run-for">Controlling how long tests are allowed to run for<a class="headerlink" href="#controlling-how-long-tests-are-allowed-to-run-for" title="Permanent link">&para;</a></h2>
+<p>In some situations, tests might seem to stall or run indefinitely due to issues in the test code or wider environmental issues. To prevent tests from hanging indefinitely, you can configure a timeout for test runs using the <code>framework.test.run.timeout.minutes</code> CPS property. When a test exceeds the configured timeout period, it is automatically interrupted and assigned the <code>Hung</code> result.</p>
+<p>For example, to configure a timeout of 30 minutes for test runs, you can set the <code>framework.test.run.timeout.minutes</code> CPS property using the Galasa CLI tool:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>galasactl<span class="w"> </span>properties<span class="w"> </span><span class="nb">set</span><span class="w"> </span>--bootstrap<span class="w"> </span>http://example.com:30960/bootstrap<span class="w"> </span>--namespace<span class="w"> </span>framework<span class="w"> </span>--name<span class="w"> </span>test.run.timeout.minutes<span class="w"> </span>--value<span class="w"> </span><span class="m">30</span>
+</code></pre></div>
+<p>This helps ensure that problematic tests do not consume resources indefinitely and allows you to identify and address issues more quickly.</p>
 
 
 
