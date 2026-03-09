@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prerequisites" class="md-skip">
+        <a href="#quick-start" class="md-skip">
           Skip to content
         </a>
       
@@ -1718,11 +1718,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Installation Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1733,64 +1757,31 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Supported Kubernetes Versions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-role-based-access-control" class="md-nav__link">
+  <a href="#configuration-guide" class="md-nav__link">
     <span class="md-ellipsis">
-      Kubernetes role-based access control
+      Configuration Guide
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-a-galasa-ecosystem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing a Galasa Ecosystem
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installing a Galasa Ecosystem">
+    <nav class="md-nav" aria-label="Configuration Guide">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-the-galasa-repository" class="md-nav__link">
+  <a href="#rbac-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding the Galasa repository
+      RBAC Setup
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-ingress" class="md-nav__link">
+  <a href="#network-access-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring Ingress
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring-dex" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuring Dex
+      Network Access Configuration
     </span>
   </a>
   
@@ -1799,16 +1790,25 @@
           <li class="md-nav__item">
   <a href="#configuring-authentication" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring authentication
+      Configuring Authentication
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-logging-for-the-galasa-service-optional" class="md-nav__link">
+  <a href="#configuring-user-roles-and-owners" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring Logging for the Galasa service (Optional)
+      Configuring User Roles and Owners
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Configurations
     </span>
   </a>
   
@@ -1820,36 +1820,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-the-default-user-role-and-owner-of-the-galasa-service" class="md-nav__link">
+  <a href="#installing-on-minikube" class="md-nav__link">
     <span class="md-ellipsis">
-      Configure the default user role, and 'owner' of the Galasa service
+      Installing on Minikube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing on Minikube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-the-chart" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing the chart
+      Installation Steps
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#verifying-the-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Verifying the installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accessing services
+      Verifying the Installation
     </span>
   </a>
   
@@ -1858,7 +1864,7 @@
         <li class="md-nav__item">
   <a href="#running-galasa-tests" class="md-nav__link">
     <span class="md-ellipsis">
-      Running Galasa tests
+      Running Galasa Tests
     </span>
   </a>
   
@@ -1871,20 +1877,23 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Upgrading the Galasa Ecosystem">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling-the-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstalling the Galasa Ecosystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       Troubleshooting
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6137,11 +6146,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Installation Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6152,64 +6185,31 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Supported Kubernetes Versions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-role-based-access-control" class="md-nav__link">
+  <a href="#configuration-guide" class="md-nav__link">
     <span class="md-ellipsis">
-      Kubernetes role-based access control
+      Configuration Guide
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-a-galasa-ecosystem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installing a Galasa Ecosystem
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installing a Galasa Ecosystem">
+    <nav class="md-nav" aria-label="Configuration Guide">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-the-galasa-repository" class="md-nav__link">
+  <a href="#rbac-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding the Galasa repository
+      RBAC Setup
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-ingress" class="md-nav__link">
+  <a href="#network-access-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring Ingress
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring-dex" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuring Dex
+      Network Access Configuration
     </span>
   </a>
   
@@ -6218,16 +6218,25 @@
           <li class="md-nav__item">
   <a href="#configuring-authentication" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring authentication
+      Configuring Authentication
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-logging-for-the-galasa-service-optional" class="md-nav__link">
+  <a href="#configuring-user-roles-and-owners" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring Logging for the Galasa service (Optional)
+      Configuring User Roles and Owners
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Configurations
     </span>
   </a>
   
@@ -6239,36 +6248,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-the-default-user-role-and-owner-of-the-galasa-service" class="md-nav__link">
+  <a href="#installing-on-minikube" class="md-nav__link">
     <span class="md-ellipsis">
-      Configure the default user role, and 'owner' of the Galasa service
+      Installing on Minikube
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing on Minikube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-the-chart" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing the chart
+      Installation Steps
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#verifying-the-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Verifying the installation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      Accessing services
+      Verifying the Installation
     </span>
   </a>
   
@@ -6277,7 +6292,7 @@
         <li class="md-nav__item">
   <a href="#running-galasa-tests" class="md-nav__link">
     <span class="md-ellipsis">
-      Running Galasa tests
+      Running Galasa Tests
     </span>
   </a>
   
@@ -6290,20 +6305,23 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Upgrading the Galasa Ecosystem">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling-the-galasa-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstalling the Galasa Ecosystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       Troubleshooting
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6371,26 +6389,71 @@
 
   <h1>Installing an Ecosystem using Helm</h1>
 
-<p>If you want to run scalable, highly available testing for enterprise level workloads, you need to install your Galasa Ecosystem in a Kubernetes cluster. Running Galasa in a Kubernetes cluster means that you can run many tests in parallel on a resilient and scalable platform, where the clean-up of test resources can be managed, and test results can be centralised and gathered easily. </p>
+<p>If you want to run scalable, highly available testing for enterprise level workloads, you need to install your Galasa Ecosystem in a Kubernetes cluster. Running Galasa in a Kubernetes cluster means that you can run many tests in parallel on a resilient and scalable platform, where the clean-up of test resources can be managed, and test results can be centralised and gathered easily.</p>
 <p>Galasa provides a Galasa Ecosystem Helm chart to install a Galasa Ecosystem. You can install the chart into a Kubernetes cluster or minikube. However, note that minikube is not suitable for production purposes because it provides a single Kubernetes node and therefore does not scale well. Use minikube only for development and testing purposes.</p>
-<p>The following sections explain how to install a Galasa Ecosystem on a Kubernetes cluster (and on minikube) by using Helm and validate that the Ecosystem is installed correctly. </p>
 <p>The <a href="https://github.com/galasa-dev/helm" target="_blank">Galasa Helm repository</a> contains the Galasa Ecosystem Helm chart that is referenced in the following sections.</p>
 <p><em>Note:</em> The Galasa Ecosystem Helm chart currently supports only x86-64 systems. It cannot be installed on ARM64-based systems.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><a href="https://helm.sh" target="_blank">Helm</a> must be installed to use the chart. See the <a href="https://helm.sh/docs/" target="_blank">Helm documentation</a> for installation instructions.</p>
-</li>
-<li>
-<p>The Kubernetes command-line tool <em>kubectl</em> must be installed on the machine that is used to run the commands and must be configured to point at your Kubernetes cluster. To find out more about Kubernetes, see the <a href="https://kubernetes.io/docs/home/" target="_blank">Kubernetes Documentation</a>.</p>
-</li>
-<li>
-<p>You must have a Kubernetes cluster at version 1.28 or higher. You can check the version number by running the <code>kubectl version</code> command. See the <a href="#supported-kubernetes-versions">Supported Kubernetes Versions</a> section for a table of Kubernetes versions that are compatible with recent Galasa releases.</p>
-</li>
-<li>
-<p>If you want to install the chart into minikube, ensure you have minikube installed and that it is running with <code>minikube status</code>. If minikube is not running, start it by running <code>minikube start</code>. Once minikube is running, follow the instructions in the following sections to install the Galasa Ecosystem Helm chart.</p>
-</li>
+<li><a href="https://helm.sh/docs/intro/install/" target="_blank">Helm 3 or later</a> installed</li>
+<li>Access to a Kubernetes cluster (v1.28 or later). See <a href="#supported-kubernetes-versions">Supported Kubernetes Versions</a> for compatibility details.</li>
+<li><code>kubectl</code> configured to access your cluster</li>
 </ul>
+<h3 id="basic-installation-steps">Basic Installation Steps<a class="headerlink" href="#basic-installation-steps" title="Permanent link">&para;</a></h3>
+<p>1. <strong>Add the Galasa Helm repository:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>galasa<span class="w"> </span>https://galasa-dev.github.io/helm
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+</code></pre></div>
+<p>2. <strong>Download and configure values:</strong></p>
+<p>Download the <code>values.yaml</code> file for your chosen Galasa version from the <a href="https://github.com/galasa-dev/helm/releases" target="_blank">Galasa Helm repository's releases page</a>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS or Linux</label><label for="__tabbed_1_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/galasa-dev/helm/main/charts/ecosystem/values.yaml
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">galasa-dev</span><span class="p">/</span><span class="n">helm</span><span class="p">/</span><span class="n">main</span><span class="p">/</span><span class="n">charts</span><span class="p">/</span><span class="n">ecosystem</span><span class="p">/</span><span class="n">values</span><span class="p">.</span><span class="n">yaml</span> <span class="n">-OutFile</span> <span class="n">values</span><span class="p">.</span><span class="n">yaml</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Edit <code>values.yaml</code> and set:</p>
+<ul>
+<li><code>galasaVersion</code>: Your desired Galasa version (see <a href="../../../releases/">Releases</a> documentation). Do not use <code>latest</code> to ensure all pods run at the same level.</li>
+<li><code>externalHostname</code>: The hostname for accessing your ecosystem (e.g., <code>galasa.example.com</code>)</li>
+</ul>
+<p>3. <strong>Configure network access:</strong></p>
+<p>Choose either Ingress (default) or Gateway API. For Ingress, update:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">ingress</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w">  </span><span class="c1"># Change to your IngressClass</span>
+</code></pre></div></p>
+<p>For Gateway API or HTTPS setup, see <a href="#network-access-configuration">Network Access Configuration</a>.</p>
+<p>4. <strong>Configure authentication (Dex):</strong></p>
+<p>Update the <code>dex</code> section in <code>values.yaml</code>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">dex</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://galasa.example.com/dex</span><span class="w">  </span><span class="c1"># Use your hostname</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">connectors</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span><span class="w">  </span><span class="c1"># Or another supported connector</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nt">config</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="nt">clientID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_ID</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nt">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_SECRET</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="nt">redirectURI</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://galasa.example.com/dex/callback</span>
+</code></pre></div></p>
+<p>See <a href="#configuring-authentication">Configuring Authentication</a> for detailed setup.</p>
+<p>5. <strong>Install the ecosystem:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>helm<span class="w"> </span>install<span class="w"> </span>my-galasa<span class="w"> </span>galasa/ecosystem<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>--wait
+</code></pre></div>
+<p>where <code>my-galasa</code> is the name you want to give the Ecosystem.</p>
+<p>6. <strong>Verify the installation:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>my-galasa
+</code></pre></div>
+<p>Your Galasa Ecosystem is now accessible at <code>https://galasa.example.com/api/bootstrap</code></p>
 <h2 id="supported-kubernetes-versions">Supported Kubernetes Versions<a class="headerlink" href="#supported-kubernetes-versions" title="Permanent link">&para;</a></h2>
 <p>The following table shows the minimum and maximum Kubernetes versions supported for each Galasa release:</p>
 <table>
@@ -6449,283 +6512,328 @@
 </tr>
 </tbody>
 </table>
-<h3 id="notes">Notes:<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<p><strong>Notes:</strong></p>
 <ul>
 <li>Kubernetes versions outside these ranges may work but are <strong>not officially supported</strong>.</li>
 <li>Only <strong>x86-64 architectures</strong> are supported. ARM64-based systems are not currently supported.</li>
 <li>Ensure your Helm version is <strong>3.x or later</strong> for all Galasa service releases.</li>
 </ul>
-<h2 id="kubernetes-role-based-access-control">Kubernetes role-based access control<a class="headerlink" href="#kubernetes-role-based-access-control" title="Permanent link">&para;</a></h2>
-<p>If role-based access control (RBAC) is active on your Kubernetes cluster, a user with the <code>galasa-admin</code> role (or a role with equivalent permissions) is needed to run Helm commands on the cluster. The <code>galasa-admin</code> role allows assigned users to run the Helm install, upgrade, and delete commands to interact with the Helm chart. </p>
-<p>You can assign the <code>galasa-admin</code> role to a user by replacing the placeholder username in the <a href="https://github.com/galasa-dev/helm/blob/main/charts/ecosystem/rbac-admin.yaml" target="_blank">rbac-admin.yaml</a> file with a username that corresponds to a user with access to your cluster. If multiple users require admin privileges, you can assign the <code>galasa-admin</code> role to multiple groups, users, or service accounts by extending the <code>subjects</code> list. See the <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/" target="_blank">Using RBAC Authorization Kubernetes documentation</a> for more information.</p>
-<p>You also need a Galasa service account. The Galasa service account allows the API, Engine Controller, Metrics, and Resource Monitor to co-ordinate between themselves, and allows the Engine Controller to create and manage engine pods. </p>
-<p>For chart versions later than <code>0.23.0</code>, the Galasa service account is automatically created, if one does not already exist, when installing the Galasa Ecosystem Helm chart.  The Galasa service account enables the API, Engine Controller, Metrics, and Resource Monitor to co-ordinate, while allowing the Engine Controller to create and manage engine pods.</p>
-<p>For chart versions <code>0.23.0</code> and earlier, you must create the Galasa service account manually by running the following command in the repository's <a href="https://github.com/galasa-dev/helm/tree/main/charts/ecosystem" target="_blank">ecosystem</a> directory:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>https://raw.githubusercontent.com/galasa-dev/helm/ecosystem-0.23.0/charts/ecosystem/rbac.yaml
+<p>You can check your Kubernetes version by running:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl<span class="w"> </span>version
+</code></pre></div></p>
+<h2 id="configuration-guide">Configuration Guide<a class="headerlink" href="#configuration-guide" title="Permanent link">&para;</a></h2>
+<h3 id="rbac-setup">RBAC Setup<a class="headerlink" href="#rbac-setup" title="Permanent link">&para;</a></h3>
+<p>If role-based access control (RBAC) is active on your Kubernetes cluster, configure user permissions:</p>
+<p><strong>For chart versions after 0.23.0:</strong> RBAC is configured automatically during installation.</p>
+<p><strong>For chart version 0.23.0 and earlier:</strong> Apply RBAC manually:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/galasa-dev/helm/ecosystem-0.23.0/charts/ecosystem/rbac.yaml
+</code></pre></div></p>
+<p><strong>Admin access:</strong> To grant users the <code>galasa-admin</code> role for managing the Helm chart, update the <a href="https://github.com/galasa-dev/helm/blob/main/charts/ecosystem/rbac-admin.yaml" target="_blank"><code>rbac-admin.yaml</code></a> file. Replace the placeholder username with actual usernames or add multiple subjects as needed. See the <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/" target="_blank">Using RBAC Authorization Kubernetes documentation</a> for more information.</p>
+<h3 id="network-access-configuration">Network Access Configuration<a class="headerlink" href="#network-access-configuration" title="Permanent link">&para;</a></h3>
+<p>Choose one method to expose your Galasa services:</p>
+<h4 id="option-1-ingress-default">Option 1: Ingress (Default)<a class="headerlink" href="#option-1-ingress-default" title="Permanent link">&para;</a></h4>
+<p>Most common for production deployments. Configure in <code>values.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">ingress</span><span class="p">:</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w">  </span><span class="c1"># Change to your IngressClass</span>
 </code></pre></div>
-<h2 id="installing-a-galasa-ecosystem">Installing a Galasa Ecosystem<a class="headerlink" href="#installing-a-galasa-ecosystem" title="Permanent link">&para;</a></h2>
-<p>Complete the following steps to install a Galasa Ecosystem by using Helm:</p>
-<h3 id="adding-the-galasa-repository">Adding the Galasa repository<a class="headerlink" href="#adding-the-galasa-repository" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Add or update the Galasa repository.</p>
+<p><strong>For HTTPS</strong>, add a TLS configuration:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">ingress</span><span class="p">:</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galasa.example.com</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">      </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">galasa-tls-secret</span>
+</code></pre></div></p>
+<p>See the <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/#tls" target="_blank">Kubernetes Ingress documentation</a> for information on how to set up TLS.</p>
+<h4 id="option-2-gateway-api-v0470">Option 2: Gateway API (v0.47.0+)<a class="headerlink" href="#option-2-gateway-api-v0470" title="Permanent link">&para;</a></h4>
+<p><strong>Prerequisites:</strong></p>
 <ul>
-<li>
-<p>If the repository does not exist, add the repository by running the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>galasa<span class="w"> </span>https://galasa-dev.github.io/helm
-</code></pre></div>
-</li>
-<li>
-<p>If the repository exists, run the <code>helm repo update</code> command to get the latest versions of the packages and then run <code>helm search repo galasa</code> to see the available charts.    </p>
-</li>
+<li><a href="https://gateway-api.sigs.k8s.io/guides/getting-started/#installing-a-gateway-controller" target="_blank">Gateway Controller</a> installed</li>
+<li><a href="https://gateway-api.sigs.k8s.io/guides/getting-started/#installing-gateway-api" target="_blank">Gateway API CRDs</a> installed</li>
 </ul>
-<p><em>Note:</em> The Galasa Ecosystem Helm chart deploys three persistent volumes (PVs). If you need to provide a Kubernetes storage class for these PVs, download the <code>values.yaml</code> file for your chosen Galasa Ecosystem version from the <a href="https://github.com/galasa-dev/helm/releases" target="_blank">Galasa Helm repository's releases page</a> and update the <code>storageClass</code> value in the file with the name of a valid storage class on your cluster. If you are deploying to minikube, you can optionally use the standard storage class that is created for you by minikube, but this is not required.</p>
+<p>For clusters with Gateway API support, configure in <code>values.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">gateway</span><span class="p">:</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">gatewayClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-gateway-class</span>
+</code></pre></div>
+<p><strong>For HTTPS</strong>, add certificate references:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">gateway</span><span class="p">:</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">gatewayClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-gateway-class</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nt">certificateRefs</span><span class="p">:</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-certificate-secret</span>
+</code></pre></div></p>
+<h3 id="configuring-authentication">Configuring Authentication<a class="headerlink" href="#configuring-authentication" title="Permanent link">&para;</a></h3>
+<p>Galasa uses <a href="https://dexidp.io" target="_blank">Dex</a> for authentication (version 0.32.0 and later). Configure a connector to your identity provider.</p>
+<h4 id="github-example">GitHub Example<a class="headerlink" href="#github-example" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Create a GitHub OAuth App:</strong></li>
+<li>Go to <a href="https://github.com/settings/applications/new" target="_blank">GitHub OAuth Apps</a></li>
+<li>Set <strong>Homepage URL</strong> to your external hostname (e.g., <code>https://galasa.example.com</code>)</li>
+<li>Set <strong>Callback URL</strong> to <code>https://&lt;your-external-hostname&gt;/dex/callback</code> (e.g., <code>https://galasa.example.com/dex/callback</code>)</li>
+<li>
+<p>Generate a client secret and save both the client ID and secret</p>
 </li>
 <li>
-<p>Download the values.yaml file for your chosen Galasa Ecosystem version from the <a href="https://github.com/galasa-dev/helm/releases" target="_blank">Galasa Helm repository's releases page</a> if you have not done so already, and edit the values of the following properties:</p>
+<p><strong>Configure Dex in values.yaml:</strong></p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">dex</span><span class="p">:</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://galasa.example.com/dex</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="nt">connectors</span><span class="p">:</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">      </span><span class="nt">config</span><span class="p">:</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">        </span><span class="nt">clientID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_ID</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">        </span><span class="nt">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_SECRET</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">        </span><span class="nt">redirectURI</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://galasa.example.com/dex/callback</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">        </span><span class="c1"># Optional: Restrict to organization/team</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">        </span><span class="nt">orgs</span><span class="p">:</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-org</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">          </span><span class="nt">teams</span><span class="p">:</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-team</span>
+</code></pre></div>
+<ol>
+<li><strong>Store credentials securely (recommended):</strong></li>
+</ol>
+<p>Create a Kubernetes Secret with your OAuth credentials:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">macOS or Linux</label><label for="__tabbed_2_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>github-oauth-credentials<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">GITHUB_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;your-client-id&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">GITHUB_CLIENT_SECRET</span><span class="o">=</span><span class="s2">&quot;your-client-secret&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">kubectl</span> <span class="n">create</span> <span class="n">secret</span> <span class="n">generic</span> <span class="n">github-oauth-credentials</span> <span class="p">`</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  <span class="p">-</span><span class="n">-from-literal</span><span class="p">=</span><span class="n">GITHUB_CLIENT_ID</span><span class="p">=</span><span class="s2">&quot;your-client-id&quot;</span> <span class="p">`</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>  <span class="p">-</span><span class="n">-from-literal</span><span class="p">=</span><span class="n">GITHUB_CLIENT_SECRET</span><span class="p">=</span><span class="s2">&quot;your-client-secret&quot;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Then reference the secret in <code>values.yaml</code>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">dex</span><span class="p">:</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">envFrom</span><span class="p">:</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretRef</span><span class="p">:</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github-oauth-credentials</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://galasa.example.com/dex</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="nt">connectors</span><span class="p">:</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">      </span><span class="nt">config</span><span class="p">:</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">        </span><span class="nt">clientID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_ID</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">        </span><span class="nt">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_SECRET</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">        </span><span class="nt">redirectURI</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://galasa.example.com/dex/callback</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">        </span><span class="nt">orgs</span><span class="p">:</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-org</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">          </span><span class="nt">teams</span><span class="p">:</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-team</span>
+</code></pre></div></p>
+<h4 id="other-identity-providers">Other Identity Providers<a class="headerlink" href="#other-identity-providers" title="Permanent link">&para;</a></h4>
+<p>Dex supports many connectors including Microsoft, LDAP, OIDC, and more. See the <a href="https://dexidp.io/docs/connectors" target="_blank">Dex connectors documentation</a> for configuration examples.</p>
+<h4 id="optional-configure-token-expiry">Optional: Configure Token Expiry<a class="headerlink" href="#optional-configure-token-expiry" title="Permanent link">&para;</a></h4>
+<p>Update the <code>expiry</code> section to configure the expiry of JSON Web Tokens (JWTs) and refresh tokens issued by Dex. By default, JWTs expire 24 hours after being issued and refresh tokens remain valid unless they have not been used for one year. See the <a href="https://dexidp.io/docs/tokens" target="_blank">Dex documentation on ID tokens</a> for information and available expiry settings.</p>
+<h3 id="configuring-user-roles-and-owners">Configuring User Roles and Owners<a class="headerlink" href="#configuring-user-roles-and-owners" title="Permanent link">&para;</a></h3>
+<p>When the Galasa Ecosystem is first installed, users logging in are assigned a default role as specified by the <code>galasaDefaultUserRole</code> property (e.g., <code>tester</code>). This means no user initially has administrator privileges.</p>
+<p>To grant administration rights, nominate one or more users as 'owners' of the service using the <code>galasaOwnersLoginIds</code> property in your <code>values.yaml</code> file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">galasaOwnersLoginIds</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;user1,user2,user3&quot;</span>
+</code></pre></div>
+<p>When a nominated owner logs into the Galasa Ecosystem, they are granted the <code>owner</code> role. They can then assign the <code>admin</code> role to other users using the <code>galasactl</code> command line or the web user interface.</p>
+<p><strong>Important notes:</strong></p>
 <ul>
-<li>
-<p>Set <code>galasaVersion</code> to the version of Galasa that you want to run. (See the <a href="../../../releases/">Releases</a> documentation for released versions). To ensure that each pod in the Ecosystem is running at the same level, do not use <code>latest</code> as the Galasa version.</p>
-</li>
-<li>
-<p>Set <code>externalHostname</code> to the DNS hostname that you wish to use to access the Galasa Ecosystem services.</p>
-</li>
+<li>Each login-id must match the login-id allocated to the user by the authentication service (e.g., Dex).</li>
+<li>If you are unsure what login-id to use, log into the Galasa Ecosystem using a browser and view the user profile page.</li>
+<li>Once you have users with the <code>admin</code> role, you can remove the <code>owner</code> designation if desired.</li>
+<li>The <code>owner</code> role exists solely to fix situations where there are no administrators on the Galasa Ecosystem.</li>
 </ul>
-</li>
-</ol>
-<p>After updating the <code>galasaVersion</code> and <code>externalHostname</code> values, complete the following instructions to set up Ingress for your Ecosystem. </p>
-<h3 id="configuring-ingress">Configuring Ingress<a class="headerlink" href="#configuring-ingress" title="Permanent link">&para;</a></h3>
-<p>The Galasa Ecosystem Helm chart uses Ingress to reach services that are running within a Kubernetes cluster. To learn more about Ingress, see the <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_blank">Kubernetes Documentation</a>.</p>
-<p><em>Note:</em> If you are deploying to minikube, ensure the NGINX Ingress controller is enabled by running the <code>minikube addons enable ingress</code> command.</p>
-<p>Assuming that your Ingress controller is set up on your Kubernetes cluster, configure the use of Ingress in your Ecosystem by completing the following updates to the values that are listed under the <code>ingress</code> section within your <code>values.yaml</code> file:</p>
-<ol>
-<li>
-<p>Replace the <code>ingressClassName</code> value with the name of the IngressClass that is configured in your cluster. By default, <code>nginx</code> is used.</p>
-</li>
-<li>
-<p>If you are using HTTPS, add a <code>tls</code> configuration within the <code>ingress</code> section, specifying the <code>hosts</code> list and a <code>secretName</code> value corresponding to the name of the Kubernetes Secret that contains your TLS private key and certificate. See the <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/#tls" target="_blank">Kubernetes Documentation</a> for information on how to set up TLS.</p>
-</li>
-</ol>
-<p>After updating the values under the <code>ingress</code> section of your <code>values.yaml</code> file, complete the following instructions to configure Dex in your Ecosystem.</p>
-<h3 id="configuring-dex">Configuring Dex<a class="headerlink" href="#configuring-dex" title="Permanent link">&para;</a></h3>
-<p>For Galasa version 0.32.0 and later, Dex is used to authenticate users interacting with a Galasa Ecosystem.</p>
-<p>To configure Dex in your Ecosystem, complete the following steps to update your <code>values.yaml</code> file:</p>
-<ol>
-<li>
-<p>Replace the hostname in your <code>issuer</code> value with the same hostname given in <code>externalHostname</code> and set the URI scheme to either <code>http</code> or <code>https</code>. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://&lt;your-external-hostname&gt;/dex</span>
+<h3 id="optional-configurations">Optional Configurations<a class="headerlink" href="#optional-configurations" title="Permanent link">&para;</a></h3>
+<h4 id="storage-class">Storage Class<a class="headerlink" href="#storage-class" title="Permanent link">&para;</a></h4>
+<p>If your cluster requires a specific StorageClass for persistent volumes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">storageClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-storage-class</span>
 </code></pre></div>
-</li>
-<li>
-<p>Optional. Update the <code>expiry</code> section to configure the expiry of JSON Web Tokens (JWTs) and refresh tokens issued by Dex. By default, JWTs expire 24 hours after being issued and refresh tokens remain valid unless they have not been used for one year. See the <a href="https://dexidp.io/docs/tokens" target="_blank">Dex documentation on ID tokens</a> for information and available expiry settings. </p>
-</li>
-</ol>
-<p>You can now configure Dex to authenticate via a connector to authenticate with an upstream identity provider, for example, GitHub, Microsoft, or an LDAP server. For a full list of supported connectors, refer to the <a href="https://dexidp.io/docs/connectors" target="_blank">Dex documentation</a>. The following instructions explain how to configure Dex to authenticate through GitHub.</p>
-<h3 id="configuring-authentication">Configuring authentication<a class="headerlink" href="#configuring-authentication" title="Permanent link">&para;</a></h3>
-<p>Complete the following steps to configure Dex to authenticate through GitHub:</p>
-<ol>
-<li>
-<p>Register an OAuth application in <a href="https://github.com/settings/applications/new" target="_blank">GitHub</a>, ensuring the callback URL of the application is set to your Dex <code>issuer</code> value, followed by <code>/callback</code>. For example, if your <code>issuer</code> value is <code>https://prod-ecosystem.galasa.dev/dex</code>, then your callback URL is <code>https://prod-ecosystem.galasa.dev/dex/callback</code>.</p>
-</li>
-<li>
-<p>Add a GitHub connector to your Dex configuration, providing the name of your GitHub organisation and any teams that you require users to be part of to be able to use your Ecosystem as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">dex</span><span class="p">:</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="c1"># Other Dex configuration values...</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">connectors</span><span class="p">:</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">config</span><span class="p">:</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nt">clientID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_ID</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="nt">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_SECRET</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">redirectURI</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;your-dex-issuer-url&gt;/callback</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="nt">orgs</span><span class="p">:</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-org</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">          </span><span class="nt">teams</span><span class="p">:</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-team</span>
+<p>If you are deploying to minikube, you can optionally use the standard storage class that is created for you by minikube, but this is not required and can be left empty.</p>
+<h4 id="custom-logging-log4j2">Custom Logging (Log4j2)<a class="headerlink" href="#custom-logging-log4j2" title="Permanent link">&para;</a></h4>
+<p>Customize log format by setting <code>log4j2Properties</code> in <code>values.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">log4j2Properties</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="no">status = error</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="no">name = Default</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="no">appender.console.type = Console</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="no">appender.console.name = stdout</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span><span class="no">appender.console.layout.type = PatternLayout</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">  </span><span class="no">appender.console.layout.pattern = %d{dd/MM/yyyy HH:mm:ss.SSS} %-5p %c{1.} - %m%n</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">  </span><span class="no">rootLogger.level = debug</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">  </span><span class="no">rootLogger.appenderRef.stdout.ref = stdout</span>
 </code></pre></div>
-<p>where <code>$GITHUB_CLIENT_ID</code> and <code>$GITHUB_CLIENT_SECRET</code> correspond to the registered OAuth application's client ID and secret. Ensure that the <code>redirectURI</code> value is the same value that you provided when setting up your GitHub OAuth application in step 1.</p>
-<p>If you want to pull the client ID and secret values of your OAuth application from a Kubernetes Secret, create a Secret by running the following <code>kubectl</code> command, ensuring that the Secret's keys match those given in the GitHub connector's <code>clientID</code> and <code>clientSecret</code> values without the leading <code>$</code> (i.e. <code>GITHUB_CLIENT_ID</code> and <code>GITHUB_CLIENT_SECRET</code> as shown in the following example):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>my-github-oauth-app-credentials<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>--from-literal<span class="o">=</span><span class="nv">GITHUB_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;myclientid&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>--from-literal<span class="o">=</span><span class="nv">GITHUB_CLIENT_SECRET</span><span class="o">=</span><span class="s2">&quot;myclientsecret&quot;</span>
+<p>For JSON templates, create a ConfigMap and reference it:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">macOS or Linux</label><label for="__tabbed_3_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>my-json-layouts<span class="w"> </span>--from-file<span class="o">=</span>/path/to/MyLayout.json
 </code></pre></div>
-<p>When your Kubernetes Secret is created, supply the name of the Secret by using the <code>envFrom</code> value in your <code>values.yaml</code> file to mount the Secret as shown in the following example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">dex</span><span class="p">:</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">envFrom</span><span class="p">:</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretRef</span><span class="p">:</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-github-oauth-app-credentials</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="c1"># Other Dex configuration values...</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">connectors</span><span class="p">:</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">      </span><span class="nt">config</span><span class="p">:</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="nt">clientID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_ID</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="nt">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$GITHUB_CLIENT_SECRET</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="nt">redirectURI</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;your-dex-issuer-url&gt;/callback</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="nt">orgs</span><span class="p">:</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-org</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">          </span><span class="nt">teams</span><span class="p">:</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-team</span>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">kubectl</span> <span class="n">create</span> <span class="n">configmap</span> <span class="n">my-json-layouts</span> <span class="p">-</span><span class="n">-from</span><span class="o">-file</span><span class="p">=</span><span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">MyLayout</span><span class="p">.</span><span class="n">json</span>
 </code></pre></div>
-</li>
-</ol>
-<p>By default, the Galasa Ecosystem Helm chart creates a Kubernetes Secret containing configuration details for Dex. 
-If you want to apply your own Dex configuration as a Secret, your Dex configuration must be provided in a <code>config.yaml</code> key within the Secret, 
-and the value of the <code>config.yaml</code> key must be a valid Dex configuration.</p>
-<p>For more information on configuring Dex, see the <a href="https://dexidp.io/docs" target="_blank">Dex documentation</a>.</p>
-<h3 id="configuring-logging-for-the-galasa-service-optional">Configuring Logging for the Galasa service (Optional)<a class="headerlink" href="#configuring-logging-for-the-galasa-service-optional" title="Permanent link">&para;</a></h3>
-<p>The Galasa service generates log messages using Log4j and these messages are sent to each process' standard output stream by default.</p>
-<p>If you would like to modify the format of the Galasa service's log messages or configure additional Log4j appenders:</p>
-<ol>
-<li>
-<p>Provide a custom set of Log4j2 properties using the <code>log4j2Properties</code> value as a multi-line string in the form:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">log4j2Properties</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="no">status = error</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="no">name = Default</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="no">appender.console.type = Console</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="no">appender.console.name = stdout</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="no">appender.console.layout.type = PatternLayout</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="no">appender.console.layout.pattern = %d{dd/MM/yyyy HH:mm:ss.SSS} %-5p %c{1.} - %m%n</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="no">rootLogger.level = debug</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span><span class="no">rootLogger.appenderRef.stdout.ref = stdout</span>
+</div>
+</div>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">log4jJsonTemplatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-json-layouts</span>
 </code></pre></div>
-</li>
-</ol>
-<p>If you are using Log4j's <code>JsonTemplateLayout</code> layout type and would like to use a custom JSON template for your log messages, then you can create a ConfigMap containing the JSON templates that you wish to make available to the Galasa service and supply the name of that ConfigMap in the <code>log4jJsonTemplatesConfigMapName</code> value.</p>
-<p>The ConfigMap is mounted into the Galasa service pods in the <code>/log4j-config</code> directory, so any Log4j properties that need to refer to a template's URI will need a value to be prefixed with <code>file:/log4j-config</code>.</p>
-<p>For example, if you have a custom JSON template in a file called <code>MyLayout.json</code>, then you would take the following steps:</p>
-<ol>
-<li>
-<p>Create a ConfigMap by running:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl create configmap my-json-layouts --from-file=/path/to/MyLayout.json
+<p>The ConfigMap is mounted into the Galasa service pods in the <code>/log4j-config</code> directory. Refer to the <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html" target="_blank">Log4j documentation</a> for available properties.</p>
+<h4 id="internal-certificates">Internal Certificates<a class="headerlink" href="#internal-certificates" title="Permanent link">&para;</a></h4>
+<p>For connecting to servers with internal or corporate certificates:</p>
+<p>1. Create a ConfigMap with your certificates:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">macOS or Linux</label><label for="__tabbed_4_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>my-certificates<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span>--from-file<span class="o">=</span>/path/to/certificate1.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span>--from-file<span class="o">=</span>/path/to/certificate2.pem
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">kubectl</span> <span class="n">create</span> <span class="n">configmap</span> <span class="n">my-certificates</span> <span class="p">`</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>  <span class="p">-</span><span class="n">-from</span><span class="o">-file</span><span class="p">=</span><span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">certificate1</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>  <span class="p">-</span><span class="n">-from</span><span class="o">-file</span><span class="p">=</span><span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">certificate2</span><span class="p">.</span><span class="n">pem</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>2. Reference it in <code>values.yaml</code>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">certificatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-certificates</span>
 </code></pre></div></p>
-</li>
-<li>
-<p>Set <code>log4jJsonTemplatesConfigMapName</code> in the Helm values to:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">log4jJsonTemplatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-json-layouts&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Use the custom layout in the <code>log4j2Properties</code> value by adding these properties:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="na">appender.myAppender.layout.type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">JsonTemplateLayout</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">appender.myAppender.layout.eventTemplateUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">file:/log4j-config/MyLayout.json</span>
-</code></pre></div></p>
-</li>
-</ol>
-<p>Refer to the <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html">Log4j documentation</a> for available properties.</p>
-<h4 id="configuring-public-certificates-optional">Configuring Public Certificates (Optional)<a class="headerlink" href="#configuring-public-certificates-optional" title="Permanent link">&para;</a></h4>
-<p>If you are deploying your Galasa service on an internal or corporate network and expect your Galasa tests to connect to servers that use internal certificates, you will need to supply the public certificates so that Galasa can contact those servers successfully.</p>
-<p>You can use the <code>certificatesConfigMapName</code> value to provide the name of an existing ConfigMap containing the certificates that you wish to inject into the Galasa service pods. To do this, take the following steps:</p>
-<ol>
-<li>
-<p>Create a ConfigMap by running:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>kubectl create configmap my-certificates --from-file=/path/to/my/certificate.pem
-</code></pre></div>
-    where <code>/path/to/my/certificate.pem</code> is a file path on your machine to a certificate that you wish to include. You can supply multiple <code>--from-file</code> flags if you wish to load multiple certificates into the ConfigMap.</p>
-</li>
-<li>
-<p>Set <code>certificatesConfigMapName</code> in the Helm values to the name of the ConfigMap that you created (in this example, the name is <code>my-certificates</code>):
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">certificatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-certificates&quot;</span>
-</code></pre></div></p>
-</li>
-</ol>
-<p>You can then proceed with the installation of the Galasa service and the Helm chart will inject the certificates inside the ConfigMap into the Galasa service pods.</p>
-<h2 id="configure-the-default-user-role-and-owner-of-the-galasa-service">Configure the default user role, and 'owner' of the Galasa service<a class="headerlink" href="#configure-the-default-user-role-and-owner-of-the-galasa-service" title="Permanent link">&para;</a></h2>
-<p>When the Galasa service is first installed, users logging in will be assigned a role as dictated by the <code>galasaDefaultUserRole</code> Helm chart property. For example 'tester'.
-This means nobody initially logging into the Galasa service will have administrator privileges.
-We would discourage ever setting this property to <code>admin</code> as doing so would provide a less secure Galasa service, with any action in the system available to anyone on the system.</p>
-<p>To obtain administration rights to the Galasa service, the kubernetes install must nominate one or more users as 'owners' of the service.
-When a service owner next logs into the Galasa service, they will be granted a role of <code>owner</code>.
-From this point on, that user can assign the 'admin' role to anyone else who needs it using the <code>galasactl</code> command line or by using the web user interface via a browser.</p>
-<p>Once the Galasa service has one or more users with the 'admin' role, kubernetes can be updated so that the system doesn't have any "owner" if desired. 
-The <code>owner</code> role exists solely to fix situations where there are no administrators on the Galasa service, such as when the Galasa service is initially installed, or when none of the
-members in the organisation have the <code>admin</code> role.
-If a user was a nominated "owner", performs some administration tasks, and is then removed from the list of "owners", their role on the Galasa service will revert to what it was initially.</p>
-<p>To configure a list of owners, use the <code>galasaOwnersLoginIds</code> property of the <code>values.yaml</code> file and use Helm to deploy it.
-You can set multiple owners by adding a comma-separated list of login-ids.</p>
-<p>Each login-id must match the login-id allocated to the user by the authentication service to which Galasa connects.
-If you are unsure what login-id to use, try setting up your system without an owner and logging into the Galasa service using a browser, then viewing the user profile page before returning to update the owner login-id in your <code>values.yaml</code> and deploying it to kubernetes using <code>helm upgrade</code>.</p>
-<h2 id="installing-the-chart">Installing the chart<a class="headerlink" href="#installing-the-chart" title="Permanent link">&para;</a></h2>
-<p>After configuring your <code>values.yaml</code> file, complete the following steps to install the Galasa Ecosystem Helm chart:</p>
-<ol>
-<li>
-<p>Install the Galasa Ecosystem chart by running the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="go">helm install -f /path/to/values.yaml &lt;release-name&gt; galasa/ecosystem --wait</span>
-</code></pre></div>
-<p>where:</p>
+<h2 id="installing-on-minikube">Installing on Minikube<a class="headerlink" href="#installing-on-minikube" title="Permanent link">&para;</a></h2>
+<p>⚠️ <strong>Minikube is for development/testing only, not production use.</strong></p>
+<h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><code>/path/to/values.yaml</code> is the path to where the <code>values.yaml</code> file is downloaded and</p>
-</li>
-<li>
-<p><code>&lt;release-name&gt;</code> is the name that you want to give the Ecosystem.</p>
-</li>
+<li><a href="https://minikube.sigs.k8s.io/docs/start/" target="_blank">Minikube</a> installed and running</li>
+<li>Verify with: <code>minikube status</code></li>
+<li>If minikube is not running, start it: <code>minikube start</code></li>
 </ul>
-<p>The <code>--wait</code> flag ensures that the chart installation completes before marking it as <code>Deployed</code>. During the installation, the API pod waits for the etcd and RAS pods to initialise while the Engine Controller, Metrics, and Resource Monitor pods wait for the API pod to initialise.</p>
-</li>
-<li>
-<p>View the status of the deployed pods by running <code>kubectl get pods</code> in another terminal. The returned results should look similar to the following example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="go">test-api-7945f959dd-v8tbs                 1/1     Running    0             65s</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="go">test-engine-controller-56fb476f45-msj4x   1/1     Running    0             65s</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="go">test-etcd-0                               1/1     Running    0             65s</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="go">test-metrics-5fd9f687b6-rwcww             1/1     Running    0             65s</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="go">test-ras-0                                1/1     Running    0             65s</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="go">test-resource-monitor-778c647995-x75z9    1/1     Running    0             65s</span>
+<h3 id="installation-steps">Installation Steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h3>
+<p>1. <strong>Enable Ingress:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>minikube<span class="w"> </span>addons<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ingress
+</code></pre></div></p>
+<p>2. <strong>Configure hosts file:</strong></p>
+<p>Add an entry to your hosts file, ensuring the IP address matches the output of <code>minikube ip</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Mac or Linux</label><label for="__tabbed_5_2">Windows (run as Administrator)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Get the minikube IP</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>minikube<span class="w"> </span>ip
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># Add this line to /etc/hosts (replace IP with your minikube IP)</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="m">192</span>.168.49.2<span class="w"> </span>galasa.local
 </code></pre></div>
-</li>
-</ol>
-<h2 id="verifying-the-installation">Verifying the installation<a class="headerlink" href="#verifying-the-installation" title="Permanent link">&para;</a></h2>
-<p>After the <code>helm install</code> command completes with a successful deployment message, run the following command to check that the Ecosystem can be accessed externally to Kubernetes so that a simple test engine can be run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;release-name&gt;
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c"># Get the minikube IP</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">minikube</span> <span class="n">ip</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="c"># Add this line to C:\Windows\System32\drivers\etc\hosts (replace IP with your minikube IP)</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">49</span><span class="p">.</span><span class="n">2</span> <span class="n">galasa</span><span class="p">.</span><span class="n">local</span>
 </code></pre></div>
-<p>where:</p>
-<p><code>&lt;release-name&gt;</code> is the name that you gave the Ecosystem during installation.</p>
-<p>When the <code>helm test</code> command ends and displays a success message, the Ecosystem is set up correctly and is ready to be used.</p>
-<h2 id="accessing-services">Accessing services<a class="headerlink" href="#accessing-services" title="Permanent link">&para;</a></h2>
-<p>The URL of the Ecosystem bootstrap will be your external hostname, followed by <code>/api/bootstrap</code>.</p>
-<p>For example, if the external hostname that you provided was <code>example.com</code> and you provided values for using TLS, the bootstrap URL would be <code>https://example.com/api/bootstrap</code>. This is the URL that you would enter into a galasactl command's <code>--bootstrap</code> option to interact with your Ecosystem.</p>
-<p>If you are deploying to minikube, add an entry to your <code>/etc/hosts</code> file, ensuring the IP address matches the output of <code>minikube ip</code>. For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="go">192.168.49.2 example.com</span>
+</div>
+</div>
+</div>
+<p>3. <strong>Configure values.yaml:</strong>
+   - Set <code>externalHostname: galasa.local</code>
+   - Configure Dex and Ingress as described in the <a href="#configuration-guide">Configuration Guide</a></p>
+<p>4. <strong>Install:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>helm<span class="w"> </span>install<span class="w"> </span>my-galasa<span class="w"> </span>galasa/ecosystem<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>--wait
+</code></pre></div></p>
+<p>5. <strong>Verify:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w">  </span><span class="c1"># Wait for all pods to be Ready</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>my-galasa
+</code></pre></div></p>
+<p>Your Galasa Ecosystem is now accessible at <code>http://galasa.local/api/bootstrap</code></p>
+<h2 id="verifying-the-installation">Verifying the Installation<a class="headerlink" href="#verifying-the-installation" title="Permanent link">&para;</a></h2>
+<p>After the <code>helm install</code> command completes, verify your ecosystem is working:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;release-name&gt;
 </code></pre></div>
-<h2 id="running-galasa-tests">Running Galasa tests<a class="headerlink" href="#running-galasa-tests" title="Permanent link">&para;</a></h2>
-<p>Once you have successfully installed the Ecosystem, you can then deploy your Galasa tests to a Maven repository and set up a test stream. For more information on managing tests, see the <a href="../../manage-ecosystem/">Managing tests in a Galasa Ecosystem</a> documentation.</p>
+<p>Expected output:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>TEST SUITE:     my-galasa-validate
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>Last Started:   Mon Mar  3 11:44:24 2025
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>Last Completed: Mon Mar  3 11:45:45 2025
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>Phase:          Succeeded
+</code></pre></div></p>
+<p><strong>Access your ecosystem:</strong></p>
+<ul>
+<li>Bootstrap URL: <code>https://&lt;your-hostname&gt;/api/bootstrap</code></li>
+<li>Web UI: <code>https://&lt;your-hostname&gt;</code></li>
+</ul>
+<p>This is the URL that you would enter into a galasactl command's <code>--bootstrap</code> option to interact with your Ecosystem.</p>
+<p><strong>Monitor pods:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+</code></pre></div></p>
+<p>All pods should show <code>Running</code> status and <code>1/1</code> ready. Example output:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="go">test-api-7945f959dd-v8tbs                 1/1     Running    0             65s</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="go">test-engine-controller-56fb476f45-msj4x   1/1     Running    0             65s</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="go">test-etcd-0                               1/1     Running    0             65s</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="go">test-metrics-5fd9f687b6-rwcww             1/1     Running    0             65s</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="go">test-ras-0                                1/1     Running    0             65s</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="go">test-resource-monitor-778c647995-x75z9    1/1     Running    0             65s</span>
+</code></pre></div></p>
+<h2 id="running-galasa-tests">Running Galasa Tests<a class="headerlink" href="#running-galasa-tests" title="Permanent link">&para;</a></h2>
+<p>Once you have successfully installed the Ecosystem, you can deploy your Galasa tests to a Maven repository and set up a test stream. For more information on managing tests, see the <a href="../../manage-ecosystem/">Managing tests in a Galasa Ecosystem</a> documentation.</p>
 <h2 id="upgrading-the-galasa-ecosystem">Upgrading the Galasa Ecosystem<a class="headerlink" href="#upgrading-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
-<p>Get the latest version of the Ecosystem chart and upgrade the Galasa Ecosystem to use the newer version of Galasa - for example version 0.46.1 - by running the following command:</p>
-<p>On Mac or Unix:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>--reuse-values<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.46.1<span class="w"> </span>--wait
+<p>To upgrade to a newer Galasa version:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">macOS or Linux</label><label for="__tabbed_6_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">  </span>--reuse-values<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">  </span>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.46.1<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">  </span>--wait
 </code></pre></div>
-<p>On Windows (Powershell):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span> <span class="p">`</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">46</span><span class="p">.</span><span class="n">1</span> <span class="p">-</span><span class="n">-wait</span>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">`</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>  <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>  <span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">46</span><span class="p">.</span><span class="n">1</span> <span class="p">`</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>  <span class="p">-</span><span class="n">-wait</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Or update your <code>values.yaml</code> and run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>--wait
 </code></pre></div>
 <p>where:</p>
 <ul>
-<li>
-<p><code>galasaVersion</code> is set to the version that you want to use and</p>
-</li>
-<li>
-<p><code>&lt;release-name&gt;</code> is the name that you gave to the Ecosystem during installation</p>
-</li>
+<li><code>galasaVersion</code> is set to the version that you want to use</li>
+<li><code>&lt;release-name&gt;</code> is the name that you gave to the Ecosystem during installation</li>
 </ul>
-<h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
+<h2 id="uninstalling-the-galasa-ecosystem">Uninstalling the Galasa Ecosystem<a class="headerlink" href="#uninstalling-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
+<p>To uninstall the Galasa Ecosystem:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>helm<span class="w"> </span>uninstall<span class="w"> </span>&lt;release-name&gt;
+</code></pre></div>
+<p>This removes all Kubernetes resources created by the chart.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Check the logs by running the <code>kubectl logs</code> command. </li>
-<li>Check that the Galasa version number in the sample is correct by running the <code>kubectl describe pod &lt;podname&gt;</code> command.  If the version number is not the latest one, update the version number in the sample and apply the update.</li>
-<li>If an 'unknown fields' error message is displayed, you can turn off validation by using the  <code>--validate=false</code> command. </li>
+<li><strong>Check pod logs:</strong> Run <code>kubectl logs &lt;pod-name&gt;</code> to view logs for a specific pod</li>
+<li><strong>Check pod details:</strong> Run <code>kubectl describe pod &lt;pod-name&gt;</code> to see detailed information about a pod</li>
+<li><strong>Verify Galasa version:</strong> Ensure the version number in your <code>values.yaml</code> matches your intended version</li>
+<li><strong>Validation errors:</strong> If an 'unknown fields' error message is displayed, you can turn off validation by using the <code>--validate=false</code> flag with kubectl commands</li>
 </ul>
 
 

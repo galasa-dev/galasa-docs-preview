@@ -6059,6 +6059,9 @@
 <li>
 <p>Added a new <code>galasactl streams set</code> command that can be used to create or update test streams within a Galasa service. <a href="../docs/reference/cli-syntax/galasactl_streams_set/">See the command reference</a>.</p>
 </li>
+<li>
+<p>Added support for Gateway API for accessing the Galasa service. See <a href="../docs/ecosystem/ecosystem-installing-k8s/#option-2-gateway-api-v0470">Installing an Ecosystem using Helm</a> for details on how to configure Gateway API. Ingress is still used for accessing the Galasa service by default but can be replaced with Gateway API by setting the <code>ingress.enabled</code> value to <code>false</code> and the <code>gatewayApi.enabled</code> value to <code>true</code> in the <code>values.yaml</code> file used when installing the Helm chart.</p>
+</li>
 </ul>
     
   </div>
