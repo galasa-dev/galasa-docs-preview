@@ -6059,7 +6059,13 @@
     <h2 id="0470-release-highlights"><a class="toclink" href="../../2026/02/19/v0.47.0/">0.47.0 - Release Highlights</a></h2>
 <h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="../../2026/02/19/v0.47.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>
-<li>Added a new CPS property <code>framework.test.run.timeout.minutes</code> that can be used to configure the maximum amount of time that a test can run for before being interrupted and assigned the 'Hung' result. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2551">#2551</a>.</li>
+<li>
+<p>Added a new CPS property <code>framework.test.run.timeout.minutes</code> that can be used to configure the maximum amount of time that a test can run for before being interrupted and assigned the 'Hung' result. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2551">#2551</a>.</p>
+</li>
+<li>
+<p><strong>HTTP Client Manager</strong>: Upgraded the underlying HTTP client library from Apache HttpClient 4 to Apache HttpClient 5.</p>
+</li>
+<li>The existing <code>getFile()</code> methods that return <code>CloseableHttpResponse</code> are now deprecated but remain functional for backward compatibility. Users are encouraged to migrate to the new <code>getFileStream()</code> methods. See the <a href="../../../docs/managers/communications-managers/http-client-manager/">HTTP Client Manager documentation</a> for examples.</li>
 </ul>
 <h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="../../2026/02/19/v0.47.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
