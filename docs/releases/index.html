@@ -2451,6 +2451,53 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8_4_2" id="__nav_3_8_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Docker Manager
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_8_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Docker Manager
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../docs/managers/cloud-managers/docker-manager/" class="md-nav__link">
         
@@ -2463,6 +2510,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/managers/cloud-managers/docker-tls-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuring Docker TLS Certificates for Galasa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -6049,8 +6127,9 @@
     <h2 id="0470-release-highlights"><a class="toclink" href="2026/02/19/v0.47.0/">0.47.0 - Release Highlights</a></h2>
 <h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2026/02/19/v0.47.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>
+<li>Added a new CPS property <code>framework.test.run.timeout.minutes</code> that can be used to configure the maximum amount of time that a test can run for before being interrupted and assigned the 'Hung' result. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2551">#2551</a>.</li>
 <li>
-<p>Added a new CPS property <code>framework.test.run.timeout.minutes</code> that can be used to configure the maximum amount of time that a test can run for before being interrupted and assigned the 'Hung' result. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2551">#2551</a>.</p>
+<p>Added support for storing Java KeyStore credentials in the Galasa Credentials Store, enabling secure storage of SSL/TLS certificates and private keys. KeyStore credentials can be managed via the Secrets REST API using the new <code>KeyStore</code> secret type, which accepts PKCS12 or JKS format keystores encoded in base64. This feature allows managers like the Docker Manager to authenticate to services that require client certificates, such as Docker engines with TLS-protected daemon sockets. The KeyStore data, password, and type are validated during credential creation to ensure immediate feedback on invalid configurations. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2509">#2509</a>.</p>
 </li>
 <li>
 <p><strong>HTTP Client Manager</strong>: Upgraded the underlying HTTP client library from Apache HttpClient 4 to Apache HttpClient 5.</p>
