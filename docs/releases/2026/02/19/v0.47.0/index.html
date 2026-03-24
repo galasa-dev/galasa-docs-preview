@@ -6181,7 +6181,12 @@
 <li>
 <p><strong>HTTP Client Manager</strong>: Upgraded the underlying HTTP client library from Apache HttpClient 4 to Apache HttpClient 5.</p>
 </li>
-<li>The existing <code>getFile()</code> methods that return <code>CloseableHttpResponse</code> are now deprecated but remain functional for backward compatibility. Users are encouraged to migrate to the new <code>getFileStream()</code> methods. See the <a href="../../../../../docs/managers/communications-managers/http-client-manager/">HTTP Client Manager documentation</a> for examples.</li>
+<li>
+<p>The existing <code>getFile()</code> methods that return <code>CloseableHttpResponse</code> are now deprecated but remain functional for backward compatibility. Users are encouraged to migrate to the new <code>getFileStream()</code> methods. See the <a href="../../../../../docs/managers/communications-managers/http-client-manager/">HTTP Client Manager documentation</a> for examples.</p>
+</li>
+<li>
+<p>The <code>galasactl runs submit local</code> command now allows additional <code>--obr</code> flags to be supplied alongside a <code>--gherkin</code> flag. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2562">#2562</a>.</p>
+</li>
 </ul>
 <h2 id="changes-affecting-the-galasa-service">Changes affecting the Galasa Service<a class="headerlink" href="#changes-affecting-the-galasa-service" title="Permanent link">&para;</a></h2>
 <ul>
