@@ -6248,6 +6248,10 @@
 <p>Added support for Gateway API for accessing the Galasa service. See <a href="../docs/ecosystem/ecosystem-installing-k8s/#option-2-gateway-api-v0470">Installing an Ecosystem using Helm</a> for details on how to configure Gateway API. Ingress is still used for accessing the Galasa service by default but can be replaced with Gateway API by setting the <code>ingress.enabled</code> value to <code>false</code> and the <code>gatewayApi.enabled</code> value to <code>true</code> in the <code>values.yaml</code> file used when installing the Helm chart.</p>
 </li>
 </ul>
+<h3 id="other-changes"><a class="toclink" href="2026/02/19/v0.47.0/#other-changes">Other changes</a></h3>
+<ul>
+<li>Added an initial Galasa agent skill to the <a href="https://github.com/galasa-dev/galasa/tree/main/.agents/skills/galasa-user">Galasa repository</a> that provides AI agents with context necessary to use Galasa more effectively. Download the <code>galasa-user</code> skill from the Galasa repository and configure your AI-powered development environment to use it.</li>
+</ul>
     
   </div>
 </article>
