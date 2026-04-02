@@ -217,6 +217,7 @@
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/creds/ICredentialsStore.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/creds/FrameworkEncryptionService.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/creds/CredentialsUsernamePassword.java'
+'/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/creds/CredentialType.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/creds/EncryptionKeys.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/creds/IEncryptionService.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/creds/CredentialsUsernameToken.java'
