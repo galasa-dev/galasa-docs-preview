@@ -6207,7 +6207,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-02-19 00:00:00+00:00">February 19, 2026</time></li>
+          <time datetime="2026-04-09 00:00:00+00:00">April 9, 2026</time></li>
         
         
       </ul>
@@ -6215,12 +6215,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="0470-release-highlights"><a class="toclink" href="2026/02/19/v0.47.0/">0.47.0 - Release Highlights</a></h2>
-<h3 id="changes-affecting-tests-running-locally"><a class="toclink" href="2026/02/19/v0.47.0/#changes-affecting-tests-running-locally">Changes affecting tests running locally</a></h3>
+    <h2 id="0470-release-highlights"><a class="toclink" href="2026/04/09/v0.47.0/">0.47.0 - Release Highlights</a></h2>
+<h3 id="changes-affecting-tests-running-locally"><a class="toclink" href="2026/04/09/v0.47.0/#changes-affecting-tests-running-locally">Changes affecting tests running locally</a></h3>
 <ul>
-<li><strong>macOS Keychain Credentials Store</strong>: Added support for reading Galasa credentials from the macOS Keychain, allowing macOS users to securely manage test credentials using the native Keychain Access application. This provides a more secure alternative to storing credentials in plain text files. The store supports all Galasa credential types including username/password, tokens, and KeyStore credentials. See the <a href="../../docs/configuring-credentials/macos-keychain-store.md">macOS Keychain Credentials Store documentation</a> for setup instructions and usage examples.</li>
+<li><strong>macOS Keychain Credentials Store</strong>: Added support for reading Galasa credentials from the macOS Keychain, allowing macOS users to securely manage test credentials using the native Keychain Access application. This provides a more secure alternative to storing credentials in plain text files. The store supports all Galasa credential types including username/password, tokens, and KeyStore credentials. See the <a href="../docs/configuring-local-credentials/macos-keychain-store/">macOS Keychain Credentials Store documentation</a> for setup instructions and usage examples.</li>
 </ul>
-<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2026/02/19/v0.47.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
+<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2026/04/09/v0.47.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>
 <li>Added a new CPS property <code>framework.test.run.timeout.minutes</code> that can be used to configure the maximum amount of time that a test can run for before being interrupted and assigned the 'Hung' result. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2551">#2551</a>.</li>
 <li>
@@ -6236,7 +6236,7 @@
 <p>The <code>galasactl runs submit local</code> command now allows additional <code>--obr</code> flags to be supplied alongside a <code>--gherkin</code> flag. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2562">#2562</a>.</p>
 </li>
 </ul>
-<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2026/02/19/v0.47.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
+<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2026/04/09/v0.47.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
 <li>
 <p>Added new REST API endpoints <code>POST /streams</code> and <code>PUT /streams/&lt;streamName&gt;</code> to allow users to create and update test streams. See the <a href="../docs/reference/rest-api/">REST API reference</a> for more details. See also <a href="https://github.com/galasa-dev/projectmanagement/issues/2447">#2447</a>.</p>
@@ -6248,7 +6248,7 @@
 <p>Added support for Gateway API for accessing the Galasa service. See <a href="../docs/ecosystem/ecosystem-installing-k8s/#option-2-gateway-api-v0470">Installing an Ecosystem using Helm</a> for details on how to configure Gateway API. Ingress is still used for accessing the Galasa service by default but can be replaced with Gateway API by setting the <code>ingress.enabled</code> value to <code>false</code> and the <code>gatewayApi.enabled</code> value to <code>true</code> in the <code>values.yaml</code> file used when installing the Helm chart.</p>
 </li>
 </ul>
-<h3 id="other-changes"><a class="toclink" href="2026/02/19/v0.47.0/#other-changes">Other changes</a></h3>
+<h3 id="other-changes"><a class="toclink" href="2026/04/09/v0.47.0/#other-changes">Other changes</a></h3>
 <ul>
 <li>Added an initial Galasa agent skill to the <a href="https://github.com/galasa-dev/galasa/tree/main/.agents/skills/galasa-user">Galasa repository</a> that provides AI agents with context necessary to use Galasa more effectively. Download the <code>galasa-user</code> skill from the Galasa repository and configure your AI-powered development environment to use it.</li>
 </ul>
