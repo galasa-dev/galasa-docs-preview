@@ -6252,7 +6252,15 @@
 <p>Added support for integrating the Galasa service with the <a href="https://istio.io" target="_blank">Istio</a> service mesh.</p>
 </li>
 <li>When enabled, Galasa service pods start up with an Istio sidecar so that pod-to-pod traffic can be secured using mutual TLS (mTLS).</li>
-<li>For configuration details, see <a href="../docs/ecosystem/ecosystem-installing-k8s/#istio-service-mesh">Installing an Ecosystem using Helm</a>.</li>
+<li>
+<p>For configuration details, see <a href="../docs/ecosystem/ecosystem-installing-k8s/#istio-service-mesh">Installing an Ecosystem using Helm</a>.</p>
+</li>
+<li>
+<p>User operations are now case-insensitive. All user-related operations in the Galasa ecosystem now treat user login IDs case-insensitively. This means that <code>myuser</code>, <code>MyUser</code>, and <code>MYUSER</code> are all treated as the same user. Users no longer need to remember the exact case a user was saved into the Auth Store with when passing the value manually or from an automation tool, which would previously cause user not found errors. This improvement applies to:</p>
+</li>
+<li>CLI commands: <code>galasactl users get/set/delete --login-id</code>, <code>galasactl auth tokens get --user</code>, and <code>galasactl runs submit --user</code></li>
+<li>REST API endpoints: <code>/users</code> and <code>/auth/tokens</code> query parameters</li>
+<li>Test run submissions: The <code>user</code> field in test run requests</li>
 </ul>
 <h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2026/04/10/v0.48.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>
