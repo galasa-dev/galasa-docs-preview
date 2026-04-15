@@ -6860,39 +6860,139 @@
 <li>The <code>owner</code> role exists solely to fix situations where there are no administrators on the Galasa Ecosystem.</li>
 </ul>
 <h3 id="optional-configurations">Optional Configurations<a class="headerlink" href="#optional-configurations" title="Permanent link">&para;</a></h3>
+<h4 id="istio-service-mesh">Istio Service Mesh<a class="headerlink" href="#istio-service-mesh" title="Permanent link">&para;</a></h4>
+<p>The Galasa service supports integration with <a href="https://istio.io">Istio</a> service mesh to automatically encrypt all pod-to-pod traffic using mutual TLS (mTLS).</p>
+<p><strong>Prerequisites:</strong>
+- Istio 1.29+ installed in your Kubernetes cluster
+- See <a href="https://istio.io/latest/docs/setup/getting-started/">Istio installation guide</a></p>
+<p><strong>Basic Configuration (Internal Traffic Only):</strong></p>
+<p>To enable mTLS for internal pod-to-pod traffic:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">istio</span><span class="p">:</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="nt">mtlsMode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;STRICT&quot;</span><span class="w">  </span><span class="c1"># Recommended for production</span>
+</code></pre></div>
+<p><strong>External Traffic Routing:</strong></p>
+<p>Istio can also handle external traffic routing. Choose one option:</p>
+<p><strong>Option 1: Istio with Kubernetes Gateway API (Recommended)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">istio</span><span class="p">:</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="nt">mtlsMode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;STRICT&quot;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nt">gatewayApi</span><span class="p">:</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span><span class="nt">gatewayClassName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;istio&quot;</span><span class="w">  </span><span class="c1"># Use Istio&#39;s Gateway implementation</span>
+</code></pre></div>
+<p><strong>Option 2: Istio with Kubernetes Ingress</strong></p>
+<p>First, create an Istio IngressClass:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="l l-Scalar l-Scalar-Plain">kubectl apply -f - &lt;&lt;EOF</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IngressClass</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">istio</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="nt">controller</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">istio.io/ingress-controller</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="l l-Scalar l-Scalar-Plain">EOF</span>
+</code></pre></div>
+<p>Then configure the chart's values:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">istio</span><span class="p">:</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="nt">mtlsMode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;STRICT&quot;</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nt">ingress</span><span class="p">:</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">  </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;istio&quot;</span><span class="w">  </span><span class="c1"># Use Istio&#39;s Ingress controller</span>
+</code></pre></div>
+<p><strong>Note:</strong> When using Istio for external traffic, Istio handles both external ingress and internal mTLS encryption.</p>
+<p><strong>Configuration Options:</strong></p>
+<ul>
+<li><code>istio.enabled</code>: Enable or disable Istio integration (default: <code>false</code>)</li>
+<li><code>istio.mtlsMode</code>: mTLS enforcement mode</li>
+<li><code>STRICT</code>: Only mTLS traffic allowed (recommended for production)</li>
+<li><code>PERMISSIVE</code>: Both mTLS and plaintext allowed (useful for migration)</li>
+<li><code>DISABLE</code>: mTLS disabled</li>
+</ul>
+<p><strong>How It Works:</strong></p>
+<p>When Istio is enabled:
+1. All Galasa service pods receive an Istio sidecar proxy
+2. The sidecar automatically encrypts all pod-to-pod traffic using mTLS
+3. Application code continues to use HTTP URLs - encryption is transparent
+4. Test pods launched by the Engine Controller also receive Istio sidecars</p>
+<p><strong>Migration Strategy:</strong></p>
+<p>For existing deployments, use a gradual migration approach:</p>
+<ol>
+<li>
+<p><strong>Enable with PERMISSIVE mode:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">istio</span><span class="p">:</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="nt">mtlsMode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PERMISSIVE&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Upgrade your deployment:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>my-galasa<span class="w"> </span>galasa/ecosystem<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>--wait
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Verify all services are working:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Check that all pods have Istio sidecars (should show 2 containers per pod)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Verify mTLS is enabled by checking Istio proxy config</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>istioctl<span class="w"> </span>proxy-status<span class="w"> </span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Switch to STRICT mode:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">istio</span><span class="p">:</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="nt">mtlsMode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;STRICT&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Upgrade again:</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>my-galasa<span class="w"> </span>galasa/ecosystem<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>--wait
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Troubleshooting:</strong></p>
+<ul>
+<li><strong>Pods not getting sidecars:</strong> Verify Istio is installed with <code>kubectl get pods -n istio-system</code></li>
+<li><strong>Connection failures:</strong> Use PERMISSIVE mode during migration, then switch to STRICT</li>
+<li><strong>Check Istio proxy logs:</strong> <code>kubectl logs &lt;pod-name&gt; -c istio-proxy</code></li>
+</ul>
 <h4 id="storage-class">Storage Class<a class="headerlink" href="#storage-class" title="Permanent link">&para;</a></h4>
 <p>If your cluster requires a specific StorageClass for persistent volumes:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">storageClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-storage-class</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">storageClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-storage-class</span>
 </code></pre></div>
 <p>If you are deploying to minikube, you can optionally use the standard storage class that is created for you by minikube, but this is not required and can be left empty.</p>
 <h4 id="custom-logging-log4j2">Custom Logging (Log4j2)<a class="headerlink" href="#custom-logging-log4j2" title="Permanent link">&para;</a></h4>
 <p>Customize log format by setting <code>log4j2Properties</code> in <code>values.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">log4j2Properties</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="no">status = error</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="no">name = Default</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="no">appender.console.type = Console</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="no">appender.console.name = stdout</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span><span class="no">appender.console.layout.type = PatternLayout</span>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">  </span><span class="no">appender.console.layout.pattern = %d{dd/MM/yyyy HH:mm:ss.SSS} %-5p %c{1.} - %m%n</span>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">  </span><span class="no">rootLogger.level = debug</span>
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">  </span><span class="no">rootLogger.appenderRef.stdout.ref = stdout</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nt">log4j2Properties</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">  </span><span class="no">status = error</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">  </span><span class="no">name = Default</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">  </span><span class="no">appender.console.type = Console</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">  </span><span class="no">appender.console.name = stdout</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">  </span><span class="no">appender.console.layout.type = PatternLayout</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="w">  </span><span class="no">appender.console.layout.pattern = %d{dd/MM/yyyy HH:mm:ss.SSS} %-5p %c{1.} - %m%n</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="w">  </span><span class="no">rootLogger.level = debug</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="w">  </span><span class="no">rootLogger.appenderRef.stdout.ref = stdout</span>
 </code></pre></div>
 <p>For JSON templates, create a ConfigMap and reference it:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">macOS or Linux</label><label for="__tabbed_3_2">Windows (PowerShell)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>my-json-layouts<span class="w"> </span>--from-file<span class="o">=</span>/path/to/MyLayout.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>my-json-layouts<span class="w"> </span>--from-file<span class="o">=</span>/path/to/MyLayout.json
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">kubectl</span> <span class="n">create</span> <span class="n">configmap</span> <span class="n">my-json-layouts</span> <span class="p">-</span><span class="n">-from</span><span class="o">-file</span><span class="p">=</span><span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">MyLayout</span><span class="p">.</span><span class="n">json</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">kubectl</span> <span class="n">create</span> <span class="n">configmap</span> <span class="n">my-json-layouts</span> <span class="p">-</span><span class="n">-from</span><span class="o">-file</span><span class="p">=</span><span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">MyLayout</span><span class="p">.</span><span class="n">json</span>
 </code></pre></div>
 </div>
 </div>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">log4jJsonTemplatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-json-layouts</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nt">log4jJsonTemplatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-json-layouts</span>
 </code></pre></div>
 <p>The ConfigMap is mounted into the Galasa service pods in the <code>/log4j-config</code> directory. Refer to the <a href="https://logging.apache.org/log4j/2.x/manual/configuration.html" target="_blank">Log4j documentation</a> for available properties.</p>
 <h4 id="internal-certificates">Internal Certificates<a class="headerlink" href="#internal-certificates" title="Permanent link">&para;</a></h4>
@@ -6901,21 +7001,21 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">macOS or Linux</label><label for="__tabbed_4_2">Windows (PowerShell)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>my-certificates<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span>--from-file<span class="o">=</span>/path/to/certificate1.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span>--from-file<span class="o">=</span>/path/to/certificate2.pem
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>configmap<span class="w"> </span>my-certificates<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span>--from-file<span class="o">=</span>/path/to/certificate1.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">  </span>--from-file<span class="o">=</span>/path/to/certificate2.pem
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">kubectl</span> <span class="n">create</span> <span class="n">configmap</span> <span class="n">my-certificates</span> <span class="p">`</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>  <span class="p">-</span><span class="n">-from</span><span class="o">-file</span><span class="p">=</span><span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">certificate1</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>  <span class="p">-</span><span class="n">-from</span><span class="o">-file</span><span class="p">=</span><span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">certificate2</span><span class="p">.</span><span class="n">pem</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">kubectl</span> <span class="n">create</span> <span class="n">configmap</span> <span class="n">my-certificates</span> <span class="p">`</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>  <span class="p">-</span><span class="n">-from</span><span class="o">-file</span><span class="p">=</span><span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">certificate1</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>  <span class="p">-</span><span class="n">-from</span><span class="o">-file</span><span class="p">=</span><span class="n">C</span><span class="p">:\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">certificate2</span><span class="p">.</span><span class="n">pem</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 <p>2. Reference it in <code>values.yaml</code>:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">certificatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-certificates</span>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nt">certificatesConfigMapName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-certificates</span>
 </code></pre></div></p>
 <h2 id="installing-on-minikube">Installing on Minikube<a class="headerlink" href="#installing-on-minikube" title="Permanent link">&para;</a></h2>
 <p>⚠️ <strong>Minikube is for development/testing only, not production use.</strong></p>
@@ -6927,26 +7027,26 @@
 </ul>
 <h3 id="installation-steps">Installation Steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h3>
 <p>1. <strong>Enable Ingress:</strong>
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>minikube<span class="w"> </span>addons<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ingress
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>minikube<span class="w"> </span>addons<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ingress
 </code></pre></div></p>
 <p>2. <strong>Configure hosts file:</strong></p>
 <p>Add an entry to your hosts file, ensuring the IP address matches the output of <code>minikube ip</code>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Mac or Linux</label><label for="__tabbed_5_2">Windows (run as Administrator)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Get the minikube IP</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>minikube<span class="w"> </span>ip
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># Add this line to /etc/hosts (replace IP with your minikube IP)</span>
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="m">192</span>.168.49.2<span class="w"> </span>galasa.local
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1"># Get the minikube IP</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>minikube<span class="w"> </span>ip
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="c1"># Add this line to /etc/hosts (replace IP with your minikube IP)</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="m">192</span>.168.49.2<span class="w"> </span>galasa.local
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c"># Get the minikube IP</span>
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">minikube</span> <span class="n">ip</span>
-<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="c"># Add this line to C:\Windows\System32\drivers\etc\hosts (replace IP with your minikube IP)</span>
-<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">49</span><span class="p">.</span><span class="n">2</span> <span class="n">galasa</span><span class="p">.</span><span class="n">local</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c"># Get the minikube IP</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="n">minikube</span> <span class="n">ip</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="c"># Add this line to C:\Windows\System32\drivers\etc\hosts (replace IP with your minikube IP)</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">49</span><span class="p">.</span><span class="n">2</span> <span class="n">galasa</span><span class="p">.</span><span class="n">local</span>
 </code></pre></div>
 </div>
 </div>
@@ -6955,22 +7055,22 @@
    - Set <code>externalHostname: galasa.local</code>
    - Configure Dex and Ingress as described in the <a href="#configuration-guide">Configuration Guide</a></p>
 <p>4. <strong>Install:</strong>
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>helm<span class="w"> </span>install<span class="w"> </span>my-galasa<span class="w"> </span>galasa/ecosystem<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>--wait
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>helm<span class="w"> </span>install<span class="w"> </span>my-galasa<span class="w"> </span>galasa/ecosystem<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>--wait
 </code></pre></div></p>
 <p>5. <strong>Verify:</strong>
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w">  </span><span class="c1"># Wait for all pods to be Ready</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>my-galasa
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w">  </span><span class="c1"># Wait for all pods to be Ready</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>my-galasa
 </code></pre></div></p>
 <p>Your Galasa Ecosystem is now accessible at <code>http://galasa.local/api/bootstrap</code></p>
 <h2 id="verifying-the-installation">Verifying the Installation<a class="headerlink" href="#verifying-the-installation" title="Permanent link">&para;</a></h2>
 <p>After the <code>helm install</code> command completes, verify your ecosystem is working:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;release-name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>&lt;release-name&gt;
 </code></pre></div>
 <p>Expected output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>TEST SUITE:     my-galasa-validate
-<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>Last Started:   Mon Mar  3 11:44:24 2025
-<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>Last Completed: Mon Mar  3 11:45:45 2025
-<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>Phase:          Succeeded
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>TEST SUITE:     my-galasa-validate
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>Last Started:   Mon Mar  3 11:44:24 2025
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>Last Completed: Mon Mar  3 11:45:45 2025
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>Phase:          Succeeded
 </code></pre></div></p>
 <p><strong>Access your ecosystem:</strong></p>
 <ul>
@@ -6979,16 +7079,16 @@
 </ul>
 <p>This is the URL that you would enter into a galasactl command's <code>--bootstrap</code> option to interact with your Ecosystem.</p>
 <p><strong>Monitor pods:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
 </code></pre></div></p>
 <p>All pods should show <code>Running</code> status and <code>1/1</code> ready. Example output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
-<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="go">test-api-7945f959dd-v8tbs                 1/1     Running    0             65s</span>
-<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="go">test-engine-controller-56fb476f45-msj4x   1/1     Running    0             65s</span>
-<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="go">test-etcd-0                               1/1     Running    0             65s</span>
-<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="go">test-metrics-5fd9f687b6-rwcww             1/1     Running    0             65s</span>
-<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="go">test-ras-0                                1/1     Running    0             65s</span>
-<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="go">test-resource-monitor-778c647995-x75z9    1/1     Running    0             65s</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="go">NAME                                      READY   STATUS     RESTARTS      AGE</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="go">test-api-7945f959dd-v8tbs                 1/1     Running    0             65s</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="go">test-engine-controller-56fb476f45-msj4x   1/1     Running    0             65s</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="go">test-etcd-0                               1/1     Running    0             65s</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="go">test-metrics-5fd9f687b6-rwcww             1/1     Running    0             65s</span>
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="go">test-ras-0                                1/1     Running    0             65s</span>
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="go">test-resource-monitor-778c647995-x75z9    1/1     Running    0             65s</span>
 </code></pre></div></p>
 <h2 id="running-galasa-tests">Running Galasa Tests<a class="headerlink" href="#running-galasa-tests" title="Permanent link">&para;</a></h2>
 <p>Once you have successfully installed the Ecosystem, you can deploy your Galasa tests to a Maven repository and set up a test stream. For more information on managing tests, see the <a href="../../manage-ecosystem/">Managing tests in a Galasa Ecosystem</a> documentation.</p>
@@ -6997,25 +7097,25 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">macOS or Linux</label><label for="__tabbed_6_2">Windows (PowerShell)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
-<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">  </span>--reuse-values<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">  </span>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.46.1<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">  </span>--wait
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="w">  </span>--reuse-values<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="w">  </span>--set<span class="w"> </span><span class="nv">galasaVersion</span><span class="o">=</span><span class="m">0</span>.46.1<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="w">  </span>--wait
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span>
-<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">`</span>
-<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>  <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
-<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>  <span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">46</span><span class="p">.</span><span class="n">1</span> <span class="p">`</span>
-<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>  <span class="p">-</span><span class="n">-wait</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">helm</span> <span class="n">repo</span> <span class="n">update</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="n">helm</span> <span class="n">upgrade</span> <span class="p">&lt;</span><span class="n">release-name</span><span class="p">&gt;</span> <span class="n">galasa</span><span class="p">/</span><span class="n">ecosystem</span> <span class="p">`</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>  <span class="p">-</span><span class="n">-reuse-values</span> <span class="p">`</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>  <span class="p">-</span><span class="n">-set</span> <span class="n">galasaVersion</span><span class="p">=</span><span class="n">0</span><span class="p">.</span><span class="n">46</span><span class="p">.</span><span class="n">1</span> <span class="p">`</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>  <span class="p">-</span><span class="n">-wait</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 <p>Or update your <code>values.yaml</code> and run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>--wait
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release-name&gt;<span class="w"> </span>galasa/ecosystem<span class="w"> </span>-f<span class="w"> </span>values.yaml<span class="w"> </span>--wait
 </code></pre></div>
 <p>where:</p>
 <ul>
@@ -7024,7 +7124,7 @@
 </ul>
 <h2 id="uninstalling-the-galasa-ecosystem">Uninstalling the Galasa Ecosystem<a class="headerlink" href="#uninstalling-the-galasa-ecosystem" title="Permanent link">&para;</a></h2>
 <p>To uninstall the Galasa Ecosystem:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>helm<span class="w"> </span>uninstall<span class="w"> </span>&lt;release-name&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>helm<span class="w"> </span>uninstall<span class="w"> </span>&lt;release-name&gt;
 </code></pre></div>
 <p>This removes all Kubernetes resources created by the chart.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>

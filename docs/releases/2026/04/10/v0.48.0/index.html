@@ -6292,7 +6292,14 @@
 <ul>
 <li>Added a background cleanup process for the Galasa service's result archive store which automatically deletes test runs that meet the configured criteria.</li>
 <li>By default, test runs older than 30 days are deleted and the cleanup process runs once every 24 hours.</li>
-<li>For information on how to configure the cleanup process, including how to adjust the age threshold, cleanup frequency, and exclude specific test runs from cleanup, see <a href="../../../../../docs/manage-ecosystem/automatic-runs-cleanup/">Configuring automatic cleanup of test runs</a>.</li>
+<li>
+<p>For information on how to configure the cleanup process, including how to adjust the age threshold, cleanup frequency, and exclude specific test runs from cleanup, see <a href="../../../../../docs/manage-ecosystem/automatic-runs-cleanup/">Configuring automatic cleanup of test runs</a>.</p>
+</li>
+<li>
+<p>Added support for integrating the Galasa service with the <a href="https://istio.io" target="_blank">Istio</a> service mesh.</p>
+</li>
+<li>When enabled, Galasa service pods start up with an Istio sidecar so that pod-to-pod traffic can be secured using mutual TLS (mTLS).</li>
+<li>For configuration details, see <a href="../../../../../docs/ecosystem/ecosystem-installing-k8s/#istio-service-mesh">Installing an Ecosystem using Helm</a>.</li>
 </ul>
 <h2 id="changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service<a class="headerlink" href="#changes-affecting-tests-running-locally-or-on-the-galasa-service" title="Permanent link">&para;</a></h2>
 <ul>
