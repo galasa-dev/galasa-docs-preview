@@ -1309,12 +1309,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../running-simbank-tests/writing-a-simbank-test/" class="md-nav__link">
+      <a href="../../running-simbank-tests/writing-a-simbank-test.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Writing your own SimBank test
+    None
     
   </span>
   
@@ -6393,7 +6393,7 @@
 
 <p>Having created your project structure and built the parent and sub-projects, you are ready to start writing your own test classes.</p>
 <h2 id="the-anatomy-of-a-galasa-test-class">The anatomy of a Galasa test class<a class="headerlink" href="#the-anatomy-of-a-galasa-test-class" title="Permanent link">&para;</a></h2>
-<p>Some classes have <code>internal</code> as part of their package name. Such classes are not intended to be used in test code, and if you try doing so then at run-time you are likely to experience <code>Class not found</code> errors. This might be especially pertinent if an IDE, for example Eclipse, shows such classes in auto-complete drop-downs.</p>
+<p>Some classes have <code>internal</code> as part of their package name. Such classes are not intended to be used in test code, and if you try doing so then at run-time you are likely to experience <code>Class not found</code> errors. This might be especially pertinent if an IDE shows such classes in auto-complete drop-downs.</p>
 <p>All Galasa tests must have a <code>@Test</code> annotation (<code>dev.galasa.Test</code>) defined and in place for it to be recognised by Galasa. Doing this allows the Galasa Maven plugin to differentiate between test and utility classes within a project. Only classes that use <code>@Test</code> are included in the test catalog.</p>
 <p>Once loaded by the Galasa test runner, there are a few further annotations that dictate how a test is executed. These are <code>@BeforeClass</code>, <code>@Before</code>, <code>@Test</code>, <code>@After</code> and <code>@AfterClass</code>. These are visually similar to how they appear in JUnit, but are handled differently in Galasa.</p>
 <h3 id="galasa-test-method-annotations">Galasa test method annotations<a class="headerlink" href="#galasa-test-method-annotations" title="Permanent link">&para;</a></h3>

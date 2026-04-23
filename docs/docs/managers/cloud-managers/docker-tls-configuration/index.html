@@ -1309,12 +1309,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../running-simbank-tests/writing-a-simbank-test/" class="md-nav__link">
+      <a href="../../../running-simbank-tests/writing-a-simbank-test.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Writing your own SimBank test
+    None
     
   </span>
   
@@ -3351,30 +3351,6 @@
   <a href="#java-keystore-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       Java KeyStore Documentation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
     </span>
   </a>
   
@@ -7519,30 +7495,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -7639,146 +7591,210 @@
 <h2 id="step-1-create-a-certificate-authority-ca">Step 1: Create a Certificate Authority (CA)<a class="headerlink" href="#step-1-create-a-certificate-authority-ca" title="Permanent link">&para;</a></h2>
 <p>The Certificate Authority is used to sign both the server and client certificates, establishing trust between Docker and Galasa.</p>
 <h3 id="11-generate-ca-private-key">1.1 Generate CA Private Key<a class="headerlink" href="#11-generate-ca-private-key" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS or Linux</label><label for="__tabbed_1_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Create a directory for certificates</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/docker-certs
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>~/docker-certs
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Generate CA private key (4096-bit RSA)</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>openssl<span class="w"> </span>genrsa<span class="w"> </span>-out<span class="w"> </span>ca-key.pem<span class="w"> </span><span class="m">4096</span>
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Create a directory for certificates</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">&quot;$env:USERPROFILE\docker-certs&quot;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">Set-Location</span> <span class="s2">&quot;$env:USERPROFILE\docker-certs&quot;</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c"># Generate CA private key (4096-bit RSA)</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">openssl</span> <span class="n">genrsa</span> <span class="n">-out</span> <span class="n">ca-key</span><span class="p">.</span><span class="n">pem</span> <span class="n">4096</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <p><strong>Important:</strong> Keep <code>ca-key.pem</code> secure! Anyone with this key can create trusted certificates.</p>
 <h3 id="12-generate-ca-certificate">1.2 Generate CA Certificate<a class="headerlink" href="#12-generate-ca-certificate" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">macOS or Linux</label><label for="__tabbed_2_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Create CA certificate (valid for 10 years)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>openssl<span class="w"> </span>req<span class="w"> </span>-new<span class="w"> </span>-x509<span class="w"> </span>-days<span class="w"> </span><span class="m">3650</span><span class="w"> </span>-key<span class="w"> </span>ca-key.pem<span class="w"> </span>-sha256<span class="w"> </span>-out<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>-subj<span class="w"> </span><span class="s2">&quot;/C=US/ST=State/L=City/O=Organization/OU=IT/CN=Docker-CA&quot;</span>
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>-subj<span class="w"> </span><span class="s2">&quot;/C=US/ST=State/L=City/O=Organization/OU=IT/CN=Docker-CA&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Create CA certificate (valid for 10 years)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">openssl</span> <span class="n">req</span> <span class="n">-new</span> <span class="n">-x509</span> <span class="n">-days</span> <span class="n">3650</span> <span class="n">-key</span> <span class="n">ca-key</span><span class="p">.</span><span class="n">pem</span> <span class="n">-sha256</span> <span class="n">-out</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="n">-subj</span> <span class="s2">&quot;/C=US/ST=State/L=City/O=Organization/OU=IT/CN=Docker-CA&quot;</span>
-</code></pre></div></p>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">-subj</span> <span class="s2">&quot;/C=US/ST=State/L=City/O=Organization/OU=IT/CN=Docker-CA&quot;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h2 id="step-2-create-server-certificates-for-docker-daemon">Step 2: Create Server Certificates for Docker Daemon<a class="headerlink" href="#step-2-create-server-certificates-for-docker-daemon" title="Permanent link">&para;</a></h2>
 <p>The Docker daemon needs a server certificate to prove its identity to clients.</p>
 <h3 id="21-generate-server-private-key">2.1 Generate Server Private Key<a class="headerlink" href="#21-generate-server-private-key" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS/Windows:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">macOS or Linux or Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>openssl<span class="w"> </span>genrsa<span class="w"> </span>-out<span class="w"> </span>server-key.pem<span class="w"> </span><span class="m">4096</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="22-create-certificate-signing-request-csr">2.2 Create Certificate Signing Request (CSR)<a class="headerlink" href="#22-create-certificate-signing-request-csr" title="Permanent link">&para;</a></h3>
 <p>Replace the IP address with your Docker host's IP address or hostname:</p>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">macOS or Linux</label><label for="__tabbed_4_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Set your Docker host IP/hostname</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nv">DOCKER_HOST</span><span class="o">=</span><span class="s2">&quot;192.168.1.100&quot;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Create CSR</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>openssl<span class="w"> </span>req<span class="w"> </span>-subj<span class="w"> </span><span class="s2">&quot;/CN=</span><span class="nv">$DOCKER_HOST</span><span class="s2">&quot;</span><span class="w"> </span>-sha256<span class="w"> </span>-new<span class="w"> </span>-key<span class="w"> </span>server-key.pem<span class="w"> </span>-out<span class="w"> </span>server.csr
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Set your Docker host IP/hostname</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">$DOCKER_HOST</span><span class="p">=</span><span class="s2">&quot;192.168.1.100&quot;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c"># Create CSR</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">openssl</span> <span class="n">req</span> <span class="n">-subj</span> <span class="s2">&quot;/CN=$DOCKER_HOST&quot;</span> <span class="n">-sha256</span> <span class="n">-new</span> <span class="n">-key</span> <span class="n">server-key</span><span class="p">.</span><span class="n">pem</span> <span class="n">-out</span> <span class="n">server</span><span class="p">.</span><span class="n">csr</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="23-configure-subject-alternative-names-san">2.3 Configure Subject Alternative Names (SAN)<a class="headerlink" href="#23-configure-subject-alternative-names-san" title="Permanent link">&para;</a></h3>
 <p>Create a file named <code>extfile.cnf</code> with the following content (replace IP addresses as needed):</p>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">macOS or Linux</label><label for="__tabbed_5_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>extfile.cnf<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="s">subjectAltName = DNS:$DOCKER_HOST,IP:$DOCKER_HOST,IP:127.0.0.1</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="s">extendedKeyUsage = serverAuth</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="s">EOF</span>
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="sh">@&quot;</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="sh">subjectAltName = DNS:$DOCKER_HOST,IP:$DOCKER_HOST,IP:127.0.0.1</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="sh">extendedKeyUsage = serverAuth</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="sh">&quot;@</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="n">extfile</span><span class="p">.</span><span class="n">cnf</span> <span class="n">-Encoding</span> <span class="n">ASCII</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="24-sign-the-server-certificate">2.4 Sign the Server Certificate<a class="headerlink" href="#24-sign-the-server-certificate" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">macOS or Linux</label><label for="__tabbed_6_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>openssl<span class="w"> </span>x509<span class="w"> </span>-req<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-sha256<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span>-in<span class="w"> </span>server.csr<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span>-CA<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span>-CAkey<span class="w"> </span>ca-key.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span>-CAcreateserial<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span>-out<span class="w"> </span>server-cert.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span>-extfile<span class="w"> </span>extfile.cnf
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>-in<span class="w"> </span>server.csr<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>-CA<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>-CAkey<span class="w"> </span>ca-key.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>-CAcreateserial<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>-out<span class="w"> </span>server-cert.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>-extfile<span class="w"> </span>extfile.cnf
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">openssl</span> <span class="n">x509</span> <span class="n">-req</span> <span class="n">-days</span> <span class="n">365</span> <span class="n">-sha256</span> <span class="p">`</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  <span class="n">-in</span> <span class="n">server</span><span class="p">.</span><span class="n">csr</span> <span class="p">`</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  <span class="n">-CA</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  <span class="n">-CAkey</span> <span class="n">ca-key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  <span class="n">-CAcreateserial</span> <span class="p">`</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>  <span class="n">-out</span> <span class="n">server-cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>  <span class="n">-extfile</span> <span class="n">extfile</span><span class="p">.</span><span class="n">cnf</span>
-</code></pre></div></p>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">-in</span> <span class="n">server</span><span class="p">.</span><span class="n">csr</span> <span class="p">`</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">-CA</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">-CAkey</span> <span class="n">ca-key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">-CAcreateserial</span> <span class="p">`</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">-out</span> <span class="n">server-cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">-extfile</span> <span class="n">extfile</span><span class="p">.</span><span class="n">cnf</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h2 id="step-3-create-client-certificates-for-galasa">Step 3: Create Client Certificates for Galasa<a class="headerlink" href="#step-3-create-client-certificates-for-galasa" title="Permanent link">&para;</a></h2>
 <p>Galasa needs client certificates to authenticate to the Docker daemon.</p>
 <h3 id="31-generate-client-private-key">3.1 Generate Client Private Key<a class="headerlink" href="#31-generate-client-private-key" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS/Windows:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">macOS or Linux or Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>openssl<span class="w"> </span>genrsa<span class="w"> </span>-out<span class="w"> </span>key.pem<span class="w"> </span><span class="m">4096</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="32-create-client-csr">3.2 Create Client CSR<a class="headerlink" href="#32-create-client-csr" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS/Windows:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">macOS or Linux or Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>openssl<span class="w"> </span>req<span class="w"> </span>-subj<span class="w"> </span><span class="s1">&#39;/CN=galasa-client&#39;</span><span class="w"> </span>-new<span class="w"> </span>-key<span class="w"> </span>key.pem<span class="w"> </span>-out<span class="w"> </span>client.csr
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="33-configure-client-extensions">3.3 Configure Client Extensions<a class="headerlink" href="#33-configure-client-extensions" title="Permanent link">&para;</a></h3>
 <p>Create <code>extfile-client.cnf</code>:</p>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">macOS or Linux</label><label for="__tabbed_9_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>extfile-client.cnf<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="s">extendedKeyUsage = clientAuth</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="s">EOF</span>
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="sh">@&quot;</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="sh">extendedKeyUsage = clientAuth</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="sh">&quot;@</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="n">extfile-client</span><span class="p">.</span><span class="n">cnf</span> <span class="n">-Encoding</span> <span class="n">ASCII</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="34-sign-the-client-certificate">3.4 Sign the Client Certificate<a class="headerlink" href="#34-sign-the-client-certificate" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">macOS or Linux</label><label for="__tabbed_10_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>openssl<span class="w"> </span>x509<span class="w"> </span>-req<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-sha256<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span>-in<span class="w"> </span>client.csr<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span>-CA<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span>-CAkey<span class="w"> </span>ca-key.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span>-CAcreateserial<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span>-out<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span>-extfile<span class="w"> </span>extfile-client.cnf
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>-in<span class="w"> </span>client.csr<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>-CA<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>-CAkey<span class="w"> </span>ca-key.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>-CAcreateserial<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>-out<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>-extfile<span class="w"> </span>extfile-client.cnf
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">openssl</span> <span class="n">x509</span> <span class="n">-req</span> <span class="n">-days</span> <span class="n">365</span> <span class="n">-sha256</span> <span class="p">`</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  <span class="n">-in</span> <span class="n">client</span><span class="p">.</span><span class="n">csr</span> <span class="p">`</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>  <span class="n">-CA</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  <span class="n">-CAkey</span> <span class="n">ca-key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>  <span class="n">-CAcreateserial</span> <span class="p">`</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>  <span class="n">-out</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>  <span class="n">-extfile</span> <span class="n">extfile-client</span><span class="p">.</span><span class="n">cnf</span>
-</code></pre></div></p>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">-in</span> <span class="n">client</span><span class="p">.</span><span class="n">csr</span> <span class="p">`</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">-CA</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">-CAkey</span> <span class="n">ca-key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="n">-CAcreateserial</span> <span class="p">`</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="n">-out</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="n">-extfile</span> <span class="n">extfile-client</span><span class="p">.</span><span class="n">cnf</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="35-verify-certificate-chain">3.5 Verify Certificate Chain<a class="headerlink" href="#35-verify-certificate-chain" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS/Windows:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">macOS or Linux or Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Verify server certificate</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>openssl<span class="w"> </span>verify<span class="w"> </span>-CAfile<span class="w"> </span>ca.pem<span class="w"> </span>server-cert.pem
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Verify client certificate</span>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>openssl<span class="w"> </span>verify<span class="w"> </span>-CAfile<span class="w"> </span>ca.pem<span class="w"> </span>cert.pem
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <p>Both should output: <code>OK</code></p>
 <hr />
 <h2 id="step-4-configure-docker-daemon">Step 4: Configure Docker Daemon<a class="headerlink" href="#step-4-configure-docker-daemon" title="Permanent link">&para;</a></h2>
 <p><strong>Note:</strong> This step is primarily for Linux systems. Windows Docker Desktop has a different configuration approach (see note below).</p>
 <h3 id="41-copy-server-certificates-to-docker">4.1 Copy Server Certificates to Docker<a class="headerlink" href="#41-copy-server-certificates-to-docker" title="Permanent link">&para;</a></h3>
-<p><strong>Linux:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:3"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><input id="__tabbed_12_3" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Linux</label><label for="__tabbed_12_2">macOS</label><label for="__tabbed_12_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Create Docker certificate directory</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/docker/certs
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
@@ -7791,8 +7807,9 @@
 <a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>sudo<span class="w"> </span>chown<span class="w"> </span>root:root<span class="w"> </span>/etc/docker/certs/*
 <a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">0400</span><span class="w"> </span>/etc/docker/certs/server-key.pem
 <a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">0444</span><span class="w"> </span>/etc/docker/certs/ca.pem<span class="w"> </span>/etc/docker/certs/server-cert.pem
-</code></pre></div></p>
-<p><strong>macOS:</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Docker Desktop on macOS - certificates go in user directory</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.docker/certs
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
@@ -7804,8 +7821,10 @@
 <a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="c1"># Set permissions</span>
 <a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>chmod<span class="w"> </span><span class="m">0400</span><span class="w"> </span>~/.docker/certs/server-key.pem
 <a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>chmod<span class="w"> </span><span class="m">0444</span><span class="w"> </span>~/.docker/certs/ca.pem<span class="w"> </span>~/.docker/certs/server-cert.pem
-</code></pre></div></p>
-<p><strong>Windows:</strong> Docker Desktop on Windows uses a GUI for configuration. For Windows Server with Docker Engine:
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Docker Desktop on Windows uses a GUI for configuration. For Windows Server with Docker Engine:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c"># Create Docker certificate directory</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="n">-Path</span> <span class="s2">&quot;C:\ProgramData\docker\certs&quot;</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
@@ -7813,147 +7832,197 @@
 <a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="nb">Copy-Item</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">docker</span><span class="p">\</span><span class="n">certs</span><span class="p">\</span>
 <a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nb">Copy-Item</span> <span class="n">server-cert</span><span class="p">.</span><span class="n">pem</span> <span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">docker</span><span class="p">\</span><span class="n">certs</span><span class="p">\</span>
 <a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="nb">Copy-Item</span> <span class="n">server-key</span><span class="p">.</span><span class="n">pem</span> <span class="n">C</span><span class="p">:\</span><span class="n">ProgramData</span><span class="p">\</span><span class="n">docker</span><span class="p">\</span><span class="n">certs</span><span class="p">\</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="42-configure-docker-daemon">4.2 Configure Docker Daemon<a class="headerlink" href="#42-configure-docker-daemon" title="Permanent link">&para;</a></h3>
-<p><strong>Linux:</strong> Edit <code>/etc/docker/daemon.json</code> (create if it doesn't exist):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><input id="__tabbed_13_3" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Linux</label><label for="__tabbed_13_2">macOS</label><label for="__tabbed_13_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Edit <code>/etc/docker/daemon.json</code> (create if it doesn't exist):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">&quot;hosts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;unix:///var/run/docker.sock&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tcp://0.0.0.0:2376&quot;</span><span class="p">],</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="nt">&quot;tls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="nt">&quot;tlsverify&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span><span class="nt">&quot;tlscacert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/etc/docker/certs/ca.pem&quot;</span><span class="p">,</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">  </span><span class="nt">&quot;tlscert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/etc/docker/certs/server-cert.pem&quot;</span><span class="p">,</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">  </span><span class="nt">&quot;tlskey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/etc/docker/certs/server-key.pem&quot;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nt">&quot;hosts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;unix:///var/run/docker.sock&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tcp://0.0.0.0:2376&quot;</span><span class="p">],</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nt">&quot;tls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nt">&quot;tlsverify&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nt">&quot;tlscacert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/etc/docker/certs/ca.pem&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nt">&quot;tlscert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/etc/docker/certs/server-cert.pem&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nt">&quot;tlskey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/etc/docker/certs/server-key.pem&quot;</span>
 <a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="p">}</span>
 </code></pre></div>
-<p><strong>macOS:</strong> Docker Desktop settings are in <code>~/.docker/daemon.json</code>:</p>
+</div>
+<div class="tabbed-block">
+<p>Docker Desktop settings are in <code>~/.docker/daemon.json</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">&quot;hosts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tcp://0.0.0.0:2376&quot;</span><span class="p">],</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="nt">&quot;tls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span><span class="nt">&quot;tlsverify&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">  </span><span class="nt">&quot;tlscacert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/YOUR_USERNAME/.docker/certs/ca.pem&quot;</span><span class="p">,</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">  </span><span class="nt">&quot;tlscert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/YOUR_USERNAME/.docker/certs/server-cert.pem&quot;</span><span class="p">,</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">  </span><span class="nt">&quot;tlskey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/YOUR_USERNAME/.docker/certs/server-key.pem&quot;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nt">&quot;hosts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tcp://0.0.0.0:2376&quot;</span><span class="p">],</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nt">&quot;tls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nt">&quot;tlsverify&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="nt">&quot;tlscacert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/YOUR_USERNAME/.docker/certs/ca.pem&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="nt">&quot;tlscert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/YOUR_USERNAME/.docker/certs/server-cert.pem&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nt">&quot;tlskey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/YOUR_USERNAME/.docker/certs/server-key.pem&quot;</span>
 <a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="p">}</span>
 </code></pre></div>
-<p><strong>Windows Server:</strong> Edit <code>C:\ProgramData\docker\config\daemon.json</code>:</p>
+</div>
+<div class="tabbed-block">
+<p>Edit <code>C:\ProgramData\docker\config\daemon.json</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="nt">&quot;hosts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tcp://0.0.0.0:2376&quot;</span><span class="p">],</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="nt">&quot;tls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">  </span><span class="nt">&quot;tlsverify&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">  </span><span class="nt">&quot;tlscacert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\ProgramData\\docker\\certs\\ca.pem&quot;</span><span class="p">,</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">  </span><span class="nt">&quot;tlscert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\ProgramData\\docker\\certs\\server-cert.pem&quot;</span><span class="p">,</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">  </span><span class="nt">&quot;tlskey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\ProgramData\\docker\\certs\\server-key.pem&quot;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nt">&quot;hosts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tcp://0.0.0.0:2376&quot;</span><span class="p">],</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nt">&quot;tls&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="nt">&quot;tlsverify&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nt">&quot;tlscacert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\ProgramData\\docker\\certs\\ca.pem&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="nt">&quot;tlscert&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\ProgramData\\docker\\certs\\server-cert.pem&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="nt">&quot;tlskey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\ProgramData\\docker\\certs\\server-key.pem&quot;</span>
 <a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="p">}</span>
 </code></pre></div>
+</div>
+</div>
+</div>
 <p><strong>Note:</strong> Port 2376 is the standard Docker TLS port. Port 2375 is for unencrypted connections (not recommended).</p>
 <h3 id="43-restart-docker-daemon">4.3 Restart Docker Daemon<a class="headerlink" href="#43-restart-docker-daemon" title="Permanent link">&para;</a></h3>
-<p><strong>Linux (systemd):</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Linux (systemd)</label><label for="__tabbed_14_2">macOS</label><label for="__tabbed_14_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Restart Docker daemon</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Verify Docker is running with TLS</span>
 <a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>docker
-</code></pre></div></p>
-<p><strong>macOS:</strong> Restart Docker Desktop from the menu bar icon.</p>
-<p><strong>Windows Server:</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Restart Docker Desktop from the menu bar icon.</p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c"># Restart Docker service</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nb">Restart-Service</span> <span class="n">docker</span>
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
 <a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="c"># Verify Docker is running</span>
 <a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="nb">Get-Service</span> <span class="n">docker</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="44-test-docker-tls-connection">4.4 Test Docker TLS Connection<a class="headerlink" href="#44-test-docker-tls-connection" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">macOS or Linux</label><label for="__tabbed_15_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Test with curl (should fail without certificates)</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>curl<span class="w"> </span>https://<span class="nv">$DOCKER_HOST</span>:2376/version
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c1"># Test with certificates</span>
 <a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>curl<span class="w"> </span>--cacert<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">     </span>--cert<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">     </span>--key<span class="w"> </span>key.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">     </span>https://<span class="nv">$DOCKER_HOST</span>:2376/version
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">    </span>--cert<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">    </span>--key<span class="w"> </span>key.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">    </span>https://<span class="nv">$DOCKER_HOST</span>:2376/version
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c"># Test with Invoke-WebRequest (should fail without certificates)</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="s2">&quot;https://$DOCKER_HOST:2376/version&quot;</span>
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
 <a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c"># Test with certificates (requires certificate setup in PowerShell)</span>
 <a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="c"># Or use curl if available (Git for Windows includes curl)</span>
 <a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nb">curl </span><span class="p">-</span><span class="n">-cacert</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>     <span class="p">-</span><span class="n">-cert</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>     <span class="p">-</span><span class="n">-key</span> <span class="n">key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>     <span class="s2">&quot;https://$DOCKER_HOST:2376/version&quot;</span>
-</code></pre></div></p>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>    <span class="p">-</span><span class="n">-cert</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>    <span class="p">-</span><span class="n">-key</span> <span class="n">key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>    <span class="s2">&quot;https://$DOCKER_HOST:2376/version&quot;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <p>You should see Docker version information in JSON format.</p>
 <hr />
 <h2 id="step-5-create-pkcs12-keystore-for-galasa">Step 5: Create PKCS12 KeyStore for Galasa<a class="headerlink" href="#step-5-create-pkcs12-keystore-for-galasa" title="Permanent link">&para;</a></h2>
 <p>Galasa stores certificates in a Java KeyStore format. We'll create a PKCS12 KeyStore containing both the client certificate and CA certificate.</p>
 <h3 id="51-create-keystore-with-client-certificate">5.1 Create KeyStore with Client Certificate<a class="headerlink" href="#51-create-keystore-with-client-certificate" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">macOS or Linux</label><label for="__tabbed_16_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># Convert client cert and key to PKCS12 format</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>openssl<span class="w"> </span>pkcs12<span class="w"> </span>-export<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">  </span>-in<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">  </span>-inkey<span class="w"> </span>key.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">  </span>-out<span class="w"> </span>client-only.p12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">  </span>-name<span class="w"> </span><span class="s2">&quot;docker-client&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">  </span>-password<span class="w"> </span>pass:changeit
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>-in<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>-inkey<span class="w"> </span>key.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>-out<span class="w"> </span>client-only.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>-name<span class="w"> </span><span class="s2">&quot;docker-client&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>-password<span class="w"> </span>pass:changeit
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c"># Convert client cert and key to PKCS12 format</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">openssl</span> <span class="n">pkcs12</span> <span class="n">-export</span> <span class="p">`</span>
-<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>  <span class="n">-in</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>  <span class="n">-inkey</span> <span class="n">key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>  <span class="n">-out</span> <span class="n">client-only</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
-<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>  <span class="n">-name</span> <span class="s2">&quot;docker-client&quot;</span> <span class="p">`</span>
-<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>  <span class="n">-password</span> <span class="n">pass</span><span class="p">:</span><span class="n">changeit</span>
-</code></pre></div></p>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">-in</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">-inkey</span> <span class="n">key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="n">-out</span> <span class="n">client-only</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="n">-name</span> <span class="s2">&quot;docker-client&quot;</span> <span class="p">`</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="n">-password</span> <span class="n">pass</span><span class="p">:</span><span class="n">changeit</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <p><strong>Important:</strong> Replace <code>changeit</code> with a strong password!</p>
 <h3 id="52-import-into-final-keystore">5.2 Import into Final KeyStore<a class="headerlink" href="#52-import-into-final-keystore" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">macOS or Linux</label><label for="__tabbed_17_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Import the client certificate</span>
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>keytool<span class="w"> </span>-importkeystore<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">  </span>-srckeystore<span class="w"> </span>client-only.p12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">  </span>-srcstoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">  </span>-srcstorepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">  </span>-destkeystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="w">  </span>-deststoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="w">  </span>-deststorepass<span class="w"> </span>changeit
-</code></pre></div></p>
-<p>**Windows:
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>-srckeystore<span class="w"> </span>client-only.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>-srcstoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>-srcstorepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>-destkeystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>-deststoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>-deststorepass<span class="w"> </span>changeit
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c"># Import the client certificate</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">keytool</span> <span class="n">-importkeystore</span> <span class="p">`</span>
-<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>  <span class="n">-srckeystore</span> <span class="n">client-only</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
-<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>  <span class="n">-srcstoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
-<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>  <span class="n">-srcstorepass</span> <span class="n">changeit</span> <span class="p">`</span>
-<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>  <span class="n">-destkeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
-<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>  <span class="n">-deststoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
-<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>  <span class="n">-deststorepass</span> <span class="n">changeit</span>
-</code></pre></div></p>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="n">-srckeystore</span> <span class="n">client-only</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="n">-srcstoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="n">-srcstorepass</span> <span class="n">changeit</span> <span class="p">`</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="n">-destkeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="n">-deststoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="n">-deststorepass</span> <span class="n">changeit</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="53-import-ca-certificate">5.3 Import CA Certificate<a class="headerlink" href="#53-import-ca-certificate" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">macOS or Linux</label><label for="__tabbed_18_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Import CA certificate as trusted cert</span>
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>keytool<span class="w"> </span>-importcert<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">  </span>-alias<span class="w"> </span>docker-ca<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">  </span>-file<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">  </span>-keystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">  </span>-storepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="w">  </span>-storetype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="w">  </span>-noprompt
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>-alias<span class="w"> </span>docker-ca<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>-file<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>-keystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>-storepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>-storetype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>-noprompt
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c"># Import CA certificate as trusted cert</span>
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="n">keytool</span> <span class="n">-importcert</span> <span class="p">`</span>
-<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>  <span class="n">-alias</span> <span class="n">docker-ca</span> <span class="p">`</span>
-<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>  <span class="o">-file</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>  <span class="n">-keystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
-<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>  <span class="n">-storepass</span> <span class="n">changeit</span> <span class="p">`</span>
-<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>  <span class="n">-storetype</span> <span class="n">PKCS12</span> <span class="p">`</span>
-<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>  <span class="n">-noprompt</span>
-</code></pre></div></p>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="n">-alias</span> <span class="n">docker-ca</span> <span class="p">`</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="o">-file</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="n">-keystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="n">-storepass</span> <span class="n">changeit</span> <span class="p">`</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="n">-storetype</span> <span class="n">PKCS12</span> <span class="p">`</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="n">-noprompt</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="54-verify-keystore-contents">5.4 Verify KeyStore Contents<a class="headerlink" href="#54-verify-keystore-contents" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS/Windows:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">macOS or Linux or Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>keytool<span class="w"> </span>-list<span class="w"> </span>-v<span class="w"> </span>-keystore<span class="w"> </span>docker-tls.p12<span class="w"> </span>-storepass<span class="w"> </span>changeit<span class="w"> </span>-storetype<span class="w"> </span>PKCS12
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <p>You should see:</p>
 <ul>
 <li><strong>Entry 1:</strong> <code>docker-client</code> (PrivateKeyEntry) - Your client certificate and private key</li>
@@ -7977,97 +8046,114 @@
 </ul>
 <h3 id="creating-a-jks-keystore">Creating a JKS KeyStore<a class="headerlink" href="#creating-a-jks-keystore" title="Permanent link">&para;</a></h3>
 <h4 id="option-a-create-jks-directly-from-certificates">Option A: Create JKS Directly from Certificates<a class="headerlink" href="#option-a-create-jks-directly-from-certificates" title="Permanent link">&para;</a></h4>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">macOS or Linux</label><label for="__tabbed_20_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># Step 1: Convert client certificate and key to PKCS12 first</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>openssl<span class="w"> </span>pkcs12<span class="w"> </span>-export<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">  </span>-in<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">  </span>-inkey<span class="w"> </span>key.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">  </span>-out<span class="w"> </span>temp-client.p12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="w">  </span>-name<span class="w"> </span><span class="s2">&quot;docker-client&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="w">  </span>-password<span class="w"> </span>pass:changeit
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>-in<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>-inkey<span class="w"> </span>key.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>-out<span class="w"> </span>temp-client.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>-name<span class="w"> </span><span class="s2">&quot;docker-client&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>-password<span class="w"> </span>pass:changeit
 <a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
 <a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="c1"># Step 2: Convert PKCS12 to JKS</span>
 <a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>keytool<span class="w"> </span>-importkeystore<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">  </span>-srckeystore<span class="w"> </span>temp-client.p12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="w">  </span>-srcstoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="w">  </span>-srcstorepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="w">  </span>-destkeystore<span class="w"> </span>docker-tls.jks<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="w">  </span>-deststoretype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="w">  </span>-deststorepass<span class="w"> </span>changeit
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>-srckeystore<span class="w"> </span>temp-client.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>-srcstoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>-srcstorepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a>-destkeystore<span class="w"> </span>docker-tls.jks<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a>-deststoretype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>-deststorepass<span class="w"> </span>changeit
 <a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a>
 <a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="c1"># Step 3: Import CA certificate</span>
 <a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a>keytool<span class="w"> </span>-importcert<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="w">  </span>-alias<span class="w"> </span>docker-ca<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a><span class="w">  </span>-file<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-22" name="__codelineno-35-22" href="#__codelineno-35-22"></a><span class="w">  </span>-keystore<span class="w"> </span>docker-tls.jks<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-23" name="__codelineno-35-23" href="#__codelineno-35-23"></a><span class="w">  </span>-storepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-24" name="__codelineno-35-24" href="#__codelineno-35-24"></a><span class="w">  </span>-storetype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-35-25" name="__codelineno-35-25" href="#__codelineno-35-25"></a><span class="w">  </span>-noprompt
+<a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a>-alias<span class="w"> </span>docker-ca<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a>-file<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-22" name="__codelineno-35-22" href="#__codelineno-35-22"></a>-keystore<span class="w"> </span>docker-tls.jks<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-23" name="__codelineno-35-23" href="#__codelineno-35-23"></a>-storepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-24" name="__codelineno-35-24" href="#__codelineno-35-24"></a>-storetype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-35-25" name="__codelineno-35-25" href="#__codelineno-35-25"></a>-noprompt
 <a id="__codelineno-35-26" name="__codelineno-35-26" href="#__codelineno-35-26"></a>
 <a id="__codelineno-35-27" name="__codelineno-35-27" href="#__codelineno-35-27"></a><span class="c1"># Step 4: Clean up temporary file</span>
 <a id="__codelineno-35-28" name="__codelineno-35-28" href="#__codelineno-35-28"></a>rm<span class="w"> </span>temp-client.p12
-</code></pre></div></p>
-<p><strong>Windows:</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c"># Step 1: Convert client certificate and key to PKCS12 first</span>
 <a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="n">openssl</span> <span class="n">pkcs12</span> <span class="n">-export</span> <span class="p">`</span>
-<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>  <span class="n">-in</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>  <span class="n">-inkey</span> <span class="n">key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>  <span class="n">-out</span> <span class="n">temp-client</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
-<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>  <span class="n">-name</span> <span class="s2">&quot;docker-client&quot;</span> <span class="p">`</span>
-<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>  <span class="n">-password</span> <span class="n">pass</span><span class="p">:</span><span class="n">changeit</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="n">-in</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="n">-inkey</span> <span class="n">key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="n">-out</span> <span class="n">temp-client</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="n">-name</span> <span class="s2">&quot;docker-client&quot;</span> <span class="p">`</span>
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="n">-password</span> <span class="n">pass</span><span class="p">:</span><span class="n">changeit</span>
 <a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a>
 <a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="c"># Step 2: Convert PKCS12 to JKS</span>
 <a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a><span class="n">keytool</span> <span class="n">-importkeystore</span> <span class="p">`</span>
-<a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a>  <span class="n">-srckeystore</span> <span class="n">temp-client</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
-<a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a>  <span class="n">-srcstoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
-<a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a>  <span class="n">-srcstorepass</span> <span class="n">changeit</span> <span class="p">`</span>
-<a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a>  <span class="n">-destkeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">jks</span> <span class="p">`</span>
-<a id="__codelineno-36-15" name="__codelineno-36-15" href="#__codelineno-36-15"></a>  <span class="n">-deststoretype</span> <span class="n">JKS</span> <span class="p">`</span>
-<a id="__codelineno-36-16" name="__codelineno-36-16" href="#__codelineno-36-16"></a>  <span class="n">-deststorepass</span> <span class="n">changeit</span>
+<a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a><span class="n">-srckeystore</span> <span class="n">temp-client</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
+<a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a><span class="n">-srcstoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
+<a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a><span class="n">-srcstorepass</span> <span class="n">changeit</span> <span class="p">`</span>
+<a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a><span class="n">-destkeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">jks</span> <span class="p">`</span>
+<a id="__codelineno-36-15" name="__codelineno-36-15" href="#__codelineno-36-15"></a><span class="n">-deststoretype</span> <span class="n">JKS</span> <span class="p">`</span>
+<a id="__codelineno-36-16" name="__codelineno-36-16" href="#__codelineno-36-16"></a><span class="n">-deststorepass</span> <span class="n">changeit</span>
 <a id="__codelineno-36-17" name="__codelineno-36-17" href="#__codelineno-36-17"></a>
 <a id="__codelineno-36-18" name="__codelineno-36-18" href="#__codelineno-36-18"></a><span class="c"># Step 3: Import CA certificate</span>
 <a id="__codelineno-36-19" name="__codelineno-36-19" href="#__codelineno-36-19"></a><span class="n">keytool</span> <span class="n">-importcert</span> <span class="p">`</span>
-<a id="__codelineno-36-20" name="__codelineno-36-20" href="#__codelineno-36-20"></a>  <span class="n">-alias</span> <span class="n">docker-ca</span> <span class="p">`</span>
-<a id="__codelineno-36-21" name="__codelineno-36-21" href="#__codelineno-36-21"></a>  <span class="o">-file</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-36-22" name="__codelineno-36-22" href="#__codelineno-36-22"></a>  <span class="n">-keystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">jks</span> <span class="p">`</span>
-<a id="__codelineno-36-23" name="__codelineno-36-23" href="#__codelineno-36-23"></a>  <span class="n">-storepass</span> <span class="n">changeit</span> <span class="p">`</span>
-<a id="__codelineno-36-24" name="__codelineno-36-24" href="#__codelineno-36-24"></a>  <span class="n">-storetype</span> <span class="n">JKS</span> <span class="p">`</span>
-<a id="__codelineno-36-25" name="__codelineno-36-25" href="#__codelineno-36-25"></a>  <span class="n">-noprompt</span>
+<a id="__codelineno-36-20" name="__codelineno-36-20" href="#__codelineno-36-20"></a><span class="n">-alias</span> <span class="n">docker-ca</span> <span class="p">`</span>
+<a id="__codelineno-36-21" name="__codelineno-36-21" href="#__codelineno-36-21"></a><span class="o">-file</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-36-22" name="__codelineno-36-22" href="#__codelineno-36-22"></a><span class="n">-keystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">jks</span> <span class="p">`</span>
+<a id="__codelineno-36-23" name="__codelineno-36-23" href="#__codelineno-36-23"></a><span class="n">-storepass</span> <span class="n">changeit</span> <span class="p">`</span>
+<a id="__codelineno-36-24" name="__codelineno-36-24" href="#__codelineno-36-24"></a><span class="n">-storetype</span> <span class="n">JKS</span> <span class="p">`</span>
+<a id="__codelineno-36-25" name="__codelineno-36-25" href="#__codelineno-36-25"></a><span class="n">-noprompt</span>
 <a id="__codelineno-36-26" name="__codelineno-36-26" href="#__codelineno-36-26"></a>
 <a id="__codelineno-36-27" name="__codelineno-36-27" href="#__codelineno-36-27"></a><span class="c"># Step 4: Clean up temporary file</span>
 <a id="__codelineno-36-28" name="__codelineno-36-28" href="#__codelineno-36-28"></a><span class="nb">rm </span><span class="n">temp-client</span><span class="p">.</span><span class="n">p12</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h4 id="option-b-convert-existing-pkcs12-to-jks">Option B: Convert Existing PKCS12 to JKS<a class="headerlink" href="#option-b-convert-existing-pkcs12-to-jks" title="Permanent link">&para;</a></h4>
 <p>If you already have a PKCS12 KeyStore from Step 5:</p>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">macOS or Linux</label><label for="__tabbed_21_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># Convert PKCS12 to JKS</span>
 <a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>keytool<span class="w"> </span>-importkeystore<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">  </span>-srckeystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">  </span>-srcstoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">  </span>-srcstorepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">  </span>-destkeystore<span class="w"> </span>docker-tls.jks<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">  </span>-deststoretype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">  </span>-deststorepass<span class="w"> </span>changeit
-</code></pre></div></p>
-<p><strong>Windows:</strong>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>-srckeystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>-srcstoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>-srcstorepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>-destkeystore<span class="w"> </span>docker-tls.jks<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>-deststoretype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>-deststorepass<span class="w"> </span>changeit
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c"># Convert PKCS12 to JKS</span>
 <a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="n">keytool</span> <span class="n">-importkeystore</span> <span class="p">`</span>
-<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>  <span class="n">-srckeystore</span> <span class="s2">&quot;docker-tls.p12&quot;</span> <span class="p">`</span>
-<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>  <span class="n">-srcstoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
-<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>  <span class="n">-srcstorepass</span> <span class="n">changeit</span> <span class="p">`</span>
-<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>  <span class="n">-destkeystore</span> <span class="s2">&quot;docker-tls.jks&quot;</span> <span class="p">`</span>
-<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>  <span class="n">-deststoretype</span> <span class="n">JKS</span> <span class="p">`</span>
-<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>  <span class="n">-deststorepass</span> <span class="n">changeit</span>
-</code></pre></div></p>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="n">-srckeystore</span> <span class="s2">&quot;docker-tls.p12&quot;</span> <span class="p">`</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="n">-srcstoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="n">-srcstorepass</span> <span class="n">changeit</span> <span class="p">`</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="n">-destkeystore</span> <span class="s2">&quot;docker-tls.jks&quot;</span> <span class="p">`</span>
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="n">-deststoretype</span> <span class="n">JKS</span> <span class="p">`</span>
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="n">-deststorepass</span> <span class="n">changeit</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="verify-jks-keystore">Verify JKS KeyStore<a class="headerlink" href="#verify-jks-keystore" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS/Windows:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:1"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">macOS or Linux or Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># List contents</span>
 <a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>keytool<span class="w"> </span>-list<span class="w"> </span>-v<span class="w"> </span>-keystore<span class="w"> </span>docker-tls.jks<span class="w"> </span>-storepass<span class="w"> </span>changeit<span class="w"> </span>-storetype<span class="w"> </span>JKS
 <a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>
 <a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="c1"># Expected output should show:</span>
 <a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="c1"># - docker-client (PrivateKeyEntry)</span>
 <a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="c1"># - docker-ca (trustedCertEntry)</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="using-jks-with-galasa">Using JKS with Galasa<a class="headerlink" href="#using-jks-with-galasa" title="Permanent link">&para;</a></h3>
 <p>When using JKS format, you'll need to:</p>
 <ol>
@@ -8089,62 +8175,80 @@
 </ol>
 <h3 id="migration-from-jks-to-pkcs12">Migration from JKS to PKCS12<a class="headerlink" href="#migration-from-jks-to-pkcs12" title="Permanent link">&para;</a></h3>
 <p>If you need to migrate from JKS to PKCS12:</p>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">macOS or Linux</label><label for="__tabbed_23_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1"># Convert JKS to PKCS12</span>
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>keytool<span class="w"> </span>-importkeystore<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w">  </span>-srckeystore<span class="w"> </span>docker-tls.jks<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">  </span>-srcstoretype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">  </span>-srcstorepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w">  </span>-destkeystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">  </span>-deststoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="w">  </span>-deststorepass<span class="w"> </span>changeit
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>-srckeystore<span class="w"> </span>docker-tls.jks<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>-srcstoretype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>-srcstorepass<span class="w"> </span>changeit<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>-destkeystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>-deststoretype<span class="w"> </span>PKCS12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>-deststorepass<span class="w"> </span>changeit
 <a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>
 <a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="c1"># Update Galasa configuration</span>
 <a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="c1"># Change type=JKS to type=PKCS12</span>
 <a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a><span class="c1"># Re-encode the PKCS12 file to base64 (see Step 6)</span>
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="c"># Convert JKS to PKCS12</span>
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="n">keytool</span> <span class="n">-importkeystore</span> <span class="p">`</span>
-<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>  <span class="n">-srckeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">jks</span> <span class="p">`</span>
-<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>  <span class="n">-srcstoretype</span> <span class="n">JKS</span> <span class="p">`</span>
-<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>  <span class="n">-srcstorepass</span> <span class="n">changeit</span> <span class="p">`</span>
-<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>  <span class="n">-destkeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
-<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>  <span class="n">-deststoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
-<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>  <span class="n">-deststorepass</span> <span class="n">changeit</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="n">-srckeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">jks</span> <span class="p">`</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="n">-srcstoretype</span> <span class="n">JKS</span> <span class="p">`</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="n">-srcstorepass</span> <span class="n">changeit</span> <span class="p">`</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="n">-destkeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="n">-deststoretype</span> <span class="n">PKCS12</span> <span class="p">`</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="n">-deststorepass</span> <span class="n">changeit</span>
 <a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>
 <a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="c"># Update Galasa configuration</span>
 <a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="c"># Change type=JKS to type=PKCS12</span>
 <a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="c"># Re-encode the PKCS12 file to base64 (see Step 6)</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h2 id="step-6-base64-encode-the-keystore">Step 6: Base64 Encode the KeyStore<a class="headerlink" href="#step-6-base64-encode-the-keystore" title="Permanent link">&para;</a></h2>
 <p>Galasa stores KeyStore data as base64-encoded text in the Credentials Store.</p>
 <h3 id="61-encode-the-keystore">6.1 Encode the KeyStore<a class="headerlink" href="#61-encode-the-keystore" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">macOS or Linux</label><label for="__tabbed_24_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="c1"># Create base64-encoded version</span>
 <a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>base64<span class="w"> </span>docker-tls.p12<span class="w"> </span>&gt;<span class="w"> </span>docker-tls.b64
 <a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>
 <a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="c1"># Verify encoding (should show base64 text)</span>
 <a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span>docker-tls.b64
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="c"># Create base64-encoded version</span>
 <a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="no">[Convert]</span><span class="p">::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="no">[IO.File]</span><span class="p">::</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="s2">&quot;docker-tls.p12&quot;</span><span class="p">))</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">b64</span> <span class="n">-Encoding</span> <span class="n">ASCII</span>
 <a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>
 <a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="c"># Verify encoding (should show base64 text)</span>
 <a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="nb">Get-Content</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">b64</span> <span class="n">-Head</span> <span class="n">5</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="62-create-single-line-base64-required-for-api">6.2 Create Single-Line Base64 (Required for API)<a class="headerlink" href="#62-create-single-line-base64-required-for-api" title="Permanent link">&para;</a></h3>
 <p>For easier copying and API usage:</p>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="25:2"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">macOS or Linux</label><label for="__tabbed_25_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c1"># Create single-line version</span>
 <a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>base64<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>docker-tls-oneline.b64
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c"># Create single-line version (PowerShell output is already single-line)</span>
 <a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="no">[Convert]</span><span class="p">::</span><span class="n">ToBase64String</span><span class="p">(</span><span class="no">[IO.File]</span><span class="p">::</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="s2">&quot;docker-tls.p12&quot;</span><span class="p">))</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="n">docker-tls-oneline</span><span class="p">.</span><span class="n">b64</span> <span class="n">-Encoding</span> <span class="n">ASCII</span> <span class="n">-NoNewline</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h2 id="step-7-configure-galasa">Step 7: Configure Galasa<a class="headerlink" href="#step-7-configure-galasa" title="Permanent link">&para;</a></h2>
 <h3 id="71-store-credentials-in-galasa">7.1 Store Credentials in Galasa<a class="headerlink" href="#71-store-credentials-in-galasa" title="Permanent link">&para;</a></h3>
@@ -8161,51 +8265,60 @@
 <a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="na">secure.credentials.DOCKER_TLS.type</span><span class="o">=</span><span class="s">PKCS12</span>
 </code></pre></div>
 <p><strong>To get the base64 content:</strong></p>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="26:2"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><div class="tabbed-labels"><label for="__tabbed_26_1">macOS or Linux</label><label for="__tabbed_26_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>cat<span class="w"> </span>docker-tls-oneline.b64
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nb">Get-Content</span> <span class="n">docker-tls-oneline</span><span class="p">.</span><span class="n">b64</span> <span class="n">-Raw</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h4 id="option-b-etcd-credentials-store">Option B: ETCD Credentials Store<a class="headerlink" href="#option-b-etcd-credentials-store" title="Permanent link">&para;</a></h4>
 <p>For Galasa services, you can use the Secrets REST API to manage KeyStore credentials:</p>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="27:2"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">macOS or Linux</label><label for="__tabbed_27_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="c1"># Prepare the secret payload</span>
 <a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>docker-tls-secret.json<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
 <a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="s">{</span>
-<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="s">  &quot;name&quot;: &quot;DOCKER_TLS&quot;,</span>
-<a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="s">  &quot;description&quot;: &quot;Docker TLS certificates for PRIMARY engine&quot;,</span>
-<a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a><span class="s">  &quot;type&quot;: &quot;KeyStore&quot;,</span>
-<a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a><span class="s">  &quot;data&quot;: {</span>
+<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="s">&quot;name&quot;: &quot;DOCKER_TLS&quot;,</span>
+<a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="s">&quot;description&quot;: &quot;Docker TLS certificates for PRIMARY engine&quot;,</span>
+<a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a><span class="s">&quot;type&quot;: &quot;KeyStore&quot;,</span>
+<a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a><span class="s">&quot;data&quot;: {</span>
 <a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a><span class="s">    &quot;keystore&quot;: &quot;$(cat docker-tls-oneline.b64)&quot;,</span>
 <a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a><span class="s">    &quot;password&quot;: &quot;changeit&quot;,</span>
 <a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a><span class="s">    &quot;type&quot;: &quot;PKCS12&quot;</span>
-<a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a><span class="s">  },</span>
-<a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a><span class="s">  &quot;encoding&quot;: &quot;base64&quot;</span>
+<a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a><span class="s">},</span>
+<a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a><span class="s">&quot;encoding&quot;: &quot;base64&quot;</span>
 <a id="__codelineno-50-13" name="__codelineno-50-13" href="#__codelineno-50-13"></a><span class="s">}</span>
 <a id="__codelineno-50-14" name="__codelineno-50-14" href="#__codelineno-50-14"></a><span class="s">EOF</span>
 <a id="__codelineno-50-15" name="__codelineno-50-15" href="#__codelineno-50-15"></a>
 <a id="__codelineno-50-16" name="__codelineno-50-16" href="#__codelineno-50-16"></a><span class="c1"># Create the secret using the API</span>
 <a id="__codelineno-50-17" name="__codelineno-50-17" href="#__codelineno-50-17"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://your-galasa-api/secrets<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-50-18" name="__codelineno-50-18" href="#__codelineno-50-18"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-50-19" name="__codelineno-50-19" href="#__codelineno-50-19"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-50-20" name="__codelineno-50-20" href="#__codelineno-50-20"></a><span class="w">  </span>-d<span class="w"> </span>@docker-tls-secret.json
+<a id="__codelineno-50-18" name="__codelineno-50-18" href="#__codelineno-50-18"></a>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-50-19" name="__codelineno-50-19" href="#__codelineno-50-19"></a>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-50-20" name="__codelineno-50-20" href="#__codelineno-50-20"></a>-d<span class="w"> </span>@docker-tls-secret.json
 <a id="__codelineno-50-21" name="__codelineno-50-21" href="#__codelineno-50-21"></a>
 <a id="__codelineno-50-22" name="__codelineno-50-22" href="#__codelineno-50-22"></a><span class="c1"># Or update an existing secret</span>
 <a id="__codelineno-50-23" name="__codelineno-50-23" href="#__codelineno-50-23"></a>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>https://your-galasa-api/secrets/DOCKER_TLS<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-50-24" name="__codelineno-50-24" href="#__codelineno-50-24"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-50-25" name="__codelineno-50-25" href="#__codelineno-50-25"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-50-26" name="__codelineno-50-26" href="#__codelineno-50-26"></a><span class="w">  </span>-d<span class="w"> </span>@docker-tls-secret.json
+<a id="__codelineno-50-24" name="__codelineno-50-24" href="#__codelineno-50-24"></a>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-50-25" name="__codelineno-50-25" href="#__codelineno-50-25"></a>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-50-26" name="__codelineno-50-26" href="#__codelineno-50-26"></a>-d<span class="w"> </span>@docker-tls-secret.json
 <a id="__codelineno-50-27" name="__codelineno-50-27" href="#__codelineno-50-27"></a>
 <a id="__codelineno-50-28" name="__codelineno-50-28" href="#__codelineno-50-28"></a><span class="c1"># Retrieve the secret (values will be redacted unless you have permission)</span>
 <a id="__codelineno-50-29" name="__codelineno-50-29" href="#__codelineno-50-29"></a>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span>https://your-galasa-api/secrets/DOCKER_TLS<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-50-30" name="__codelineno-50-30" href="#__codelineno-50-30"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span>
+<a id="__codelineno-50-30" name="__codelineno-50-30" href="#__codelineno-50-30"></a>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span>
 <a id="__codelineno-50-31" name="__codelineno-50-31" href="#__codelineno-50-31"></a>
 <a id="__codelineno-50-32" name="__codelineno-50-32" href="#__codelineno-50-32"></a><span class="c1"># Delete the secret if needed</span>
 <a id="__codelineno-50-33" name="__codelineno-50-33" href="#__codelineno-50-33"></a>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span>https://your-galasa-api/secrets/DOCKER_TLS<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-50-34" name="__codelineno-50-34" href="#__codelineno-50-34"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span>
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+<a id="__codelineno-50-34" name="__codelineno-50-34" href="#__codelineno-50-34"></a>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="c"># Prepare the secret payload</span>
 <a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="nv">$keystoreData</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="n">docker-tls-oneline</span><span class="p">.</span><span class="n">b64</span> <span class="n">-Raw</span>
 <a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="nv">$secretPayload</span> <span class="p">=</span> <span class="p">@{</span>
@@ -8224,36 +8337,41 @@
 <a id="__codelineno-51-16" name="__codelineno-51-16" href="#__codelineno-51-16"></a>
 <a id="__codelineno-51-17" name="__codelineno-51-17" href="#__codelineno-51-17"></a><span class="c"># Create the secret using the API</span>
 <a id="__codelineno-51-18" name="__codelineno-51-18" href="#__codelineno-51-18"></a><span class="nb">curl </span><span class="n">-X</span> <span class="n">POST</span> <span class="n">https</span><span class="p">://</span><span class="n">your-galasa-api</span><span class="p">/</span><span class="n">secrets</span> <span class="p">`</span>
-<a id="__codelineno-51-19" name="__codelineno-51-19" href="#__codelineno-51-19"></a>  <span class="n">-H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="p">`</span>
-<a id="__codelineno-51-20" name="__codelineno-51-20" href="#__codelineno-51-20"></a>  <span class="n">-H</span> <span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span> <span class="p">`</span>
-<a id="__codelineno-51-21" name="__codelineno-51-21" href="#__codelineno-51-21"></a>  <span class="n">-d</span> <span class="s2">&quot;@docker-tls-secret.json&quot;</span>
+<a id="__codelineno-51-19" name="__codelineno-51-19" href="#__codelineno-51-19"></a><span class="n">-H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="p">`</span>
+<a id="__codelineno-51-20" name="__codelineno-51-20" href="#__codelineno-51-20"></a><span class="n">-H</span> <span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span> <span class="p">`</span>
+<a id="__codelineno-51-21" name="__codelineno-51-21" href="#__codelineno-51-21"></a><span class="n">-d</span> <span class="s2">&quot;@docker-tls-secret.json&quot;</span>
 <a id="__codelineno-51-22" name="__codelineno-51-22" href="#__codelineno-51-22"></a>
 <a id="__codelineno-51-23" name="__codelineno-51-23" href="#__codelineno-51-23"></a><span class="c"># Or update an existing secret</span>
 <a id="__codelineno-51-24" name="__codelineno-51-24" href="#__codelineno-51-24"></a><span class="nb">curl </span><span class="n">-X</span> <span class="n">PUT</span> <span class="n">https</span><span class="p">://</span><span class="n">your-galasa-api</span><span class="p">/</span><span class="n">secrets</span><span class="p">/</span><span class="n">DOCKER_TLS</span> <span class="p">`</span>
-<a id="__codelineno-51-25" name="__codelineno-51-25" href="#__codelineno-51-25"></a>  <span class="n">-H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="p">`</span>
-<a id="__codelineno-51-26" name="__codelineno-51-26" href="#__codelineno-51-26"></a>  <span class="n">-H</span> <span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span> <span class="p">`</span>
-<a id="__codelineno-51-27" name="__codelineno-51-27" href="#__codelineno-51-27"></a>  <span class="n">-d</span> <span class="s2">&quot;@docker-tls-secret.json&quot;</span>
+<a id="__codelineno-51-25" name="__codelineno-51-25" href="#__codelineno-51-25"></a><span class="n">-H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="p">`</span>
+<a id="__codelineno-51-26" name="__codelineno-51-26" href="#__codelineno-51-26"></a><span class="n">-H</span> <span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span> <span class="p">`</span>
+<a id="__codelineno-51-27" name="__codelineno-51-27" href="#__codelineno-51-27"></a><span class="n">-d</span> <span class="s2">&quot;@docker-tls-secret.json&quot;</span>
 <a id="__codelineno-51-28" name="__codelineno-51-28" href="#__codelineno-51-28"></a>
 <a id="__codelineno-51-29" name="__codelineno-51-29" href="#__codelineno-51-29"></a><span class="c"># Retrieve the secret (values will be redacted unless you have permission)</span>
 <a id="__codelineno-51-30" name="__codelineno-51-30" href="#__codelineno-51-30"></a><span class="nb">curl </span><span class="n">-X</span> <span class="n">GET</span> <span class="n">https</span><span class="p">://</span><span class="n">your-galasa-api</span><span class="p">/</span><span class="n">secrets</span><span class="p">/</span><span class="n">DOCKER_TLS</span> <span class="p">`</span>
-<a id="__codelineno-51-31" name="__codelineno-51-31" href="#__codelineno-51-31"></a>  <span class="n">-H</span> <span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span>
+<a id="__codelineno-51-31" name="__codelineno-51-31" href="#__codelineno-51-31"></a><span class="n">-H</span> <span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span>
 <a id="__codelineno-51-32" name="__codelineno-51-32" href="#__codelineno-51-32"></a>
 <a id="__codelineno-51-33" name="__codelineno-51-33" href="#__codelineno-51-33"></a><span class="c"># Delete the secret if needed</span>
 <a id="__codelineno-51-34" name="__codelineno-51-34" href="#__codelineno-51-34"></a><span class="nb">curl </span><span class="n">-X</span> <span class="n">DELETE</span> <span class="n">https</span><span class="p">://</span><span class="n">your-galasa-api</span><span class="p">/</span><span class="n">secrets</span><span class="p">/</span><span class="n">DOCKER_TLS</span> <span class="p">`</span>
-<a id="__codelineno-51-35" name="__codelineno-51-35" href="#__codelineno-51-35"></a>  <span class="n">-H</span> <span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span>
-</code></pre></div></p>
+<a id="__codelineno-51-35" name="__codelineno-51-35" href="#__codelineno-51-35"></a><span class="n">-H</span> <span class="s2">&quot;Authorization: Bearer YOUR_JWT_TOKEN&quot;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <p><strong>Important Notes for Secrets API:</strong></p>
 <ul>
 <li>The KeyStore data must be base64-encoded (without any prefix)</li>
 <li>The <code>encoding</code> field must be set to <code>"base64"</code></li>
 <li>The <code>type</code> field in <code>data</code> specifies the KeyStore format (PKCS12 or JKS)</li>
 <li>Authentication is required via JWT token</li>
-<li><strong>Eager validation:</strong> The KeyStore is validated when created/updated - you'll get immediate feedback if:</li>
+<li><strong>Eager validation:</strong> The KeyStore is validated when created/updated - you'll get immediate feedback if:<ul>
 <li>The KeyStore data is corrupted or invalid</li>
 <li>The password is incorrect</li>
 <li>The KeyStore type doesn't match the actual format</li>
 <li>The KeyStore cannot be loaded</li>
 <li>The base64 encoding is invalid</li>
+</ul>
+</li>
 </ul>
 <h3 id="72-configure-docker-engine-properties">7.2 Configure Docker Engine Properties<a class="headerlink" href="#72-configure-docker-engine-properties" title="Permanent link">&para;</a></h3>
 <p>Add to your CPS properties:</p>
@@ -8264,6 +8382,8 @@
 </code></pre></div>
 <p><strong>Note:</strong> When <code>credentials.id</code> is specified, Galasa automatically uses HTTPS.</p>
 <h3 id="73-example-test-code">7.3 Example Test Code<a class="headerlink" href="#73-example-test-code" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">A Galasa test with a protected Docker engine</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">dev.galasa.Test</span><span class="p">;</span>
 <a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">dev.galasa.docker.DockerContainer</span><span class="p">;</span>
 <a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">dev.galasa.docker.IDockerContainer</span><span class="p">;</span>
@@ -8284,23 +8404,30 @@
 <a id="__codelineno-53-18" name="__codelineno-53-18" href="#__codelineno-53-18"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-53-19" name="__codelineno-53-19" href="#__codelineno-53-19"></a><span class="p">}</span>
 </code></pre></div>
+</div>
 <hr />
 <h2 id="step-8-test-the-connection">Step 8: Test the Connection<a class="headerlink" href="#step-8-test-the-connection" title="Permanent link">&para;</a></h2>
 <h3 id="81-verify-galasa-configuration">8.1 Verify Galasa Configuration<a class="headerlink" href="#81-verify-galasa-configuration" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="28:2"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><div class="tabbed-labels"><label for="__tabbed_28_1">macOS or Linux</label><label for="__tabbed_28_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="c1"># Test with curl using the same certificates</span>
 <a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>curl<span class="w"> </span>--cacert<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">     </span>--cert<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="w">     </span>--key<span class="w"> </span>key.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="w">     </span>https://192.168.1.100:2376/version
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">    </span>--cert<span class="w"> </span>cert.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="w">    </span>--key<span class="w"> </span>key.pem<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="w">    </span>https://192.168.1.100:2376/version
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="c"># Test with curl using the same certificates</span>
 <a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="nb">curl </span><span class="p">-</span><span class="n">-cacert</span> <span class="n">ca</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>     <span class="p">-</span><span class="n">-cert</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>     <span class="p">-</span><span class="n">-key</span> <span class="n">key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
-<a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>     <span class="n">https</span><span class="p">://</span><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">100</span><span class="p">:</span><span class="n">2376</span><span class="p">/</span><span class="n">version</span>
-</code></pre></div></p>
+<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>    <span class="p">-</span><span class="n">-cert</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>    <span class="p">-</span><span class="n">-key</span> <span class="n">key</span><span class="p">.</span><span class="n">pem</span> <span class="p">`</span>
+<a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>    <span class="n">https</span><span class="p">://</span><span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">100</span><span class="p">:</span><span class="n">2376</span><span class="p">/</span><span class="n">version</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="82-run-a-simple-galasa-test">8.2 Run a Simple Galasa Test<a class="headerlink" href="#82-run-a-simple-galasa-test" title="Permanent link">&para;</a></h3>
 <p>Create a minimal test to verify the connection:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nd">@Test</span>
@@ -8321,24 +8448,33 @@
 <h3 id="issue-1-certificate-does-not-match-the-root-of-the-given-chain">Issue 1: "Certificate does not match the root of the given chain"<a class="headerlink" href="#issue-1-certificate-does-not-match-the-root-of-the-given-chain" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> The CA certificate is not properly included in the KeyStore as a trusted certificate.</p>
 <p><strong>Solution:</strong></p>
-<p><strong>Linux/macOS/Windows:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="29:1"><input checked="checked" id="__tabbed_29_1" name="__tabbed_29" type="radio" /><div class="tabbed-labels"><label for="__tabbed_29_1">macOS or Linux or Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="c1"># Verify CA is in KeyStore</span>
 <a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>keytool<span class="w"> </span>-list<span class="w"> </span>-keystore<span class="w"> </span>docker-tls.p12<span class="w"> </span>-storepass<span class="w"> </span>changeit<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>docker-ca
 <a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>
 <a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="c1"># If missing, re-import CA certificate</span>
 <a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a>keytool<span class="w"> </span>-importcert<span class="w"> </span>-alias<span class="w"> </span>docker-ca<span class="w"> </span>-file<span class="w"> </span>ca.pem<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="w">  </span>-keystore<span class="w"> </span>docker-tls.p12<span class="w"> </span>-storepass<span class="w"> </span>changeit<span class="w"> </span>-noprompt
-</code></pre></div></p>
+<a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a>-keystore<span class="w"> </span>docker-tls.p12<span class="w"> </span>-storepass<span class="w"> </span>changeit<span class="w"> </span>-noprompt
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="issue-2-unable-to-find-valid-certification-path-to-requested-target">Issue 2: "unable to find valid certification path to requested target"<a class="headerlink" href="#issue-2-unable-to-find-valid-certification-path-to-requested-target" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> The KeyStore doesn't contain the CA certificate needed to validate the server certificate.</p>
-<p><strong>Solution:</strong>
-1. Verify the CA certificate is in the KeyStore (see Issue 1)
-2. Ensure the server certificate was signed by the same CA
-3. Check that the CA certificate is marked as a trusted certificate entry</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Verify the CA certificate is in the KeyStore (see Issue 1)</li>
+<li>Ensure the server certificate was signed by the same CA</li>
+<li>Check that the CA certificate is marked as a trusted certificate entry</li>
+</ol>
 <h3 id="issue-3-connection-refused-to-docker-daemon">Issue 3: "Connection refused" to Docker daemon<a class="headerlink" href="#issue-3-connection-refused-to-docker-daemon" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> Docker daemon is not listening on the TLS port, or firewall is blocking the connection.</p>
 <p><strong>Solution:</strong></p>
-<p><strong>Linux:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="30:3"><input checked="checked" id="__tabbed_30_1" name="__tabbed_30" type="radio" /><input id="__tabbed_30_2" name="__tabbed_30" type="radio" /><input id="__tabbed_30_3" name="__tabbed_30" type="radio" /><div class="tabbed-labels"><label for="__tabbed_30_1">Linux</label><label for="__tabbed_30_2">macOS</label><label for="__tabbed_30_3">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="c1"># Check if Docker is listening on port 2376</span>
 <a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>sudo<span class="w"> </span>netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">2376</span>
 <a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>
@@ -8350,8 +8486,9 @@
 <a id="__codelineno-59-9" name="__codelineno-59-9" href="#__codelineno-59-9"></a>
 <a id="__codelineno-59-10" name="__codelineno-59-10" href="#__codelineno-59-10"></a><span class="c1"># Restart Docker daemon</span>
 <a id="__codelineno-59-11" name="__codelineno-59-11" href="#__codelineno-59-11"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
-</code></pre></div></p>
-<p><strong>macOS:</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="c1"># Check if Docker is listening on port 2376</span>
 <a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>netstat<span class="w"> </span>-an<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">2376</span>
 <a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>
@@ -8361,8 +8498,9 @@
 <a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a><span class="c1"># Restart Docker (Docker Desktop)</span>
 <a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a><span class="c1"># Use Docker Desktop UI or:</span>
 <a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a>killall<span class="w"> </span>Docker<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>open<span class="w"> </span>-a<span class="w"> </span>Docker
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="c"># Check if Docker is listening on port 2376</span>
 <a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="n">netstat</span> <span class="n">-an</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="s2">&quot;2376&quot;</span>
 <a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a>
@@ -8375,7 +8513,10 @@
 <a id="__codelineno-61-10" name="__codelineno-61-10" href="#__codelineno-61-10"></a><span class="c"># Restart Docker service</span>
 <a id="__codelineno-61-11" name="__codelineno-61-11" href="#__codelineno-61-11"></a><span class="nb">Restart-Service</span> <span class="n">docker</span>
 <a id="__codelineno-61-12" name="__codelineno-61-12" href="#__codelineno-61-12"></a><span class="c"># Or for Docker Desktop, restart from system tray</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="issue-4-invalid-keystore-value-provided">Issue 4: "Invalid keystore value provided"<a class="headerlink" href="#issue-4-invalid-keystore-value-provided" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> The KeyStore data in Galasa configuration is not valid base64-encoded data.</p>
 <p><strong>Solution:</strong></p>
@@ -8401,40 +8542,58 @@
 <h3 id="issue-5-unsupported-keystore-type">Issue 5: "Unsupported KeyStore type"<a class="headerlink" href="#issue-5-unsupported-keystore-type" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> Galasa only supports PKCS12 and JKS KeyStore formats.</p>
 <p><strong>Solution:</strong></p>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="31:2"><input checked="checked" id="__tabbed_31_1" name="__tabbed_31" type="radio" /><input id="__tabbed_31_2" name="__tabbed_31" type="radio" /><div class="tabbed-labels"><label for="__tabbed_31_1">macOS or Linux</label><label for="__tabbed_31_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="c1"># Convert to PKCS12 if using another format</span>
 <a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>keytool<span class="w"> </span>-importkeystore<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="w">  </span>-srckeystore<span class="w"> </span>old-keystore.jks<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a><span class="w">  </span>-srcstoretype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a><span class="w">  </span>-destkeystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a><span class="w">  </span>-deststoretype<span class="w"> </span>PKCS12
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>-srckeystore<span class="w"> </span>old-keystore.jks<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>-srcstoretype<span class="w"> </span>JKS<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a>-destkeystore<span class="w"> </span>docker-tls.p12<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a>-deststoretype<span class="w"> </span>PKCS12
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="c"># Convert to PKCS12 if using another format</span>
 <a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="n">keytool</span> <span class="n">-importkeystore</span> <span class="p">`</span>
-<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>  <span class="n">-srckeystore</span> <span class="n">old-keystore</span><span class="p">.</span><span class="n">jks</span> <span class="p">`</span>
-<a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>  <span class="n">-srcstoretype</span> <span class="n">JKS</span> <span class="p">`</span>
-<a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a>  <span class="n">-destkeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
-<a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a>  <span class="n">-deststoretype</span> <span class="n">PKCS12</span>
-</code></pre></div></p>
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="n">-srckeystore</span> <span class="n">old-keystore</span><span class="p">.</span><span class="n">jks</span> <span class="p">`</span>
+<a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="n">-srcstoretype</span> <span class="n">JKS</span> <span class="p">`</span>
+<a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a><span class="n">-destkeystore</span> <span class="n">docker-tls</span><span class="p">.</span><span class="n">p12</span> <span class="p">`</span>
+<a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a><span class="n">-deststoretype</span> <span class="n">PKCS12</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="issue-6-hostname-verification-failed">Issue 6: "Hostname verification failed"<a class="headerlink" href="#issue-6-hostname-verification-failed" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> The hostname in the Docker engine configuration doesn't match the Subject Alternative Names (SAN) in the server certificate.</p>
-<p><strong>Solution:</strong>
-1. Verify the SAN in the server certificate:</p>
-<p><strong>Linux/macOS:</strong>
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>server-cert.pem<span class="w"> </span>-text<span class="w"> </span>-noout<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;Subject Alternative Name&quot;</span>
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="n">openssl</span> <span class="n">x509</span> <span class="n">-in</span> <span class="n">server-cert</span><span class="p">.</span><span class="n">pem</span> <span class="n">-text</span> <span class="n">-noout</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="n">-Pattern</span> <span class="s2">&quot;Subject Alternative Name&quot;</span> <span class="n">-Context</span> <span class="n">0</span><span class="p">,</span><span class="n">1</span>
-</code></pre></div></p>
+<p><strong>Solution:</strong></p>
 <ol>
-<li>Ensure your <code>docker.engine.PRIMARY.hostname</code> matches one of the SANs</li>
+<li>
+<p>Verify the SAN in the server certificate:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="32:2"><input checked="checked" id="__tabbed_32_1" name="__tabbed_32" type="radio" /><input id="__tabbed_32_2" name="__tabbed_32" type="radio" /><div class="tabbed-labels"><label for="__tabbed_32_1">macOS or Linux</label><label for="__tabbed_32_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>server-cert.pem<span class="w"> </span>-text<span class="w"> </span>-noout<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="s2">&quot;Subject Alternative Name&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="n">openssl</span> <span class="n">x509</span> <span class="n">-in</span> <span class="n">server-cert</span><span class="p">.</span><span class="n">pem</span> <span class="n">-text</span> <span class="n">-noout</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="n">-Pattern</span> <span class="s2">&quot;Subject Alternative Name&quot;</span> <span class="n">-Context</span> <span class="n">0</span><span class="p">,</span><span class="n">1</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Ensure your <code>docker.engine.PRIMARY.hostname</code> matches one of the SANs</p>
+</li>
 <li>If needed, regenerate the server certificate with correct SANs</li>
 </ol>
 <h3 id="issue-7-docker-daemon-fails-to-start-after-tls-configuration">Issue 7: Docker daemon fails to start after TLS configuration<a class="headerlink" href="#issue-7-docker-daemon-fails-to-start-after-tls-configuration" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> Invalid certificate paths or permissions in <code>daemon.json</code>.</p>
 <p><strong>Solution:</strong></p>
-<p><strong>Linux:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="33:3"><input checked="checked" id="__tabbed_33_1" name="__tabbed_33" type="radio" /><input id="__tabbed_33_2" name="__tabbed_33" type="radio" /><input id="__tabbed_33_3" name="__tabbed_33" type="radio" /><div class="tabbed-labels"><label for="__tabbed_33_1">Linux</label><label for="__tabbed_33_2">macOS</label><label for="__tabbed_33_3">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="c1"># Check Docker logs</span>
 <a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>docker<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span>
 <a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>
@@ -8446,8 +8605,9 @@
 <a id="__codelineno-68-9" name="__codelineno-68-9" href="#__codelineno-68-9"></a>
 <a id="__codelineno-68-10" name="__codelineno-68-10" href="#__codelineno-68-10"></a><span class="c1"># Test Docker daemon configuration</span>
 <a id="__codelineno-68-11" name="__codelineno-68-11" href="#__codelineno-68-11"></a>sudo<span class="w"> </span>dockerd<span class="w"> </span>--validate
-</code></pre></div></p>
-<p><strong>macOS:</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="c1"># Check Docker logs (Docker Desktop)</span>
 <a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>tail<span class="w"> </span>-f<span class="w"> </span>~/Library/Containers/com.docker.docker/Data/log/vm/dockerd.log
 <a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>
@@ -8456,8 +8616,9 @@
 <a id="__codelineno-69-6" name="__codelineno-69-6" href="#__codelineno-69-6"></a>
 <a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a><span class="c1"># Verify daemon.json syntax</span>
 <a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a>cat<span class="w"> </span>~/Library/Group<span class="se">\ </span>Containers/group.com.docker/settings.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>json.tool
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="c"># Check Docker logs</span>
 <a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a><span class="nb">Get-EventLog</span> <span class="n">-LogName</span> <span class="n">Application</span> <span class="n">-Source</span> <span class="n">Docker</span> <span class="n">-Newest</span> <span class="n">50</span>
 <a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a>
@@ -8472,11 +8633,16 @@
 <a id="__codelineno-70-12" name="__codelineno-70-12" href="#__codelineno-70-12"></a>
 <a id="__codelineno-70-13" name="__codelineno-70-13" href="#__codelineno-70-13"></a><span class="c"># Test Docker daemon configuration</span>
 <a id="__codelineno-70-14" name="__codelineno-70-14" href="#__codelineno-70-14"></a><span class="n">dockerd</span> <span class="p">-</span><span class="n">-validate</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="issue-8-failed-to-load-keystore-or-password-incorrect">Issue 8: "Failed to load KeyStore" or "Password incorrect"<a class="headerlink" href="#issue-8-failed-to-load-keystore-or-password-incorrect" title="Permanent link">&para;</a></h3>
 <p><strong>Cause:</strong> The password in Galasa configuration doesn't match the KeyStore password, or the KeyStore data is corrupted.</p>
 <p><strong>Solution:</strong></p>
-<p><strong>Linux/macOS/Windows:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="34:1"><input checked="checked" id="__tabbed_34_1" name="__tabbed_34" type="radio" /><div class="tabbed-labels"><label for="__tabbed_34_1">macOS or Linux or Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="c1"># Test KeyStore password locally</span>
 <a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>keytool<span class="w"> </span>-list<span class="w"> </span>-keystore<span class="w"> </span>docker-tls.p12<span class="w"> </span>-storepass<span class="w"> </span>YOUR_PASSWORD
 <a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a>
@@ -8486,18 +8652,24 @@
 <a id="__codelineno-71-7" name="__codelineno-71-7" href="#__codelineno-71-7"></a>
 <a id="__codelineno-71-8" name="__codelineno-71-8" href="#__codelineno-71-8"></a><span class="c1"># Update Galasa configuration with correct password</span>
 <a id="__codelineno-71-9" name="__codelineno-71-9" href="#__codelineno-71-9"></a>secure.credentials.DOCKER_TLS.password<span class="o">=</span>YOUR_PASSWORD
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h2 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h2>
 <h3 id="1-protect-private-keys">1. Protect Private Keys<a class="headerlink" href="#1-protect-private-keys" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="35:2"><input checked="checked" id="__tabbed_35_1" name="__tabbed_35" type="radio" /><input id="__tabbed_35_2" name="__tabbed_35" type="radio" /><div class="tabbed-labels"><label for="__tabbed_35_1">macOS or Linux</label><label for="__tabbed_35_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="c1"># Set restrictive permissions</span>
 <a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>chmod<span class="w"> </span><span class="m">0400</span><span class="w"> </span>ca-key.pem<span class="w"> </span>server-key.pem<span class="w"> </span>key.pem
 <a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a>
 <a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a><span class="c1"># Store CA key offline after certificate generation</span>
 <a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a>mv<span class="w"> </span>ca-key.pem<span class="w"> </span>/secure/offline/storage/
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="c"># Remove inheritance and set explicit permissions for current user only</span>
 <a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a><span class="nv">$files</span> <span class="p">=</span> <span class="p">@(</span><span class="s2">&quot;ca-key.pem&quot;</span><span class="p">,</span> <span class="s2">&quot;server-key.pem&quot;</span><span class="p">,</span> <span class="s2">&quot;key.pem&quot;</span><span class="p">)</span>
 <a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$file</span> <span class="k">in</span> <span class="nv">$files</span><span class="p">)</span> <span class="p">{</span>
@@ -8512,29 +8684,41 @@
 <a id="__codelineno-73-12" name="__codelineno-73-12" href="#__codelineno-73-12"></a>
 <a id="__codelineno-73-13" name="__codelineno-73-13" href="#__codelineno-73-13"></a><span class="c"># Store CA key offline after certificate generation</span>
 <a id="__codelineno-73-14" name="__codelineno-73-14" href="#__codelineno-73-14"></a><span class="nb">Move-Item</span> <span class="n">ca-key</span><span class="p">.</span><span class="n">pem</span> <span class="s2">&quot;C:\SecureStorage\&quot;</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="2-use-strong-passwords">2. Use Strong Passwords<a class="headerlink" href="#2-use-strong-passwords" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="36:2"><input checked="checked" id="__tabbed_36_1" name="__tabbed_36" type="radio" /><input id="__tabbed_36_2" name="__tabbed_36" type="radio" /><div class="tabbed-labels"><label for="__tabbed_36_1">macOS or Linux</label><label for="__tabbed_36_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="c1"># Generate a strong random password</span>
 <a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>openssl<span class="w"> </span>rand<span class="w"> </span>-base64<span class="w"> </span><span class="m">32</span>
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="c"># Generate a strong random password</span>
 <a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="n">openssl</span> <span class="n">rand</span> <span class="n">-base64</span> <span class="n">32</span>
 <a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a>
 <a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a><span class="c"># Alternative using PowerShell</span>
 <a id="__codelineno-75-5" name="__codelineno-75-5" href="#__codelineno-75-5"></a><span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">Web</span>
 <a id="__codelineno-75-6" name="__codelineno-75-6" href="#__codelineno-75-6"></a><span class="no">[System.Web.Security.Membership]</span><span class="p">::</span><span class="n">GeneratePassword</span><span class="p">(</span><span class="n">32</span><span class="p">,</span> <span class="n">8</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="3-certificate-rotation">3. Certificate Rotation<a class="headerlink" href="#3-certificate-rotation" title="Permanent link">&para;</a></h3>
-<p><strong>Linux/macOS:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="37:2"><input checked="checked" id="__tabbed_37_1" name="__tabbed_37" type="radio" /><input id="__tabbed_37_2" name="__tabbed_37" type="radio" /><div class="tabbed-labels"><label for="__tabbed_37_1">macOS or Linux</label><label for="__tabbed_37_2">Windows (PowerShell)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="c1"># Check certificate expiry date</span>
 <a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>cert.pem<span class="w"> </span>-noout<span class="w"> </span>-enddate
 <a id="__codelineno-76-3" name="__codelineno-76-3" href="#__codelineno-76-3"></a>
 <a id="__codelineno-76-4" name="__codelineno-76-4" href="#__codelineno-76-4"></a><span class="c1"># Set up a reminder (example using cron)</span>
 <a id="__codelineno-76-5" name="__codelineno-76-5" href="#__codelineno-76-5"></a><span class="c1"># Add to crontab: 0 0 1 * * /path/to/check-cert-expiry.sh</span>
-</code></pre></div></p>
-<p><strong>Windows (PowerShell):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="c"># Check certificate expiry date</span>
 <a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a><span class="n">openssl</span> <span class="n">x509</span> <span class="n">-in</span> <span class="n">cert</span><span class="p">.</span><span class="n">pem</span> <span class="n">-noout</span> <span class="n">-enddate</span>
 <a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a>
@@ -8546,7 +8730,10 @@
 <a id="__codelineno-77-9" name="__codelineno-77-9" href="#__codelineno-77-9"></a><span class="nv">$action</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskAction</span> <span class="n">-Execute</span> <span class="s2">&quot;PowerShell.exe&quot;</span> <span class="n">-Argument</span> <span class="s2">&quot;-File C:\Scripts\check-cert-expiry.ps1&quot;</span>
 <a id="__codelineno-77-10" name="__codelineno-77-10" href="#__codelineno-77-10"></a><span class="nv">$trigger</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskTrigger</span> <span class="n">-Daily</span> <span class="n">-At</span> <span class="n">9am</span>
 <a id="__codelineno-77-11" name="__codelineno-77-11" href="#__codelineno-77-11"></a><span class="nb">Register-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;CheckDockerCertExpiry&quot;</span> <span class="n">-Action</span> <span class="nv">$action</span> <span class="n">-Trigger</span> <span class="nv">$trigger</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h3 id="4-limit-certificate-scope">4. Limit Certificate Scope<a class="headerlink" href="#4-limit-certificate-scope" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Use separate CAs for different environments (dev, test, prod)</li>
@@ -8554,15 +8741,18 @@
 <li>Revoke compromised certificates immediately</li>
 </ul>
 <h3 id="5-network-security">5. Network Security<a class="headerlink" href="#5-network-security" title="Permanent link">&para;</a></h3>
-<p><strong>Linux:</strong>
+<div class="tabbed-set tabbed-alternate" data-tabs="38:3"><input checked="checked" id="__tabbed_38_1" name="__tabbed_38" type="radio" /><input id="__tabbed_38_2" name="__tabbed_38" type="radio" /><input id="__tabbed_38_3" name="__tabbed_38" type="radio" /><div class="tabbed-labels"><label for="__tabbed_38_1">Linux</label><label for="__tabbed_38_2">macOS</label><label for="__tabbed_38_3">Windows (PowerShell - Run as Administrator)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="c1"># Restrict Docker TLS port to specific IPs</span>
 <a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">2376</span><span class="w"> </span>-s<span class="w"> </span><span class="m">192</span>.168.1.0/24<span class="w"> </span>-j<span class="w"> </span>ACCEPT
 <a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>INPUT<span class="w"> </span>-p<span class="w"> </span>tcp<span class="w"> </span>--dport<span class="w"> </span><span class="m">2376</span><span class="w"> </span>-j<span class="w"> </span>DROP
 <a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a>
 <a id="__codelineno-78-5" name="__codelineno-78-5" href="#__codelineno-78-5"></a><span class="c1"># Make rules persistent</span>
 <a id="__codelineno-78-6" name="__codelineno-78-6" href="#__codelineno-78-6"></a>sudo<span class="w"> </span>iptables-save<span class="w"> </span>&gt;<span class="w"> </span>/etc/iptables/rules.v4
-</code></pre></div></p>
-<p><strong>macOS:</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a><span class="c1"># macOS uses pf (packet filter)</span>
 <a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a><span class="c1"># Edit /etc/pf.conf and add:</span>
 <a id="__codelineno-79-3" name="__codelineno-79-3" href="#__codelineno-79-3"></a><span class="c1"># pass in proto tcp from 192.168.1.0/24 to any port 2376</span>
@@ -8571,8 +8761,9 @@
 <a id="__codelineno-79-6" name="__codelineno-79-6" href="#__codelineno-79-6"></a><span class="c1"># Load the rules</span>
 <a id="__codelineno-79-7" name="__codelineno-79-7" href="#__codelineno-79-7"></a>sudo<span class="w"> </span>pfctl<span class="w"> </span>-f<span class="w"> </span>/etc/pf.conf
 <a id="__codelineno-79-8" name="__codelineno-79-8" href="#__codelineno-79-8"></a>sudo<span class="w"> </span>pfctl<span class="w"> </span>-e
-</code></pre></div></p>
-<p><strong>Windows (PowerShell - Run as Administrator):</strong>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a><span class="c"># Restrict Docker TLS port to specific IPs</span>
 <a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s2">&quot;Docker TLS - Allow Subnet&quot;</span> <span class="p">`</span>
 <a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a>    <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="p">`</span>
@@ -8586,7 +8777,10 @@
 <a id="__codelineno-80-11" name="__codelineno-80-11" href="#__codelineno-80-11"></a>    <span class="n">-LocalPort</span> <span class="n">2376</span> <span class="p">`</span>
 <a id="__codelineno-80-12" name="__codelineno-80-12" href="#__codelineno-80-12"></a>    <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="p">`</span>
 <a id="__codelineno-80-13" name="__codelineno-80-13" href="#__codelineno-80-13"></a>    <span class="n">-Action</span> <span class="n">Block</span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
 <h3 id="docker-tls-documentation">Docker TLS Documentation<a class="headerlink" href="#docker-tls-documentation" title="Permanent link">&para;</a></h3>
@@ -8603,27 +8797,6 @@
 <ul>
 <li><a href="https://docs.oracle.com/en/java/javase/17/docs/specs/man/keytool.html">keytool Reference</a></li>
 <li><a href="https://docs.oracle.com/en/java/javase/17/security/pkcs12-keystore-enhancements.html">PKCS12 KeyStore</a></li>
-</ul>
-<hr />
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>You have successfully:</p>
-<ol>
-<li>✅ Created a Certificate Authority for signing certificates</li>
-<li>✅ Generated server certificates for Docker daemon</li>
-<li>✅ Generated client certificates for Galasa</li>
-<li>✅ Configured Docker daemon to use TLS</li>
-<li>✅ Created a PKCS12 KeyStore containing certificates</li>
-<li>✅ Base64 encoded the KeyStore for Galasa</li>
-<li>✅ Configured Galasa to use the certificates (via file or REST API)</li>
-<li>✅ Tested the secure connection</li>
-</ol>
-<p>Your Docker daemon is now protected with TLS, and Galasa can securely connect using client certificate authentication.</p>
-<h3 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>For production use:</strong> Consider implementing certificate rotation policies</li>
-<li><strong>For multiple engines:</strong> Repeat the process for each Docker engine with unique certificates</li>
-<li><strong>For automation:</strong> Use the Secrets REST API to automate credential management in CI/CD pipelines</li>
-<li><strong>For security audits:</strong> Review the audit trail in Galasa's credential metadata</li>
 </ul>
 
 
