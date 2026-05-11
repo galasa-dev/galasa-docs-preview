@@ -6312,7 +6312,20 @@
     <h2 id="0480-release-highlights"><a class="toclink" href="2026/04/10/v0.48.0/">0.48.0 - Release Highlights</a></h2>
 <h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2026/04/10/v0.48.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
-<li>Added a background cleanup process for the Galasa service's result archive store which automatically deletes test runs that meet the configured criteria.</li>
+<li><strong>Personal Access Token Expiry</strong>: Personal access tokens now have expiry times associated with them. When a token expires, it can no longer be used to authenticate with the Galasa service.</li>
+<li>All existing tokens will migrate to expire in 90 days from the date of the update, however, they might expire sooner depending on your Galasa service's configured Dex 'expiry' values in the Galasa service's Helm chart.</li>
+<li>The Galasa webui will now present you with the option to set an expiry date for your token, and display if tokens are expired or nearing expiry.</li>
+<li>Tokens are automatically disabled when they reach their expiry date. Note: JWTs may continue to be valid for a period of time determined by your Galasa service administrator, so you might find your token will still work for a short while after it expires.</li>
+<li>The Galasa CLI will automatically delete your token if you attempt to use it after it has expired.</li>
+<li>The CLI displays a warning when using a token that is approaching its expiry date.</li>
+<li>System administrators can configure when the "approaching expiry" warning is displayed using the CPS property <code>service.tokens.lifespan.nearly.expired.warning.days</code> (min: 1 day, max: 30 days).</li>
+<li>The <code>galasactl auth tokens get</code> command displays token expiry dates.</li>
+<li>
+<p>For more information, see <a href="../docs/ecosystem/ecosystem-authentication/">Configuring authentication</a>.</p>
+</li>
+<li>
+<p>Added a background cleanup process for the Galasa service's result archive store which automatically deletes test runs that meet the configured criteria.</p>
+</li>
 <li>By default, test runs older than 30 days are deleted and the cleanup process runs once every 24 hours.</li>
 <li>
 <p>For information on how to configure the cleanup process, including how to adjust the age threshold, cleanup frequency, and exclude specific test runs from cleanup, see <a href="../docs/manage-ecosystem/automatic-runs-cleanup/">Configuring automatic cleanup of test runs</a>.</p>
