@@ -11,8 +11,6 @@ dev.galasa.cicsts.cemt.spi
 dev.galasa.cicsts.cicsresource
 dev.galasa.cicsts.resource.spi
 dev.galasa.cicsts.spi
-dev.galasa.cloud
-dev.galasa.cloud.spi
 dev.galasa.common
 dev.galasa.core.manager
 dev.galasa.db2
