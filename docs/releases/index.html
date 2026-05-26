@@ -6357,6 +6357,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#0481-release-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.48.1 - Release Highlights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#0480-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       0.48.0 - Release Highlights
@@ -6437,15 +6446,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#0400-release-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.40.0 - Release Highlights
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -6460,6 +6460,31 @@
       <header class="md-typeset">
         <h1 id="galasa-releases">Galasa Releases<a class="headerlink" href="#galasa-releases" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-05-20 00:00:00+00:00">May 20, 2026</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0481-release-highlights"><a class="toclink" href="2026/05/20/v0.48.1/">0.48.1 - Release Highlights</a></h2>
+<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2026/05/20/v0.48.1/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
+<ul>
+<li>Username/password credentials used to authenticate with Maven repositories can be supplied to download test artifacts and OBRs from password-protected Maven repositories.</li>
+<li><strong>For local test runs:</strong> Credentials can be supplied in the <code>${GALASA_HOME}/bootstrap.properties</code> file using the <code>maven.repository.username</code> and <code>maven.repository.password</code> properties. Alternatively, credentials can be supplied as environment variables by setting <code>GALASA_MAVEN_USERNAME</code> and <code>GALASA_MAVEN_PASSWORD</code>. Values in environment variables take precedence over values in the <code>bootstrap.properties</code> file.</li>
+<li><strong>For test runs on the Galasa Service:</strong> Test streams can be configured with an optional <code>secretName</code> field that contains the name of an existing Galasa secret containing the credentials to use when authenticating with Maven repositories. The secret name can be set using the <code>galasactl streams set --name &lt;stream-name&gt; --maven-secret-name &lt;secret-name&gt;</code> command or via YAML files with the <code>galasactl resources apply</code> command (see <a href="../docs/manage-ecosystem/test-streams/">Test Streams as GalasaStream resources</a> for more details).</li>
+</ul>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -6975,94 +7000,6 @@
 <li>Code for the galasactl command-line tool has moved git repositories, to the galasa repository.
   This simplifies the build process and makes changes on a fork easier to build and verify.</li>
 </ul>
-</li>
-</ul>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-03-12 00:00:00+00:00">March 12, 2025</time></li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="0400-release-highlights"><a class="toclink" href="2025/03/12/v0.40.0/">0.40.0 - Release Highlights</a></h2>
-<ul>
-<li>
-<p>Nameculture:</p>
-<ul>
-<li>The term "Galasa Ecosystem" is being replaced with "Galasa Service" because it more clearly describes Galasa components that are deployed onto a Kubernetes cluster, providing testing as a service.</li>
-</ul>
-</li>
-<li>
-<p>Galasa Service Changes:</p>
-<ul>
-<li>
-<p>A submission ID is generated for each test run submitted. A new field has been added to the test structures passed over the REST interface. Client programs can use the submission ID to query test runs from the Results Archive Store (RAS).</p>
-</li>
-<li>
-<p>Each user now has a <code>role</code>, which dictates what that user can do. See the <a href="../docs/ecosystem/ecosystem-role-based-access/">documentation on Role Based Access Control (RBAC)</a> for more details.</p>
-</li>
-<li>
-<p>The Helm chart can configure specific users to be <code>owners</code> of the system, such that these users are immutable administrators of the system. Configuring owners is used to set up a system with some initial administrators, and to recover a system that no longer has any functioning administrators.</p>
-</li>
-<li>
-<p>Completed test pods now count when calculating the maximum number of pods that Galasa creates. Use the Helm chart parameter <code>max_engines</code> to configure the maximum number of pods.</p>
-</li>
-<li>
-<p>When tests complete, the pod for the test disappears quicker than in previous releases, to free up resources on the cluster. Instead of up to 5 minutes, completed pods are cleaned up within 2-4 seconds.</p>
-</li>
-<li>
-<p>It is now possible to configure the Galasa service to use an etcd server that is external to the Galasa namespace, for Dynamic Status Store traffic. This option is not recommended but may be useful for allowing testcase developers to use the same resource pools as the rest of the Galasa service.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Framework and Manager changes:</p>
-<ul>
-<li>The addition of an IMS manager for contacting, controlling, and asserting against an IMS system.</li>
-</ul>
-</li>
-<li>
-<p>The Web User interface changes:</p>
-<ul>
-<li>
-<p>Everyone logged-in to the Galasa service can see the list of users on the system, and their roles.</p>
-</li>
-<li>
-<p>Administrators on the Galasa service can delete the tokens of other users, change their role, or delete their entire user record.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Command-line tool (<code>galasactl</code>) changes:</p>
-<ul>
-<li>Users launching tests can use multiple override files with the <code>--overridefile</code> option.
-These files are combined into a single collection of properties, with warning messages generated in the logs if any property keys clash.</li>
-</ul>
-</li>
-<li>
-<p>Development process, infrastructure, and contributing:</p>
-<ul>
-<li>
-<p>Improvements to the build process and instructions you use to fork the code, and build your own Galasa binaries in your own GitHub organisation.</p>
-</li>
-<li>
-<p>Added experimental instructions describing how to install the Galasa Service into Minikube. Minikube can be used when developing contributions to Galasa, but is not suitable as a useable run time platform.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Various other component version upgrades and bug fixes.</p>
 </li>
 </ul>
     

@@ -5769,6 +5769,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#0481-release-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.48.1 - Release Highlights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#0480-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       0.48.0 - Release Highlights
@@ -6439,6 +6448,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#0481-release-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.48.1 - Release Highlights
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#0480-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       0.48.0 - Release Highlights
@@ -6488,6 +6506,31 @@
       <header class="md-typeset">
         <h1 id="2026">2026<a class="headerlink" href="#2026" title="Permanent link">&para;</a></h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-05-20 00:00:00+00:00">May 20, 2026</time></li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="0481-release-highlights"><a class="toclink" href="../../2026/05/20/v0.48.1/">0.48.1 - Release Highlights</a></h2>
+<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="../../2026/05/20/v0.48.1/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
+<ul>
+<li>Username/password credentials used to authenticate with Maven repositories can be supplied to download test artifacts and OBRs from password-protected Maven repositories.</li>
+<li><strong>For local test runs:</strong> Credentials can be supplied in the <code>${GALASA_HOME}/bootstrap.properties</code> file using the <code>maven.repository.username</code> and <code>maven.repository.password</code> properties. Alternatively, credentials can be supplied as environment variables by setting <code>GALASA_MAVEN_USERNAME</code> and <code>GALASA_MAVEN_PASSWORD</code>. Values in environment variables take precedence over values in the <code>bootstrap.properties</code> file.</li>
+<li><strong>For test runs on the Galasa Service:</strong> Test streams can be configured with an optional <code>secretName</code> field that contains the name of an existing Galasa secret containing the credentials to use when authenticating with Maven repositories. The secret name can be set using the <code>galasactl streams set --name &lt;stream-name&gt; --maven-secret-name &lt;secret-name&gt;</code> command or via YAML files with the <code>galasactl resources apply</code> command (see <a href="../../../docs/manage-ecosystem/test-streams/">Test Streams as GalasaStream resources</a> for more details).</li>
+</ul>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
