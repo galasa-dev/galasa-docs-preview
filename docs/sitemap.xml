@@ -165,7 +165,19 @@
          <lastmod>2026-05-26</lastmod>
     </url>
     <url>
+         <loc>https://galasa.dev/docs/managers/cics-ts-managers/cics-ts-ceda-manager/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/cics-ts-managers/cics-ts-cemt-manager/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
          <loc>https://galasa.dev/docs/managers/cics-ts-managers/cics-ts-manager/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/cics-ts-managers/cics-ts-resource-manager/</loc>
          <lastmod>2026-05-26</lastmod>
     </url>
     <url>
@@ -217,6 +229,18 @@
          <lastmod>2026-05-26</lastmod>
     </url>
     <url>
+         <loc>https://galasa.dev/docs/managers/core-managers/text-scan-manager/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/database-managers/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/database-managers/db2-manager/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
          <loc>https://galasa.dev/docs/managers/ecosystem-managers/</loc>
          <lastmod>2026-05-26</lastmod>
     </url>
@@ -230,6 +254,22 @@
     </url>
     <url>
          <loc>https://galasa.dev/docs/managers/ims-tm-managers/ims-tm-manager/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/language-managers/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/language-managers/java-manager/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/language-managers/java-ubuntu-manager/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/language-managers/java-windows-manager/</loc>
          <lastmod>2026-05-26</lastmod>
     </url>
     <url>
@@ -262,6 +302,14 @@
     </url>
     <url>
          <loc>https://galasa.dev/docs/managers/unix-managers/linux-manager/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/windows-managers/</loc>
+         <lastmod>2026-05-26</lastmod>
+    </url>
+    <url>
+         <loc>https://galasa.dev/docs/managers/windows-managers/windows-manager/</loc>
          <lastmod>2026-05-26</lastmod>
     </url>
     <url>
