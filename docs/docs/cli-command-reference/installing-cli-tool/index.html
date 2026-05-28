@@ -7023,7 +7023,7 @@
 </table>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Choose your installation method:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS (Homebrew)</label><label for="__tabbed_1_2">Linux or macOS (manual download)</label><label for="__tabbed_1_3">Windows (PowerShell)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS (Homebrew)</label><label for="__tabbed_1_2">Linux or macOS (manual download)</label><label for="__tabbed_1_3">Windows (Scoop)</label><label for="__tabbed_1_4">Windows PowerShell (manual download)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -7085,28 +7085,52 @@
 <div class="tabbed-block">
 <ol>
 <li>
+<p>Install <a href="https://scoop.sh/">Scoop</a> if not already installed</p>
+</li>
+<li>
+<p>Add Galasa bucket:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">scoop</span> <span class="n">bucket</span> <span class="n">add</span> <span class="n">galasa</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">galasa-dev</span><span class="p">/</span><span class="n">scoop-bucket</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Install latest:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">scoop</span> <span class="n">install</span> <span class="n">galasactl</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Install a specific version:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">scoop</span> <span class="n">install</span> <span class="n">galasactl</span><span class="nv">@0</span><span class="p">.</span><span class="n">48</span><span class="p">.</span><span class="n">0</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Verify the installation:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">galasactl</span> <span class="p">-</span><span class="n">-version</span>
+</code></pre></div></p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
 <p>Download the Windows executable from the <a href="https://github.com/galasa-dev/galasa/releases" target="_blank">Galasa Releases page</a> and rename it to <code>galasactl.exe</code></p>
 </li>
 <li>
 <p>Add the directory containing <code>galasactl.exe</code> to your PATH environment variable through System Properties → Environment Variables</p>
 </li>
-<li>
-<p>Open a command prompt and verify:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">galasactl</span> <span class="p">-</span><span class="n">-version</span>
-</code></pre></div></p>
-</li>
 </ol>
 </div>
 </div>
 </div>
-<p>You can now run the Galasa CLI from any directory without specifying the full path.</p>
+<p>You can now run the Galasa CLI from any directory without specifying the full path. We recommend opening a command prompt to verify it:
+ <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">galasactl</span> <span class="p">-</span><span class="n">-version</span>
+</code></pre></div></p>
 <h2 id="upgrading-the-galasa-cli">Upgrading the Galasa CLI<a class="headerlink" href="#upgrading-the-galasa-cli" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">macOS (Homebrew)</label><label for="__tabbed_2_2">Linux or macOS (manual)</label><label for="__tabbed_2_3">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Update to the latest version:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>brew<span class="w"> </span>update
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>brew<span class="w"> </span>upgrade<span class="w"> </span>galasactl
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>brew<span class="w"> </span>update
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>brew<span class="w"> </span>upgrade<span class="w"> </span>galasactl
 </code></pre></div></p>
 <p>The <code>brew update</code> command refreshes Homebrew's catalog, and <code>brew upgrade galasactl</code> updates the CLI.</p>
 </div>
