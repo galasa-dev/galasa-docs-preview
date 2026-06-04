@@ -6896,14 +6896,15 @@
 <p>Starting from Galasa 0.47.0, the OS Credentials Store bundle (<code>dev.galasa.creds.os</code>) enables Galasa to read credentials from your operating system's native credential management system.</p>
 <h3 id="enabling-the-os-credentials-store">Enabling the OS Credentials Store<a class="headerlink" href="#enabling-the-os-credentials-store" title="Permanent link">&para;</a></h3>
 <p>To enable the OS Credentials Store, add the following properties to your <code>{GALASA_HOME}/bootstrap.properties</code> file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">framework.credentials.store</span><span class="o">=</span><span class="s">os:[macOS|auto]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">framework.credentials.store</span><span class="o">=</span><span class="s">os:[macOS|windows|auto]</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">framework.extra.bundles</span><span class="o">=</span><span class="s">dev.galasa.creds.os</span>
 </code></pre></div>
-<p>The <code>os:auto</code> value automatically detects your operating system and uses the appropriate credentials store implementation. At the moment, only a macOS Keychain implementation is available.</p>
+<p>The <code>os:auto</code> value automatically detects your operating system and uses the appropriate credentials store implementation.</p>
 <h3 id="platform-specific-documentation">Platform-Specific Documentation<a class="headerlink" href="#platform-specific-documentation" title="Permanent link">&para;</a></h3>
 <p>See the platform-specific documentation for more information:</p>
 <ul>
 <li><a href="macos-keychain-store/">macOS Keychain Store</a></li>
+<li><a href="windows-credential-manager-store/">Windows Credential Manager Store</a></li>
 </ul>
 
 
