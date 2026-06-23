@@ -6939,8 +6939,9 @@
 <h1 id="100-release-highlights">1.0.0 - Release Highlights<a class="headerlink" href="#100-release-highlights" title="Permanent link">&para;</a></h1>
 <h2 id="changes-affecting-tests-running-locally">Changes affecting tests running locally<a class="headerlink" href="#changes-affecting-tests-running-locally" title="Permanent link">&para;</a></h2>
 <ul>
+<li>Windows Credential Manager support added to the OS Credentials Store extension. Galasa can now securely read test credentials from Windows Credential Manager, providing a more secure alternative to storing credentials in plain text configuration files. See <a href="../../../../../docs/configuring-local-credentials/windows-credential-manager-store/">Windows Credential Manager Store</a> for more details.</li>
 <li>
-<p>Windows Credential Manager support added to the OS Credentials Store extension. Galasa can now securely read test credentials from Windows Credential Manager, providing a more secure alternative to storing credentials in plain text configuration files. See <a href="../../../../../docs/configuring-local-credentials/windows-credential-manager-store/">Windows Credential Manager Store</a> for more details.</p>
+<p>JMeter Manager now supports LOCAL execution mode using pre-installed external JMeter binaries, eliminating Docker dependency for performance testing.</p>
 </li>
 <li>
 <p>Fixed an issue where multiple Galasa test classes could not be run in one <code>galasactl runs submit local</code> command. You can now supply multiple <code>--class</code> flags to run multiple test classes sequentially.</p>
