@@ -6959,6 +6959,8 @@
 <li>
 <p>Fixed an issue where multiple Galasa test classes could not be run in one <code>galasactl runs submit local</code> command. You can now supply multiple <code>--class</code> flags to run multiple test classes sequentially.</p>
 </li>
+<li>Added <code>--offline</code> flag to <code>galasactl runs submit local</code>. When set, the test JVM does not contact any remote Maven repositories — all required bundles must already be present in the local Maven cache. The flag is mutually exclusive with <code>--remoteMaven</code>.</li>
+<li>Added new <code>galasactl runs prepare local</code> command. This pre-fetches all OBR bundle dependencies to the local Maven repository without running tests, enabling fully offline test execution on a subsequent <code>galasactl runs submit local --offline</code> invocation.</li>
 </ul>
 
 

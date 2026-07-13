@@ -6840,6 +6840,7 @@
 <li><strong>Offline development</strong>: Working in locations or situations where internet connectivity is unreliable or unavailable</li>
 </ul>
 <p>The offline distribution includes the Galasa CLI binaries, Maven dependencies, Javadoc API documentation, and optional Docker images for hosting the artifacts on an internal server. This ensures that you have everything needed to develop, build, and run Galasa tests without external network dependencies.</p>
+<p>If you have already built your own tests and want to run them in a restricted network environment without using the full <code>isolated.zip</code> distribution, you can use the <code>galasactl runs prepare local</code> command to pre-fetch all required bundle dependencies while online, and then use <code>galasactl runs submit local --offline</code> to run tests without any network connectivity. See <a href="running-tests-offline-locally/">Running tests locally in an offline environment</a> for details.</p>
 
 
 
