@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#upgrading-your-galasa-version" class="md-skip">
+        <a href="#upgrading-to-v100" class="md-skip">
           Skip to content
         </a>
       
@@ -6780,6 +6780,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#upgrading-to-v100" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrading to v1.0.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading to v1.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-image-registry-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker image registry change
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#upgrading-your-galasa-version" class="md-nav__link">
     <span class="md-ellipsis">
       Upgrading your Galasa version
@@ -6897,6 +6921,24 @@
 
   <h1>Upgrading</h1>
 
+<h2 id="upgrading-to-v100">Upgrading to v1.0.0<a class="headerlink" href="#upgrading-to-v100" title="Permanent link">&para;</a></h2>
+<h3 id="docker-image-registry-change">Docker image registry change<a class="headerlink" href="#docker-image-registry-change" title="Permanent link">&para;</a></h3>
+<p>From v1.0.0, Galasa Docker images are published to <strong><code>icr.io/galasa</code></strong> instead of <code>icr.io/galasadev</code>.</p>
+<p>To give users time to migrate, images will continue to be published to <code>icr.io/galasadev</code> for a number of releases after v1.0.0. However, you are encouraged to update references as soon as possible, as publishing to <code>icr.io/galasadev</code> will stop in a future release.</p>
+<p>Check any of the following for references to <code>icr.io/galasadev</code> and update them to use <code>icr.io/galasa</code>:</p>
+<ul>
+<li>Custom Helm <code>values.yaml</code> files used to install or upgrade a Galasa Ecosystem</li>
+<li>CI/CD pipeline definitions (for example, Tekton pipelines, GitHub Actions workflows, Jenkins jobs)</li>
+<li>Deployment scripts or <code>docker pull</code> / <code>docker run</code> commands</li>
+<li>Kubernetes manifests that reference Galasa images directly</li>
+</ul>
+<p><strong>Example:</strong> replace
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>icr.io/galasadev/galasa-boot-embedded-amd64:0.48.1
+</code></pre></div>
+with:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>icr.io/galasa/galasa-boot-embedded-amd64:1.0.0
+</code></pre></div></p>
+<hr />
 <h2 id="upgrading-your-galasa-version">Upgrading your Galasa version<a class="headerlink" href="#upgrading-your-galasa-version" title="Permanent link">&para;</a></h2>
 <p>You can upgrade your version of Galasa by completing the following steps:</p>
 <ol>
@@ -6913,29 +6955,29 @@
 <ol>
 <li>
 <p>Edit the <code>build.gradle</code> file in the OBR directory of your parent project, setting the plug-in values at the top of the file to version <code>0.36.0</code>, as shown in the following example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>plugins {
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>...
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>id &#39;dev.galasa.obr&#39; version &#39;0.36.0&#39;
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>id &#39;dev.galasa.testcatalog&#39; version &#39;0.36.0&#39;
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>...
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>plugins {
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>...
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>id &#39;dev.galasa.obr&#39; version &#39;0.36.0&#39;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>id &#39;dev.galasa.testcatalog&#39; version &#39;0.36.0&#39;
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>...
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>}
 </code></pre></div>
 </li>
 <li>
 <p>Add the following task definition to the <code>build.gradle</code> file in the OBR directory of the parent project to ensure that Gradle uses the correct build order.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">tasks</span><span class="o">.</span><span class="na">withType</span><span class="o">(</span><span class="n">PublishToMavenLocal</span><span class="o">)</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="o">-&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">task</span><span class="o">.</span><span class="na">dependsOn</span><span class="w"> </span><span class="n">genobr</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">task</span><span class="o">.</span><span class="na">dependsOn</span><span class="w"> </span><span class="n">mergetestcat</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="o">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">tasks</span><span class="o">.</span><span class="na">withType</span><span class="o">(</span><span class="n">PublishToMavenLocal</span><span class="o">)</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="o">-&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">task</span><span class="o">.</span><span class="na">dependsOn</span><span class="w"> </span><span class="n">genobr</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">task</span><span class="o">.</span><span class="na">dependsOn</span><span class="w"> </span><span class="n">mergetestcat</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="o">}</span>
 </code></pre></div>
 </li>
 <li>
 <p>In each test project <code>build.gradle</code> file, set the <code>dev.galasa.tests</code> plug-in to version <code>0.36.0</code> to ensure that the build uses the correct plug-in.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>plugins {
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>...
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>id &#39;dev.galasa.tests&#39; version &#39;0.36.0&#39;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>...
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>plugins {
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>...
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>id &#39;dev.galasa.tests&#39; version &#39;0.36.0&#39;
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>...
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>}
 </code></pre></div>
 </li>
 </ol>
@@ -6966,19 +7008,19 @@ You can work with later versions of Galasa by using the Galasa command line inte
 <li>
 <p>Check each pom.xml file and replace that version number with the new version number, for example, <em>0.28.0</em>. </p>
 <p><strong>NOTE:</strong> Do not update version numbers for non-Galasa dependencies or plug-ins. Only replace the version number for Galasa dependencies, where the <em>groupId</em> is set to <em>dev.galasa</em>, as per the following examples:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&lt;parent&gt;
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&lt;groupId&gt;dev.galasa&lt;/groupId&gt;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>&lt;artifactId&gt;galasa-parent&lt;/artifactId&gt;
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>&lt;version&gt;0.28.0&lt;/version&gt;
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&lt;/parent&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&lt;parent&gt;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&lt;groupId&gt;dev.galasa&lt;/groupId&gt;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>&lt;artifactId&gt;galasa-parent&lt;/artifactId&gt;
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>&lt;version&gt;0.28.0&lt;/version&gt;
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>&lt;/parent&gt;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;dependencies&gt;
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        &lt;dependency&gt;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>            &lt;groupId&gt;dev.galasa&lt;/groupId&gt;
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>            &lt;artifactId&gt;dev.galasa&lt;/artifactId&gt;
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            &lt;version&gt;0.28.0&lt;/version&gt;
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            &lt;scope&gt;provided&lt;/scope&gt;
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        &lt;/dependency&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&lt;dependencies&gt;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>        &lt;dependency&gt;
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>            &lt;groupId&gt;dev.galasa&lt;/groupId&gt;
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>            &lt;artifactId&gt;dev.galasa&lt;/artifactId&gt;
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>            &lt;version&gt;0.28.0&lt;/version&gt;
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>            &lt;scope&gt;provided&lt;/scope&gt;
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        &lt;/dependency&gt;
 </code></pre></div>
 </li>
 <li>

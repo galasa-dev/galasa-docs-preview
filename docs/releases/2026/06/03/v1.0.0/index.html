@@ -6782,6 +6782,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#breaking-change-docker-image-registry-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Breaking change: Docker image registry change
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#changes-affecting-the-galasa-service" class="md-nav__link">
     <span class="md-ellipsis">
       Changes affecting the Galasa Service
@@ -6946,6 +6955,17 @@
 
 
 <h1 id="100-release-highlights">1.0.0 - Release Highlights<a class="headerlink" href="#100-release-highlights" title="Permanent link">&para;</a></h1>
+<h2 id="breaking-change-docker-image-registry-change">⚠️ Breaking change: Docker image registry change<a class="headerlink" href="#breaking-change-docker-image-registry-change" title="Permanent link">&para;</a></h2>
+<p>From v1.0.0, Galasa Docker images are published to <strong><code>icr.io/galasa</code></strong> instead of <code>icr.io/galasadev</code>.</p>
+<p>To give users time to migrate, images will continue to be published to <code>icr.io/galasadev</code> for a number of releases after v1.0.0. However, you are encouraged to update any references to <code>icr.io/galasadev</code> as soon as possible, as publishing to that registry will stop in a future release.</p>
+<p>If you have any automation that pulls Galasa images directly — for example, custom Helm <code>values.yaml</code> overrides, CI/CD pipelines, scripts, or <code>docker pull</code> commands referencing <code>icr.io/galasadev</code> — you should update those references to use <code>icr.io/galasa</code>.</p>
+<p>For example, if you currently reference:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>icr.io/galasadev/galasa-boot-embedded-amd64:0.48.1
+</code></pre></div>
+update this to:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>icr.io/galasa/galasa-boot-embedded-amd64:1.0.0
+</code></pre></div></p>
+<p>See <a href="../../../../../docs/upgrading/#upgrading-to-v100">Upgrading to v1.0.0</a> for more details.</p>
 <h2 id="changes-affecting-the-galasa-service">Changes affecting the Galasa Service<a class="headerlink" href="#changes-affecting-the-galasa-service" title="Permanent link">&para;</a></h2>
 <ul>
 <li>A new <code>Opaque</code> credential type is now supported in the Galasa Credentials Store. Opaque secrets store arbitrary opaque data (for example, licence JAR files such as <code>my_license.jar</code>) that tests can retrieve at runtime via the Credentials Store. The <code>galasactl secrets set</code> command gains two new flags: <code>--secret-file</code> (reads a file from disk and base64-encodes its contents) and <code>--base64-secret</code> (accepts an already-encoded string). Opaque secrets are mutually exclusive with all other credential fields. The REST API <code>PUT /secrets/{name}</code> and <code>GET /secrets/{name}</code> endpoints support the new <code>Opaque</code> type alongside the existing types.</li>
