@@ -7901,6 +7901,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#deprecation-notices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deprecation notices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deprecation notices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ifirefoxoptionsgetbinaryornull-deprecated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IFirefoxOptions.getBinaryOrNull() deprecated
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#changes-affecting-the-galasa-service" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8063,6 +8091,10 @@
 
 
 <h1 id="101-release-highlights">1.0.1 - Release Highlights<a class="headerlink" href="#101-release-highlights" title="Permanent link">&para;</a></h1>
+<h2 id="deprecation-notices">Deprecation notices<a class="headerlink" href="#deprecation-notices" title="Permanent link">&para;</a></h2>
+<h3 id="ifirefoxoptionsgetbinaryornull-deprecated"><code>IFirefoxOptions.getBinaryOrNull()</code> deprecated<a class="headerlink" href="#ifirefoxoptionsgetbinaryornull-deprecated" title="Permanent link">&para;</a></h3>
+<p>The <code>getBinaryOrNull()</code> method on <code>IFirefoxOptions</code> has been deprecated and marked for removal as <code>FirefoxBinary</code> has been removed from Selenium 4.</p>
+<p><strong>Action required:</strong> Remove any calls to <code>getBinaryOrNull()</code> from your test code. If you were using the returned <code>FirefoxBinary</code> to configure the Firefox executable path, use <code>IFirefoxOptions.setBinary(Path)</code> or <code>IFirefoxOptions.setBinary(String)</code> instead.</p>
 <h2 id="changes-affecting-the-galasa-service">Changes affecting the Galasa Service<a class="headerlink" href="#changes-affecting-the-galasa-service" title="Permanent link">&para;</a></h2>
 <ul>
 <li>A new <code>POST /runs/portfolios</code> REST API endpoint resolves a portfolio of test classes server-side. Clients supply a <code>selections</code> array, where each entry names a stream and optional filters (bundle, package, test name, class, tag, with optional regex mode), and the server returns all matching classes from the stream's test catalog. If no filters are provided for a stream, all classes in that stream's catalog are returned. The response is stateless; no portfolio resource is persisted. See the <a href="../../../../../docs/reference/rest-api/">Runs API reference</a> for more details.</li>

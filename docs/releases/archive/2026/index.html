@@ -8134,6 +8134,10 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="101-release-highlights"><a class="toclink" href="../../2026/07/24/v1.0.1/">1.0.1 - Release Highlights</a></h2>
+<h3 id="deprecation-notices"><a class="toclink" href="../../2026/07/24/v1.0.1/#deprecation-notices">Deprecation notices</a></h3>
+<h4 id="ifirefoxoptionsgetbinaryornull-deprecated"><a class="toclink" href="../../2026/07/24/v1.0.1/#ifirefoxoptionsgetbinaryornull-deprecated"><code>IFirefoxOptions.getBinaryOrNull()</code> deprecated</a></h4>
+<p>The <code>getBinaryOrNull()</code> method on <code>IFirefoxOptions</code> has been deprecated and marked for removal as <code>FirefoxBinary</code> has been removed from Selenium 4.</p>
+<p><strong>Action required:</strong> Remove any calls to <code>getBinaryOrNull()</code> from your test code. If you were using the returned <code>FirefoxBinary</code> to configure the Firefox executable path, use <code>IFirefoxOptions.setBinary(Path)</code> or <code>IFirefoxOptions.setBinary(String)</code> instead.</p>
 <h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="../../2026/07/24/v1.0.1/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
 <li>A new <code>POST /runs/portfolios</code> REST API endpoint resolves a portfolio of test classes server-side. Clients supply a <code>selections</code> array, where each entry names a stream and optional filters (bundle, package, test name, class, tag, with optional regex mode), and the server returns all matching classes from the stream's test catalog. If no filters are provided for a stream, all classes in that stream's catalog are returned. The response is stateless; no portfolio resource is persisted. See the <a href="../../../docs/reference/rest-api/">Runs API reference</a> for more details.</li>
