@@ -7929,6 +7929,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#110-release-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1.0 - Release Highlights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#101-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8027,17 +8038,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#0430-release-highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        0.43.0 - Release Highlights
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -8059,7 +8059,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-07-24 00:00:00+00:00">July 24, 2026</time></li>
+          <time datetime="2026-08-13 00:00:00+00:00">August 13, 2026</time></li>
         
         
         
@@ -8068,12 +8068,37 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="101-release-highlights"><a class="toclink" href="2026/07/24/v1.0.1/">1.0.1 - Release Highlights</a></h2>
-<h3 id="deprecation-notices"><a class="toclink" href="2026/07/24/v1.0.1/#deprecation-notices">Deprecation notices</a></h3>
-<h4 id="ifirefoxoptionsgetbinaryornull-deprecated"><a class="toclink" href="2026/07/24/v1.0.1/#ifirefoxoptionsgetbinaryornull-deprecated"><code>IFirefoxOptions.getBinaryOrNull()</code> deprecated</a></h4>
+    <h2 id="110-release-highlights"><a class="toclink" href="2026/08/13/v1.1.0/">1.1.0 - Release Highlights</a></h2>
+<h3 id="deprecation-notices"><a class="toclink" href="2026/08/13/v1.1.0/#deprecation-notices">Deprecation notices</a></h3>
+<h4 id="http-manager"><a class="toclink" href="2026/08/13/v1.1.0/#http-manager">HTTP manager</a></h4>
+<p>The deprecated <code>getFile(String path)</code> and <code>getFile(String path, ContentType... acceptTypes)</code> methods on <code>IHttpClient</code> have been removed as the HTTP manager has been upgraded to use the Apache httpclient 5 library.</p>
+<p><strong>Action required:</strong> If you haven't done so already, replace any calls to <code>getFile(String path)</code> and <code>getFile(String path, ContentType... acceptTypes)</code> with <code>getFileStream(String path)</code> and <code>getFileStream(String path, ContentType... acceptTypes)</code> in your test code.</p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-11 00:00:00+00:00">August 11, 2026</time></li>
+        
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="101-release-highlights"><a class="toclink" href="2026/08/11/v1.0.1/">1.0.1 - Release Highlights</a></h2>
+<h3 id="deprecation-notices"><a class="toclink" href="2026/08/11/v1.0.1/#deprecation-notices">Deprecation notices</a></h3>
+<h4 id="ifirefoxoptionsgetbinaryornull-deprecated"><a class="toclink" href="2026/08/11/v1.0.1/#ifirefoxoptionsgetbinaryornull-deprecated"><code>IFirefoxOptions.getBinaryOrNull()</code> deprecated</a></h4>
 <p>The <code>getBinaryOrNull()</code> method on <code>IFirefoxOptions</code> has been deprecated and marked for removal as <code>FirefoxBinary</code> has been removed from Selenium 4.</p>
 <p><strong>Action required:</strong> Remove any calls to <code>getBinaryOrNull()</code> from your test code. If you were using the returned <code>FirefoxBinary</code> to configure the Firefox executable path, use <code>IFirefoxOptions.setBinary(Path)</code> or <code>IFirefoxOptions.setBinary(String)</code> instead.</p>
-<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2026/07/24/v1.0.1/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
+<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2026/08/11/v1.0.1/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
 <li>A new <code>POST /runs/portfolios</code> REST API endpoint resolves a portfolio of test classes server-side. Clients supply a <code>selections</code> array, where each entry names a stream and optional filters (bundle, package, test name, class, tag, with optional regex mode), and the server returns all matching classes from the stream's test catalog. If no filters are provided for a stream, all classes in that stream's catalog are returned. The response is stateless; no portfolio resource is persisted. See the <a href="../docs/reference/rest-api/">Runs API reference</a> for more details.</li>
 </ul>
@@ -8461,73 +8486,6 @@ update this to:
 <li>
 <p>The VTP manager has been removed from the available Galasa managers as the IBM Z Virtual Test Platform offering has been discontinued. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2460">#2460</a>.</p>
 </li>
-</ul>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-08-13 00:00:00+00:00">August 13, 2025</time></li>
-        
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="0430-release-highlights"><a class="toclink" href="2025/08/13/v0.43.0/">0.43.0 - Release Highlights</a></h2>
-<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="2025/08/13/v0.43.0/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
-<ul>
-<li>
-<p>The Galasa service now creates a test run record in the Result Archive Store when each run is submitted, rather than when the test is scheduled to execute, so more test runs will appear in the 'queued' state awaiting execution now. This also allows observability of submitted runs which were cancelled prior to being scheduled, which was not previously possible.</p>
-</li>
-<li>
-<p>The Galasa service has been made more efficient by reducing the amount of data being exchanged between internal components and avoiding the exchange of large messages travelling over the gRPC protocol. See <a href="https://github.com/galasa-dev/projectmanagement/issues/2312">#2312</a>.</p>
-</li>
-<li>
-<p>Upgrades are handled better: The Galasa Helm chart creates the <code>_users</code> database in CouchDB if it doesn't already exist. This is a required database for CouchDB that should be created as default to prevent errors when the Result Archive Store is started. This is needed because latest version of CouchDB needs this database, and it may not have existed before.</p>
-</li>
-<li>
-<p>The Galasa service is more robust when failures occur: A deployed Galasa service will now only attempt to launch tests in a new Kubernetes pod if the ETCD and RAS services are working. Were either of the ETCD or RAS services to fail, the errors would not be compounded by launching more tests which would all fail anyway.</p>
-</li>
-<li>
-<p>Cancelling test runs which have not already finished is handled better: Running tests are given an opportunity to notice they have been cancelled, and to exit cleanly after releasing any resources they hold. Queued test runs are marked as cancelled immediately.<a href="https://github.com/galasa-dev/projectmanagement/issues/2317">#2317</a>.</p>
-</li>
-</ul>
-<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="2025/08/13/v0.43.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
-<ul>
-<li>
-<p>Java API enhancement: Updates have been made to the <code>@TestResultProvider</code> annotation. The <code>@TestResultProvider</code> can now provide a list of <code>ITestMethodResult</code>s to the test which each include the method name, if the method passed, if the method failed, and the exception thrown to cause the failure, if available. This can be used by tests themselves to determine actions to take based on each method's result. See issue <a href="https://github.com/galasa-dev/projectmanagement/issues/2343">#2343</a>.</p>
-</li>
-<li>
-<p>The start and end line number in the run log pertaining to a particular method are now available in the test structure. This can be used to navigate the run log and identify which sections of the run log are about which methods. See issue <a href="https://github.com/galasa-dev/projectmanagement/issues/2214">#2214</a>.</p>
-</li>
-<li>
-<p>z/OS telnet 3270 server certificates can now be verified if the CPS property <code>zos.image.[TAG].telnet.tls.verify</code> is set to true. See issue <a href="https://github.com/galasa-dev/projectmanagement/issues/2296">#2296</a>.</p>
-</li>
-</ul>
-<h3 id="other-changes"><a class="toclink" href="2025/08/13/v0.43.0/#other-changes">Other changes</a></h3>
-<ul>
-<li>
-<p>Galasa users without internet access can continue to read the Galasa documentation offline. The Galasa zipped distribution, <code>isolated.zip</code>, now contains a <code>docs.tar</code> file that when untarred becomes a Docker image. This Docker image can then be run to access the Galasa documentation site from a local web server.</p>
-</li>
-<li>
-<p>log4j-core dependency upgraded from 2.24.1 to 2.25.1 to remediate a Critical vulnerability.</p>
-</li>
-<li>
-<p>The Galasa documentation site now complies with EEC regulations, providing a privacy statement and standard cookie consent banner.</p>
-</li>
-</ul>
-<h3 id="galasa-web-ui-changes"><a class="toclink" href="2025/08/13/v0.43.0/#galasa-web-ui-changes">Galasa Web UI changes</a></h3>
-<ul>
-<li>More experimental features have been added to the Galasa web user interface which are not visible by default. If you would like to test out these experimental features, you can opt-in to the features you wish to try by going to the "My Settings" page and ticking the checkboxes in the "Experimental Features" section. You can opt-out at any time by unchecking the ticked feature checkboxes.</li>
 </ul>
     
     

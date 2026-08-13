@@ -7246,6 +7246,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#110-release-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1.0 - Release Highlights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#101-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8057,6 +8068,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#110-release-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1.0 - Release Highlights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#101-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -8154,7 +8176,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-07-24 00:00:00+00:00">July 24, 2026</time></li>
+          <time datetime="2026-08-13 00:00:00+00:00">August 13, 2026</time></li>
         
         
         
@@ -8163,12 +8185,37 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="101-release-highlights"><a class="toclink" href="../../2026/07/24/v1.0.1/">1.0.1 - Release Highlights</a></h2>
-<h3 id="deprecation-notices"><a class="toclink" href="../../2026/07/24/v1.0.1/#deprecation-notices">Deprecation notices</a></h3>
-<h4 id="ifirefoxoptionsgetbinaryornull-deprecated"><a class="toclink" href="../../2026/07/24/v1.0.1/#ifirefoxoptionsgetbinaryornull-deprecated"><code>IFirefoxOptions.getBinaryOrNull()</code> deprecated</a></h4>
+    <h2 id="110-release-highlights"><a class="toclink" href="../../2026/08/13/v1.1.0/">1.1.0 - Release Highlights</a></h2>
+<h3 id="deprecation-notices"><a class="toclink" href="../../2026/08/13/v1.1.0/#deprecation-notices">Deprecation notices</a></h3>
+<h4 id="http-manager"><a class="toclink" href="../../2026/08/13/v1.1.0/#http-manager">HTTP manager</a></h4>
+<p>The deprecated <code>getFile(String path)</code> and <code>getFile(String path, ContentType... acceptTypes)</code> methods on <code>IHttpClient</code> have been removed as the HTTP manager has been upgraded to use the Apache httpclient 5 library.</p>
+<p><strong>Action required:</strong> If you haven't done so already, replace any calls to <code>getFile(String path)</code> and <code>getFile(String path, ContentType... acceptTypes)</code> with <code>getFileStream(String path)</code> and <code>getFileStream(String path, ContentType... acceptTypes)</code> in your test code.</p>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-08-11 00:00:00+00:00">August 11, 2026</time></li>
+        
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="101-release-highlights"><a class="toclink" href="../../2026/08/11/v1.0.1/">1.0.1 - Release Highlights</a></h2>
+<h3 id="deprecation-notices"><a class="toclink" href="../../2026/08/11/v1.0.1/#deprecation-notices">Deprecation notices</a></h3>
+<h4 id="ifirefoxoptionsgetbinaryornull-deprecated"><a class="toclink" href="../../2026/08/11/v1.0.1/#ifirefoxoptionsgetbinaryornull-deprecated"><code>IFirefoxOptions.getBinaryOrNull()</code> deprecated</a></h4>
 <p>The <code>getBinaryOrNull()</code> method on <code>IFirefoxOptions</code> has been deprecated and marked for removal as <code>FirefoxBinary</code> has been removed from Selenium 4.</p>
 <p><strong>Action required:</strong> Remove any calls to <code>getBinaryOrNull()</code> from your test code. If you were using the returned <code>FirefoxBinary</code> to configure the Firefox executable path, use <code>IFirefoxOptions.setBinary(Path)</code> or <code>IFirefoxOptions.setBinary(String)</code> instead.</p>
-<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="../../2026/07/24/v1.0.1/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
+<h3 id="changes-affecting-the-galasa-service"><a class="toclink" href="../../2026/08/11/v1.0.1/#changes-affecting-the-galasa-service">Changes affecting the Galasa Service</a></h3>
 <ul>
 <li>A new <code>POST /runs/portfolios</code> REST API endpoint resolves a portfolio of test classes server-side. Clients supply a <code>selections</code> array, where each entry names a stream and optional filters (bundle, package, test name, class, tag, with optional regex mode), and the server returns all matching classes from the stream's test catalog. If no filters are provided for a stream, all classes in that stream's catalog are returned. The response is stateless; no portfolio resource is persisted. See the <a href="../../../docs/reference/rest-api/">Runs API reference</a> for more details.</li>
 </ul>
