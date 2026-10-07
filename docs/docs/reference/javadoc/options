@@ -9,7 +9,7 @@
                         '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/classes'
 -author
 -bottom
-'Copyright &#169; 1980. All rights reserved.'
+'Copyright &#169; 2026. All rights reserved.'
 -charset
 'UTF-8'
 -d
@@ -18,7 +18,6 @@
 'UTF-8'
 -doctitle
 'galasa-uber-javadoc 1.1.2 API'
--notimestamp
 -tag
 "galasa.annotation:a:Annotation:"
 -tag
