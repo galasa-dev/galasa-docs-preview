@@ -109,6 +109,11 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Submit a job.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@NotNull <a href="IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#submitJobWithSuppliedJobcard(java.lang.String)" class="member-name-link">submitJobWithSuppliedJobcard</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Submit a job using JCL that contains its own JOB statement, for example a member of a JCL library.</div>
+</div>
 </div>
 </div>
 </div>
@@ -131,10 +136,13 @@ loadScripts(document, 'script');</script>
  @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl,
  <a href="IZosBatchJobname.html" title="interface in dev.galasa.zosbatch">IZosBatchJobname</a>&nbsp;jobname)</span>
                          throws <span class="exceptions"><a href="ZosBatchException.html" title="class in dev.galasa.zosbatch">ZosBatchException</a></span></div>
-<div class="block">Submit a job.</div>
+<div class="block">Submit a job.
+ <p>
+ The Manager generates a JOB statement and puts it in front of the supplied JCL, so the JCL must not include a JOB statement.
+ To submit JCL that already contains its own JOB statement, use <a href="#submitJobWithSuppliedJobcard(java.lang.String)"><code>submitJobWithSuppliedJobcard(String)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>jcl</code> - - The JCL to submit.   Must not include the JOB statement</dd>
+<dd><code>jcl</code> - - The JCL to submit.   Must not include the JOB statement, unless submitted using <a href="#submitJobWithSuppliedJobcard(java.lang.String)"><code>submitJobWithSuppliedJobcard(String)</code></a></dd>
 <dd><code>jobname</code> - - <a href="IZosBatchJobname.html" title="interface in dev.galasa.zosbatch"><code>IZosBatchJobname</code></a> A provisioned jobname, if null, a new unique jobname will be provisioned.</dd>
 <dt>Returns:</dt>
 <dd><a href="IZosBatchJob.html" title="interface in dev.galasa.zosbatch"><code>IZosBatchJob</code></a> A representation of the zOS Batch Job</dd>
@@ -152,15 +160,56 @@ loadScripts(document, 'script');</script>
  <a href="IZosBatchJobname.html" title="interface in dev.galasa.zosbatch">IZosBatchJobname</a>&nbsp;jobname,
  <a href="ZosBatchJobcard.html" title="class in dev.galasa.zosbatch">ZosBatchJobcard</a>&nbsp;jobCard)</span>
                          throws <span class="exceptions"><a href="ZosBatchException.html" title="class in dev.galasa.zosbatch">ZosBatchException</a></span></div>
-<div class="block">Submit a job.</div>
+<div class="block">Submit a job.
+ <p>
+ The Manager generates a JOB statement and puts it in front of the supplied JCL, so the JCL must not include a JOB statement.
+ To submit JCL that already contains its own JOB statement, use <a href="#submitJobWithSuppliedJobcard(java.lang.String)"><code>submitJobWithSuppliedJobcard(String)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>jcl</code> - - The JCL to submit.   Must not include the JOB statement</dd>
+<dd><code>jcl</code> - - The JCL to submit.   Must not include the JOB statement, unless submitted using <a href="#submitJobWithSuppliedJobcard(java.lang.String)"><code>submitJobWithSuppliedJobcard(String)</code></a></dd>
 <dd><code>jobname</code> - - <a href="IZosBatchJobname.html" title="interface in dev.galasa.zosbatch"><code>IZosBatchJobname</code></a> A provisioned jobname, if null, a new unique jobname will be provisioned.</dd>
 <dt>Returns:</dt>
 <dd><a href="IZosBatchJob.html" title="interface in dev.galasa.zosbatch"><code>IZosBatchJob</code></a> A representation of the zOS Batch Job</dd>
 <dt>Throws:</dt>
 <dd><code><a href="ZosBatchException.html" title="class in dev.galasa.zosbatch">ZosBatchException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="submitJobWithSuppliedJobcard(java.lang.String)">
+<h3>submitJobWithSuppliedJobcard</h3>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="return-type">@NotNull <a href="IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a></span>&nbsp;<span class="element-name">submitJobWithSuppliedJobcard</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl)</span>
+                                            throws <span class="exceptions"><a href="ZosBatchException.html" title="class in dev.galasa.zosbatch">ZosBatchException</a></span></div>
+<div class="block">Submit a job using JCL that contains its own JOB statement, for example a member of a JCL library.
+ <p>
+ The JCL is submitted as supplied. The Manager does not generate a JOB statement, so:
+ <ul>
+ <li>the job name is taken from the supplied JOB statement, converted to upper case,
+ and is returned by <a href="IZosBatchJob.html#getJobname()"><code>IZosBatchJob.getJobname()</code></a>. A Galasa provisioned jobname is not used.
+ The same job name is used to track the job, so <a href="IZosBatchJob.html#waitForJob()"><code>IZosBatchJob.waitForJob()</code></a> and the retrieval of spool files work as usual.
+ Jobs submitted with the same job name by tests running at the same time are distinguished by their job IDs.</li>
+ <li>the values that are set on a <a href="ZosBatchJobcard.html" title="class in dev.galasa.zosbatch"><code>ZosBatchJobcard</code></a>, and the default input class, message class and message level
+ from the CPS properties, are not applied. Everything required must be specified in the supplied JOB statement.</li>
+ </ul>
+ The first record of the JCL that is not blank and is not a comment (<code>//*</code>) must be the JOB statement,
+ <code>//jobname JOB ...</code>. The statement can be continued over several records.
+ If a valid JOB statement is not found, a <a href="ZosBatchException.html" title="class in dev.galasa.zosbatch"><code>ZosBatchException</code></a> is thrown and the JCL is not submitted.
+ Only the first JOB statement is considered if the JCL contains more than one.
+ <p>
+ If the CPS property <code>zosbatch.batchjob.[imageid].use.sysaff</code> is true,
+ a <code>/*JOBPARM SYSAFF=[imageid]</code> record is inserted immediately after the last record of the JOB statement.
+ It is not inserted if the supplied JCL already contains a <code>/*JOBPARM</code> record that specifies <code>SYSAFF=</code>.
+ <p>
+ The supplied JCL is stored in the test results archive in the same way as for <a href="#submitJob(java.lang.String,dev.galasa.zosbatch.IZosBatchJobname)"><code>submitJob(String, IZosBatchJobname)</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>jcl</code> - - The JCL to submit.   Must start with a JOB statement</dd>
+<dt>Returns:</dt>
+<dd><a href="IZosBatchJob.html" title="interface in dev.galasa.zosbatch"><code>IZosBatchJob</code></a> A representation of the zOS Batch Job</dd>
+<dt>Throws:</dt>
+<dd><code><a href="ZosBatchException.html" title="class in dev.galasa.zosbatch">ZosBatchException</a></code> - if the JCL does not start with a valid JOB statement or the job cannot be submitted</dd>
 </dl>
 </section>
 </li>

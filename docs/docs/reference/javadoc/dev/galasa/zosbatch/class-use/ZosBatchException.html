@@ -61,6 +61,8 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">z/OS Batch Manager Batch interface</div>
 </div>
+<div class="col-first even-row-color"><a href="#dev.galasa.zosbatch.spi">dev.galasa.zosbatch.spi</a></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
@@ -190,15 +192,36 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Submit a job.</div>
 </div>
+<div class="col-first even-row-color"><code>@NotNull <a href="../IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#submitJobWithSuppliedJobcard(java.lang.String)" class="member-name-link">submitJobWithSuppliedJobcard</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Submit a job using JCL that contains its own JOB statement, for example a member of a JCL library.</div>
+</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#waitForJob()" class="member-name-link">waitForJob</a>()</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Wait for a job to complete.</div>
+</div>
 <div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#waitForJob()" class="member-name-link">waitForJob</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#waitForJob(long)" class="member-name-link">waitForJob</a><wbr>(long&nbsp;timeout)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Wait for a job to complete.</div>
 </div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#waitForJob(long)" class="member-name-link">waitForJob</a><wbr>(long&nbsp;timeout)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Wait for a job to complete.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="dev.galasa.zosbatch.spi">
+<h2>Uses of <a href="../ZosBatchException.html" title="class in dev.galasa.zosbatch">ZosBatchException</a> in <a href="../spi/package-summary.html">dev.galasa.zosbatch.spi</a></h2>
+<div class="caption"><span>Methods in <a href="../spi/package-summary.html">dev.galasa.zosbatch.spi</a> that throw <a href="../ZosBatchException.html" title="class in dev.galasa.zosbatch">ZosBatchException</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static <a href="../spi/ZosBatchSuppliedJobcard.html" title="class in dev.galasa.zosbatch.spi">ZosBatchSuppliedJobcard</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ZosBatchSuppliedJobcard.</span><code><a href="../spi/ZosBatchSuppliedJobcard.html#parse(java.lang.String)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Parse the JOB statement from the supplied JCL.</div>
 </div>
 </div>
 </section>

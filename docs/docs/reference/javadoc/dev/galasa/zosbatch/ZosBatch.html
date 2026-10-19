@@ -85,8 +85,9 @@ loadScripts(document, 'script');</script>
  @ZosBatch(imageTag="A")<br>
  public IZosBatch zosBatchA;<br></code></dd>
 <dt>Extra:</dt>
-<dd>The <code>IZosBatch</code> interface has a single method, <a href="IZosBatch.html#submitJob(java.lang.String,dev.galasa.zosbatch.IZosBatchJobname)"><code>IZosBatch.submitJob(String, IZosBatchJobname)</code></a> to submit a JCL 
- as a <code>String</code> and returns a <code>IZosBatchJob</code> instance.<br><br>
+<dd>The <code>IZosBatch</code> interface has the method <a href="IZosBatch.html#submitJob(java.lang.String,dev.galasa.zosbatch.IZosBatchJobname)"><code>IZosBatch.submitJob(String, IZosBatchJobname)</code></a> to submit a JCL
+ as a <code>String</code> and returns a <code>IZosBatchJob</code> instance. The Manager generates the JOB statement, so the JCL must not include one.<br>
+ To submit JCL that already contains its own JOB statement, use <a href="IZosBatch.html#submitJobWithSuppliedJobcard(java.lang.String)"><code>IZosBatch.submitJobWithSuppliedJobcard(String)</code></a>.<br><br>
  See <a href="ZosBatch.html" title="annotation interface in dev.galasa.zosbatch"><code>ZosBatch</code></a>, <a href="IZosBatch.html" title="interface in dev.galasa.zosbatch"><code>IZosBatch</code></a> and <a href="IZosBatchJob.html" title="interface in dev.galasa.zosbatch"><code>IZosBatchJob</code></a> to find out more.</dd>
 </dl>
 </section>
