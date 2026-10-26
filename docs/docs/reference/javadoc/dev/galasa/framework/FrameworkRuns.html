@@ -177,7 +177,7 @@ implements <a href="spi/IFrameworkRuns.html" title="interface in dev.galasa.fram
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset(java.lang.String)" class="member-name-link">reset</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;runName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>@NotNull @NotNull <a href="spi/IRun.html" title="interface in dev.galasa.framework.spi">IRun</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)" class="member-name-link">submitRun</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;runType,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)" class="member-name-link">submitRun</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;runType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;requestor,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;user,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bundleName,
@@ -188,6 +188,7 @@ implements <a href="spi/IFrameworkRuns.html" title="interface in dev.galasa.fram
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stream,
  boolean&nbsp;local,
  boolean&nbsp;trace,
+ boolean&nbsp;isSerial,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;tags,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;overrides,
  <a href="spi/IFrameworkRuns.SharedEnvironmentPhase.html" title="enum class in dev.galasa.framework.spi">IFrameworkRuns.SharedEnvironmentPhase</a>&nbsp;sharedEnvironmentPhase,
@@ -318,7 +319,7 @@ implements <a href="spi/IFrameworkRuns.html" title="interface in dev.galasa.fram
 </section>
 </li>
 <li>
-<section class="detail" id="submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)">
+<section class="detail" id="submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)">
 <h3>submitRun</h3>
 <div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Override.html" title="class or interface in java.lang" class="external-link">@Override</a>
 @NotNull @NotNull
@@ -334,6 +335,7 @@ implements <a href="spi/IFrameworkRuns.html" title="interface in dev.galasa.fram
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stream,
  boolean&nbsp;local,
  boolean&nbsp;trace,
+ boolean&nbsp;isSerial,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;tags,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;overrides,
  <a href="spi/IFrameworkRuns.SharedEnvironmentPhase.html" title="enum class in dev.galasa.framework.spi">IFrameworkRuns.SharedEnvironmentPhase</a>&nbsp;sharedEnvironmentPhase,
@@ -344,7 +346,7 @@ implements <a href="spi/IFrameworkRuns.html" title="interface in dev.galasa.fram
                                  throws <span class="exceptions"><a href="spi/FrameworkException.html" title="class in dev.galasa.framework.spi">FrameworkException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="spi/IFrameworkRuns.html#submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)">submitRun</a></code>&nbsp;in interface&nbsp;<code><a href="spi/IFrameworkRuns.html" title="interface in dev.galasa.framework.spi">IFrameworkRuns</a></code></dd>
+<dd><code><a href="spi/IFrameworkRuns.html#submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)">submitRun</a></code>&nbsp;in interface&nbsp;<code><a href="spi/IFrameworkRuns.html" title="interface in dev.galasa.framework.spi">IFrameworkRuns</a></code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="spi/FrameworkException.html" title="class in dev.galasa.framework.spi">FrameworkException</a></code></dd>
 </dl>

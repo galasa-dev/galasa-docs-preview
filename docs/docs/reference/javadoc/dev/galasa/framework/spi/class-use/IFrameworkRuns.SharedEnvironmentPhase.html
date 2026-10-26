@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>@NotNull @NotNull <a href="../IRun.html" title="interface in dev.galasa.framework.spi">IRun</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">FrameworkRuns.</span><code><a href="../../FrameworkRuns.html#submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)" class="member-name-link">submitRun</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;runType,
+<div class="col-second even-row-color"><span class="type-name-label">FrameworkRuns.</span><code><a href="../../FrameworkRuns.html#submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)" class="member-name-link">submitRun</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;runType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;requestor,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;user,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bundleName,
@@ -88,6 +88,7 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stream,
  boolean&nbsp;local,
  boolean&nbsp;trace,
+ boolean&nbsp;isSerial,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;tags,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;overrides,
  <a href="../IFrameworkRuns.SharedEnvironmentPhase.html" title="enum class in dev.galasa.framework.spi">IFrameworkRuns.SharedEnvironmentPhase</a>&nbsp;sharedEnvironmentPhase,
@@ -174,7 +175,7 @@ the order they are declared.</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>@NotNull <a href="../IRun.html" title="interface in dev.galasa.framework.spi">IRun</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IFrameworkRuns.</span><code><a href="../IFrameworkRuns.html#submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)" class="member-name-link">submitRun</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
+<div class="col-second even-row-color"><span class="type-name-label">IFrameworkRuns.</span><code><a href="../IFrameworkRuns.html#submitRun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean,boolean,boolean,java.util.Set,java.util.Properties,dev.galasa.framework.spi.IFrameworkRuns.SharedEnvironmentPhase,java.lang.String,java.lang.String,java.lang.String,java.util.List)" class="member-name-link">submitRun</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;type,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;requestor,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;user,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bundleName,
@@ -185,6 +186,7 @@ the order they are declared.</div>
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;stream,
  boolean&nbsp;local,
  boolean&nbsp;trace,
+ boolean&nbsp;isSerial,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;tags,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;overrides,
  <a href="../IFrameworkRuns.SharedEnvironmentPhase.html" title="enum class in dev.galasa.framework.spi">IFrameworkRuns.SharedEnvironmentPhase</a>&nbsp;sharedEnvironmentPhase,
