@@ -7276,10 +7276,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#121-release-highlights" class="md-nav__link">
+  <a href="#130-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2.1 - Release Highlights
+        1.3.0 - Release Highlights
       
     </span>
   </a>
@@ -8120,10 +8120,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#121-release-highlights" class="md-nav__link">
+  <a href="#130-release-highlights" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2.1 - Release Highlights
+        1.3.0 - Release Highlights
       
     </span>
   </a>
@@ -8259,8 +8259,8 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="121-release-highlights"><a class="toclink" href="../../2026/10/14/v1.2.1/">1.2.1 - Release Highlights</a></h2>
-<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="../../2026/10/14/v1.2.1/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
+    <h2 id="130-release-highlights"><a class="toclink" href="../../2026/10/14/v1.3.0/">1.3.0 - Release Highlights</a></h2>
+<h3 id="changes-affecting-tests-running-locally-or-on-the-galasa-service"><a class="toclink" href="../../2026/10/14/v1.3.0/#changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service</a></h3>
 <ul>
 <li><strong>z/OS Batch Manager</strong>: Added a new <code>submitJobWithSuppliedJobcard(String jcl)</code> method to the <code>IZosBatch</code> interface that submits JCL which already contains its own JOB statement, such as a member of a JCL library. Previously the manager always generated a JOB statement and put it in front of the supplied JCL, so JCL that contained its own JOB statement was rejected by JES with a JCL error. Tests no longer need to strip the JOB statement and its continuation records from the JCL, or re-express its attributes using a <code>ZosBatchJobcard</code>. This is supported by both the z/OS MF and RSE API implementations of the z/OS Batch Manager. See the <a href="../../../docs/managers/zos-managers/zos-manager/">z/OS Manager documentation</a> for examples.</li>
 <li>The job name is taken from the JOB statement in the supplied JCL and is used to track the job, so <code>waitForJob()</code>, <code>getRetcode()</code> and the retrieval of spool files work in the same way as for other jobs. A Galasa provisioned job name is not used.</li>

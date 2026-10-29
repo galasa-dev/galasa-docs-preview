@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://galasa.dev/releases/2026/10/14/v1.2.1/">
+        <link rel="canonical" href="https://galasa.dev/releases/2026/10/14/v1.3.0/">
       
       
         <link rel="prev" href="../../05/v1.2.0/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>1.2.1 - Release Highlights - Galasa</title>
+        <title>1.3.0 - Release Highlights - Galasa</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#121-release-highlights" class="md-skip">
+        <a href="#130-release-highlights" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1.2.1 - Release Highlights
+              1.3.0 - Release Highlights
             
           </span>
         </div>
@@ -8036,14 +8036,14 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/galasa-dev/galasa/releases/tag/v1.2.1" class="md-nav__link">
+      <a href="https://github.com/galasa-dev/galasa/releases/tag/v1.3.0" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    v1.2.1 GitHub release
+    v1.3.0 GitHub release
   
 
     
@@ -8104,7 +8104,7 @@
 
   <!-- Edit button -->
   
-    <a href="https://github.com/galasa-dev/galasa/edit/main/docs/content/releases/posts/v1.2.1.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/galasa-dev/galasa/edit/main/docs/content/releases/posts/v1.3.0.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -8115,14 +8115,14 @@
     
       
     
-    <a href="https://github.com/galasa-dev/galasa/raw/main/docs/content/releases/posts/v1.2.1.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/galasa-dev/galasa/raw/main/docs/content/releases/posts/v1.3.0.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="121-release-highlights">1.2.1 - Release Highlights<a class="headerlink" href="#121-release-highlights" title="Permanent link">&para;</a></h1>
+<h1 id="130-release-highlights">1.3.0 - Release Highlights<a class="headerlink" href="#130-release-highlights" title="Permanent link">&para;</a></h1>
 <h2 id="changes-affecting-tests-running-locally-or-on-the-galasa-service">Changes affecting tests running locally or on the Galasa Service<a class="headerlink" href="#changes-affecting-tests-running-locally-or-on-the-galasa-service" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>z/OS Batch Manager</strong>: Added a new <code>submitJobWithSuppliedJobcard(String jcl)</code> method to the <code>IZosBatch</code> interface that submits JCL which already contains its own JOB statement, such as a member of a JCL library. Previously the manager always generated a JOB statement and put it in front of the supplied JCL, so JCL that contained its own JOB statement was rejected by JES with a JCL error. Tests no longer need to strip the JOB statement and its continuation records from the JCL, or re-express its attributes using a <code>ZosBatchJobcard</code>. This is supported by both the z/OS MF and RSE API implementations of the z/OS Batch Manager. See the <a href="../../../../../docs/managers/zos-managers/zos-manager/">z/OS Manager documentation</a> for examples.</li>
