@@ -76,8 +76,11 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">IZosBatchJobname</span></div>
 <div class="block"><p>Represents a privovision zOS Batch Jobname</p>
- 
- <p>Use a <a href="ZosBatchJobname.html" title="annotation interface in dev.galasa.zosbatch"><code>ZosBatchJobname</code></a> annotation to populate this field with</p></div>
+
+ <p>Use a <a href="ZosBatchJobname.html" title="annotation interface in dev.galasa.zosbatch"><code>ZosBatchJobname</code></a> annotation to populate this field with a unique jobname provisioned by the Manager.</p>
+
+ <p>To use a jobname chosen by the test, create one with <a href="ZosBatchJobnames.html#exact(java.lang.String)"><code>ZosBatchJobnames.exact(String)</code></a> or
+ <a href="ZosBatchJobnames.html#randomWithPrefix(java.lang.String)"><code>ZosBatchJobnames.randomWithPrefix(String)</code></a>.</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">

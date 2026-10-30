@@ -112,41 +112,52 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Cancel the batch job</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJobOutput.</span><code><a href="../IZosBatchJobOutput.html#getJobid()" class="member-name-link">getJobid</a>()</code></div>
+<div class="col-first odd-row-color"><code>static <a href="../IZosBatchJobname.html" title="interface in dev.galasa.zosbatch">IZosBatchJobname</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ZosBatchJobnames.</span><code><a href="../ZosBatchJobnames.html#exact(java.lang.String)" class="member-name-link">exact</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Returns the zOS batch jobid</div>
+<div class="block">Create a jobname with exactly the supplied name, converted to upper case.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJobOutput.</span><code><a href="../IZosBatchJobOutput.html#getJobname()" class="member-name-link">getJobname</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJobOutput.</span><code><a href="../IZosBatchJobOutput.html#getJobid()" class="member-name-link">getJobid</a>()</code></div>
 <div class="col-last even-row-color">
+<div class="block">Returns the zOS batch jobid</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJobOutput.</span><code><a href="../IZosBatchJobOutput.html#getJobname()" class="member-name-link">getJobname</a>()</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Returns the zOS batch jobname</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a>&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#getJobs(java.lang.String,java.lang.String)" class="member-name-link">getJobs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jobname,
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a>&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#getJobs(java.lang.String,java.lang.String)" class="member-name-link">getJobs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jobname,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;owner)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Return a list of zOS Batch jobs with the given jobname and/or the owner.</div>
 </div>
-<div class="col-first even-row-color"><code>long</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJobOutputSpoolFile.</span><code><a href="../IZosBatchJobOutputSpoolFile.html#getSize()" class="member-name-link">getSize</a>()</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>long</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJobOutputSpoolFile.</span><code><a href="../IZosBatchJobOutputSpoolFile.html#getSize()" class="member-name-link">getSize</a>()</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Return the size of this zOS batch job spool file</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../IZosBatchJobOutputSpoolFile.html" title="interface in dev.galasa.zosbatch">IZosBatchJobOutputSpoolFile</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#getSpoolFile(java.lang.String)" class="member-name-link">getSpoolFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ddname)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code><a href="../IZosBatchJobOutputSpoolFile.html" title="interface in dev.galasa.zosbatch">IZosBatchJobOutputSpoolFile</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#getSpoolFile(java.lang.String)" class="member-name-link">getSpoolFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ddname)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Convenience method to retrieve the content of a spool file from the batch job given the ddname.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../IZosBatchJobOutput.html" title="interface in dev.galasa.zosbatch">IZosBatchJobOutput</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#listSpoolFiles()" class="member-name-link">listSpoolFiles</a>()</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../IZosBatchJobOutput.html" title="interface in dev.galasa.zosbatch">IZosBatchJobOutput</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#listSpoolFiles()" class="member-name-link">listSpoolFiles</a>()</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Provides a list of the batch job spool files as an <a href="../IZosBatchJobOutput.html" title="interface in dev.galasa.zosbatch"><code>IZosBatchJobOutput</code></a> object without retrieving spool file content</div>
 </div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#purge()" class="member-name-link">purge</a>()</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#purge()" class="member-name-link">purge</a>()</code></div>
+<div class="col-last even-row-color">
 <div class="block">Cancel the batch job and purge output from the queue</div>
+</div>
+<div class="col-first odd-row-color"><code>static <a href="../IZosBatchJobname.html" title="interface in dev.galasa.zosbatch">IZosBatchJobname</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ZosBatchJobnames.</span><code><a href="../ZosBatchJobnames.html#randomWithPrefix(java.lang.String)" class="member-name-link">randomWithPrefix</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;prefix)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Create a jobname that starts with the supplied prefix, converted to upper case, followed by random alphanumeric
+ characters that make the jobname 8 characters long.</div>
 </div>
 <div class="col-first even-row-color"><code>long</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">IZosBatchJobOutputSpoolFile.</span><code><a href="../IZosBatchJobOutputSpoolFile.html#retrieve()" class="member-name-link">retrieve</a>()</code></div>
@@ -179,32 +190,37 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Save this zOS batch job spool file to the Results Archive Store.</div>
 </div>
-<div class="col-first even-row-color"><code>@NotNull <a href="../IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#submitJob(java.lang.String,dev.galasa.zosbatch.IZosBatchJobname)" class="member-name-link">submitJob</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl,
+<div class="col-first even-row-color"><code>default @NotNull <a href="../IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#submitJob(java.lang.String)" class="member-name-link">submitJob</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Submit a job with a unique jobname that is provisioned by the Manager.</div>
+</div>
+<div class="col-first odd-row-color"><code>@NotNull <a href="../IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#submitJob(java.lang.String,dev.galasa.zosbatch.IZosBatchJobname)" class="member-name-link">submitJob</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl,
  <a href="../IZosBatchJobname.html" title="interface in dev.galasa.zosbatch">IZosBatchJobname</a>&nbsp;jobname)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Submit a job.</div>
+</div>
+<div class="col-first even-row-color"><code>@NotNull <a href="../IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#submitJob(java.lang.String,dev.galasa.zosbatch.IZosBatchJobname,dev.galasa.zosbatch.ZosBatchJobcard)" class="member-name-link">submitJob</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl,
+ <a href="../IZosBatchJobname.html" title="interface in dev.galasa.zosbatch">IZosBatchJobname</a>&nbsp;jobname,
+ <a href="../ZosBatchJobcard.html" title="class in dev.galasa.zosbatch">ZosBatchJobcard</a>&nbsp;jobCard)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Submit a job.</div>
 </div>
 <div class="col-first odd-row-color"><code>@NotNull <a href="../IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#submitJob(java.lang.String,dev.galasa.zosbatch.IZosBatchJobname,dev.galasa.zosbatch.ZosBatchJobcard)" class="member-name-link">submitJob</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl,
- <a href="../IZosBatchJobname.html" title="interface in dev.galasa.zosbatch">IZosBatchJobname</a>&nbsp;jobname,
- <a href="../ZosBatchJobcard.html" title="class in dev.galasa.zosbatch">ZosBatchJobcard</a>&nbsp;jobCard)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#submitJobWithSuppliedJobcard(java.lang.String)" class="member-name-link">submitJobWithSuppliedJobcard</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Submit a job.</div>
-</div>
-<div class="col-first even-row-color"><code>@NotNull <a href="../IZosBatchJob.html" title="interface in dev.galasa.zosbatch">IZosBatchJob</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IZosBatch.</span><code><a href="../IZosBatch.html#submitJobWithSuppliedJobcard(java.lang.String)" class="member-name-link">submitJobWithSuppliedJobcard</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;jcl)</code></div>
-<div class="col-last even-row-color">
 <div class="block">Submit a job using JCL that contains its own JOB statement, for example a member of a JCL library.</div>
 </div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#waitForJob()" class="member-name-link">waitForJob</a>()</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#waitForJob()" class="member-name-link">waitForJob</a>()</code></div>
+<div class="col-last even-row-color">
 <div class="block">Wait for a job to complete.</div>
 </div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#waitForJob(long)" class="member-name-link">waitForJob</a><wbr>(long&nbsp;timeout)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IZosBatchJob.</span><code><a href="../IZosBatchJob.html#waitForJob(long)" class="member-name-link">waitForJob</a><wbr>(long&nbsp;timeout)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Wait for a job to complete.</div>
 </div>
 </div>

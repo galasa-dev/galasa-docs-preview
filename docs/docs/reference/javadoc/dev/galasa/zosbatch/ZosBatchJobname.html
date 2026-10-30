@@ -77,7 +77,8 @@ loadScripts(document, 'script');</script>
 <dt>Description:</dt>
 <dd>The <code>@ZosBatchJobname</code> annotation requests the z/OS Manager to provide a
  <a href="IZosBatchJobname.html" title="interface in dev.galasa.zosbatch"><code>IZosBatchJobname</code></a> field that is guaranteed to be unique which can be used for running Jobs or STCs on a zOS Image.
- The Test can provision many jobnames as are needed for the test</dd>
+ The Test can provision many jobnames as are needed for the test.<br>
+ To use a jobname that is chosen by the test instead, see <a href="ZosBatchJobnames.html" title="class in dev.galasa.zosbatch"><code>ZosBatchJobnames</code></a>.</dd>
 <dt>Examples:</dt>
 <dd><code>@ZosBatchJobname(imageTag="A")<br>
  public IZosBatchJobname jobName;<br></code></dd>
