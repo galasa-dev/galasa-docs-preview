@@ -388,6 +388,7 @@
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/IDynamicStatusStoreKeyAccess.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/ResourcePoolingServiceException.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/utils/DssUtils.java'
+'/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/utils/SerialRunLock.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/utils/StringValidator.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/utils/SystemTimeService.java'
 '/home/runner/work/galasa/galasa/modules/obr/javadocs/target/sources/dev/galasa/framework/spi/utils/GalasaGson.java'

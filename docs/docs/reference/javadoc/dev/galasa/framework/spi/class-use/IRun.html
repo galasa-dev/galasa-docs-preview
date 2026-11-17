@@ -65,6 +65,8 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first even-row-color"><a href="#dev.galasa.framework.spi.language.gherkin">dev.galasa.framework.spi.language.gherkin</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><a href="#dev.galasa.framework.spi.utils">dev.galasa.framework.spi.utils</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
@@ -247,6 +249,29 @@ loadScripts(document, 'script');</script>
  <a href="../teststructure/TestStructure.html" title="class in dev.galasa.framework.spi.teststructure">TestStructure</a>&nbsp;testStructure,
  <a href="../../IFileSystem.html" title="interface in dev.galasa.framework">IFileSystem</a>&nbsp;fs)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="dev.galasa.framework.spi.utils">
+<h2>Uses of <a href="../IRun.html" title="interface in dev.galasa.framework.spi">IRun</a> in <a href="../utils/package-summary.html">dev.galasa.framework.spi.utils</a></h2>
+<div class="caption"><span>Methods in <a href="../utils/package-summary.html">dev.galasa.framework.spi.utils</a> with parameters of type <a href="../IRun.html" title="interface in dev.galasa.framework.spi">IRun</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SerialRunLock.</span><code><a href="../utils/SerialRunLock.html#claimIfSerial(dev.galasa.framework.spi.IDynamicStatusStoreKeyAccess,dev.galasa.framework.spi.IRun)" class="member-name-link">claimIfSerial</a><wbr>(<a href="../IDynamicStatusStoreKeyAccess.html" title="interface in dev.galasa.framework.spi">IDynamicStatusStoreKeyAccess</a>&nbsp;dss,
+ <a href="../IRun.html" title="interface in dev.galasa.framework.spi">IRun</a>&nbsp;run)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Claims the lock for the run's test class if the run is serial.</div>
+</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">SerialRunLock.</span><code><a href="../utils/SerialRunLock.html#releaseIfSerial(dev.galasa.framework.spi.IDynamicStatusStoreKeyAccess,dev.galasa.framework.spi.IRun)" class="member-name-link">releaseIfSerial</a><wbr>(<a href="../IDynamicStatusStoreKeyAccess.html" title="interface in dev.galasa.framework.spi">IDynamicStatusStoreKeyAccess</a>&nbsp;dss,
+ <a href="../IRun.html" title="interface in dev.galasa.framework.spi">IRun</a>&nbsp;run)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Releases the lock for the run's test class if the run is serial, but only if the run owns it.</div>
+</div>
 </div>
 </section>
 </li>

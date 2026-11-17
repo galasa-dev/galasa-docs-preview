@@ -1387,6 +1387,10 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="dev/galasa/cicsts/spi/ICicstsManagerSpi.html#cicstsRegionStarted(dev.galasa.cicsts.ICicsRegion)" class="member-name-link">cicstsRegionStarted(ICicsRegion)</a> - Method in interface dev.galasa.cicsts.spi.<a href="dev/galasa/cicsts/spi/ICicstsManagerSpi.html" title="interface in dev.galasa.cicsts.spi">ICicstsManagerSpi</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/galasa/framework/spi/utils/SerialRunLock.html#claimIfSerial(dev.galasa.framework.spi.IDynamicStatusStoreKeyAccess,dev.galasa.framework.spi.IRun)" class="member-name-link">claimIfSerial(IDynamicStatusStoreKeyAccess, IRun)</a> - Static method in class dev.galasa.framework.spi.utils.<a href="dev/galasa/framework/spi/utils/SerialRunLock.html" title="class in dev.galasa.framework.spi.utils">SerialRunLock</a></dt>
+<dd>
+<div class="block">Claims the lock for the run's test class if the run is serial.</div>
+</dd>
 <dt><a href="dev/galasa/cicsts/cicsresource/IJvmserver.JvmserverType.html#CLASSPATH" class="member-name-link">CLASSPATH</a> - Enum constant in enum class dev.galasa.cicsts.cicsresource.<a href="dev/galasa/cicsts/cicsresource/IJvmserver.JvmserverType.html" title="enum class in dev.galasa.cicsts.cicsresource">IJvmserver.JvmserverType</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="com/coreos/dex/api/DexOuterClass.Client.Builder.html#clear()" class="member-name-link">clear()</a> - Method in class com.coreos.dex.api.<a href="com/coreos/dex/api/DexOuterClass.Client.Builder.html" title="class in com.coreos.dex.api">DexOuterClass.Client.Builder</a></dt>
@@ -16951,6 +16955,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="dev/galasa/framework/spi/ras/ResultArchiveStorePath.html#relativize(java.nio.file.Path)" class="member-name-link">relativize(Path)</a> - Method in class dev.galasa.framework.spi.ras.<a href="dev/galasa/framework/spi/ras/ResultArchiveStorePath.html" title="class in dev.galasa.framework.spi.ras">ResultArchiveStorePath</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/galasa/framework/spi/utils/SerialRunLock.html#releaseIfSerial(dev.galasa.framework.spi.IDynamicStatusStoreKeyAccess,dev.galasa.framework.spi.IRun)" class="member-name-link">releaseIfSerial(IDynamicStatusStoreKeyAccess, IRun)</a> - Static method in class dev.galasa.framework.spi.utils.<a href="dev/galasa/framework/spi/utils/SerialRunLock.html" title="class in dev.galasa.framework.spi.utils">SerialRunLock</a></dt>
+<dd>
+<div class="block">Releases the lock for the run's test class if the run is serial, but only if the run owns it.</div>
+</dd>
 <dt><a href="dev/galasa/zosliberty/IZosLibertyServer.html#removeApplication(java.lang.String)" class="member-name-link">removeApplication(String)</a> - Method in interface dev.galasa.zosliberty.<a href="dev/galasa/zosliberty/IZosLibertyServer.html" title="interface in dev.galasa.zosliberty">IZosLibertyServer</a></dt>
 <dd>
 <div class="block">Remove an application from the Liberty server.</div>
@@ -18235,6 +18243,11 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="dev/galasa/zosfile/IZosDataset.DatasetOrganization.html#SEQUENTIAL" class="member-name-link">SEQUENTIAL</a> - Enum constant in enum class dev.galasa.zosfile.<a href="dev/galasa/zosfile/IZosDataset.DatasetOrganization.html" title="enum class in dev.galasa.zosfile">IZosDataset.DatasetOrganization</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/galasa/framework/spi/utils/SerialRunLock.html" class="type-name-link" title="class in dev.galasa.framework.spi.utils">SerialRunLock</a> - Class in <a href="dev/galasa/framework/spi/utils/package-summary.html">dev.galasa.framework.spi.utils</a></dt>
+<dd>
+<div class="block">The lock which stops two runs of the same test class running at the same time, for test classes
+ which are annotated with @DoNotRunInParallel.</div>
+</dd>
 <dt><a href="com/coreos/dex/api/DexOuterClass.VersionResp.html#SERVER_FIELD_NUMBER" class="member-name-link">SERVER_FIELD_NUMBER</a> - Static variable in class com.coreos.dex.api.<a href="com/coreos/dex/api/DexOuterClass.VersionResp.html" title="class in com.coreos.dex.api">DexOuterClass.VersionResp</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/galasa/zosmf/IZosmf.html#serverInfo()" class="member-name-link">serverInfo()</a> - Method in interface dev.galasa.zosmf.<a href="dev/galasa/zosmf/IZosmf.html" title="interface in dev.galasa.zosmf">IZosmf</a></dt>
